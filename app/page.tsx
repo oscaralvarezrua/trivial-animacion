@@ -1,12 +1,18 @@
 import { connection } from "next/server";
+import { haySesion } from "@/lib/acceso";
 import { partidaGuardada } from "@/lib/partida-guardada";
 import type { GameState } from "@/lib/types";
+import { Acceso } from "./acceso";
 import { cargarPartida } from "./acciones";
 import { Juego } from "./juego";
 
 export default async function Page() {
   // La partida vive en Supabase y cambia en cada turno: nada que prerenderizar.
   await connection();
+
+  // Antes que nada el PIN: si no, el error de sesión de cargarPartida caería en
+  // el catch de abajo y se enseñaría la pantalla de Supabase, que no viene a cuento.
+  if (!(await haySesion())) return <Acceso />;
 
   // El try envuelve solo la lectura, no el JSX: si falla, casi siempre es que
   // todavía no están puestas las claves de Supabase, y conviene decirlo.

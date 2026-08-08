@@ -20,6 +20,7 @@ Copia `.env.local.example` a `.env.local` y rellena los dos valores de Supabase:
 | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | Project Settings → Data API → Project URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | Project Settings → API Keys → `service_role` |
+| `TRIVIAL_PIN` | Lo eliges tú: el PIN compartido para entrar |
 
 La URL va sin ruta ni barra final: `https://xxxxxxxxxxxx.supabase.co`.
 
@@ -75,6 +76,20 @@ Importa el repositorio en [Vercel](https://vercel.com/new) y define las dos
 variables de entorno de arriba en Project Settings → Environment Variables. El
 plan Hobby sobra.
 
+## El PIN
+
 Las Server Actions son invocables por POST por cualquiera que conozca la URL del
-despliegue. Para una partida privada entre dos es aceptable; si algún día
-molesta, se añade un PIN compartido.
+despliegue, así que esconder la pantalla no bastaría. `TRIVIAL_PIN` cierra las
+dos puertas:
+
+- [`app/page.tsx`](app/page.tsx) no enseña la partida sin sesión.
+- [`lib/acceso.ts`](lib/acceso.ts) comprueba la sesión **dentro de cada Server
+  Action**, antes de tocar Supabase, que es donde está el dato.
+
+En la cookie no viaja el PIN sino un hash con sal, la comparación es en tiempo
+constante y la sesión dura un año. Cambiar `TRIVIAL_PIN` invalida de golpe todas
+las sesiones abiertas, que es la forma de echar a alguien.
+
+Si `TRIVIAL_PIN` se deja vacío no hay PIN y la web queda abierta. Es a propósito:
+quedarse fuera de tu propia partida por una variable mal puesta es peor que el
+riesgo que cubre.
