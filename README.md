@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trivial de animación
 
-## Getting Started
+Web para que Oscar y Alicia jueguen a un trivial de películas y series de
+animación en un mismo dispositivo, por turnos. Las reglas están implementadas
+como código: **no hay ninguna llamada a IA en tiempo de ejecución**, y las 220
+preguntas viven en un banco local en TypeScript.
 
-First, run the development server:
+El contexto largo del proyecto —decisiones, reglas y su porqué— está en
+[ESTADO.md](ESTADO.md).
+
+## Arrancar en local
+
+```bash
+npm install
+```
+
+Copia `.env.local.example` a `.env.local` y rellena los dos valores de Supabase:
+
+| Variable | Dónde sale |
+| --- | --- |
+| `NEXT_PUBLIC_SUPABASE_URL` | Project Settings → Data API → Project URL |
+| `SUPABASE_SERVICE_ROLE_KEY` | Project Settings → API Keys → `service_role` |
+
+La URL va sin ruta ni barra final: `https://xxxxxxxxxxxx.supabase.co`.
+
+La primera vez, ejecuta el contenido de [`supabase/esquema.sql`](supabase/esquema.sql)
+en el SQL Editor de Supabase para crear la tabla `partidas`. Después:
+
+```bash
+npm run supabase
+```
+
+Comprueba que las claves valen y que la tabla existe, sin imprimirlas nunca. Y ya:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+En [localhost:3000](http://localhost:3000). Si Supabase no está configurado, la
+web enseña una pantalla explicando qué falta en vez de romperse.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Build de producción |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run lint` | ESLint |
+| `npm run validar` | Estructura y reparto del banco de preguntas |
+| `npm run probar` | 25 casos del corrector de respuestas |
+| `npm run simular` | Juega una partida entera y comprueba las reglas |
+| `npm run supabase` | Comprueba la conexión con la base de datos |
 
-## Learn More
+## Cómo está montado
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 16** (App Router, Server Actions), React 19, TypeScript, Tailwind 4.
+- **Supabase (Postgres)** guarda la partida entera en una fila `jsonb`, para
+  poder retomarla desde cualquier sitio.
+- El acceso a la base de datos va **solo por Server Actions** con la service role
+  key. La tabla tiene RLS activado y ninguna política, así que la clave pública
+  no sirve para nada y nunca llega al navegador.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+lib/motor.ts        Elección de pregunta, turnos, puntuación
+lib/corrector.ts    Acepta erratas sin colar respuestas distintas
+lib/banco/          Las 220 preguntas, por familias
+app/page.tsx        Lee el estado o enseña la pantalla de configuración
+app/juego.tsx       Marcador, pregunta, veredicto
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Desplegar
 
-## Deploy on Vercel
+Importa el repositorio en [Vercel](https://vercel.com/new) y define las dos
+variables de entorno de arriba en Project Settings → Environment Variables. El
+plan Hobby sobra.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Las Server Actions son invocables por POST por cualquiera que conozca la URL del
+despliegue. Para una partida privada entre dos es aceptable; si algún día
+molesta, se añade un PIN compartido.

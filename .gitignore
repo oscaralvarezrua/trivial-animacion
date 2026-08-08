@@ -32,9 +32,14 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# …salvo la plantilla, que no lleva ningún secreto y sirve de documentación.
+!.env.local.example
 
 # vercel
 .vercel
+
+# ajustes locales de Claude Code (permisos de esta máquina, no del proyecto)
+.claude/settings.local.json
 
 # typescript
 *.tsbuildinfo
