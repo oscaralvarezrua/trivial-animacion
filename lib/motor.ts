@@ -176,7 +176,10 @@ export function responder(
     updatedAt: new Date().toISOString(),
   };
 
-  if (acierto) {
+  // En verdadero o falso no hay rebote: solo quedan dos opciones y el rival
+  // acaba de ver fallar una, así que acertar sería gratis y el −1 no disuadiría
+  // de nada. La regla existe para que solo conteste quien se la sabe.
+  if (acierto || pregunta.format === "vf") {
     return { ...base, turn: jugadorRival(jugador), currentQuestionId: null, rebote: null };
   }
 

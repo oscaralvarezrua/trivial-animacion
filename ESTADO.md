@@ -47,7 +47,9 @@ escribir código. Dos cosas ya comprobadas ahí:
 3. Acierto = 1 punto. Fallo = 0. No hay medios puntos.
 3b. **Rebote.** Si el titular falla, la pregunta pasa al rival sin revelar la
    solución. Puede responder o pasar: acierto +1, fallo −1 y pasar no mueve
-   nada, para que solo conteste si se la sabe. El marcador tiene suelo en cero,
+   nada, para que solo conteste si se la sabe. **Salvo en verdadero o falso**,
+   donde no hay rebote: al quedar una sola opción, acertar sería gratis y el −1
+   no disuadiría de nada. El marcador tiene suelo en cero,
    así que un fallo nunca deja a nadie en negativo. El botón «era correcta» se
    ofrece **durante** el rebote: si le dais el punto al titular, el rebote se
    cancela porque nunca hubo fallo. Una vez jugado el rebote ya no se puede

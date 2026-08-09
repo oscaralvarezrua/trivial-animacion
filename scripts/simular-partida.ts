@@ -18,6 +18,41 @@ import type { Difficulty, GameState } from "../lib/types";
 const RONDAS = Math.floor(PREGUNTAS.length / 2);
 let estado: GameState = partidaGuardada();
 
+/**
+ * El veto del rebote en verdadero o falso se comprueba a mano sobre TODAS las
+ * preguntas del formato. Dejarlo en manos de la partida simulada no vale: hay
+ * seis en el banco y puede que ninguna llegue a fallarse.
+ */
+{
+  const limpio: GameState = {
+    ...partidaGuardada(),
+    history: [],
+    usedQuestionIds: [],
+    rebote: null,
+  };
+  const verdaderoFalso = PREGUNTAS.filter((q) => q.format === "vf");
+
+  for (const q of verdaderoFalso) {
+    const tras = responder({ ...limpio, currentQuestionId: q.id }, false, "fallo");
+    if (tras.rebote) {
+      console.log(`FALLO: la pregunta de verdadero o falso ${q.id} ha abierto rebote`);
+      process.exit(1);
+    }
+  }
+
+  // Y el contraste: cualquier otro formato sí tiene que abrirlo.
+  const otra = PREGUNTAS.find((q) => q.format !== "vf")!;
+  if (!responder({ ...limpio, currentQuestionId: otra.id }, false, "fallo").rebote) {
+    console.log(`FALLO: ${otra.id} tenía que haber abierto rebote y no lo hizo`);
+    process.exit(1);
+  }
+
+  console.log(
+    `Veto del rebote comprobado en las ${verdaderoFalso.length} preguntas de ` +
+      `verdadero o falso, y el rebote sigue abriéndose en el resto.\n`,
+  );
+}
+
 for (let i = 0; i < RONDAS * 2; i++) {
   if (!estado.currentQuestionId) estado = servirPregunta(estado);
   if (!estado.currentQuestionId) break; // banco agotado
@@ -139,6 +174,16 @@ console.log(
 if (estado.scores.oscar < 0 || estado.scores.alicia < 0) {
   problemas.push("Algún marcador ha quedado en negativo");
 }
+
+// En verdadero o falso el rebote regalaría el punto, así que no debe existir.
+const vfFallados = h.filter((e) => e.format === "vf" && !e.correct);
+if (rebotes.some((e) => e.format === "vf")) {
+  problemas.push("Ha habido rebote en una pregunta de verdadero o falso");
+}
+console.log(
+  `Verdadero o falso fallados: ${vfFallados.length}, y ninguno rebotó ` +
+    `(${rebotes.filter((e) => e.format === "vf").length} rebotes en vf)`,
+);
 console.log(`Reglas comprobadas sobre las ${MARGEN} primeras (${rondas} rondas):`);
 console.log(
   `Dificultad por ronda -> fácil ${pct(porRonda.facil)}, ` +
