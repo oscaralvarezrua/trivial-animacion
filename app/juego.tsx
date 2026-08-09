@@ -416,7 +416,15 @@ function Pie({
         <span aria-hidden>·</span>
         {confirmando ? (
           <>
-            <span>¿Seguro? Se pierde el 59-57 y todo el historial.</span>
+            {/* El marcador sale del estado: antes estaba escrito el 59-57 de la
+                partida que se heredó de ChatGPT, y dejó de ser cierto enseguida. */}
+            <span>
+              {estado.scores.oscar === 0 &&
+              estado.scores.alicia === 0 &&
+              estado.history.length === 0
+                ? "¿Seguro? Empezaréis de cero otra vez."
+                : `¿Seguro? Se pierde el ${estado.scores.oscar}-${estado.scores.alicia} y todo el historial.`}
+            </span>
             <button
               onClick={() => {
                 setConfirmando(false);
