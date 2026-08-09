@@ -112,7 +112,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
               Esta ya ha salido
             </button>
             <span className="ml-auto text-[var(--apagado)]">
-              Sin penalización, repite {PLAYERS[estado.turn].nombre}
+              Sin penalización: {PLAYERS[estado.turn].nombre} responde otra
             </span>
           </footer>
         </section>
