@@ -6,12 +6,22 @@ import { EntradaRespuesta, type Envio } from "./respuesta";
 import {
   concederPunto,
   descartarPregunta,
+  jugadorRival,
   partidaNueva,
+  pasarRebote,
   responder,
+  responderRebote,
   servirPregunta,
 } from "@/lib/motor";
 import { porId } from "@/lib/preguntas";
-import { FORMAT_LABEL, PLAYERS, type GameState, type Player } from "@/lib/types";
+import {
+  FORMAT_LABEL,
+  PLAYERS,
+  type GameState,
+  type Player,
+  type Question,
+  type Rebound,
+} from "@/lib/types";
 
 export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   const [estado, setEstado] = useState(estadoInicial);
@@ -39,12 +49,29 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
 
   const pregunta = estado.currentQuestionId ? porId(estado.currentQuestionId) : null;
   const ultima = estado.history.at(-1);
+  const rebote = estado.rebote ?? null;
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
       <Marcador estado={estado} />
 
-      {pregunta ? (
+      {pregunta && rebote ? (
+        <Rebote
+          key={`${pregunta.id}-rebote`}
+          pregunta={pregunta}
+          jugador={rebote}
+          fallo={ultima?.given ?? ""}
+          onResponder={(envio) => {
+            setErrata(envio.conErrata);
+            aplicar(responderRebote(estado, envio.acierto, envio.texto));
+          }}
+          onPasar={() => aplicar(pasarRebote(estado))}
+          onConceder={() => {
+            setErrata(false);
+            aplicar(concederPunto(estado));
+          }}
+        />
+      ) : pregunta ? (
         <section
           key={pregunta.id}
           data-jugador={estado.turn}
@@ -116,10 +143,13 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
 }
 
 function Marcador({ estado }: { estado: GameState }) {
+  // Durante un rebote manda quien lo tiene, no el titular de la pregunta.
+  const enJuego = estado.rebote ?? estado.turn;
+
   return (
     <div className="grid grid-cols-2 gap-3">
       {(Object.keys(PLAYERS) as Player[]).map((jugador) => {
-        const activo = estado.turn === jugador;
+        const activo = enJuego === jugador;
         return (
           <div
             key={jugador}
@@ -142,13 +172,84 @@ function Marcador({ estado }: { estado: GameState }) {
             </p>
             {activo && (
               <p className="text-xs" style={{ color: "var(--jugador)" }}>
-                Su turno
+                {estado.rebote ? "Rebote" : "Su turno"}
               </p>
             )}
           </div>
         );
       })}
     </div>
+  );
+}
+
+/**
+ * Rebote. La respuesta oficial sigue tapada: el rival decide a ciegas si se la
+ * juega. Se le enseña lo que falló el titular porque en la mesa lo ha oído.
+ */
+function Rebote({
+  pregunta,
+  jugador,
+  fallo,
+  onResponder,
+  onPasar,
+  onConceder,
+}: {
+  pregunta: Question;
+  jugador: Player;
+  fallo: string;
+  onResponder: (envio: Envio) => void;
+  onPasar: () => void;
+  onConceder: () => void;
+}) {
+  const titular = PLAYERS[jugadorRival(jugador)];
+
+  return (
+    <section
+      data-jugador={jugador}
+      className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--jugador)]
+        bg-[var(--superficie)] p-5 sm:p-6"
+    >
+      <header className="flex flex-col gap-1">
+        <p className="text-sm font-medium" style={{ color: "var(--jugador)" }}>
+          {PLAYERS[jugador].emoji} Rebote para {PLAYERS[jugador].nombre}
+        </p>
+        <p className="text-sm text-[var(--apagado)]">
+          {titular.nombre} ha fallado{fallo && <>: respondió «{fallo}»</>}
+        </p>
+      </header>
+
+      <div className="flex flex-col gap-1.5">
+        <h2 className="text-xl leading-snug font-medium text-balance sm:text-2xl">
+          {pregunta.prompt}
+        </h2>
+        {pregunta.hint && (
+          <p className="text-sm text-[var(--apagado)]">{pregunta.hint}</p>
+        )}
+      </div>
+
+      <p className="rounded-xl bg-[var(--jugador-suave)] px-4 py-2.5 text-sm">
+        Si aciertas sumas 1. Si fallas restas 1. Si pasas, no pierdes nada:
+        responde solo si te la sabes.
+      </p>
+
+      <EntradaRespuesta pregunta={pregunta} onEnviar={onResponder} />
+
+      <footer className="flex flex-wrap items-center gap-4 border-t border-[var(--borde)] pt-4 text-sm">
+        <button
+          onClick={onPasar}
+          className="rounded-xl border border-[var(--borde)] px-4 py-2.5
+            hover:border-[var(--texto)]"
+        >
+          Paso, no me la sé
+        </button>
+        <button
+          onClick={onConceder}
+          className="text-[var(--apagado)] underline-offset-4 hover:text-[var(--texto)] hover:underline"
+        >
+          Era correcta, dadle el punto a {titular.nombre}
+        </button>
+      </footer>
+    </section>
   );
 }
 
@@ -198,6 +299,7 @@ function Veredicto({
             {jugador.nombre} respondió: «{ultima.given}»
           </p>
         )}
+        {ultima.rebound && <Rebotado rebote={ultima.rebound} />}
       </div>
 
       <div className="flex flex-wrap items-center gap-3 border-t border-[var(--borde)] pt-4">
@@ -211,7 +313,8 @@ function Veredicto({
           Pregunta de {PLAYERS[estado.turn].nombre} →
         </button>
 
-        {!ultima.correct && (
+        {/* Jugado el rebote ya no se puede deshacer: el árbitro se ofrece antes. */}
+        {!ultima.correct && !ultima.rebound && (
           <button
             onClick={onConceder}
             className="text-sm text-[var(--apagado)] underline-offset-4
@@ -222,6 +325,36 @@ function Veredicto({
         )}
       </div>
     </section>
+  );
+}
+
+function Rebotado({ rebote }: { rebote: Rebound }) {
+  const nombre = PLAYERS[rebote.player].nombre;
+
+  const texto =
+    rebote.outcome === "acierto"
+      ? `Rebote: ${nombre} lo cazó y suma un punto.`
+      : rebote.outcome === "fallo"
+        ? // Con el marcador a cero el fallo no resta: decir lo contrario sería mentir.
+          rebote.delta === 0
+          ? `Rebote: ${nombre} se lanzó y falló, pero estaba a cero y de ahí no baja.`
+          : `Rebote: ${nombre} se lanzó, falló y pierde un punto.`
+        : `Rebote: ${nombre} pasó. Sin cambios.`;
+
+  const color =
+    rebote.outcome === "acierto"
+      ? "var(--acierto)"
+      : rebote.outcome === "fallo"
+        ? "var(--fallo)"
+        : "var(--apagado)";
+
+  return (
+    <p className="text-sm" style={{ color }}>
+      {texto}
+      {rebote.outcome !== "pasa" && rebote.given && (
+        <span className="text-[var(--apagado)]"> Respondió: «{rebote.given}»</span>
+      )}
+    </p>
   );
 }
 

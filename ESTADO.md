@@ -45,6 +45,15 @@ escribir código. Dos cosas ya comprobadas ahí:
 1. Turnos estrictos: Oscar → Alicia. Oscar siempre abre ronda.
 2. Una pregunta cada vez, esperando respuesta.
 3. Acierto = 1 punto. Fallo = 0. No hay medios puntos.
+3b. **Rebote.** Si el titular falla, la pregunta pasa al rival sin revelar la
+   solución. Puede responder o pasar: acierto +1, fallo −1 y pasar no mueve
+   nada, para que solo conteste si se la sabe. El marcador tiene suelo en cero,
+   así que un fallo nunca deja a nadie en negativo. El botón «era correcta» se
+   ofrece **durante** el rebote: si le dais el punto al titular, el rebote se
+   cancela porque nunca hubo fallo. Una vez jugado el rebote ya no se puede
+   deshacer. El rebote se anota dentro de la pregunta que lo provocó, no como
+   entrada aparte, para no contar dos veces su franquicia y su formato en las
+   reglas de variedad.
 4. En preguntas de varias respuestas hay que acertarlas todas (`accepted` con
    varios huecos obligatorios).
 5. Pregunta anulada: no toca el marcador, no hace perder el turno, sirve otra al

@@ -82,6 +82,24 @@ export type Question =
   | OrderQuestion
   | MatchQuestion;
 
+/**
+ * Rebote: cuando el titular falla, la pregunta pasa al rival, que elige entre
+ * responder o pasar. Acertar suma 1, fallar resta 1 y pasar no mueve nada, para
+ * que solo conteste si se la sabe.
+ */
+export interface Rebound {
+  player: Player;
+  outcome: "acierto" | "fallo" | "pasa";
+  /** Lo que respondió. Vacío si pasó. */
+  given: string;
+  /**
+   * Puntos que se movieron de verdad. Es 0 cuando falla estando a cero: el
+   * suelo lo frena, y sin este dato el veredicto diría que ha perdido un punto
+   * que nunca perdió.
+   */
+  delta: number;
+}
+
 export interface HistoryEntry {
   /** Número de pregunta de ese jugador (el 83 de Oscar, etc.). */
   n: number;
@@ -93,6 +111,8 @@ export interface HistoryEntry {
   correct: boolean;
   /** true si el punto se concedió con el botón «era correcta». */
   overridden?: boolean;
+  /** Cómo acabó el rebote, si el titular falló y el rival llegó a jugarlo. */
+  rebound?: Rebound;
   /** Lo que respondió el jugador, para poder repasar la partida. */
   given: string;
   at: string;
@@ -113,5 +133,11 @@ export interface GameState {
   roundDifficulty: Difficulty | null;
   /** Franquicia que ya ha salido en esta ronda; la otra no puede repetirla. */
   roundFranchise: string | null;
+  /**
+   * Jugador con un rebote pendiente. Mientras esté puesto manda él y no `turn`:
+   * la pregunta sigue servida y sin revelar. Opcional porque las partidas
+   * guardadas antes de existir el rebote no lo traen.
+   */
+  rebote?: Player | null;
   updatedAt: string;
 }

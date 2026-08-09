@@ -6,6 +6,7 @@ import type {
   Player,
   Question,
   QuestionFormat,
+  Rebound,
 } from "./types";
 
 /** Una franquicia no puede repetirse hasta que hayan pasado 8 preguntas. */
@@ -139,8 +140,9 @@ export function servirPregunta(estado: GameState): GameState {
 }
 
 /**
- * Registra la respuesta, mueve el marcador y pasa el turno. No sirve la
- * siguiente pregunta: entre medias hay que enseñar el veredicto.
+ * Registra la respuesta y mueve el marcador. Si es acierto, pasa el turno y
+ * toca enseñar el veredicto. Si es fallo, la pregunta rebota al rival: no se
+ * revela nada todavía y el turno se queda quieto hasta que resuelva el rebote.
  */
 export function responder(
   estado: GameState,
@@ -163,18 +165,80 @@ export function responder(
     at: new Date().toISOString(),
   };
 
-  return {
+  const base: GameState = {
     ...estado,
     scores: {
       ...estado.scores,
       [jugador]: estado.scores[jugador] + (acierto ? 1 : 0),
     },
     nextNumber: { ...estado.nextNumber, [jugador]: estado.nextNumber[jugador] + 1 },
-    turn: jugador === "oscar" ? "alicia" : "oscar",
-    currentQuestionId: null,
     history: [...estado.history, entrada],
     updatedAt: new Date().toISOString(),
   };
+
+  if (acierto) {
+    return { ...base, turn: jugadorRival(jugador), currentQuestionId: null, rebote: null };
+  }
+
+  // La pregunta se mantiene servida: el rival tiene que verla sin la solución.
+  return { ...base, rebote: jugadorRival(jugador) };
+}
+
+/**
+ * Cierra el rebote: lo anota en la pregunta que lo provocó (no como entrada
+ * aparte, que contaría dos veces la franquicia y el formato y descuadraría las
+ * reglas de variedad) y devuelve el turno a su curso normal.
+ */
+function cerrarRebote(estado: GameState, rebote: Rebound): GameState {
+  const ultima = estado.history.at(-1);
+  if (!ultima) return estado;
+
+  return {
+    ...estado,
+    history: [...estado.history.slice(0, -1), { ...ultima, rebound: rebote }],
+    turn: rebote.player,
+    currentQuestionId: null,
+    rebote: null,
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+/**
+ * El rival se lanza a por el rebote. Acertar suma 1 y fallar resta 1, con suelo
+ * en cero: el castigo existe, pero nadie acaba en negativo.
+ */
+export function responderRebote(
+  estado: GameState,
+  acierto: boolean,
+  respuestaDada: string,
+): GameState {
+  const jugador = estado.rebote;
+  if (!jugador) return estado;
+
+  const anterior = estado.scores[jugador];
+  const nuevo = Math.max(0, anterior + (acierto ? 1 : -1));
+
+  const cerrado = cerrarRebote(estado, {
+    player: jugador,
+    outcome: acierto ? "acierto" : "fallo",
+    given: respuestaDada,
+    delta: nuevo - anterior,
+  });
+
+  return { ...cerrado, scores: { ...cerrado.scores, [jugador]: nuevo } };
+}
+
+/** El rival no se la sabe y pasa: el marcador no se mueve. */
+export function pasarRebote(estado: GameState): GameState {
+  const jugador = estado.rebote;
+  if (!jugador) return estado;
+
+  return cerrarRebote(estado, {
+    player: jugador,
+    outcome: "pasa",
+    given: "",
+    delta: 0,
+  });
 }
 
 /**
@@ -199,6 +263,10 @@ export function descartarPregunta(estado: GameState): GameState {
 /**
  * Botón «era correcta»: concede el punto de la última respuesta juzgada mal.
  * Queda anotado para que se vea cuántas veces lo usa cada uno.
+ *
+ * Con el rebote encima, darlo por bueno significa que nunca hubo fallo, así que
+ * el rebote se cancela. Por eso el botón se ofrece antes de que el rival juegue:
+ * después ya no habría manera de deshacer su punto.
  */
 export function concederPunto(estado: GameState): GameState {
   const ultima = estado.history.at(-1);
@@ -207,7 +275,7 @@ export function concederPunto(estado: GameState): GameState {
   const historial = estado.history.slice(0, -1);
   historial.push({ ...ultima, correct: true, overridden: true });
 
-  return {
+  const base: GameState = {
     ...estado,
     scores: { ...estado.scores, [ultima.player]: estado.scores[ultima.player] + 1 },
     overrides: {
@@ -216,6 +284,15 @@ export function concederPunto(estado: GameState): GameState {
     },
     history: historial,
     updatedAt: new Date().toISOString(),
+  };
+
+  if (!estado.rebote) return base;
+
+  return {
+    ...base,
+    rebote: null,
+    currentQuestionId: null,
+    turn: jugadorRival(ultima.player),
   };
 }
 
@@ -231,6 +308,7 @@ export function partidaNueva(): GameState {
     overrides: { oscar: 0, alicia: 0 },
     roundDifficulty: null,
     roundFranchise: null,
+    rebote: null,
     updatedAt: new Date().toISOString(),
   };
   return servirPregunta(base);

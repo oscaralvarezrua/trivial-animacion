@@ -1,4 +1,10 @@
-import { descartarPregunta, responder, servirPregunta } from "../lib/motor";
+import {
+  descartarPregunta,
+  pasarRebote,
+  responder,
+  responderRebote,
+  servirPregunta,
+} from "../lib/motor";
 import { partidaGuardada } from "../lib/partida-guardada";
 import { PREGUNTAS } from "../lib/preguntas";
 import type { Difficulty, GameState } from "../lib/types";
@@ -28,6 +34,39 @@ for (let i = 0; i < RONDAS * 2; i++) {
   }
 
   estado = responder(estado, Math.random() < 0.7, "respuesta simulada");
+
+  // Si el titular falló, el rival tiene rebote: a veces se lanza, a veces pasa.
+  if (estado.rebote) {
+    const quien = estado.rebote;
+    const antes = estado.scores[quien];
+
+    if (Math.random() < 0.5) {
+      const acierta = Math.random() < 0.5;
+      estado = responderRebote(estado, acierta, "rebote simulado");
+      const esperado = Math.max(0, antes + (acierta ? 1 : -1));
+      if (estado.scores[quien] !== esperado) {
+        console.log(
+          `FALLO: el rebote dejó a ${quien} en ${estado.scores[quien]} y tocaba ${esperado}`,
+        );
+        process.exit(1);
+      }
+    } else {
+      estado = pasarRebote(estado);
+      if (estado.scores[quien] !== antes) {
+        console.log("FALLO: pasar el rebote ha movido el marcador");
+        process.exit(1);
+      }
+    }
+
+    if (estado.rebote) {
+      console.log("FALLO: el rebote sigue pendiente después de resolverlo");
+      process.exit(1);
+    }
+    if (estado.turn !== quien) {
+      console.log("FALLO: tras el rebote el turno no ha pasado a quien lo jugó");
+      process.exit(1);
+    }
+  }
 }
 
 const h = estado.history;
@@ -85,8 +124,21 @@ for (let i = 0; i + 1 < conMargen.length; i += 2) {
 const rondas = Math.floor(conMargen.length / 2);
 const pct = (n: number) => `${Math.round((n / rondas) * 100)}%`;
 
+const rebotes = h.filter((e) => e.rebound);
+const porResultado = (r: string) => rebotes.filter((e) => e.rebound!.outcome === r).length;
+
 console.log(`Preguntas jugadas: ${h.length}`);
 console.log(`Marcador final: Oscar ${estado.scores.oscar} - Alicia ${estado.scores.alicia}`);
+console.log(
+  `Rebotes jugados: ${rebotes.length} ` +
+    `(acertados ${porResultado("acierto")}, fallados ${porResultado("fallo")}, ` +
+    `pasados ${porResultado("pasa")})`,
+);
+
+// El suelo en cero es regla: un fallo resta, pero nadie acaba en negativo.
+if (estado.scores.oscar < 0 || estado.scores.alicia < 0) {
+  problemas.push("Algún marcador ha quedado en negativo");
+}
 console.log(`Reglas comprobadas sobre las ${MARGEN} primeras (${rondas} rondas):`);
 console.log(
   `Dificultad por ronda -> fácil ${pct(porRonda.facil)}, ` +
