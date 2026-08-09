@@ -22,7 +22,7 @@ ninguna llamada a IA en tiempo de ejecución.
 | Modo de juego | Un solo dispositivo, por turnos | Juegan juntos; nada de sincronización en tiempo real |
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
-| Árbitro | Botón «Era correcta, dadle el punto» | El corrector automático puede fallar; sin registro de usos |
+| Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
 | Tamaño del banco | ~150 objetivo, salieron 220 | Ampliable añadiendo líneas a `lib/banco/` |
 
 ## Stack
@@ -58,9 +58,16 @@ escribir código. Dos cosas ya comprobadas ahí:
    reglas de variedad.
 4. En preguntas de varias respuestas hay que acertarlas todas (`accepted` con
    varios huecos obligatorios).
-5. Pregunta anulada: no toca el marcador, no hace perder el turno, sirve otra al
-   mismo jugador. Botón «Anular pregunta».
-6. «Esa ya ha salido»: mismo comportamiento. Botón propio.
+5. «Esta ya ha salido»: no toca el marcador, no hace perder el turno y sirve
+   otra al mismo jugador. La descartada queda marcada como usada, igual que si
+   se hubiera jugado, así que no vuelve a aparecer. Es un único botón: el
+   antiguo «Anular pregunta» llamaba a la misma función y se ha quitado.
+6. Corrección del veredicto, en los dos sentidos. Un fallo se puede pasar a
+   acierto y un acierto a fallo, porque el corrector automático se equivoca en
+   ambas direcciones. Al pasar de acierto a fallo se abre el rebote (salvo en
+   verdadero o falso); al pasar de fallo a acierto, el rebote que se hubiera
+   jugado se deshace entero, incluidos los puntos del rival. El resultado del
+   propio rebote también se puede invertir.
 7. Erratas y aproximaciones fonéticas se aceptan indicando la grafía oficial.
 8. Se muestra siempre la respuesta oficial tras contestar, más una nota breve
    opcional.

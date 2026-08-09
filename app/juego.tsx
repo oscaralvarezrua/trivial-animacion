@@ -5,6 +5,8 @@ import { guardarPartida } from "./acciones";
 import { EntradaRespuesta, type Envio } from "./respuesta";
 import {
   concederPunto,
+  corregirRebote,
+  corregirTitular,
   descartarPregunta,
   jugadorRival,
   partidaNueva,
@@ -109,12 +111,6 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
             >
               Esta ya ha salido
             </button>
-            <button
-              className="text-[var(--apagado)] underline-offset-4 hover:text-[var(--texto)] hover:underline"
-              onClick={() => aplicar(descartarPregunta(estado))}
-            >
-              Anular pregunta
-            </button>
             <span className="ml-auto text-[var(--apagado)]">
               Sin penalización, repite {PLAYERS[estado.turn].nombre}
             </span>
@@ -124,10 +120,11 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
         <Veredicto
           estado={estado}
           errata={errata}
-          onConceder={() => {
+          onCorregir={() => {
             setErrata(false);
-            aplicar(concederPunto(estado));
+            aplicar(corregirTitular(estado));
           }}
+          onCorregirRebote={() => aplicar(corregirRebote(estado))}
           onSiguiente={() => {
             setErrata(false);
             aplicar(servirPregunta(estado));
@@ -256,12 +253,14 @@ function Rebote({
 function Veredicto({
   estado,
   errata,
-  onConceder,
+  onCorregir,
+  onCorregirRebote,
   onSiguiente,
 }: {
   estado: GameState;
   errata: boolean;
-  onConceder: () => void;
+  onCorregir: () => void;
+  onCorregirRebote: () => void;
   onSiguiente: () => void;
 }) {
   const ultima = estado.history.at(-1)!;
@@ -313,14 +312,28 @@ function Veredicto({
           Pregunta de {PLAYERS[estado.turn].nombre} →
         </button>
 
-        {/* Jugado el rebote ya no se puede deshacer: el árbitro se ofrece antes. */}
-        {!ultima.correct && !ultima.rebound && (
+        {/* La corrección va en los dos sentidos y deshace lo que hubiera aplicado. */}
+        <button
+          onClick={onCorregir}
+          className="text-sm text-[var(--apagado)] underline-offset-4
+            hover:text-[var(--texto)] hover:underline"
+        >
+          {!ultima.correct
+            ? `Era correcta, dadle el punto a ${jugador.nombre}`
+            : pregunta?.format === "vf"
+              ? `No era correcta, quitadle el punto a ${jugador.nombre}`
+              : `No era correcta: quitadle el punto y que rebote`}
+        </button>
+
+        {ultima.rebound && ultima.rebound.outcome !== "pasa" && (
           <button
-            onClick={onConceder}
+            onClick={onCorregirRebote}
             className="text-sm text-[var(--apagado)] underline-offset-4
               hover:text-[var(--texto)] hover:underline"
           >
-            Era correcta, dadle el punto
+            {ultima.rebound.outcome === "acierto"
+              ? `El rebote no valía, quitadle el punto a ${PLAYERS[ultima.rebound.player].nombre}`
+              : `El rebote sí valía, dadle el punto a ${PLAYERS[ultima.rebound.player].nombre}`}
           </button>
         )}
       </div>

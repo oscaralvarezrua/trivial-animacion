@@ -1,4 +1,6 @@
 import {
+  corregirRebote,
+  corregirTitular,
   descartarPregunta,
   pasarRebote,
   responder,
@@ -49,8 +51,69 @@ let estado: GameState = partidaGuardada();
 
   console.log(
     `Veto del rebote comprobado en las ${verdaderoFalso.length} preguntas de ` +
-      `verdadero o falso, y el rebote sigue abriéndose en el resto.\n`,
+      `verdadero o falso, y el rebote sigue abriéndose en el resto.`,
   );
+}
+
+/**
+ * Correcciones del veredicto. Es la parte con más aristas del motor, porque hay
+ * que deshacer lo ya aplicado y aplicar lo contrario sin saltarse el suelo en
+ * cero, así que se comprueba caso por caso y no al azar.
+ */
+{
+  const fallo = (mensaje: string): never => {
+    console.log(`FALLO: ${mensaje}`);
+    process.exit(1);
+  };
+
+  const base: GameState = {
+    ...partidaGuardada(),
+    history: [],
+    usedQuestionIds: [],
+    rebote: null,
+    scores: { oscar: 5, alicia: 5 },
+  };
+  const conRebote = PREGUNTAS.find((q) => q.format !== "vf")!;
+  const vf = PREGUNTAS.find((q) => q.format === "vf")!;
+
+  // 1. El titular falla, el rival pincha el rebote y luego se corrige al
+  //    titular: recupera su punto y el rival recupera el suyo.
+  let e = responder({ ...base, currentQuestionId: conRebote.id }, false, "mal");
+  e = responderRebote(e, false, "mal");
+  if (e.scores.alicia !== 4) fallo(`el rebote fallado dejó a Alicia en ${e.scores.alicia}`);
+  e = corregirTitular(e);
+  if (e.scores.oscar !== 6) fallo(`corregir a acierto dejó a Oscar en ${e.scores.oscar}`);
+  if (e.scores.alicia !== 5) fallo(`el rebote no se deshizo: Alicia en ${e.scores.alicia}`);
+  if (e.history.at(-1)!.rebound) fallo("el rebote sigue anotado tras corregir");
+
+  // 2. Un acierto corregido a fallo abre el rebote y devuelve la pregunta.
+  e = corregirTitular(responder({ ...base, currentQuestionId: conRebote.id }, true, "bien"));
+  if (e.scores.oscar !== 5) fallo(`quitar el punto dejó a Oscar en ${e.scores.oscar}`);
+  if (e.rebote !== "alicia") fallo("corregir a fallo no ha abierto el rebote");
+  if (e.currentQuestionId !== conRebote.id) fallo("la pregunta no ha vuelto a servirse");
+
+  // 3. En verdadero o falso, corregir a fallo quita el punto y nada más.
+  e = corregirTitular(responder({ ...base, currentQuestionId: vf.id }, true, "bien"));
+  if (e.scores.oscar !== 5) fallo(`en vf quitar el punto dejó a Oscar en ${e.scores.oscar}`);
+  if (e.rebote) fallo("verdadero o falso no debe abrir rebote al corregir");
+
+  // 4. El resultado del rebote se puede dar la vuelta, y volver a darla.
+  e = responderRebote(responder({ ...base, currentQuestionId: conRebote.id }, false, "mal"), true, "bien");
+  if (e.scores.alicia !== 6) fallo(`el rebote acertado dejó a Alicia en ${e.scores.alicia}`);
+  e = corregirRebote(e);
+  if (e.scores.alicia !== 4) fallo(`corregir el rebote a fallo dejó a Alicia en ${e.scores.alicia}`);
+  e = corregirRebote(e);
+  if (e.scores.alicia !== 6) fallo(`volver a corregirlo dejó a Alicia en ${e.scores.alicia}`);
+
+  // 5. El caso que justifica guardar el delta: falla el rebote estando a cero,
+  //    así que no resta nada. Al corregirlo tiene que subir a 1, no a 2.
+  const aCero: GameState = { ...base, scores: { oscar: 5, alicia: 0 } };
+  e = responderRebote(responder({ ...aCero, currentQuestionId: conRebote.id }, false, "mal"), false, "mal");
+  if (e.scores.alicia !== 0) fallo(`el suelo falló: Alicia en ${e.scores.alicia}`);
+  e = corregirRebote(e);
+  if (e.scores.alicia !== 1) fallo(`corregir un rebote frenado por el suelo dejó a Alicia en ${e.scores.alicia}`);
+
+  console.log("Correcciones del veredicto comprobadas en sus cinco casos.\n");
 }
 
 for (let i = 0; i < RONDAS * 2; i++) {

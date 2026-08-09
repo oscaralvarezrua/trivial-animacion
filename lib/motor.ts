@@ -299,6 +299,97 @@ export function concederPunto(estado: GameState): GameState {
   };
 }
 
+/**
+ * Corrección del veredicto del titular, en los dos sentidos: el corrector
+ * automático tanto puede rechazar una respuesta buena como tragarse una mala.
+ *
+ * Pasar de fallo a acierto deshace el rebote entero, porque si acertó nunca
+ * debió existir. Pasar de acierto a fallo lo abre, salvo en verdadero o falso,
+ * donde no hay rebote.
+ */
+export function corregirTitular(estado: GameState): GameState {
+  const ultima = estado.history.at(-1);
+  if (!ultima) return estado;
+
+  const pregunta = porId(ultima.questionId);
+  const rival = jugadorRival(ultima.player);
+  const ahoraAcierta = !ultima.correct;
+
+  const marcador: Record<Player, number> = {
+    ...estado.scores,
+    [ultima.player]: Math.max(
+      0,
+      estado.scores[ultima.player] + (ahoraAcierta ? 1 : -1),
+    ),
+  };
+
+  const entrada: HistoryEntry = { ...ultima, correct: ahoraAcierta, overridden: true };
+
+  // Aquel rebote no tenía que haberse jugado: se le devuelve al rival lo que le
+  // movió, sea lo que ganó o lo que perdió.
+  if (ahoraAcierta && ultima.rebound) {
+    marcador[rival] = Math.max(0, marcador[rival] - ultima.rebound.delta);
+    delete entrada.rebound;
+  }
+
+  const base: GameState = {
+    ...estado,
+    scores: marcador,
+    overrides: {
+      ...estado.overrides,
+      [ultima.player]: estado.overrides[ultima.player] + 1,
+    },
+    history: [...estado.history.slice(0, -1), entrada],
+    updatedAt: new Date().toISOString(),
+  };
+
+  if (!ahoraAcierta && pregunta && pregunta.format !== "vf") {
+    // Se vuelve a la pregunta para que el rival juegue el rebote que ahora toca.
+    return {
+      ...base,
+      currentQuestionId: ultima.questionId,
+      turn: ultima.player,
+      rebote: rival,
+    };
+  }
+
+  return { ...base, rebote: null };
+}
+
+/**
+ * Corrección del rebote: le da la vuelta a su resultado. Deshace lo que aplicó
+ * en su día y aplica lo contrario, así que el suelo en cero se respeta aunque
+ * se corrija varias veces seguidas.
+ */
+export function corregirRebote(estado: GameState): GameState {
+  const ultima = estado.history.at(-1);
+  if (!ultima?.rebound || ultima.rebound.outcome === "pasa") return estado;
+
+  const { player, delta, outcome } = ultima.rebound;
+  const acertabaAntes = outcome === "acierto";
+
+  const limpio = Math.max(0, estado.scores[player] - delta);
+  const nuevo = Math.max(0, limpio + (acertabaAntes ? -1 : 1));
+
+  return {
+    ...estado,
+    scores: { ...estado.scores, [player]: nuevo },
+    overrides: { ...estado.overrides, [player]: estado.overrides[player] + 1 },
+    history: [
+      ...estado.history.slice(0, -1),
+      {
+        ...ultima,
+        rebound: {
+          ...ultima.rebound,
+          outcome: acertabaAntes ? "fallo" : "acierto",
+          delta: nuevo - limpio,
+        },
+      },
+    ],
+    updatedAt: new Date().toISOString(),
+  };
+}
+
 export function partidaNueva(): GameState {
   const base: GameState = {
     version: 1,
