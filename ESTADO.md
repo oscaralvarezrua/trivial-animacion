@@ -1,7 +1,7 @@
 # Estado del proyecto — Trivial de animación
 
 Documento de contexto para retomar el trabajo sin depender del historial de chat.
-Última actualización: 6 de agosto de 2026.
+Última actualización: 17 de agosto de 2026.
 
 ## Qué es
 
@@ -24,13 +24,14 @@ ninguna llamada a IA en tiempo de ejecución.
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
 | Tamaño del banco | ~150 objetivo, salieron 220 | Ampliable añadiendo líneas a `lib/banco/` |
+| Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
 
 - Next.js 16.3.0 (App Router, Server Actions), React 19.2.8, TypeScript, Tailwind 4.
 - `@supabase/supabase-js` + `server-only`.
 - `tsx` para los scripts de verificación.
-- Node 20.19.4, Windows.
+- Node 24.x, Windows. Es lo que usa también el despliegue de Vercel.
 
 **Importante:** este Next.js tiene cambios respecto a lo que un modelo suele
 recordar. `AGENTS.md` obliga a consultar `node_modules/next/dist/docs/` antes de
@@ -93,10 +94,12 @@ Está en `sortearDificultad(permitirDificil)` en `lib/motor.ts`.
 ## Mapa de ficheros
 
 ```
-lib/types.ts             Question (unión por formato), GameState, HistoryEntry
+lib/types.ts             Question (unión por formato), GameState, HistoryEntry, Rebound
 lib/corrector.ts         normalizar, levenshtein, esqueleto, corregirTexto
 lib/motor.ts             elegirPregunta, servirPregunta, responder,
-                         descartarPregunta, concederPunto, partidaNueva
+                         responderRebote, pasarRebote, descartarPregunta,
+                         concederPunto, corregirTitular, corregirRebote,
+                         partidaNueva, jugadorRival
 lib/barajar.ts           Barajado determinista por semilla (evita mismatch de hidratación)
 lib/preguntas.ts         Índice del banco, porId, validarBanco, PREGUNTA_PENDIENTE
 lib/banco/disney.ts      Clásicos Disney y WDAS
@@ -104,10 +107,12 @@ lib/banco/estudios.ts    Pixar, DreamWorks, Illumination, Sony y otros
 lib/banco/series.ts      TV, Ghibli, anime, Clan y Boing
 lib/partida-guardada.ts  Estado semilla 59-57 con la pregunta 83 pendiente
 lib/supabase.ts          Cliente con service role key, marcado server-only
-app/acciones.ts          Server Actions: cargarPartida, guardarPartida
-app/page.tsx             Server Component: lee el estado o enseña la pantalla de configuración
-app/juego.tsx            Cliente: marcador, pregunta, veredicto, pie
-app/respuesta.tsx        Entrada de respuesta según el formato
+lib/acceso.ts            PIN: haySesion, exigirSesion, abrirSesion (server-only)
+app/acciones.ts          Server Actions: cargarPartida, guardarPartida, entrar
+app/page.tsx             Server Component: PIN, luego el estado o la pantalla de configuración
+app/acceso.tsx           Pantalla del PIN
+app/juego.tsx            Cliente: marcador, pregunta, veredicto, rebote, banco agotado, pie
+app/respuesta.tsx        Entrada de respuesta según el formato (los siete)
 app/globals.css          Variables de color y tema por jugador
 supabase/esquema.sql     Tabla partidas + RLS
 scripts/*.ts             Verificación (ver abajo)
@@ -157,16 +162,28 @@ npm run lint        # eslint
 npm run validar     # estructura y reparto del banco
 npm run probar      # 25 casos del corrector, incluidos los 6 del enunciado
 npm run simular     # juega una partida entera y comprueba las reglas
+npm run supabase    # claves y tabla, sin imprimir nunca su valor
 ```
 
-Estado actual de cada uno:
+Estado actual de cada uno, comprobado el 17 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
 - `validar`: 220 preguntas, 130 franquicias, reparto 62 % / 27 % / 11 %.
 - `probar`: los 25 casos pasan.
-- `simular`: las reglas se cumplen durante las ~180 primeras preguntas. En las
-  últimas ~35 aparecen repeticiones de formato porque el banco se queda sin
-  alternativas; es inevitable y se arregla añadiendo preguntas.
+- `simular`: pasa. Comprueba a mano el veto del rebote en las 6 preguntas de
+  verdadero o falso y los cinco casos de corrección del veredicto, y luego juega
+  una partida entera.
+
+El `simular` solo exige las reglas de variedad sobre el 85 % inicial del banco
+(`MARGEN` en el script). Al final ya no hay entre qué elegir y el motor tiene
+que relajar filtros, así que se admite ruido. En la última tirada: 1 franquicia
+repetida antes de tiempo sobre un tope de 9, y 11 rondas con dificultad desigual
+sobre un tope de 14.
+
+Esas rondas desiguales no son un fallo suelto: cuando al banco se le acaban las
+preguntas de la dificultad sorteada, `elegirPregunta` cede en la dificultad
+antes que en el formato, y Alicia acaba con una distinta a la de Oscar. Se
+arregla añadiendo preguntas, no tocando el motor.
 
 ### Verificado en el navegador
 
@@ -176,10 +193,18 @@ Con `TRIVIAL_SIN_NUBE=1` se jugaron cuatro turnos reales y funcionó todo:
 - «roxane richi» se acepta como Roxanne Ritchi, avisa de la errata y suma punto.
 - El turno pasa a Alicia con una franquicia distinta y la misma dificultad.
 - Una respuesta fallada muestra la correcta; «Era correcta» sube 57 a 58.
-- «Anular pregunta» mantiene jugador y número, y sirve otra pregunta que además
+- Descartar una pregunta mantiene jugador y número, y sirve otra que además
   respeta el veto de formato.
 - Consola del navegador limpia; en el servidor solo los errores esperados de
   Supabase sin claves.
+
+Eso cubre los formatos `corta` y `multiple`. Los otros cinco y la pantalla de
+banco agotado **existen en el código pero nadie los ha visto funcionar**: las
+siete ramas están en `app/respuesta.tsx` y la de banco agotado en `app/juego.tsx`.
+Ver el punto 1 de «Pendiente».
+
+El rebote y las correcciones del veredicto llegaron después de esta sesión de
+navegador, así que solo están comprobados por `simular`.
 
 ### Modo sin nube
 
@@ -188,18 +213,59 @@ en local desde el estado semilla en vez de enseñar la pantalla de configuració
 **No guarda nada y se reinicia al recargar.** Es solo para probar la interfaz;
 en cuanto haya claves reales deja de activarse, porque la carga ya no falla.
 
+## Despliegue
+
+Está en producción y funcionando.
+
+| | |
+| --- | --- |
+| Vercel | `oscaralvarezs-projects/trivial-animacion`, plan Hobby, Node 24.x |
+| URL | https://trivial-animacion-rho.vercel.app |
+| Supabase | proyecto `yanwsicuprdrgwfjynfw` |
+| Repo | https://github.com/oscaralvarezrua/trivial-animacion, rama `main` |
+
+**Las tres variables de entorno están marcadas «Sensitive» en Vercel.** Eso las
+hace de solo escritura: ni el panel ni la CLI pueden leerlas, y
+`vercel env pull` escribe el literal `[SENSITIVE]` en vez del valor. Para
+rehacer un `.env.local` no sirve de nada tirar de Vercel: la URL sale del ref de
+Supabase de la tabla de arriba, la *service role key* del panel de Supabase
+(Project Settings → API Keys → `service_role`) y el PIN solo lo sabe Oscar.
+
+Ojo con no confundirse de sitio: `trivial-animacion.vercel.app`, sin el `-rho`,
+es de otra persona y no tiene nada que ver con esto.
+
+## Montar el proyecto en una máquina nueva
+
+Dos tropiezos que parecen fallos del código y no lo son:
+
+1. `npm run typecheck` falla nada más clonar con «Cannot find name
+   `LayoutProps`». Ese tipo global lo genera Next, así que hay que correr
+   `npm run build` una vez antes. `app/layout.tsx` está bien; no hay que tocarlo.
+2. npm 11 no ejecuta los postinstall de `esbuild` ni de `unrs-resolver`. Sin
+   ellos `tsx` no arranca y se caen `validar`, `probar` y `simular`. Se arregla
+   con `npm approve-scripts esbuild`, lo mismo para `unrs-resolver`, y luego
+   `npm rebuild`. Eso deja un bloque `allowScripts` en `package.json`.
+
+O sea: `npm install` → `npm approve-scripts` → `npm rebuild` → `npm run build` →
+ya el resto.
+
 ## Pendiente
 
-1. **Bloqueante — Supabase.** Oscar tiene que crear el proyecto en supabase.com,
-   ejecutar `supabase/esquema.sql` en el SQL Editor y copiar
-   `.env.local.example` a `.env.local` con la URL y la *service role key*. Sin
-   eso la web arranca pero solo enseña la pantalla de configuración.
-2. **Probar los formatos que faltan.** Se han visto en el navegador `corta` y
-   `multiple`. Quedan por ejercitar `vf`, `orden`, `relacionar`, `describir` y
-   `completar`, y la pantalla de banco agotado.
-3. **Desplegar en Vercel** con las dos variables de entorno.
-4. **README** breve.
-5. Commit: nada de esto está commiteado todavía, solo el scaffold inicial.
+1. **Probar en el navegador los cinco formatos que faltan**: `vf`, `orden`,
+   `relacionar`, `describir` y `completar`, más la pantalla de banco agotado.
+   Es lo único del juego que nunca ha visto nadie funcionando. También conviene
+   ejercitar a mano el rebote y las dos correcciones del veredicto, que hasta
+   ahora solo los ha comprobado `simular`.
+2. **Ampliar el banco.** Con 220 preguntas, el último 15 % de la partida se
+   juega con los filtros de variedad relajados: se repiten formatos y alguna
+   ronda sale con dificultades desiguales. Se arregla añadiendo líneas a
+   `lib/banco/`, y sobre todo de dificultad **media**: es la única cuyo peso en
+   el banco (27 %) queda por debajo de lo que pide el sorteo (30 %). Fácil va
+   sobrada (62 % frente a 60 %) y difícil cuadra (11 % frente a 10 %), y encima
+   el sorteo veta las difíciles después de una pregunta de opciones, así que
+   gasta menos de lo que su peso sugiere.
+3. **Nada urgente más.** Supabase, el despliegue, el README y el PIN ya están
+   hechos, y el árbol está limpio salvo el `allowScripts` de `package.json`.
 
 ## Ideas descartadas o aplazadas
 
@@ -215,8 +281,14 @@ en cuanto haya claves reales deja de activarse, porque la carga ya no falla.
   key. La tabla tiene RLS activado y **ninguna política**, así que la clave
   pública no sirve para nada. La anon key no se usa en ningún sitio.
 - Las Server Actions son invocables por POST por cualquiera que conozca la URL
-  del despliegue. Para una partida privada entre dos es aceptable; si molesta,
-  se puede añadir un PIN compartido.
+  del despliegue, así que esconder la pantalla no bastaría. De ahí el PIN: se
+  comprueba en `app/page.tsx` para no enseñar la partida y otra vez dentro de
+  cada Server Action, en `lib/acceso.ts`, que es donde está el dato. En la
+  cookie viaja un hash con sal, no el PIN. Cambiar `TRIVIAL_PIN` invalida de
+  golpe todas las sesiones abiertas.
+- Si `TRIVIAL_PIN` se deja vacío la web queda abierta, y es a propósito:
+  quedarse fuera de vuestra propia partida por una variable mal puesta es peor
+  que el riesgo que cubre.
 - El estado de la partida cabe entero en una fila jsonb con id `oscar-alicia`.
 - Los ~130 datos del registro de preguntas ya usadas del prompt original están
   excluidos del banco: ninguna pregunta los repite.
