@@ -1,7 +1,7 @@
 # Estado del proyecto — Trivial de animación
 
 Documento de contexto para retomar el trabajo sin depender del historial de chat.
-Última actualización: 17 de agosto de 2026.
+Última actualización: 18 de agosto de 2026.
 
 ## Qué es
 
@@ -23,7 +23,7 @@ ninguna llamada a IA en tiempo de ejecución.
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | ~150 objetivo, salieron 220 | Ampliable añadiendo líneas a `lib/banco/` |
+| Tamaño del banco | 440 preguntas, tras doblar las 220 iniciales | Con 220 el último tramo de partida perdía variedad |
 | Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
@@ -142,7 +142,14 @@ baraja), `vf` usa `correct: boolean`, `orden` usa `items` en el orden correcto y
 
 ## Cómo funciona el corrector
 
-Dos vías para dar por buena una respuesta que no es idéntica:
+Antes de nada, una regla que corta por lo sano: **los dígitos tienen que
+coincidir exactamente**. Si no, «5» valía por «7» y «102 dálmatas» por «101
+dálmatas», porque el esqueleto consonántico borra todo lo que no sea letra y
+dejaba las dos respuestas en la cadena vacía. Cambiar un dígito no deja la misma
+respuesta mal escrita, deja otra respuesta.
+
+Con los números fuera, quedan dos vías para dar por buena una respuesta que no
+es idéntica:
 
 1. **Levenshtein** con tolerancia por longitud (0 hasta 6 caracteres, 1 hasta 10,
    2 por encima). Caza resbalones de teclado en nombres largos: «Rapuzel».
@@ -160,7 +167,7 @@ valer, mientras que «Nala»/Nana está a distancia 1 y debe fallar.
 npm run typecheck   # tsc --noEmit
 npm run lint        # eslint
 npm run validar     # estructura y reparto del banco
-npm run probar      # 25 casos del corrector, incluidos los 6 del enunciado
+npm run probar      # 35 casos del corrector, incluidos los 6 del enunciado
 npm run simular     # juega una partida entera y comprueba las reglas
 npm run supabase    # claves y tabla, sin imprimir nunca su valor
 ```
@@ -168,22 +175,22 @@ npm run supabase    # claves y tabla, sin imprimir nunca su valor
 Estado actual de cada uno, comprobado el 17 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 220 preguntas, 130 franquicias, reparto 62 % / 27 % / 11 %.
-- `probar`: los 25 casos pasan.
-- `simular`: pasa. Comprueba a mano el veto del rebote en las 6 preguntas de
+- `validar`: 440 preguntas, 164 franquicias, reparto 56 % / 34 % / 10 %.
+- `probar`: los 35 casos pasan.
+- `simular`: pasa. Comprueba a mano el veto del rebote en las preguntas de
   verdadero o falso y los cinco casos de corrección del veredicto, y luego juega
   una partida entera.
 
-El `simular` solo exige las reglas de variedad sobre el 85 % inicial del banco
-(`MARGEN` en el script). Al final ya no hay entre qué elegir y el motor tiene
-que relajar filtros, así que se admite ruido. En la última tirada: 1 franquicia
-repetida antes de tiempo sobre un tope de 9, y 11 rondas con dificultad desigual
-sobre un tope de 14.
+Al doblar el banco, el `simular` pasa a salir **perfecto**: cero franquicias
+repetidas antes de tiempo, cero rondas con dificultad desigual, cero rondas que
+repitan franquicia, y un reparto de dificultad de 60 % / 31 % / 9 %, clavado en
+lo que pide el sorteo.
 
-Esas rondas desiguales no son un fallo suelto: cuando al banco se le acaban las
+Con 220 preguntas no salía así: 11 de las 187 rondas comprobadas quedaban
+descompensadas. No era un fallo del motor. Cuando al banco se le acaban las
 preguntas de la dificultad sorteada, `elegirPregunta` cede en la dificultad
-antes que en el formato, y Alicia acaba con una distinta a la de Oscar. Se
-arregla añadiendo preguntas, no tocando el motor.
+antes que en el formato, y Alicia acababa con una distinta a la de Oscar. Con
+440 ya no hace falta ceder.
 
 ### Verificado en el navegador
 
@@ -256,16 +263,16 @@ ya el resto.
    Es lo único del juego que nunca ha visto nadie funcionando. También conviene
    ejercitar a mano el rebote y las dos correcciones del veredicto, que hasta
    ahora solo los ha comprobado `simular`.
-2. **Ampliar el banco.** Con 220 preguntas, el último 15 % de la partida se
-   juega con los filtros de variedad relajados: se repiten formatos y alguna
-   ronda sale con dificultades desiguales. Se arregla añadiendo líneas a
-   `lib/banco/`, y sobre todo de dificultad **media**: es la única cuyo peso en
-   el banco (27 %) queda por debajo de lo que pide el sorteo (30 %). Fácil va
-   sobrada (62 % frente a 60 %) y difícil cuadra (11 % frente a 10 %), y encima
-   el sorteo veta las difíciles después de una pregunta de opciones, así que
-   gasta menos de lo que su peso sugiere.
-3. **Nada urgente más.** Supabase, el despliegue, el README y el PIN ya están
-   hechos, y el árbol está limpio salvo el `allowScripts` de `package.json`.
+2. **Repasar las preguntas nuevas.** El banco pasó de 220 a 440 de una tacada, y
+   las 220 nuevas las redactó Claude de memoria, no salieron de ninguna fuente
+   consultada. La estructura la valida `npm run validar`, pero **que el dato sea
+   cierto no lo comprueba nadie**. Conviene leerlas con calma antes de fiarse,
+   sobre todo años, nombres de doblaje y personajes secundarios.
+3. **Vigilar el reparto de dificultad.** Ahora es 56 % / 34 % / 10 % y el sorteo
+   pide 60 / 30 / 10, así que la escasa ha pasado a ser la **fácil**. Todavía
+   sobra margen, pero si algún día se amplía otra vez, que sea de fáciles.
+4. **Nada urgente más.** Supabase, el despliegue, el README y el PIN ya están
+   hechos.
 
 ## Ideas descartadas o aplazadas
 
