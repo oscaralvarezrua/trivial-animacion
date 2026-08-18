@@ -36,6 +36,23 @@ const casos: Caso[] = [
   ["Simba", [["Mufasa"]], false],
   ["", [["Baymax"]], false],
   ["un personaje de Disney", [["Baymax"]], false],
+  // Números: la tolerancia de erratas no puede alcanzarlos, porque cambiar un
+  // dígito no deja la misma respuesta mal escrita sino otra distinta.
+  // Los dos huecos son reales: dragonball-siete y cenicienta-hora.
+  ["5", [["siete", "7"]], false],
+  ["7", [["siete", "7"]], true],
+  ["siete", [["siete", "7"]], true],
+  ["10", [["medianoche", "las doce", "12"]], false],
+  ["12", [["medianoche", "las doce", "12"]], true],
+  // Sin la guarda del esqueleto vacío, cualquier respuesta sin consonantes
+  // valdría por cualquier otra.
+  ["ai", [["7"]], false],
+  // Con letras alrededor tampoco: el dígito sigue siendo obligatorio.
+  ["102 dálmatas", [["101 dálmatas"]], false],
+  ["101 dalmatas", [["101 dálmatas"]], true],
+  // Y las erratas de letra siguen valiendo aunque haya un número al lado.
+  ["Big Hebo 6", [["Big Hero 6"]], true],
+  ["Big Hero 5", [["Big Hero 6"]], false],
 ];
 
 let fallos = 0;

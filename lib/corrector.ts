@@ -5,6 +5,10 @@
  * personaje es inequívoco («Bemax» por Baymax, «Asoka» por Ahsoka), indicando
  * después la grafía oficial. Eso se implementa con normalización agresiva más
  * distancia de Levenshtein con umbral proporcional a la longitud.
+ *
+ * La tolerancia se aplica solo a las letras. Los números van aparte y tienen
+ * que coincidir exactamente: en «siete bolas de dragón» una letra de más o de
+ * menos sigue siendo la misma respuesta, pero un 5 en lugar de un 7 ya es otra.
  */
 
 const ARTICULOS = /^(el|la|los|las|un|una|unos|unas)\s+/;
@@ -89,16 +93,31 @@ function esqueleto(s: string): string {
 
 type Coincidencia = "exacta" | "aproximada" | "ninguna";
 
+/** Los dígitos de una respuesta, en orden. «101 dálmatas» da «101». */
+function digitos(s: string): string {
+  return (s.match(/\d/g) ?? []).join("");
+}
+
 function comparar(dada: string, esperada: string): Coincidencia {
   if (dada === esperada) return "exacta";
+
+  // Un dígito no admite erratas: cambiarlo no deja la misma respuesta mal
+  // escrita, deja otra respuesta. «5» no puede valer por «7», ni «101
+  // dálmatas» por «102 dálmatas», por muy cerca que queden en distancia de
+  // edición o en esqueleto consonántico.
+  if (digitos(dada) !== digitos(esperada)) return "ninguna";
 
   const margen = tolerancia(Math.max(dada.length, esperada.length));
   if (margen > 0 && levenshtein(dada, esperada) <= margen) return "aproximada";
 
-  // Misma sonoridad y longitud parecida: es la misma palabra mal escrita.
+  // Misma sonoridad y longitud parecida: es la misma palabra mal escrita. El
+  // esqueleto vacío no cuenta: lo dan todas las respuestas sin consonantes,
+  // así que compararlo igualaría «5» con «7» y «ai» con «oí».
+  const marca = esqueleto(dada);
   if (
+    marca.length > 0 &&
     Math.abs(dada.length - esperada.length) <= 3 &&
-    esqueleto(dada) === esqueleto(esperada)
+    marca === esqueleto(esperada)
   ) {
     return "aproximada";
   }
