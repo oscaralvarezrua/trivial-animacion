@@ -181,10 +181,11 @@ Estado actual de cada uno, comprobado el 17 de agosto de 2026:
   verdadero o falso y los cinco casos de corrección del veredicto, y luego juega
   una partida entera.
 
-Al doblar el banco, el `simular` pasa a salir **perfecto**: cero franquicias
-repetidas antes de tiempo, cero rondas con dificultad desigual, cero rondas que
-repitan franquicia, y un reparto de dificultad de 60 % / 31 % / 9 %, clavado en
-lo que pide el sorteo.
+Al doblar el banco, el `simular` pasa a salir casi perfecto. La partida simulada
+es aleatoria, así que varía algo entre tiradas, pero en tres seguidas: cero
+franquicias repetidas antes de tiempo, cero rondas que repitan franquicia, entre
+cero y una ronda con dificultad desigual (el tope tolerado son 28), y un reparto
+de dificultad de 60-62 % / 31-34 % / 6-7 %.
 
 Con 220 preguntas no salía así: 11 de las 187 rondas comprobadas quedaban
 descompensadas. No era un fallo del motor. Cuando al banco se le acaban las

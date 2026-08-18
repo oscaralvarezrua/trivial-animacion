@@ -969,10 +969,10 @@ export const ESTUDIOS: Question[] = [
       "Hopper–Bichos, Lotso–Toy Story 3, Skinner–Ratatouille y Waternoose–Monstruos S.A.",
   },
 
-  // --- La Edad de Hielo ---
+  // --- Ice Age ---
   {
     id: "edadhielo-scrat",
-    franchise: "La Edad de Hielo",
+    franchise: "Ice Age",
     emoji: "🌰",
     difficulty: "facil",
     format: "describir",
@@ -983,7 +983,7 @@ export const ESTUDIOS: Question[] = [
   },
   {
     id: "edadhielo-manny",
-    franchise: "La Edad de Hielo",
+    franchise: "Ice Age",
     emoji: "🦣",
     difficulty: "facil",
     format: "corta",
@@ -994,7 +994,7 @@ export const ESTUDIOS: Question[] = [
   },
   {
     id: "edadhielo-sid",
-    franchise: "La Edad de Hielo",
+    franchise: "Ice Age",
     emoji: "🦥",
     difficulty: "facil",
     format: "multiple",
@@ -1005,7 +1005,7 @@ export const ESTUDIOS: Question[] = [
   },
   {
     id: "edadhielo-diego",
-    franchise: "La Edad de Hielo",
+    franchise: "Ice Age",
     emoji: "🐯",
     difficulty: "facil",
     format: "vf",
@@ -1086,7 +1086,7 @@ export const ESTUDIOS: Question[] = [
     emoji: "🐶",
     difficulty: "facil",
     format: "corta",
-    prompt: "¿Cómo se llama el terrier protagonista al que le cambia la vida cuando llega Duke?",
+    prompt: "¿Cómo se llama el terrier protagonista al que le cambia la vida cuando llega Duque?",
     hint: "(Solo el nombre.)",
     accepted: [["Max"]],
     official: "Max",
@@ -1099,8 +1099,9 @@ export const ESTUDIOS: Question[] = [
     format: "describir",
     prompt: "Conejito blanco y adorable que en realidad lidera una banda de animales abandonados.",
     hint: "(Solo el nombre.)",
-    accepted: [["Snowball", "Bola de Nieve"]],
-    official: "Snowball",
+    accepted: [["Pompón", "Snowball"]],
+    official: "Pompón",
+    note: "Pompón en el doblaje de España; Snowball en el original.",
   },
 
   // --- Bichos ---
@@ -1330,18 +1331,6 @@ export const ESTUDIOS: Question[] = [
   },
 
   // --- Kung Fu Panda ---
-  {
-    id: "kungfupanda-oogway",
-    franchise: "Kung Fu Panda",
-    emoji: "🐼",
-    difficulty: "media",
-    format: "multiple",
-    prompt: "¿Qué animal es el maestro Oogway, el más sabio de todos?",
-    options: ["Una tortuga", "Un panda rojo", "Una grulla", "Un mono"],
-    correct: 0,
-    official: "Una tortuga",
-    note: "Shifu es el panda rojo.",
-  },
 
   // --- Cómo entrenar a tu dragón ---
   {
@@ -1454,17 +1443,6 @@ export const ESTUDIOS: Question[] = [
   },
 
   // --- El Grinch ---
-  {
-    id: "grinch-perro",
-    franchise: "El Grinch",
-    emoji: "🎄",
-    difficulty: "media",
-    format: "corta",
-    prompt: "¿Cómo se llama el perro del Grinch?",
-    hint: "(Solo el nombre.)",
-    accepted: [["Max"]],
-    official: "Max",
-  },
 
   // --- Canta ---
   {
@@ -1597,9 +1575,9 @@ export const ESTUDIOS: Question[] = [
       { left: "Dante", right: "Coco" },
       { left: "Dug", right: "Up" },
       { left: "Hank", right: "Buscando a Dory" },
-      { left: "Scrat", right: "La Edad de Hielo" },
+      { left: "Scrat", right: "Ice Age" },
     ],
-    official: "Dante–Coco, Dug–Up, Hank–Buscando a Dory y Scrat–La Edad de Hielo",
+    official: "Dante–Coco, Dug–Up, Hank–Buscando a Dory y Scrat–Ice Age",
   },
   {
     id: "relacionar-dreamworks-personajes",
@@ -1677,16 +1655,6 @@ export const ESTUDIOS: Question[] = [
     official: "Verdadero",
   },
   {
-    id: "completar-buzz-frase",
-    franchise: "Toy Story",
-    emoji: "🚀",
-    difficulty: "facil",
-    format: "completar",
-    prompt: "Completa el lema de Buzz Lightyear: «Hasta el infinito y ___ allá».",
-    accepted: [["más", "mas"]],
-    official: "Hasta el infinito y más allá",
-  },
-  {
     id: "describir-sulley",
     franchise: "Monstruos S.A.",
     emoji: "👾",
@@ -1707,16 +1675,5 @@ export const ESTUDIOS: Question[] = [
     hint: "(Solo el nombre.)",
     accepted: [["Gru"]],
     official: "Gru",
-  },
-  {
-    id: "describir-po",
-    franchise: "Kung Fu Panda",
-    emoji: "🐼",
-    difficulty: "facil",
-    format: "describir",
-    prompt: "Panda tragón que trabaja en el puesto de fideos de su padre y acaba siendo el Guerrero Dragón.",
-    hint: "(Solo el nombre.)",
-    accepted: [["Po"]],
-    official: "Po",
   },
 ];
