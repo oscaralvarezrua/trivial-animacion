@@ -2,7 +2,7 @@
 
 Web para que Oscar y Alicia jueguen a un trivial de películas y series de
 animación en un mismo dispositivo, por turnos. Las reglas están implementadas
-como código: **no hay ninguna llamada a IA en tiempo de ejecución**, y las 638
+como código: **no hay ninguna llamada a IA en tiempo de ejecución**, y las 840
 preguntas viven en un banco local en TypeScript.
 
 El contexto largo del proyecto —decisiones, reglas y su porqué— está en
@@ -65,7 +65,7 @@ web enseña una pantalla explicando qué falta en vez de romperse.
 ```
 lib/motor.ts        Elección de pregunta, turnos, puntuación
 lib/corrector.ts    Acepta erratas sin colar respuestas distintas
-lib/banco/          Las 638 preguntas, por familias
+lib/banco/          Las 840 preguntas, por familias
 app/page.tsx        Lee el estado o enseña la pantalla de configuración
 app/juego.tsx       Marcador, pregunta, veredicto
 ```

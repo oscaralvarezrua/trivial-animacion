@@ -1,7 +1,7 @@
 # Estado del proyecto — Trivial de animación
 
 Documento de contexto para retomar el trabajo sin depender del historial de chat.
-Última actualización: 18 de agosto de 2026.
+Última actualización: 19 de agosto de 2026.
 
 ## Qué es
 
@@ -23,7 +23,7 @@ ninguna llamada a IA en tiempo de ejecución.
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | 638 preguntas, camino de 840 | Con 220 el último tramo de partida perdía variedad |
+| Tamaño del banco | 840 preguntas en 11 categorías | Con 220 el último tramo de partida perdía variedad |
 | Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
@@ -87,16 +87,16 @@ jugador: aciertos sobre intentos en total, por formato y por categoría.
   de la misma pregunta. Pasar no cuenta como intento: no llegó a responder, y
   apuntárselo como fallo diría que se equivocó cuando lo que hizo fue no
   arriesgarse. Los pases se cuentan aparte, en una línea suelta.
-- Solo se pintan las filas con algún intento. Con 7 formatos y 10 categorías,
+- Solo se pintan las filas con algún intento. Con 7 formatos y 11 categorías,
   una tabla de ceros taparía lo poco que se hubiera jugado.
 - El reinicio ya no pregunta «¿seguro?» a secas: enseña el resumen primero,
   porque es justo lo que se va a perder.
 
 La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
-categoría en `lib/categorias.ts`. Con casi 200 franquicias y cientos de preguntas,
-repetir el dato en cada una era pedir que se desincronizara. `validarBanco()` comprueba
-que toda franquicia tenga categoría, así que añadir una nueva sin clasificarla
-rompe `npm run validar`.
+categoría en `lib/categorias.ts`: 11 categorías y 215 franquicias. Repetir el
+dato en cada una de las 840 preguntas era pedir que se desincronizara.
+`validarBanco()` comprueba que toda franquicia tenga categoría, así que añadir
+una nueva sin clasificarla rompe `npm run validar`.
 
 Manda la franquicia, no el fichero: Ratatouille cuenta como Pixar aunque su
 pregunta viva en `banco/disney.ts`.
@@ -203,26 +203,30 @@ npm run simular     # juega una partida entera y comprueba las reglas
 npm run supabase    # claves y tabla, sin imprimir nunca su valor
 ```
 
-Estado actual de cada uno, comprobado el 17 de agosto de 2026:
+Estado actual de cada uno, comprobado el 19 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 638 preguntas, 194 franquicias, reparto 50 % / 39 % / 11 %.
+- `validar`: 840 preguntas, 215 franquicias, reparto 53 % / 38 % / 9 %.
 - `probar`: los 35 casos pasan.
 - `simular`: pasa. Comprueba a mano el veto del rebote en las preguntas de
   verdadero o falso y los cinco casos de corrección del veredicto, y luego juega
   una partida entera.
 
-Al doblar el banco, el `simular` pasa a salir casi perfecto. La partida simulada
-es aleatoria, así que varía algo entre tiradas, pero en tres seguidas: cero
-franquicias repetidas antes de tiempo, cero rondas que repitan franquicia, entre
-cero y una ronda con dificultad desigual (el tope tolerado son 28), y un reparto
-de dificultad de 60-62 % / 31-34 % / 6-7 %.
+El `simular` pasa, pero no sale limpio: con 840 preguntas quedan unas 7 rondas
+descompensadas de 357 y 2 franquicias repetidas antes de tiempo, con un reparto
+por ronda de 57 % / 36 % / 7 %.
 
-Con 220 preguntas no salía así: 11 de las 187 rondas comprobadas quedaban
-descompensadas. No era un fallo del motor. Cuando al banco se le acaban las
-preguntas de la dificultad sorteada, `elegirPregunta` cede en la dificultad
-antes que en el formato, y Alicia acababa con una distinta a la de Oscar. Con
-440 ya no hace falta ceder.
+**La causa es el reparto de dificultad, y conviene tenerla presente.** El sorteo
+pide 60 % de fáciles y el banco solo tiene un 53 %. Cuando se le acaban las
+fáciles, `elegirPregunta` cede en la dificultad antes que en el formato, y
+Alicia acaba con una distinta a la de Oscar. No es un fallo del motor: es que
+falta oferta.
+
+Pasó lo mismo con 220 preguntas y se arregló doblando el banco. Al crecer a 840
+se ha vuelto a torcer, porque los bloques nuevos (superhéroes, animación adulta,
+secuelas) tiran de forma natural hacia la dificultad media. **Si algún día se
+amplía otra vez, que sea casi todo de fáciles**: hacen falta unas 60 más para
+llegar al 60 % y que el simulador vuelva a salir limpio.
 
 ### Verificado en el navegador
 

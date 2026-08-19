@@ -119,6 +119,8 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
 
   // --- DreamWorks ---
   "Bee Movie": "DreamWorks",
+  Spirit: "DreamWorks",
+  "Monstruos contra alienígenas": "DreamWorks",
   "Cómo entrenar a tu dragón": "DreamWorks",
   DreamWorks: "DreamWorks",
   "El gato con botas": "DreamWorks",
@@ -152,6 +154,15 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   // Heidi, Marco y La abeja Maya son anime japonés, aunque aquí se vieran como
   // dibujos de sobremesa; Oliver y Benji, igual.
   "Anime clásico": "Anime",
+  "Mazinger Z": "Anime",
+  "Los Caballeros del Zodiaco": "Anime",
+  Digimon: "Anime",
+  "Ranma ½": "Anime",
+  "Érase una vez el hombre": "Anime",
+  "Chicho Terremoto": "Anime",
+  Musculman: "Anime",
+  "Candy Candy": "Anime",
+  "Banner y Flappy": "Anime",
   "Detective Conan": "Anime",
   Doraemon: "Anime",
   "Dragon Ball": "Anime",
@@ -191,6 +202,10 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Somos osos": "Series de dibujos",
   "Steven Universe": "Series de dibujos",
 
+  "Los Autos Locos": "Series de dibujos",
+  "Don Gato": "Series de dibujos",
+  "Los Supersónicos": "Series de dibujos",
+  "El Oso Yogui": "Series de dibujos",
   "Tom y Jerry": "Series de dibujos",
   "La Pantera Rosa": "Series de dibujos",
   Popeye: "Series de dibujos",
@@ -250,6 +265,12 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Ice Age": "Otros estudios",
   "Lluvia de albóndigas": "Otros estudios",
   "Lugares de ficción": "Otros estudios",
+  "Los Boxtrolls": "Otros estudios",
+  Kubo: "Otros estudios",
+  ParaNorman: "Otros estudios",
+  "Los Mitchell contra las máquinas": "Otros estudios",
+  "El robot salvaje": "Otros estudios",
+  Nimona: "Otros estudios",
   "Pesadilla antes de Navidad": "Otros estudios",
   "Robots de la animación": "Otros estudios",
   Río: "Otros estudios",
