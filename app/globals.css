@@ -1,11 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --fondo: #0b0c10;
+  /* Fondo en dos tonos: el degradado de body separa el lienzo de las tarjetas
+     sin necesidad de bordes más claros, que ensuciaban. */
+  --fondo: #0a0b0f;
+  --fondo-alto: #111320;
   --superficie: #14161d;
+  --superficie-alta: #1a1d27;
   --borde: #262a36;
+  --borde-fuerte: #363b4b;
   --texto: #eef0f6;
-  --apagado: #969cb0;
+  --apagado: #9aa0b4;
 
   --oscar: #4c8dff;
   --oscar-suave: #4c8dff26;
@@ -13,7 +18,15 @@
   --alicia-suave: #ff7ab826;
 
   --acierto: #46d18b;
+  --acierto-suave: #46d18b1f;
   --fallo: #ff6b6b;
+  --fallo-suave: #ff6b6b1f;
+
+  --radio: 0.75rem;
+  --radio-grande: 1.25rem;
+  /* Sombra baja y ancha: en fondo oscuro una sombra dura no se ve, lo que da
+     sensación de relieve es el halo. */
+  --sombra: 0 1px 2px #00000066, 0 8px 24px -12px #00000099;
 }
 
 @theme inline {
@@ -31,8 +44,11 @@
 
 body {
   background: var(--fondo);
+  background-image: radial-gradient(120% 80% at 50% 0%, var(--fondo-alto) 0%, var(--fondo) 60%);
+  background-attachment: fixed;
   color: var(--texto);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* El color del jugador al que le toca tiñe la tarjeta entera. */
@@ -44,6 +60,38 @@ body {
 [data-jugador="alicia"] {
   --jugador: var(--alicia);
   --jugador-suave: var(--alicia-suave);
+}
+
+/* Un foco visible y uniforme en todo lo enfocable: se juega mucho con teclado
+   porque se responde escribiendo y se encadena con el tabulador. */
+:focus-visible {
+  outline: 2px solid var(--jugador, var(--texto));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Piezas que se repiten --- */
+
+/* Etiqueta pequeña: formato de la pregunta, franquicia, categoría. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--borde);
+  background: var(--superficie-alta);
+  border-radius: 999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  color: var(--apagado);
+  white-space: nowrap;
+}
+
+.tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -60,5 +108,22 @@ body {
 
   .aparecer {
     animation: aparecer 0.25s ease-out;
+  }
+
+  /* Latido del marcador de quien tiene el turno. Es lento y muy sutil a
+     propósito: sirve para localizar de un vistazo a quién le toca cuando
+     levantas la vista del móvil, no para llamar la atención. */
+  @keyframes latido {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+    }
+    50% {
+      box-shadow: 0 0 0 4px var(--jugador-suave);
+    }
+  }
+
+  .latido {
+    animation: latido 2.4s ease-in-out infinite;
   }
 }

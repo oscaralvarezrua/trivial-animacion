@@ -13,14 +13,24 @@ export interface Envio {
   conErrata: boolean;
 }
 
+/**
+ * Opción pulsable. El `active:scale` da el acuse de recibo táctil que en el
+ * móvil se echa de menos: sin él no se sabe si el dedo ha entrado.
+ */
 const BOTON =
-  "rounded-xl border border-[var(--borde)] px-4 py-3 text-left transition " +
-  "hover:border-[var(--jugador)] hover:bg-[var(--jugador-suave)] " +
-  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--jugador)]";
+  "rounded-xl border border-[var(--borde)] bg-[var(--superficie-alta)] px-4 py-3.5 text-left " +
+  "transition duration-150 hover:border-[var(--jugador)] hover:bg-[var(--jugador-suave)] " +
+  "active:scale-[0.98] motion-reduce:active:scale-100";
 
 const PRINCIPAL =
-  "rounded-xl bg-[var(--jugador)] px-5 py-3 font-medium text-[#0b0c10] transition " +
-  "hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40";
+  "rounded-xl bg-[var(--jugador)] px-5 py-3.5 font-medium text-[#0b0c10] transition duration-150 " +
+  "hover:brightness-110 active:scale-[0.98] motion-reduce:active:scale-100 " +
+  "disabled:cursor-not-allowed disabled:opacity-40 disabled:active:scale-100";
+
+const CAMPO =
+  "rounded-xl border border-[var(--borde)] bg-[var(--fondo)] px-4 py-3.5 outline-none " +
+  "transition duration-150 placeholder:text-[var(--apagado)] " +
+  "focus:border-[var(--jugador)] focus:bg-[var(--superficie-alta)]";
 
 export function EntradaRespuesta({
   pregunta,
@@ -69,8 +79,7 @@ function Texto({
         onChange={(e) => setValor(e.target.value)}
         placeholder="Escribe tu respuesta"
         aria-label="Tu respuesta"
-        className="flex-1 rounded-xl border border-[var(--borde)] bg-[var(--fondo)] px-4 py-3
-          outline-none placeholder:text-[var(--apagado)] focus:border-[var(--jugador)]"
+        className={`flex-1 ${CAMPO}`}
       />
       <button type="submit" className={PRINCIPAL} disabled={!valor.trim()}>
         Responder
@@ -228,8 +237,7 @@ function Relacionar({
               onChange={(e) =>
                 setElegido({ ...elegido, [par.left]: e.target.value })
               }
-              className="flex-1 rounded-xl border border-[var(--borde)] bg-[var(--fondo)]
-                px-3 py-2.5 outline-none focus:border-[var(--jugador)]"
+              className={`flex-1 ${CAMPO} py-2.5`}
             >
               <option value="">Elige…</option>
               {derechas.map((derecha) => (

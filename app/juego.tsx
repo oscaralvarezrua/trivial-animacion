@@ -16,7 +16,7 @@ import {
   responderRebote,
   servirPregunta,
 } from "@/lib/motor";
-import { porId } from "@/lib/preguntas";
+import { PREGUNTAS, porId } from "@/lib/preguntas";
 import {
   FORMAT_LABEL,
   PLAYERS,
@@ -107,24 +107,21 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
         <section
           key={pregunta.id}
           data-jugador={estado.turn}
-          className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--borde)]
-            bg-[var(--superficie)] p-5 sm:p-6"
+          className="tarjeta aparecer flex flex-col gap-5 p-5 sm:p-6"
         >
-          <header className="flex flex-col gap-1">
-            <p className="text-sm text-[var(--apagado)]">
-              <span style={{ color: "var(--jugador)" }}>
-                {PLAYERS[estado.turn].emoji} Pregunta {estado.nextNumber[estado.turn]}
-              </span>
-              {" — "}
-              {FORMAT_LABEL[pregunta.format]}
-            </p>
-            <p className="text-sm text-[var(--apagado)]">
-              {pregunta.emoji} {pregunta.franchise}
-            </p>
+          <header className="flex flex-wrap items-center gap-2">
+            <span
+              className="chip border-[var(--jugador)] font-medium"
+              style={{ color: "var(--jugador)", background: "var(--jugador-suave)" }}
+            >
+              {PLAYERS[estado.turn].emoji} Pregunta {estado.nextNumber[estado.turn]}
+            </span>
+            <span className="chip">{pregunta.emoji} {pregunta.franchise}</span>
+            <span className="chip ml-auto">{FORMAT_LABEL[pregunta.format]}</span>
           </header>
 
-          <div className="flex flex-col gap-1.5">
-            <h2 className="text-xl leading-snug font-medium text-balance sm:text-2xl">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
               {pregunta.prompt}
             </h2>
             {pregunta.hint && (
@@ -182,9 +179,10 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
  */
 function Categoria() {
   return (
-    <p className="text-sm text-[var(--apagado)]">
-      <span className="text-[var(--texto)]">Sabelotodo</span> · 🍿 Palomitas
-    </p>
+    <header className="flex items-center justify-between gap-3">
+      <p className="text-sm font-medium tracking-tight text-[var(--texto)]">Sabelotodo</p>
+      <span className="chip">🍿 Palomitas</span>
+    </header>
   );
 }
 
@@ -201,26 +199,30 @@ function Marcador({ estado }: { estado: GameState }) {
             key={jugador}
             data-jugador={jugador}
             aria-current={activo ? "true" : undefined}
-            className={`rounded-2xl border p-4 transition ${
+            className={`tarjeta flex flex-col gap-0.5 p-4 transition duration-200 ${
               activo
-                ? "border-[var(--jugador)] bg-[var(--jugador-suave)]"
-                : "border-[var(--borde)] bg-[var(--superficie)]"
+                ? "latido border-[var(--jugador)] bg-[var(--jugador-suave)]"
+                : "opacity-70"
             }`}
           >
-            <p className="text-sm text-[var(--apagado)]">
-              {PLAYERS[jugador].emoji} {PLAYERS[jugador].nombre}
+            <p className="flex items-center gap-1.5 text-sm text-[var(--apagado)]">
+              <span aria-hidden>{PLAYERS[jugador].emoji}</span>
+              {PLAYERS[jugador].nombre}
             </p>
             <p
-              className="text-4xl font-semibold tabular-nums"
+              className="text-4xl leading-none font-semibold tabular-nums sm:text-5xl"
               style={{ color: activo ? "var(--jugador)" : undefined }}
             >
               {estado.scores[jugador]}
             </p>
-            {activo && (
-              <p className="text-xs" style={{ color: "var(--jugador)" }}>
-                {estado.rebote ? "Rebote" : "Su turno"}
-              </p>
-            )}
+            {/* La altura se reserva siempre para que el marcador no dé un salto
+                cada vez que cambia el turno. */}
+            <p
+              className="h-4 text-xs font-medium"
+              style={{ color: "var(--jugador)" }}
+            >
+              {activo ? (estado.rebote ? "Rebote" : "Su turno") : ""}
+            </p>
           </div>
         );
       })}
@@ -319,20 +321,26 @@ function Veredicto({
   return (
     <section
       data-jugador={ultima.player}
-      className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--borde)]
-        bg-[var(--superficie)] p-5 sm:p-6"
+      className="tarjeta aparecer flex flex-col gap-5 p-5 sm:p-6"
+      style={{
+        // Una franja de color arriba: el veredicto se lee de un vistazo desde
+        // lejos, sin tener que fijarse en el texto.
+        borderTop: `3px solid ${ultima.correct ? "var(--acierto)" : "var(--fallo)"}`,
+        background: `linear-gradient(var(--${ultima.correct ? "acierto" : "fallo"}-suave), transparent 140px), var(--superficie)`,
+      }}
     >
       <p
-        className="text-xl font-semibold"
+        className="flex items-center gap-2 text-lg font-semibold"
         style={{ color: ultima.correct ? "var(--acierto)" : "var(--fallo)" }}
       >
-        {ultima.correct ? "✅ ¡Correcto!" : "❌ Incorrecto"}
+        <span aria-hidden>{ultima.correct ? "✅" : "❌"}</span>
+        {ultima.correct ? "¡Correcto!" : "Incorrecto"}
       </p>
 
       <div className="flex flex-col gap-1.5">
-        <p className="text-lg">
+        <p className="text-xl leading-snug text-balance">
           La respuesta {ultima.correct ? "era" : "correcta era"}{" "}
-          <strong>{pregunta?.official}</strong>.
+          <strong className="font-semibold">{pregunta?.official}</strong>.
         </p>
         {errata && ultima.correct && (
           <p className="text-sm text-[var(--apagado)]">
@@ -478,6 +486,9 @@ function Pie({
   fallo: string | null;
   onPedirReinicio: () => void;
 }) {
+  const usadas = estado.usedQuestionIds.length;
+  const total = PREGUNTAS.length;
+
   return (
     <footer className="mt-auto flex flex-col gap-3 pt-4 text-sm text-[var(--apagado)]">
       {fallo && (
@@ -486,10 +497,25 @@ function Pie({
         </p>
       )}
 
+      {/* Barra de banco gastado. Con más de mil preguntas, «12 preguntas usadas»
+          no dice nada; lo que quiere saberse es cuánto queda. */}
+      <div
+        className="h-1 overflow-hidden rounded-full bg-[var(--borde)]"
+        role="progressbar"
+        aria-valuenow={usadas}
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-label="Preguntas jugadas del banco"
+      >
+        <div
+          className="h-full rounded-full bg-[var(--texto)] opacity-40 transition-[width] duration-500"
+          style={{ width: `${Math.max(0.5, (usadas / total) * 100)}%` }}
+        />
+      </div>
+
       <div className="flex flex-wrap items-center gap-3">
-        <span>
-          {estado.usedQuestionIds.length}{" "}
-          {estado.usedQuestionIds.length === 1 ? "pregunta usada" : "preguntas usadas"}
+        <span className="tabular-nums">
+          {usadas} de {total} preguntas
         </span>
         <span aria-hidden>·</span>
         {/* La confirmación ya no vive aquí: al pulsar se enseña el resumen de la
