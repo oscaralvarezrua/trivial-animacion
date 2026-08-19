@@ -75,6 +75,32 @@ escribir código. Dos cosas ya comprobadas ahí:
 9. Solo marcador numérico, sin cadenas de aciertos y fallos.
 10. Nombres y títulos del doblaje de España.
 
+### Estadísticas de fin de partida
+
+Al agotarse el banco y al pulsar «Reiniciar partida» se enseña un resumen por
+jugador: aciertos sobre intentos en total, por formato y por categoría.
+
+- Se calcula entero desde `history`, así que no hay contadores en el estado ni
+  hubo que migrar la partida guardada.
+- **El rebote cuenta como un intento más de quien lo jugó.** Si el titular falla
+  y el rival acierta, eso es un fallo para uno y un acierto para el otro dentro
+  de la misma pregunta. Pasar no cuenta como intento: no llegó a responder, y
+  apuntárselo como fallo diría que se equivocó cuando lo que hizo fue no
+  arriesgarse. Los pases se cuentan aparte, en una línea suelta.
+- Solo se pintan las filas con algún intento. Con 7 formatos y 10 categorías,
+  una tabla de ceros taparía lo poco que se hubiera jugado.
+- El reinicio ya no pregunta «¿seguro?» a secas: enseña el resumen primero,
+  porque es justo lo que se va a perder.
+
+La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
+categoría en `lib/categorias.ts`. Con 164 franquicias y 440 preguntas, repetir
+el dato 440 veces era pedir que se desincronizara. `validarBanco()` comprueba
+que toda franquicia tenga categoría, así que añadir una nueva sin clasificarla
+rompe `npm run validar`.
+
+Manda la franquicia, no el fichero: Ratatouille cuenta como Pixar aunque su
+pregunta viva en `banco/disney.ts`.
+
 ### Variedad
 
 - Una franquicia no se repite hasta pasadas 8 preguntas.
@@ -108,11 +134,14 @@ lib/banco/series.ts      TV, Ghibli, anime, Clan y Boing
 lib/partida-guardada.ts  Estado semilla 59-57 con la pregunta 83 pendiente
 lib/supabase.ts          Cliente con service role key, marcado server-only
 lib/acceso.ts            PIN: haySesion, exigirSesion, abrirSesion (server-only)
+lib/categorias.ts        Mapa de franquicia a categoría (Disney, Pixar, DreamWorks…)
+lib/estadisticas.ts      Aciertos y fallos por jugador, formato y categoría
 app/acciones.ts          Server Actions: cargarPartida, guardarPartida, entrar
 app/page.tsx             Server Component: PIN, luego el estado o la pantalla de configuración
 app/acceso.tsx           Pantalla del PIN
 app/juego.tsx            Cliente: marcador, pregunta, veredicto, rebote, banco agotado, pie
 app/respuesta.tsx        Entrada de respuesta según el formato (los siete)
+app/estadisticas.tsx     Resumen de la partida por jugador
 app/globals.css          Variables de color y tema por jugador
 supabase/esquema.sql     Tabla partidas + RLS
 scripts/*.ts             Verificación (ver abajo)
@@ -206,13 +235,24 @@ Con `TRIVIAL_SIN_NUBE=1` se jugaron cuatro turnos reales y funcionó todo:
 - Consola del navegador limpia; en el servidor solo los errores esperados de
   Supabase sin claves.
 
-Eso cubre los formatos `corta` y `multiple`. Los otros cinco y la pantalla de
-banco agotado **existen en el código pero nadie los ha visto funcionar**: las
-siete ramas están en `app/respuesta.tsx` y la de banco agotado en `app/juego.tsx`.
-Ver el punto 1 de «Pendiente».
+En una segunda sesión, al montar las estadísticas, se jugaron cuatro turnos más
+con `TRIVIAL_SIN_NUBE=1` y se comprobó:
 
-El rebote y las correcciones del veredicto llegaron después de esta sesión de
-navegador, así que solo están comprobados por `simular`.
+- El formato `relacionar`, que nunca se había visto: los cuatro desplegables
+  funcionan y corrige bien.
+- El **rebote entero**: Oscar falla una de opciones, salta el rebote a Alicia
+  sin revelar la solución, acierta y se le suma el punto.
+- El resumen al pulsar «Reiniciar partida»: Oscar 1 de 2 (50 %) y Alicia 3 de 3
+  (100 %), con el desglose por formato y por categoría cuadrando, y el rebote
+  contando como acierto de Alicia en `multiple` y en «Series de dibujos».
+- «Cancelar» devuelve a la partida con el estado intacto.
+
+Quedan por ejercitar `vf`, `orden`, `describir` y `completar`, y la pantalla de
+banco agotado, que no es fácil de provocar sin jugar las 440. El resumen que
+sale al agotarse el banco es el mismo componente que el del reinicio, con otro
+texto, así que está probado por dentro pero no en esa ruta.
+
+Las correcciones del veredicto siguen comprobadas solo por `simular`.
 
 ### Modo sin nube
 
@@ -259,11 +299,10 @@ ya el resto.
 
 ## Pendiente
 
-1. **Probar en el navegador los cinco formatos que faltan**: `vf`, `orden`,
-   `relacionar`, `describir` y `completar`, más la pantalla de banco agotado.
-   Es lo único del juego que nunca ha visto nadie funcionando. También conviene
-   ejercitar a mano el rebote y las dos correcciones del veredicto, que hasta
-   ahora solo los ha comprobado `simular`.
+1. **Probar en el navegador los cuatro formatos que faltan**: `vf`, `orden`,
+   `describir` y `completar`, más la pantalla de banco agotado y las dos
+   correcciones del veredicto. `corta`, `multiple` y `relacionar` ya están
+   vistos, y el rebote también.
 2. **Repasar las preguntas nuevas.** El banco pasó de 220 a 440 de una tacada, y
    las 220 nuevas las redactó Claude de memoria, no salieron de ninguna fuente
    consultada. La estructura la valida `npm run validar`, pero **que el dato sea

@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { guardarPartida } from "./acciones";
+import { Estadisticas } from "./estadisticas";
 import { EntradaRespuesta, type Envio } from "./respuesta";
 import {
   concederPunto,
@@ -29,6 +30,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   const [estado, setEstado] = useState(estadoInicial);
   const [errata, setErrata] = useState(false);
   const [fallo, setFallo] = useState<string | null>(null);
+  const [reiniciando, setReiniciando] = useState(false);
   const [, empezarTransicion] = useTransition();
 
   /** Actualiza la pantalla ya y manda el estado a Supabase por detrás. */
@@ -52,6 +54,32 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   const pregunta = estado.currentQuestionId ? porId(estado.currentQuestionId) : null;
   const ultima = estado.history.at(-1);
   const rebote = estado.rebote ?? null;
+
+  // Reiniciar borra el historial, y con él las estadísticas. Por eso la
+  // confirmación no es un «¿seguro?» a secas: enseña antes el resumen de la
+  // partida, que es lo único que se va a perder de verdad.
+  if (reiniciando) {
+    return (
+      <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
+        <Marcador estado={estado} />
+        <Resumen
+          estado={estado}
+          titulo="Antes de reiniciar"
+          entradilla={
+            estado.history.length === 0
+              ? "Empezaréis de cero otra vez."
+              : `Así va el ${estado.scores.oscar}-${estado.scores.alicia}. Al reiniciar se pierde el historial y este resumen.`
+          }
+          accion="Sí, reiniciar"
+          onConfirmar={() => {
+            setReiniciando(false);
+            aplicar(partidaNueva());
+          }}
+          onCancelar={() => setReiniciando(false)}
+        />
+      </main>
+    );
+  }
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
@@ -131,10 +159,16 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
           }}
         />
       ) : (
-        <Agotado onReiniciar={() => aplicar(partidaNueva())} />
+        <Resumen
+          estado={estado}
+          titulo="Se ha acabado el banco de preguntas"
+          entradilla="Habéis jugado las 440. Aquí está cómo ha ido; después podéis empezar otra partida y volver a usarlas."
+          accion="Partida nueva"
+          onConfirmar={() => aplicar(partidaNueva())}
+        />
       )}
 
-      <Pie estado={estado} fallo={fallo} onReiniciar={() => aplicar(partidaNueva())} />
+      <Pie estado={estado} fallo={fallo} onPedirReinicio={() => setReiniciando(true)} />
     </main>
   );
 }
@@ -371,20 +405,51 @@ function Rebotado({ rebote }: { rebote: Rebound }) {
   );
 }
 
-function Agotado({ onReiniciar }: { onReiniciar: () => void }) {
+/**
+ * Fin de partida: banco agotado o reinicio a punto de confirmarse. En los dos
+ * casos la partida deja de estar en curso, así que es cuando toca enseñar el
+ * resumen.
+ */
+function Resumen({
+  estado,
+  titulo,
+  entradilla,
+  accion,
+  onConfirmar,
+  onCancelar,
+}: {
+  estado: GameState;
+  titulo: string;
+  entradilla: string;
+  accion: string;
+  onConfirmar: () => void;
+  onCancelar?: () => void;
+}) {
   return (
-    <section className="rounded-2xl border border-[var(--borde)] bg-[var(--superficie)] p-6">
-      <h2 className="text-xl font-medium">Se ha acabado el banco de preguntas</h2>
-      <p className="mt-2 text-[var(--apagado)]">
-        Habéis jugado todas. Añade más en <code>lib/banco/</code> o empieza una partida
-        nueva para volver a usarlas.
-      </p>
-      <button
-        onClick={onReiniciar}
-        className="mt-4 rounded-xl border border-[var(--borde)] px-4 py-2.5 hover:border-[var(--texto)]"
-      >
-        Partida nueva
-      </button>
+    <section className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--borde)] bg-[var(--superficie)] p-5 sm:p-6">
+      <header className="flex flex-col gap-1">
+        <h2 className="text-xl font-medium">{titulo}</h2>
+        <p className="text-sm text-[var(--apagado)]">{entradilla}</p>
+      </header>
+
+      <Estadisticas estado={estado} />
+
+      <div className="flex flex-wrap gap-3 border-t border-[var(--borde)] pt-4">
+        <button
+          onClick={onConfirmar}
+          className="rounded-xl border border-[var(--borde)] px-4 py-2.5 hover:border-[var(--texto)]"
+        >
+          {accion}
+        </button>
+        {onCancelar && (
+          <button
+            onClick={onCancelar}
+            className="text-sm text-[var(--apagado)] underline-offset-4 hover:text-[var(--texto)] hover:underline"
+          >
+            Cancelar
+          </button>
+        )}
+      </div>
     </section>
   );
 }
@@ -392,14 +457,12 @@ function Agotado({ onReiniciar }: { onReiniciar: () => void }) {
 function Pie({
   estado,
   fallo,
-  onReiniciar,
+  onPedirReinicio,
 }: {
   estado: GameState;
   fallo: string | null;
-  onReiniciar: () => void;
+  onPedirReinicio: () => void;
 }) {
-  const [confirmando, setConfirmando] = useState(false);
-
   return (
     <footer className="mt-auto flex flex-col gap-3 pt-4 text-sm text-[var(--apagado)]">
       {fallo && (
@@ -414,38 +477,14 @@ function Pie({
           {estado.usedQuestionIds.length === 1 ? "pregunta usada" : "preguntas usadas"}
         </span>
         <span aria-hidden>·</span>
-        {confirmando ? (
-          <>
-            {/* El marcador sale del estado: antes estaba escrito el 59-57 de la
-                partida que se heredó de ChatGPT, y dejó de ser cierto enseguida. */}
-            <span>
-              {estado.scores.oscar === 0 &&
-              estado.scores.alicia === 0 &&
-              estado.history.length === 0
-                ? "¿Seguro? Empezaréis de cero otra vez."
-                : `¿Seguro? Se pierde el ${estado.scores.oscar}-${estado.scores.alicia} y todo el historial.`}
-            </span>
-            <button
-              onClick={() => {
-                setConfirmando(false);
-                onReiniciar();
-              }}
-              className="text-[var(--fallo)] underline underline-offset-4"
-            >
-              Sí, reiniciar
-            </button>
-            <button onClick={() => setConfirmando(false)} className="underline underline-offset-4">
-              Cancelar
-            </button>
-          </>
-        ) : (
-          <button
-            onClick={() => setConfirmando(true)}
-            className="underline-offset-4 hover:text-[var(--texto)] hover:underline"
-          >
-            Reiniciar partida
-          </button>
-        )}
+        {/* La confirmación ya no vive aquí: al pulsar se enseña el resumen de la
+            partida, que es lo que se pierde al reiniciar. */}
+        <button
+          onClick={onPedirReinicio}
+          className="underline-offset-4 hover:text-[var(--texto)] hover:underline"
+        >
+          Reiniciar partida
+        </button>
       </div>
     </footer>
   );

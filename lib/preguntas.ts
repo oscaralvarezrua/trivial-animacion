@@ -1,6 +1,7 @@
 import { DISNEY } from "./banco/disney";
 import { ESTUDIOS } from "./banco/estudios";
 import { SERIES } from "./banco/series";
+import { categoriaDe } from "./categorias";
 import type { Question } from "./types";
 
 /**
@@ -44,10 +45,25 @@ export function franquicias(): string[] {
 export function validarBanco(): string[] {
   const errores: string[] = [];
   const vistos = new Set<string>();
+  const sinCategoria = new Set<string>();
+  // Respuestas ya usadas dentro de una misma franquicia, para no preguntar dos
+  // veces lo mismo con otras palabras. Los verdadero o falso quedan fuera:
+  // todos responden «Verdadero» o «Falso» y chocarían siempre entre sí.
+  const respuestas = new Set<string>();
 
   for (const q of PREGUNTAS) {
     if (vistos.has(q.id)) errores.push(`Id repetido: ${q.id}`);
     vistos.add(q.id);
+
+    if (!categoriaDe(q.franchise)) sinCategoria.add(q.franchise);
+
+    if (q.format !== "vf") {
+      const clave = `${q.franchise}::${q.official.trim().toLowerCase()}`;
+      if (respuestas.has(clave)) {
+        errores.push(`${q.id}: repite una respuesta ya usada en ${q.franchise}`);
+      }
+      respuestas.add(clave);
+    }
 
     if (!q.prompt.trim()) errores.push(`${q.id}: enunciado vacío`);
     if (!q.official.trim()) errores.push(`${q.id}: falta la respuesta oficial`);
@@ -82,6 +98,10 @@ export function validarBanco(): string[] {
         if (q.pairs.length < 3) errores.push(`${q.id}: hacen falta al menos 3 parejas`);
         break;
     }
+  }
+
+  for (const f of sinCategoria) {
+    errores.push(`La franquicia «${f}» no tiene categoría en lib/categorias.ts`);
   }
 
   return errores;
