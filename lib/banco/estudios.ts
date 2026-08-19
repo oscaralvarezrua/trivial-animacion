@@ -965,8 +965,7 @@ export const ESTUDIOS: Question[] = [
       { left: "Skinner", right: "Ratatouille" },
       { left: "Waternoose", right: "Monstruos S.A." },
     ],
-    official:
-      "Hopper–Bichos, Lotso–Toy Story 3, Skinner–Ratatouille y Waternoose–Monstruos S.A.",
+    official: "Hopper–Bichos, Lotso–Toy Story 3, Skinner–Ratatouille y Waternoose–Monstruos S.A.",
   },
 
   // --- Ice Age ---
@@ -1009,9 +1008,9 @@ export const ESTUDIOS: Question[] = [
     emoji: "🐯",
     difficulty: "facil",
     format: "vf",
-    prompt: "Diego es un tigre dientes de sable que al principio quiere entregar al bebé a su manada.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Diego se une al grupo desde el primer momento, sin ninguna segunda intención.",
+    correct: false,
+    official: "Falso: al principio quiere entregar al bebé a su manada",
   },
 
   // --- Brave (Indomable) ---
@@ -1032,9 +1031,9 @@ export const ESTUDIOS: Question[] = [
     emoji: "🏹",
     difficulty: "media",
     format: "vf",
-    prompt: "Mérida convierte a su madre en oso sin querer, por culpa de un pastel encantado.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Mérida convierte a su madre en loba sin querer, por culpa de un pastel encantado.",
+    correct: false,
+    official: "Falso: la convierte en osa",
   },
 
   // --- El viaje de Arlo ---
@@ -1074,9 +1073,9 @@ export const ESTUDIOS: Question[] = [
     emoji: "🦜",
     difficulty: "facil",
     format: "vf",
-    prompt: "La película transcurre en Río de Janeiro, en pleno carnaval.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "La película transcurre en São Paulo, en pleno carnaval.",
+    correct: false,
+    official: "Falso: transcurre en Río de Janeiro",
   },
 
   // --- Mascotas ---
@@ -1122,9 +1121,10 @@ export const ESTUDIOS: Question[] = [
     emoji: "🐜",
     difficulty: "media",
     format: "vf",
-    prompt: "Los guerreros que Flik contrata resultan ser en realidad artistas de circo.",
-    correct: true,
-    official: "Verdadero",
+    prompt:
+      "Los guerreros que Flik contrata resultan ser soldados de verdad, curtidos en mil batallas.",
+    correct: false,
+    official: "Falso: son artistas de circo que se hacen pasar por guerreros",
   },
 
   // --- Buscando a Dory ---
@@ -1134,9 +1134,9 @@ export const ESTUDIOS: Question[] = [
     emoji: "🐠",
     difficulty: "facil",
     format: "vf",
-    prompt: "Dory busca a sus padres a pesar de que apenas puede retener recuerdos.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Dory tiene una memoria excelente y recuerda perfectamente dónde dejó a sus padres.",
+    correct: false,
+    official: "Falso: apenas puede retener recuerdos, ese es todo el problema",
   },
 
   // --- Luca ---
@@ -1146,9 +1146,9 @@ export const ESTUDIOS: Question[] = [
     emoji: "🐟",
     difficulty: "media",
     format: "vf",
-    prompt: "Luca y Alberto son monstruos marinos que toman forma humana al secarse.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Luca y Alberto son monstruos marinos que toman forma humana al mojarse.",
+    correct: false,
+    official: "Falso: es al revés, se vuelven humanos al secarse",
   },
   {
     id: "luca-vespa",
@@ -1325,9 +1325,10 @@ export const ESTUDIOS: Question[] = [
     emoji: "🐧",
     difficulty: "media",
     format: "vf",
-    prompt: "Los cuatro pingüinos de la película acabaron teniendo su propia serie y su película.",
-    correct: true,
-    official: "Verdadero",
+    prompt:
+      "Los cuatro pingüinos se quedaron en un gag de la película y nunca tuvieron nada propio.",
+    correct: false,
+    official: "Falso: tienen serie y película propias",
   },
 
   // --- Kung Fu Panda ---
@@ -1650,9 +1651,9 @@ export const ESTUDIOS: Question[] = [
     emoji: "🎬",
     difficulty: "media",
     format: "vf",
-    prompt: "Toy Story fue el primer largometraje hecho enteramente por ordenador.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Shrek fue el primer largometraje hecho enteramente por ordenador.",
+    correct: false,
+    official: "Falso: fue Toy Story, seis años antes",
   },
   {
     id: "describir-sulley",

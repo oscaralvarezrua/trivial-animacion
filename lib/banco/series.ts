@@ -949,9 +949,9 @@ export const SERIES: Question[] = [
     emoji: "🥅",
     difficulty: "facil",
     format: "vf",
-    prompt: "Benji es el portero del equipo.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Benji es el delantero estrella del equipo y el que mete todos los goles.",
+    correct: false,
+    official: "Falso: Benji es el portero",
   },
 
   // --- Los Pitufos ---
@@ -1041,9 +1041,9 @@ export const SERIES: Question[] = [
     emoji: "🐷",
     difficulty: "facil",
     format: "vf",
-    prompt: "Lo que más le gusta a Peppa es saltar en charcos de barro.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Lo que más le gusta a Peppa es saltar en la cama elástica.",
+    correct: false,
+    official: "Falso: lo suyo es saltar en charcos de barro",
   },
 
   // --- Pocoyó ---
@@ -1195,9 +1195,9 @@ export const SERIES: Question[] = [
     emoji: "🐺",
     difficulty: "facil",
     format: "vf",
-    prompt: "San, la princesa Mononoke, ha sido criada por lobos.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "San, la princesa Mononoke, ha sido criada por una manada de osos.",
+    correct: false,
+    official: "Falso: la crían lobos",
   },
   {
     id: "pokemon-equipo",
@@ -1226,9 +1226,9 @@ export const SERIES: Question[] = [
     emoji: "🔍",
     difficulty: "facil",
     format: "vf",
-    prompt: "Conan es en realidad un detective adolescente al que un veneno dejó con cuerpo de niño.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Conan siempre ha sido un niño: nunca llegó a tener otro cuerpo.",
+    correct: false,
+    official: "Falso: es un detective adolescente al que un veneno dejó con cuerpo de niño",
   },
   {
     id: "dragonball-nube",

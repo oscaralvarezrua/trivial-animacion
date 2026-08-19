@@ -40,8 +40,7 @@ export const DISNEY: Question[] = [
     emoji: "🦁",
     difficulty: "facil",
     format: "describir",
-    prompt:
-      "Es un cálao rojo, mayordomo del rey, siempre nervioso y con aires de secretario.",
+    prompt: "Es un cálao rojo, mayordomo del rey, siempre nervioso y con aires de secretario.",
     hint: "(Solo el nombre.)",
     accepted: [["Zazú", "Zazu"]],
     official: "Zazú",
@@ -167,8 +166,7 @@ export const DISNEY: Question[] = [
     emoji: "🌹",
     difficulty: "dificil",
     format: "multiple",
-    prompt:
-      "¿Cómo se llama en el doblaje español el mayordomo convertido en reloj de sobremesa?",
+    prompt: "¿Cómo se llama en el doblaje español el mayordomo convertido en reloj de sobremesa?",
     options: ["Din-Don", "Tic-Tac", "Cogsworth", "Campanón"],
     correct: 0,
     official: "Din-Don",
@@ -958,8 +956,7 @@ export const DISNEY: Question[] = [
       { left: "Shan Yu", right: "Mulán" },
       { left: "Cruella de Vil", right: "101 dálmatas" },
     ],
-    official:
-      "Hades–Hércules, Madre Gothel–Enredados, Shan Yu–Mulán y Cruella de Vil–101 dálmatas",
+    official: "Hades–Hércules, Madre Gothel–Enredados, Shan Yu–Mulán y Cruella de Vil–101 dálmatas",
   },
 
   // --- La Bella Durmiente ---
@@ -1009,10 +1006,9 @@ export const DISNEY: Question[] = [
     emoji: "🌹",
     difficulty: "media",
     format: "vf",
-    prompt: "Flora y Primavera se pelean por si el vestido de Aurora debe ser rosa o azul.",
-    correct: true,
-    official: "Verdadero",
-    note: "El vestido cambia de color hasta el último plano de la película.",
+    prompt: "Flora y Primavera se pelean por si el vestido de Aurora debe ser rosa o verde.",
+    correct: false,
+    official: "Falso: la pelea es entre el rosa y el azul",
   },
 
   // --- Bambi ---
@@ -1161,10 +1157,9 @@ export const DISNEY: Question[] = [
     difficulty: "media",
     format: "vf",
     prompt:
-      "Quien abandona a los gatos en el campo es el mayordomo, que quiere quedarse la herencia.",
-    correct: true,
-    official: "Verdadero",
-    note: "El mayordomo se llama Edgar.",
+      "Quien abandona a los gatos en el campo es el chófer de la casa, para cobrar la herencia.",
+    correct: false,
+    official: "Falso: es Edgar, el mayordomo",
   },
 
   // --- Dumbo ---
@@ -1704,9 +1699,9 @@ export const DISNEY: Question[] = [
     emoji: "🦁",
     difficulty: "facil",
     format: "vf",
-    prompt: "Scar es el hermano de Mufasa y, por tanto, tío de Simba.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Scar es el padre de Simba y el hermano mayor de Mufasa.",
+    correct: false,
+    official: "Falso: es el hermano de Mufasa, o sea el tío de Simba",
   },
   {
     id: "vf-frozen-olaf",
@@ -1714,9 +1709,9 @@ export const DISNEY: Question[] = [
     emoji: "❄️",
     difficulty: "facil",
     format: "vf",
-    prompt: "Olaf es un muñeco de nieve que sueña con conocer el verano.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Olaf sueña con que llegue el invierno eterno para no derretirse nunca.",
+    correct: false,
+    official: "Falso: lo que sueña es con conocer el verano",
   },
   {
     id: "vf-cenicienta-zapato",
@@ -1745,9 +1740,10 @@ export const DISNEY: Question[] = [
     emoji: "🔔",
     difficulty: "media",
     format: "vf",
-    prompt: "Quasimodo vive encerrado en la catedral y se ocupa de tocar las campanas.",
-    correct: true,
-    official: "Verdadero",
+    prompt:
+      "Quasimodo vive encerrado en el palacio del juez Frollo, que no le deja salir a la calle.",
+    correct: false,
+    official: "Falso: vive en el campanario de Notre Dame",
   },
   {
     id: "vf-tarzan-gorilas",
@@ -1766,9 +1762,9 @@ export const DISNEY: Question[] = [
     emoji: "🐰",
     difficulty: "media",
     format: "vf",
-    prompt: "Judy Hopps es la primera coneja que entra en la policía de Zootrópolis.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Judy Hopps llega a Zootrópolis siendo ya una policía veterana y con galones.",
+    correct: false,
+    official: "Falso: llega recién salida de la academia, y es la primera coneja del cuerpo",
   },
   {
     id: "vf-encanto-mirabel",
@@ -1786,9 +1782,9 @@ export const DISNEY: Question[] = [
     emoji: "🌊",
     difficulty: "media",
     format: "vf",
-    prompt: "Maui es un semidiós que cambia de forma gracias a un anzuelo mágico.",
-    correct: true,
-    official: "Verdadero",
+    prompt: "Maui es un semidiós que cambia de forma gracias a un collar mágico.",
+    correct: false,
+    official: "Falso: lo que le da el poder es su anzuelo",
   },
 
   // --- Identifica el personaje ---
