@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { guardarPartida } from "./acciones";
+import { Etiqueta, Etiquetas, Panel, Puntuacion } from "./animaciones";
 import { Estadisticas } from "./estadisticas";
 import { EntradaRespuesta, type Envio } from "./respuesta";
 import {
@@ -87,9 +88,12 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
       <Categoria />
       <Marcador estado={estado} />
 
+      {/* Cada rama lleva su propia clave de fase para que el panel entre y salga
+          al cambiar de una a otra. La del veredicto incluye el id de la pregunta:
+          si no, al corregir un veredicto la clave no cambiaba y no se veía nada. */}
+      <Panel id={faseActual(estado)}>
       {pregunta && rebote ? (
         <Rebote
-          key={`${pregunta.id}-rebote`}
           pregunta={pregunta}
           jugador={rebote}
           fallo={ultima?.given ?? ""}
@@ -107,18 +111,20 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
         <section
           key={pregunta.id}
           data-jugador={estado.turn}
-          className="tarjeta aparecer flex flex-col gap-5 p-5 sm:p-6"
+          className="tarjeta flex flex-col gap-5 p-5 sm:p-6"
         >
-          <header className="flex flex-wrap items-center gap-2">
-            <span
+          <Etiquetas>
+            <Etiqueta
               className="chip border-[var(--jugador)] font-medium"
               style={{ color: "var(--jugador)", background: "var(--jugador-suave)" }}
             >
               {PLAYERS[estado.turn].emoji} Pregunta {estado.nextNumber[estado.turn]}
-            </span>
-            <span className="chip">{pregunta.emoji} {pregunta.franchise}</span>
-            <span className="chip ml-auto">{FORMAT_LABEL[pregunta.format]}</span>
-          </header>
+            </Etiqueta>
+            <Etiqueta className="chip">
+              {pregunta.emoji} {pregunta.franchise}
+            </Etiqueta>
+            <Etiqueta className="chip ml-auto">{FORMAT_LABEL[pregunta.format]}</Etiqueta>
+          </Etiquetas>
 
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
@@ -166,10 +172,24 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
           onConfirmar={() => aplicar(partidaNueva())}
         />
       )}
+      </Panel>
 
       <Pie estado={estado} fallo={fallo} onPedirReinicio={() => setReiniciando(true)} />
     </main>
   );
+}
+
+/**
+ * Identifica en qué punto está la partida, para que el panel sepa cuándo tiene
+ * que reemplazarse. No basta con el id de la pregunta: la misma pregunta pasa
+ * por servida, rebote y veredicto, y cada paso es un panel distinto.
+ */
+function faseActual(estado: GameState): string {
+  const id = estado.currentQuestionId ?? estado.history.at(-1)?.questionId ?? "vacio";
+  if (estado.currentQuestionId && estado.rebote) return `rebote:${id}`;
+  if (estado.currentQuestionId) return `pregunta:${id}`;
+  if (estado.history.length > 0) return `veredicto:${id}`;
+  return "agotado";
 }
 
 /**
@@ -209,12 +229,10 @@ function Marcador({ estado }: { estado: GameState }) {
               <span aria-hidden>{PLAYERS[jugador].emoji}</span>
               {PLAYERS[jugador].nombre}
             </p>
-            <p
-              className="text-4xl leading-none font-semibold tabular-nums sm:text-5xl"
-              style={{ color: activo ? "var(--jugador)" : undefined }}
-            >
-              {estado.scores[jugador]}
-            </p>
+            <Puntuacion
+              valor={estado.scores[jugador]}
+              color={activo ? "var(--jugador)" : undefined}
+            />
             {/* La altura se reserva siempre para que el marcador no dé un salto
                 cada vez que cambia el turno. */}
             <p
@@ -254,8 +272,7 @@ function Rebote({
   return (
     <section
       data-jugador={jugador}
-      className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--jugador)]
-        bg-[var(--superficie)] p-5 sm:p-6"
+      className="tarjeta flex flex-col gap-5 border-[var(--jugador)] p-5 sm:p-6"
     >
       <header className="flex flex-col gap-1">
         <p className="text-sm font-medium" style={{ color: "var(--jugador)" }}>
@@ -321,7 +338,7 @@ function Veredicto({
   return (
     <section
       data-jugador={ultima.player}
-      className="tarjeta aparecer flex flex-col gap-5 p-5 sm:p-6"
+      className="tarjeta flex flex-col gap-5 p-5 sm:p-6"
       style={{
         // Una franja de color arriba: el veredicto se lee de un vistazo desde
         // lejos, sin tener que fijarse en el texto.
@@ -449,7 +466,7 @@ function Resumen({
   onCancelar?: () => void;
 }) {
   return (
-    <section className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--borde)] bg-[var(--superficie)] p-5 sm:p-6">
+    <section className="tarjeta flex flex-col gap-5 p-5 sm:p-6">
       <header className="flex flex-col gap-1">
         <h2 className="text-xl font-medium">{titulo}</h2>
         <p className="text-sm text-[var(--apagado)]">{entradilla}</p>

@@ -94,22 +94,10 @@ body {
   box-shadow: var(--sombra);
 }
 
+/* La entrada de los paneles ya no se hace aquí: la lleva `motion` en
+   app/animaciones.tsx, que además sabe esperar a que el panel anterior salga.
+   Lo que queda en CSS es lo que no necesita coordinación. */
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes aparecer {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  .aparecer {
-    animation: aparecer 0.25s ease-out;
-  }
-
   /* Latido del marcador de quien tiene el turno. Es lento y muy sutil a
      propósito: sirve para localizar de un vistazo a quién le toca cuando
      levantas la vista del móvil, no para llamar la atención. */
