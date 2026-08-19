@@ -15,7 +15,7 @@ export function Acceso() {
   return (
     <main className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center gap-6 px-4 py-10">
       <header className="flex flex-col gap-1.5">
-        <h1 className="text-2xl font-medium">Trivial de animación</h1>
+        <h1 className="text-2xl font-medium">Sabelotodo</h1>
         <p className="text-sm text-[var(--apagado)]">
           Escribe el PIN para entrar en la partida.
         </p>

@@ -1,17 +1,34 @@
-# Estado del proyecto — Trivial de animación
+# Estado del proyecto — Sabelotodo
 
 Documento de contexto para retomar el trabajo sin depender del historial de chat.
 Última actualización: 19 de agosto de 2026.
 
 ## Qué es
 
-Web para que Oscar y Alicia jueguen a un trivial de películas y series de
-animación. Sustituye a una partida que venían jugando con ChatGPT, con marcador
+Web para que Oscar y Alicia jueguen a un trivial en un mismo dispositivo, por
+turnos. Sustituye a una partida que venían jugando con ChatGPT, con marcador
 59-57 y 82 preguntas respondidas cada uno.
 
 El punto de partida fue un prompt de ChatGPT con las reglas del juego. La web
 implementa esas reglas como código, no como instrucciones a un modelo: no hay
 ninguna llamada a IA en tiempo de ejecución.
+
+### El nombre y las categorías
+
+Nació como «Trivial de animación» y se llamó así hasta el 19 de agosto de 2026.
+Dejó de valer por dos motivos a la vez: el banco había crecido hasta incluir
+imagen real (el Universo Cinematográfico de Marvel, las series de Disney
+Channel), y la intención es acabar teniendo varias categorías, no solo esta.
+
+Así que ahora la aplicación es **Sabelotodo** y esta categoría es
+**🍿 Palomitas**: cine y series, de la animación clásica a Endgame. Las
+siguientes previstas son geografía, historia y arte.
+
+**El menú todavía no existe.** La cabecera de categoría en `app/juego.tsx` está
+fija a Palomitas a propósito: montar un selector de un solo elemento es trabajo
+tirado. Cuando haya una segunda categoría, ese componente es el sitio por donde
+empezar, y habrá que decidir si el estado de la partida pasa a ser uno por
+categoría (ahora hay una única fila en Supabase con id `oscar-alicia`).
 
 ## Decisiones tomadas (y por qué)
 

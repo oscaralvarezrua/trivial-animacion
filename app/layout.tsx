@@ -5,8 +5,8 @@ import "./globals.css";
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Trivial de animación",
-  description: "Trivial de películas y series de animación para Oscar y Alicia.",
+  title: "Sabelotodo",
+  description: "Trivial por categorías. Palomitas: cine, series y animación.",
 };
 
 export const viewport: Viewport = {

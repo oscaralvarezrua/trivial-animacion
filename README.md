@@ -1,9 +1,14 @@
-# Trivial de animación
+# Sabelotodo
 
-Web para que Oscar y Alicia jueguen a un trivial de películas y series de
-animación en un mismo dispositivo, por turnos. Las reglas están implementadas
-como código: **no hay ninguna llamada a IA en tiempo de ejecución**, y las 840
-preguntas viven en un banco local en TypeScript.
+Web para jugar a un trivial en un mismo dispositivo, por turnos. Las reglas
+están implementadas como código: **no hay ninguna llamada a IA en tiempo de
+ejecución**, y las preguntas viven en un banco local en TypeScript.
+
+La idea es que acabe teniendo varias categorías. De momento hay una:
+
+- **🍿 Palomitas** — cine y series, de la animación clásica al Universo
+  Cinematográfico de Marvel, pasando por Disney Channel y los dibujos de
+  sobremesa.
 
 El contexto largo del proyecto —decisiones, reglas y su porqué— está en
 [ESTADO.md](ESTADO.md).

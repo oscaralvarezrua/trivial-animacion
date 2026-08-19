@@ -61,6 +61,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   if (reiniciando) {
     return (
       <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
+        <Categoria />
         <Marcador estado={estado} />
         <Resumen
           estado={estado}
@@ -83,6 +84,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
+      <Categoria />
       <Marcador estado={estado} />
 
       {pregunta && rebote ? (
@@ -170,6 +172,19 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
 
       <Pie estado={estado} fallo={fallo} onPedirReinicio={() => setReiniciando(true)} />
     </main>
+  );
+}
+
+/**
+ * Cabecera de categoría. Hoy solo hay una, «Palomitas», así que va fija: montar
+ * un selector para un único elemento sería trabajo tirado. Cuando existan
+ * geografía, historia o arte, esto pasa a ser el menú.
+ */
+function Categoria() {
+  return (
+    <p className="text-sm text-[var(--apagado)]">
+      <span className="text-[var(--texto)]">Sabelotodo</span> · 🍿 Palomitas
+    </p>
   );
 }
 
