@@ -4,7 +4,7 @@ import { SERIES } from "./banco/series";
 import { SUPERHEROES } from "./banco/superheroes";
 import { TELEVISION } from "./banco/television";
 import { categoriaDe } from "./categorias";
-import type { Question } from "./types";
+import type { Difficulty, Question } from "./types";
 
 /**
  * La pregunta 83 que quedó pendiente en la partida de ChatGPT. Vive aparte
@@ -106,6 +106,62 @@ export function validarBanco(): string[] {
 
   for (const f of sinCategoria) {
     errores.push(`La franquicia «${f}» no tiene categoría en lib/categorias.ts`);
+  }
+
+  errores.push(...revisarVerdaderoFalso());
+
+  return errores;
+}
+
+/**
+ * Los verdadero o falso tienen que estar repartidos entre unos y otros.
+ *
+ * No es una manía de simetría: si casi todos son «verdadero», contestar siempre
+ * que sí acierta la mayoría, y como en ese formato **no hay rebote**, el rival
+ * ni siquiera puede castigarlo. El formato se convierte en puntos regalados.
+ *
+ * Se comprueba aquí porque ha pasado tres veces al ampliar el banco, siempre
+ * igual: al redactar sale más natural afirmar algo cierto que inventar una
+ * versión falsa creíble, y la desviación no se nota hasta que alguien la mide.
+ *
+ * Se mira también por dificultad, porque el peor caso que hubo no fue el global
+ * sino que las 20 preguntas de dificultad media eran verdaderas las 20.
+ */
+function revisarVerdaderoFalso(): string[] {
+  const errores: string[] = [];
+  const vf = PREGUNTAS.filter((q) => q.format === "vf");
+
+  const reparto = (lista: typeof vf) => {
+    const verdaderas = lista.filter((q) => q.correct === true).length;
+    return { verdaderas, total: lista.length, pct: verdaderas / lista.length };
+  };
+
+  // El margen global es estrecho: con muchas preguntas no hay excusa para
+  // desviarse, y una de más o de menos no llega a moverlo.
+  const MINIMO = 20;
+  if (vf.length >= MINIMO) {
+    const { verdaderas, total, pct } = reparto(vf);
+    if (pct < 0.45 || pct > 0.55) {
+      errores.push(
+        `Los verdadero o falso están descompensados: ${verdaderas} verdaderas de ${total} ` +
+          `(${Math.round(pct * 100)} %). Se admite entre el 45 % y el 55 %.`,
+      );
+    }
+  }
+
+  // Por dificultad se afloja el margen: los grupos son más pequeños y un
+  // desvío de dos o tres preguntas no rompe el juego.
+  for (const dificultad of ["facil", "media", "dificil"] as Difficulty[]) {
+    const grupo = vf.filter((q) => q.difficulty === dificultad);
+    if (grupo.length < 12) continue;
+
+    const { verdaderas, total, pct } = reparto(grupo);
+    if (pct < 0.35 || pct > 0.65) {
+      errores.push(
+        `Los verdadero o falso de dificultad ${dificultad} están descompensados: ` +
+          `${verdaderas} verdaderas de ${total} (${Math.round(pct * 100)} %).`,
+      );
+    }
   }
 
   return errores;
