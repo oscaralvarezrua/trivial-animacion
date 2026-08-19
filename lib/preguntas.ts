@@ -2,6 +2,7 @@ import { DISNEY } from "./banco/disney";
 import { ESTUDIOS } from "./banco/estudios";
 import { SERIES } from "./banco/series";
 import { SUPERHEROES } from "./banco/superheroes";
+import { IMAGEN_REAL } from "./banco/imagen-real";
 import { TELEVISION } from "./banco/television";
 import { categoriaDe } from "./categorias";
 import type { Difficulty, Question } from "./types";
@@ -30,6 +31,7 @@ export const PREGUNTAS: Question[] = [
   ...SERIES,
   ...SUPERHEROES,
   ...TELEVISION,
+  ...IMAGEN_REAL,
 ];
 
 const INDICE = new Map(PREGUNTAS.map((q) => [q.id, q]));

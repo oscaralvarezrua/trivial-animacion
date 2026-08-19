@@ -40,7 +40,7 @@ categoría (ahora hay una única fila en Supabase con id `oscar-alicia`).
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | 840 preguntas en 11 categorías | Con 220 el último tramo de partida perdía variedad |
+| Tamaño del banco | 1080 preguntas en 12 categorías | Con 220 el último tramo de partida perdía variedad |
 | Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
@@ -104,14 +104,14 @@ jugador: aciertos sobre intentos en total, por formato y por categoría.
   de la misma pregunta. Pasar no cuenta como intento: no llegó a responder, y
   apuntárselo como fallo diría que se equivocó cuando lo que hizo fue no
   arriesgarse. Los pases se cuentan aparte, en una línea suelta.
-- Solo se pintan las filas con algún intento. Con 7 formatos y 11 categorías,
+- Solo se pintan las filas con algún intento. Con 7 formatos y 12 categorías,
   una tabla de ceros taparía lo poco que se hubiera jugado.
 - El reinicio ya no pregunta «¿seguro?» a secas: enseña el resumen primero,
   porque es justo lo que se va a perder.
 
 La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
-categoría en `lib/categorias.ts`: 11 categorías y 215 franquicias. Repetir el
-dato en cada una de las 840 preguntas era pedir que se desincronizara.
+categoría en `lib/categorias.ts`: 12 categorías y 269 franquicias. Repetir el
+dato en cada una de las 1080 preguntas era pedir que se desincronizara.
 `validarBanco()` comprueba que toda franquicia tenga categoría, así que añadir
 una nueva sin clasificarla rompe `npm run validar`.
 
@@ -150,6 +150,7 @@ lib/banco/estudios.ts    Pixar, DreamWorks, Illumination, Sony y otros
 lib/banco/series.ts      TV, Ghibli, anime, Clan y Boing
 lib/banco/superheroes.ts Marvel, DC y Spider-Man, en animación
 lib/banco/television.ts  Tom y Jerry, Cartoon Network, Nickelodeon y animación adulta
+lib/banco/imagen-real.ts Disney Channel y Nickelodeon en imagen real
 lib/partida-guardada.ts  Estado semilla 59-57 con la pregunta 83 pendiente
 lib/supabase.ts          Cliente con service role key, marcado server-only
 lib/acceso.ts            PIN: haySesion, exigirSesion, abrirSesion (server-only)
@@ -223,27 +224,41 @@ npm run supabase    # claves y tabla, sin imprimir nunca su valor
 Estado actual de cada uno, comprobado el 19 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 840 preguntas, 215 franquicias, reparto 53 % / 38 % / 9 %.
+- `validar`: 1080 preguntas, 269 franquicias, reparto 49 % / 40 % / 10 %.
 - `probar`: los 35 casos pasan.
 - `simular`: pasa. Comprueba a mano el veto del rebote en las preguntas de
   verdadero o falso y los cinco casos de corrección del veredicto, y luego juega
   una partida entera.
 
-El `simular` pasa, pero no sale limpio: con 840 preguntas quedan unas 7 rondas
-descompensadas de 357 y 2 franquicias repetidas antes de tiempo, con un reparto
-por ronda de 57 % / 36 % / 7 %.
+El `simular` pasa, pero **no sale limpio, y cada vez peor**: con 1080 preguntas
+quedan 16 rondas descompensadas de 459 y 9 franquicias repetidas antes de
+tiempo, con un reparto por ronda de 54 % / 37 % / 9 %.
 
-**La causa es el reparto de dificultad, y conviene tenerla presente.** El sorteo
-pide 60 % de fáciles y el banco solo tiene un 53 %. Cuando se le acaban las
+**La causa es el reparto de dificultad, y es la deuda pendiente del banco.** El
+sorteo pide un 60 % de fáciles y el banco tiene un 49 %. Cuando se le acaban las
 fáciles, `elegirPregunta` cede en la dificultad antes que en el formato, y
 Alicia acaba con una distinta a la de Oscar. No es un fallo del motor: es que
 falta oferta.
 
-Pasó lo mismo con 220 preguntas y se arregló doblando el banco. Al crecer a 840
-se ha vuelto a torcer, porque los bloques nuevos (superhéroes, animación adulta,
-secuelas) tiran de forma natural hacia la dificultad media. **Si algún día se
-amplía otra vez, que sea casi todo de fáciles**: hacen falta unas 60 más para
-llegar al 60 % y que el simulador vuelva a salir limpio.
+Y va a peor porque cada ampliación ha empeorado el porcentaje, no lo ha
+mejorado:
+
+| Banco | Fáciles | Rondas descompensadas |
+| --- | --- | --- |
+| 220 | 62 % | 11 de 187 |
+| 440 | 56 % | 0-1 de 187 |
+| 840 | 53 % | 7 de 357 |
+| 1080 | **49 %** | **16 de 459** |
+
+El motivo es siempre el mismo: los bloques que se han ido añadiendo
+(superhéroes, animación adulta, imagen real) tiran de forma natural hacia la
+dificultad media, porque preguntar por lo muy conocido de un tema que no
+dominas sigue saliendo «medio».
+
+**Para arreglarlo hacen falta unas 130 preguntas fáciles más**, sin añadir ni
+una media ni difícil. Eso llevaría el banco a ~1210 con un 56 % de fáciles.
+Mientras no se haga, la degradación solo se nota en el tramo final de una
+partida completa, que a 2 preguntas por ronda son cientos de rondas por delante.
 
 ### Verificado en el navegador
 
