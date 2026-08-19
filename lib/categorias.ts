@@ -21,6 +21,7 @@ export const CATEGORIAS = [
   "Series de dibujos",
   "Infantil",
   "Animación española",
+  "Superhéroes",
   "Otros estudios",
 ] as const;
 
@@ -82,6 +83,14 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Winnie the Pooh": "Disney",
   Wish: "Disney",
   Zootrópolis: "Disney",
+
+  Fantasía: "Disney",
+  "La dama y el vagabundo": "Disney",
+  "Merlín el encantador": "Disney",
+  "Basil el ratón superdetective": "Disney",
+  "Oliver y su pandilla": "Disney",
+  "El caldero mágico": "Disney",
+  "Chicken Little": "Disney",
 
   // --- Pixar ---
   Bichos: "Pixar",
@@ -182,6 +191,28 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Somos osos": "Series de dibujos",
   "Steven Universe": "Series de dibujos",
 
+  "Tom y Jerry": "Series de dibujos",
+  "La Pantera Rosa": "Series de dibujos",
+  Popeye: "Series de dibujos",
+  "El laboratorio de Dexter": "Series de dibujos",
+  "Johnny Bravo": "Series de dibujos",
+  "Vaca y Pollo": "Series de dibujos",
+  "Ed, Edd y Eddy": "Series de dibujos",
+  "Las macabras aventuras de Billy y Mandy": "Series de dibujos",
+  Foster: "Series de dibujos",
+  "Oye Arnold": "Series de dibujos",
+  "Los Castores Cascarrabias": "Series de dibujos",
+  "Invasor Zim": "Series de dibujos",
+  "Jimmy Neutrón": "Series de dibujos",
+  "Danny Phantom": "Series de dibujos",
+  "Los Thornberrys": "Series de dibujos",
+  "La vida moderna de Rocko": "Series de dibujos",
+  "Padre de familia": "Series de dibujos",
+  "South Park": "Series de dibujos",
+  "Rick y Morty": "Series de dibujos",
+  Arcane: "Series de dibujos",
+  "Super Mario": "Otros estudios",
+
   // --- Infantil ---
   Bluey: "Infantil",
   "La Patrulla Canina": "Infantil",
@@ -201,6 +232,12 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Series españolas": "Animación española",
   "Willy Fog": "Animación española",
 
+  // --- Superhéroes ---
+  // Manda el personaje, no el estudio: Spider-Man es de Sony y aquí está.
+  Marvel: "Superhéroes",
+  DC: "Superhéroes",
+  "Spider-Man": "Superhéroes",
+
   // --- Otros estudios ---
   // Sony, Blue Sky, Aardman, Laika, Warner y las mezclas de varios estudios.
   Anastasia: "Otros estudios",
@@ -216,7 +253,6 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Pesadilla antes de Navidad": "Otros estudios",
   "Robots de la animación": "Otros estudios",
   Río: "Otros estudios",
-  "Spider-Man: Un nuevo universo": "Otros estudios",
   "Wallace y Gromit": "Otros estudios",
 };
 

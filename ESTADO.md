@@ -23,7 +23,7 @@ ninguna llamada a IA en tiempo de ejecución.
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | 440 preguntas, tras doblar las 220 iniciales | Con 220 el último tramo de partida perdía variedad |
+| Tamaño del banco | 638 preguntas, camino de 840 | Con 220 el último tramo de partida perdía variedad |
 | Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
@@ -93,8 +93,8 @@ jugador: aciertos sobre intentos en total, por formato y por categoría.
   porque es justo lo que se va a perder.
 
 La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
-categoría en `lib/categorias.ts`. Con 164 franquicias y 440 preguntas, repetir
-el dato 440 veces era pedir que se desincronizara. `validarBanco()` comprueba
+categoría en `lib/categorias.ts`. Con casi 200 franquicias y cientos de preguntas,
+repetir el dato en cada una era pedir que se desincronizara. `validarBanco()` comprueba
 que toda franquicia tenga categoría, así que añadir una nueva sin clasificarla
 rompe `npm run validar`.
 
@@ -131,6 +131,8 @@ lib/preguntas.ts         Índice del banco, porId, validarBanco, PREGUNTA_PENDIE
 lib/banco/disney.ts      Clásicos Disney y WDAS
 lib/banco/estudios.ts    Pixar, DreamWorks, Illumination, Sony y otros
 lib/banco/series.ts      TV, Ghibli, anime, Clan y Boing
+lib/banco/superheroes.ts Marvel, DC y Spider-Man, en animación
+lib/banco/television.ts  Tom y Jerry, Cartoon Network, Nickelodeon y animación adulta
 lib/partida-guardada.ts  Estado semilla 59-57 con la pregunta 83 pendiente
 lib/supabase.ts          Cliente con service role key, marcado server-only
 lib/acceso.ts            PIN: haySesion, exigirSesion, abrirSesion (server-only)
@@ -204,7 +206,7 @@ npm run supabase    # claves y tabla, sin imprimir nunca su valor
 Estado actual de cada uno, comprobado el 17 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 440 preguntas, 164 franquicias, reparto 56 % / 34 % / 10 %.
+- `validar`: 638 preguntas, 194 franquicias, reparto 50 % / 39 % / 11 %.
 - `probar`: los 35 casos pasan.
 - `simular`: pasa. Comprueba a mano el veto del rebote en las preguntas de
   verdadero o falso y los cinco casos de corrección del veredicto, y luego juega

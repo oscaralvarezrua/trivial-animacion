@@ -162,7 +162,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
         <Resumen
           estado={estado}
           titulo="Se ha acabado el banco de preguntas"
-          entradilla="Habéis jugado las 440. Aquí está cómo ha ido; después podéis empezar otra partida y volver a usarlas."
+          entradilla="Habéis jugado todas. Aquí está cómo ha ido; después podéis empezar otra partida y volver a usarlas."
           accion="Partida nueva"
           onConfirmar={() => aplicar(partidaNueva())}
         />

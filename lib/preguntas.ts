@@ -1,6 +1,8 @@
 import { DISNEY } from "./banco/disney";
 import { ESTUDIOS } from "./banco/estudios";
 import { SERIES } from "./banco/series";
+import { SUPERHEROES } from "./banco/superheroes";
+import { TELEVISION } from "./banco/television";
 import { categoriaDe } from "./categorias";
 import type { Question } from "./types";
 
@@ -26,6 +28,8 @@ export const PREGUNTAS: Question[] = [
   ...DISNEY,
   ...ESTUDIOS,
   ...SERIES,
+  ...SUPERHEROES,
+  ...TELEVISION,
 ];
 
 const INDICE = new Map(PREGUNTAS.map((q) => [q.id, q]));
