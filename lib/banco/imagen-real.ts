@@ -336,7 +336,7 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hsm-troy",
     franchise: "High School Musical",
-    emoji: "🏀",
+    emoji: "⭐",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A qué deporte juega Troy Bolton?",
@@ -382,7 +382,7 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "soyluna-patines",
     franchise: "Soy Luna",
-    emoji: "🛼",
+    emoji: "🎬",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué deporte marca la vida de Luna?",
@@ -471,7 +471,7 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "icarly-webshow",
     franchise: "iCarly",
-    emoji: "💻",
+    emoji: "🍖",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué montan Carly y sus amigos?",
@@ -537,7 +537,7 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "drakejosh-guitarra",
     franchise: "Drake y Josh",
-    emoji: "🎸",
+    emoji: "👦",
     difficulty: "media",
     format: "vf",
     prompt: "De los dos hermanos, el músico es Josh y el estudioso es Drake.",
@@ -631,7 +631,7 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "ned-manual",
     franchise: "Manual de supervivencia escolar de Ned",
-    emoji: "📓",
+    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué formato tiene esta serie?",

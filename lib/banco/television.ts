@@ -12,7 +12,7 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-quien",
     franchise: "Tom y Jerry",
-    emoji: "🐱",
+    emoji: "🤐",
     difficulty: "facil",
     format: "corta",
     prompt: "De los dos protagonistas, ¿cuál es el gato?",
@@ -100,7 +100,7 @@ export const TELEVISION: Question[] = [
   {
     id: "pantera-color",
     franchise: "La Pantera Rosa",
-    emoji: "🩷",
+    emoji: "🎬",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color es la pantera protagonista?",
@@ -121,7 +121,7 @@ export const TELEVISION: Question[] = [
   {
     id: "pantera-musica",
     franchise: "La Pantera Rosa",
-    emoji: "🎷",
+    emoji: "🩷",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué instrumento lleva el peso de la famosa sintonía de la Pantera Rosa?",
@@ -161,7 +161,7 @@ export const TELEVISION: Question[] = [
   {
     id: "popeye-espinacas",
     franchise: "Popeye",
-    emoji: "🥬",
+    emoji: "💚",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué come Popeye para volverse fortísimo de golpe?",
@@ -183,7 +183,7 @@ export const TELEVISION: Question[] = [
   {
     id: "popeye-oficio",
     franchise: "Popeye",
-    emoji: "⚓",
+    emoji: "💚",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A qué se dedica Popeye?",
@@ -353,7 +353,7 @@ export const TELEVISION: Question[] = [
   {
     id: "castores-hermanos",
     franchise: "Los Castores Cascarrabias",
-    emoji: "🦫",
+    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué son Norbert y Dagoberto, los protagonistas de la serie?",
@@ -444,7 +444,7 @@ export const TELEVISION: Question[] = [
   {
     id: "rocko-animal",
     franchise: "La vida moderna de Rocko",
-    emoji: "🦘",
+    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué animal es Rocko?",
@@ -769,7 +769,7 @@ export const TELEVISION: Question[] = [
   {
     id: "autoslocos-que",
     franchise: "Los Autos Locos",
-    emoji: "🚗",
+    emoji: "🏎️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En qué compiten los personajes de esta serie?",
@@ -862,7 +862,7 @@ export const TELEVISION: Question[] = [
   {
     id: "yogui-cestas",
     franchise: "El Oso Yogui",
-    emoji: "🧺",
+    emoji: "🐻",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué le roba Yogui a los visitantes del parque?",
@@ -897,7 +897,7 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-zanahoria",
     franchise: "Looney Tunes",
-    emoji: "🥕",
+    emoji: "🐦",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué está siempre comiendo Bugs Bunny?",
@@ -940,7 +940,7 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-bugs-animal",
     franchise: "Looney Tunes",
-    emoji: "🐰",
+    emoji: "🥕",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Bugs Bunny?",
@@ -1035,7 +1035,7 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-lisa",
     franchise: "Los Simpson",
-    emoji: "🎷",
+    emoji: "🍩",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué instrumento toca Lisa Simpson?",
@@ -1101,7 +1101,7 @@ export const TELEVISION: Question[] = [
   {
     id: "bobesponja-hamburguesa",
     franchise: "Bob Esponja",
-    emoji: "🍔",
+    emoji: "🧽",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la hamburguesa estrella del restaurante?",
@@ -1146,7 +1146,7 @@ export const TELEVISION: Question[] = [
   {
     id: "tortugas-leonardo",
     franchise: "Las Tortugas Ninja",
-    emoji: "💙",
+    emoji: "🐢",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué color es el antifaz de Leonardo, el líder?",
@@ -1157,7 +1157,7 @@ export const TELEVISION: Question[] = [
   {
     id: "tortugas-alcantarillas",
     franchise: "Las Tortugas Ninja",
-    emoji: "🕳️",
+    emoji: "🐢",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Dónde viven las Tortugas Ninja?",
@@ -1192,7 +1192,7 @@ export const TELEVISION: Question[] = [
   {
     id: "picapiedra-epoca",
     franchise: "Los Picapiedra",
-    emoji: "🦴",
+    emoji: "🦕",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿En qué época viven Los Picapiedra?",
@@ -1331,7 +1331,7 @@ export const TELEVISION: Question[] = [
   {
     id: "gravityfalls-diario",
     franchise: "Gravity Falls",
-    emoji: "📓",
+    emoji: "🌲",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué encuentra Dipper en el bosque y cambia todo el verano?",
@@ -1451,7 +1451,7 @@ export const TELEVISION: Question[] = [
   {
     id: "gumball-animal",
     franchise: "El asombroso mundo de Gumball",
-    emoji: "🐱",
+    emoji: "🎬",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Gumball?",
@@ -1475,7 +1475,7 @@ export const TELEVISION: Question[] = [
   {
     id: "avatar-elementos",
     franchise: "Avatar: la leyenda de Aang",
-    emoji: "🔥",
+    emoji: "💨",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuáles son los cuatro elementos que se dominan en Avatar?",
@@ -1565,7 +1565,7 @@ export const TELEVISION: Question[] = [
   {
     id: "scooby-galletas",
     franchise: "Scooby-Doo",
-    emoji: "🍪",
+    emoji: "🐶",
     difficulty: "media",
     format: "corta",
     prompt: "¿Con qué se soborna a Scooby para que se atreva a entrar en un sitio?",
@@ -1933,7 +1933,7 @@ export const TELEVISION: Question[] = [
   {
     id: "lazytown-stephanie",
     franchise: "Lazy Town",
-    emoji: "🩷",
+    emoji: "🤸",
     difficulty: "media",
     format: "vf",
     prompt: "La niña protagonista de Lazy Town tiene el pelo azul.",
@@ -2001,7 +2001,7 @@ export const TELEVISION: Question[] = [
   {
     id: "littleeinsteins-nave",
     franchise: "Little Einsteins",
-    emoji: "🚀",
+    emoji: "🧒",
     difficulty: "media",
     format: "multiple",
     prompt: "¿En qué viajan los cuatro niños de Little Einsteins?",
@@ -2028,7 +2028,7 @@ export const TELEVISION: Question[] = [
   {
     id: "garfield-lasana",
     franchise: "El show de Garfield",
-    emoji: "🍝",
+    emoji: "🐶",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cuál es la comida favorita de Garfield?",
@@ -2062,7 +2062,7 @@ export const TELEVISION: Question[] = [
   {
     id: "bernard-oso",
     franchise: "Bernard",
-    emoji: "🐻‍❄️",
+    emoji: "🤕",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Bernard, el protagonista de esta serie sin diálogos?",
@@ -2149,7 +2149,7 @@ export const TELEVISION: Question[] = [
   {
     id: "historiascorrientes-animales",
     franchise: "Historias corrientes",
-    emoji: "🦝",
+    emoji: "🌳",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animales son Mordecai y Rigby?",
@@ -2243,7 +2243,7 @@ export const TELEVISION: Question[] = [
   {
     id: "inazuma-deporte",
     franchise: "Inazuma Eleven",
-    emoji: "⚽",
+    emoji: "🔥",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A qué deporte se juega en Inazuma Eleven?",
@@ -2372,7 +2372,7 @@ export const TELEVISION: Question[] = [
   {
     id: "dora-botas-animal",
     franchise: "Dora la exploradora",
-    emoji: "🐵",
+    emoji: "🎒",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Botas, el amigo de Dora?",
@@ -2383,7 +2383,7 @@ export const TELEVISION: Question[] = [
   {
     id: "caillou-familia",
     franchise: "Caillou",
-    emoji: "🐈",
+    emoji: "👦",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué mascota tiene la familia de Caillou?",

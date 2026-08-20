@@ -704,7 +704,7 @@ export const SERIES: Question[] = [
   {
     id: "pocoyo-color",
     franchise: "Pocoyó",
-    emoji: "🔵",
+    emoji: "🦆",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color es la ropa de Pocoyó?",
@@ -845,7 +845,7 @@ export const SERIES: Question[] = [
   {
     id: "heidi-pedro",
     franchise: "Heidi",
-    emoji: "🐐",
+    emoji: "🏔️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A qué se dedica Pedro, el amigo de Heidi?",
@@ -946,7 +946,7 @@ export const SERIES: Question[] = [
   {
     id: "oliverbenji-portero",
     franchise: "Oliver y Benji",
-    emoji: "🥅",
+    emoji: "🎬",
     difficulty: "facil",
     format: "vf",
     prompt: "Benji es el delantero estrella del equipo y el que mete todos los goles.",
@@ -1113,7 +1113,7 @@ export const SERIES: Question[] = [
   {
     id: "escandalosos-osos",
     franchise: "Somos osos",
-    emoji: "🐻",
+    emoji: "🎬",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué tres osos protagonizan Somos osos?",
@@ -1192,7 +1192,7 @@ export const SERIES: Question[] = [
   {
     id: "mononoke-san",
     franchise: "La princesa Mononoke",
-    emoji: "🐺",
+    emoji: "🎬",
     difficulty: "facil",
     format: "vf",
     prompt: "San, la princesa Mononoke, ha sido criada por una manada de osos.",
@@ -1267,7 +1267,7 @@ export const SERIES: Question[] = [
   {
     id: "bobesponja-mascota",
     franchise: "Bob Esponja",
-    emoji: "🐌",
+    emoji: "🧽",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Gary, la mascota de Bob Esponja?",
@@ -1425,7 +1425,7 @@ export const SERIES: Question[] = [
   {
     id: "completar-tortugas-comida",
     franchise: "Las Tortugas Ninja",
-    emoji: "🍕",
+    emoji: "🐢",
     difficulty: "facil",
     format: "completar",
     prompt:
@@ -1626,7 +1626,7 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-comidas",
     franchise: "Lugares de ficción",
-    emoji: "🍕",
+    emoji: "🗺️",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada comida con la historia en la que es famosa.",
@@ -2055,7 +2055,7 @@ export const SERIES: Question[] = [
   {
     id: "ranma-padre",
     franchise: "Ranma ½",
-    emoji: "🐼",
+    emoji: "💧",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué se convierte el padre de Ranma con el agua fría?",
@@ -2107,7 +2107,7 @@ export const SERIES: Question[] = [
   {
     id: "chicho-deporte",
     franchise: "Chicho Terremoto",
-    emoji: "🏀",
+    emoji: "📏",
     difficulty: "media",
     format: "corta",
     prompt: "¿A qué deporte juega Chicho Terremoto?",
@@ -2139,7 +2139,7 @@ export const SERIES: Question[] = [
   {
     id: "musculman-fideos",
     franchise: "Musculman",
-    emoji: "🍜",
+    emoji: "🤼",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿De qué planeta viene Musculman?",
@@ -2176,7 +2176,7 @@ export const SERIES: Question[] = [
   {
     id: "banner-animal",
     franchise: "Banner y Flappy",
-    emoji: "🐿️",
+    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué animales son Banner y Flappy?",
@@ -2200,7 +2200,7 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-cola",
     franchise: "Dragon Ball",
-    emoji: "🐒",
+    emoji: "🐉",
     difficulty: "facil",
     format: "vf",
     prompt: "De pequeño, Goku tenía alas.",
@@ -2237,7 +2237,7 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-supersaiyan",
     franchise: "Dragon Ball",
-    emoji: "💛",
+    emoji: "🐉",
     difficulty: "media",
     format: "corta",
     prompt: "¿De qué color se le pone el pelo a Goku al transformarse en Super Saiyan?",
@@ -2307,7 +2307,7 @@ export const SERIES: Question[] = [
   {
     id: "doraemon-puerta",
     franchise: "Doraemon",
-    emoji: "🚪",
+    emoji: "🔔",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el invento de Doraemon que lleva a cualquier sitio al cruzarlo?",
@@ -2382,7 +2382,7 @@ export const SERIES: Question[] = [
   {
     id: "naruto-comida",
     franchise: "Naruto",
-    emoji: "🍜",
+    emoji: "🍥",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cuál es la comida favorita de Naruto?",

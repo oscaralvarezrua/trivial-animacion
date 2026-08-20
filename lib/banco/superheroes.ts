@@ -166,7 +166,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-thor",
     franchise: "Marvel",
-    emoji: "🔨",
+    emoji: "📺",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el arma de Thor?",
@@ -177,7 +177,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-hulk-color",
     franchise: "Marvel",
-    emoji: "💚",
+    emoji: "📺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color se pone Bruce Banner cuando se enfada?",
@@ -281,7 +281,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "moongirl-dinosaurio",
     franchise: "Marvel",
-    emoji: "🦖",
+    emoji: "📺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué acompaña a Moon Girl en su serie?",
@@ -442,7 +442,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-araña",
     franchise: "Spider-Man",
-    emoji: "🕷️",
+    emoji: "🖤",
     difficulty: "media",
     format: "vf",
     prompt: "Peter Parker consigue sus poderes por la picadura de un escorpión radiactivo.",
@@ -525,7 +525,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-linterna",
     franchise: "DC",
-    emoji: "💚",
+    emoji: "🦇",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama en español el héroe cuyo poder sale de un anillo?",
@@ -600,7 +600,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-kryptonita",
     franchise: "DC",
-    emoji: "💎",
+    emoji: "🦇",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué mineral deja a Superman sin fuerzas?",
@@ -737,7 +737,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-guantelete",
     franchise: "Marvel",
-    emoji: "🧤",
+    emoji: "📺",
     difficulty: "media",
     format: "corta",
     prompt: "¿En qué objeto engarza Thanos las Gemas del Infinito?",
@@ -817,7 +817,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-escudo-final",
     franchise: "Marvel",
-    emoji: "🦅",
+    emoji: "📺",
     difficulty: "media",
     format: "corta",
     prompt: "Al final de Endgame, ¿a quién le entrega el Capitán América su escudo?",
@@ -894,7 +894,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-rocket",
     franchise: "Marvel",
-    emoji: "🦝",
+    emoji: "📺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué animal es Rocket, el guardián que maneja las armas?",
@@ -1190,7 +1190,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-hawkeye",
     franchise: "Marvel",
-    emoji: "🏹",
+    emoji: "📺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Con qué arma lucha Ojo de Halcón?",
@@ -1678,7 +1678,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-pinguino",
     franchise: "DC",
-    emoji: "🐧",
+    emoji: "🃏",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué villano de Batman va con paraguas y monóculo, y toma el nombre de un ave?",
@@ -1689,7 +1689,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-doscaras",
     franchise: "DC",
-    emoji: "🪙",
+    emoji: "🦇",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Con qué decide sus actos el villano Dos Caras?",
@@ -1721,7 +1721,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-gafas",
     franchise: "DC",
-    emoji: "👓",
+    emoji: "🦇",
     difficulty: "facil",
     format: "vf",
     prompt: "Para pasar por humano, Superman se pone una máscara que le tapa media cara.",
@@ -1836,7 +1836,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-lagarto",
     franchise: "Spider-Man",
-    emoji: "🦎",
+    emoji: "🕸️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cuál es el villano de The Amazing Spider-Man con Andrew Garfield?",
@@ -1942,7 +1942,7 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-fotografo",
     franchise: "Spider-Man",
-    emoji: "📷",
+    emoji: "🕷️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué trabaja Peter Parker en las películas de Raimi?",

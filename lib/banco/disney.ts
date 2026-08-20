@@ -570,7 +570,7 @@ export const DISNEY: Question[] = [
   {
     id: "zootropolis-mrbig",
     franchise: "Zootrópolis",
-    emoji: "🦊",
+    emoji: "🎬",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Mr. Big, el temido jefe del crimen de Tundratown?",
@@ -1166,7 +1166,7 @@ export const DISNEY: Question[] = [
   {
     id: "dumbo-timothy",
     franchise: "Dumbo",
-    emoji: "🐘",
+    emoji: "🎬",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué animal es Timothy, el amigo que convence a Dumbo de que puede volar?",
@@ -1202,7 +1202,7 @@ export const DISNEY: Question[] = [
   {
     id: "pooh-miel",
     franchise: "Winnie the Pooh",
-    emoji: "🍯",
+    emoji: "🎬",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué es lo que más le gusta comer a Winnie the Pooh?",
@@ -1314,7 +1314,7 @@ export const DISNEY: Question[] = [
   {
     id: "kuzco-animal",
     franchise: "El emperador y sus locuras",
-    emoji: "🦙",
+    emoji: "🎒",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En qué animal convierten al emperador Kuzco?",
@@ -1405,7 +1405,7 @@ export const DISNEY: Question[] = [
   {
     id: "todytoby-animales",
     franchise: "Tod y Toby",
-    emoji: "🦊",
+    emoji: "🎬",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué son Tod y Toby, los dos amigos a los que la vida acaba enfrentando?",
@@ -1716,7 +1716,7 @@ export const DISNEY: Question[] = [
   {
     id: "vf-cenicienta-zapato",
     franchise: "Cenicienta",
-    emoji: "👠",
+    emoji: "🎬",
     difficulty: "facil",
     format: "vf",
     prompt: "A Cenicienta se le cae un guante al salir corriendo del baile.",
@@ -1737,7 +1737,7 @@ export const DISNEY: Question[] = [
   {
     id: "vf-jorobado-quasimodo",
     franchise: "El jorobado de Notre Dame",
-    emoji: "🔔",
+    emoji: "🎬",
     difficulty: "media",
     format: "vf",
     prompt:
@@ -1748,7 +1748,7 @@ export const DISNEY: Question[] = [
   {
     id: "vf-tarzan-gorilas",
     franchise: "Tarzán",
-    emoji: "🦍",
+    emoji: "🌴",
     difficulty: "facil",
     format: "vf",
     prompt: "A Tarzán lo cría una manada de chimpancés.",
@@ -1759,7 +1759,7 @@ export const DISNEY: Question[] = [
   {
     id: "vf-zootropolis-judy",
     franchise: "Zootrópolis",
-    emoji: "🐰",
+    emoji: "🎬",
     difficulty: "media",
     format: "vf",
     prompt: "Judy Hopps llega a Zootrópolis siendo ya una policía veterana y con galones.",
@@ -1938,7 +1938,7 @@ export const DISNEY: Question[] = [
   {
     id: "damavagabundo-espaguetis",
     franchise: "La dama y el vagabundo",
-    emoji: "🍝",
+    emoji: "🐶",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué plato comparten los dos perros en la escena más famosa de la película?",
@@ -2059,7 +2059,7 @@ export const DISNEY: Question[] = [
   {
     id: "oliver-animal",
     franchise: "Oliver y su pandilla",
-    emoji: "🐱",
+    emoji: "🏙️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Oliver?",
@@ -2128,7 +2128,7 @@ export const DISNEY: Question[] = [
   {
     id: "chickenlittle-animal",
     franchise: "Chicken Little",
-    emoji: "🐤",
+    emoji: "☁️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Chicken Little?",

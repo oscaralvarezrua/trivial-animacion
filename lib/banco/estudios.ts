@@ -628,7 +628,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "gatobotas-kitty",
     franchise: "El gato con botas",
-    emoji: "🐈",
+    emoji: "🐾",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama la gata que acompaña al Gato con Botas?",
@@ -972,7 +972,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "edadhielo-sid",
     franchise: "Ice Age",
-    emoji: "🦥",
+    emoji: "🌰",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Sid, el charlatán del grupo?",
@@ -1131,7 +1131,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "luca-vespa",
     franchise: "Luca",
-    emoji: "🛵",
+    emoji: "🐟",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cuál es el gran sueño de Luca y Alberto durante el verano italiano?",
@@ -1144,7 +1144,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "soul-joe",
     franchise: "Soul",
-    emoji: "🎷",
+    emoji: "🎬",
     difficulty: "media",
     format: "corta",
     prompt: "¿A qué se dedica Joe Gardner, el protagonista?",
@@ -1157,7 +1157,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "red-panda",
     franchise: "Red",
-    emoji: "🐼",
+    emoji: "🎬",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En qué animal se transforma Mei cuando se emociona?",
@@ -1183,7 +1183,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "elemental-parejas",
     franchise: "Elemental",
-    emoji: "🔥",
+    emoji: "🎬",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué elementos son los dos protagonistas de Elemental?",
@@ -1726,7 +1726,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "shrek-gatobotas-aparicion",
     franchise: "Shrek",
-    emoji: "🐱",
+    emoji: "🧅",
     difficulty: "facil",
     format: "vf",
     prompt: "El Gato con Botas aparece por primera vez en Shrek 3.",
@@ -1803,7 +1803,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "kfp-shen",
     franchise: "Kung Fu Panda",
-    emoji: "🦚",
+    emoji: "🥟",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Lord Shen, el villano de Kung Fu Panda 2?",
@@ -1835,7 +1835,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "kfp-camaleona",
     franchise: "Kung Fu Panda",
-    emoji: "🦎",
+    emoji: "🥟",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es la villana de Kung Fu Panda 4, capaz de copiar cualquier técnica?",
@@ -1947,7 +1947,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "iceage-deshielo",
     franchise: "Ice Age",
-    emoji: "💧",
+    emoji: "🌰",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el peligro de la segunda película de Ice Age?",
@@ -1973,7 +1973,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "iceage-dinosaurios",
     franchise: "Ice Age",
-    emoji: "🦕",
+    emoji: "🌰",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Con qué se topan los protagonistas en la tercera película?",
@@ -2106,7 +2106,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "hoteltransilvania-crucero",
     franchise: "Hotel Transilvania",
-    emoji: "🚢",
+    emoji: "🧛",
     difficulty: "media",
     format: "vf",
     prompt: "La tercera película transcurre entera dentro del hotel, sin salir de él.",
@@ -2143,7 +2143,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "canta-leon",
     franchise: "Canta",
-    emoji: "🦁",
+    emoji: "🎤",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué animal es Clay Calloway, la estrella retirada que buscan en Canta 2?",
@@ -2165,7 +2165,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "gatobotas-muerte",
     franchise: "El gato con botas",
-    emoji: "🐺",
+    emoji: "🐾",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Quién persigue al Gato en El último deseo?",
@@ -2324,7 +2324,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "iceage-bellota",
     franchise: "Ice Age",
-    emoji: "🌰",
+    emoji: "🦣",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué persigue Scrat sin descanso a lo largo de toda la saga?",
@@ -2359,7 +2359,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "rio-nigel",
     franchise: "Río",
-    emoji: "🦤",
+    emoji: "🌴",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué ave es Nigel, el villano de la primera película?",
@@ -2418,7 +2418,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "wallace-gromit",
     franchise: "Wallace y Gromit",
-    emoji: "🐕",
+    emoji: "🧀",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Quién es Gromit?",
@@ -2439,7 +2439,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "wallace-tecnica",
     franchise: "Wallace y Gromit",
-    emoji: "🧱",
+    emoji: "🧀",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Con qué técnica está hecha la serie?",
@@ -2463,7 +2463,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "chickenrun-tecnica",
     franchise: "Chicken Run",
-    emoji: "🧱",
+    emoji: "🐔",
     difficulty: "facil",
     format: "vf",
     prompt: "Chicken Run está hecha con animación por ordenador.",
@@ -2523,7 +2523,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "pesadilla-pueblo",
     franchise: "Pesadilla antes de Navidad",
-    emoji: "🎃",
+    emoji: "🎲",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué pueblo es el rey Jack Skellington?",
@@ -2581,7 +2581,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "boxtrolls-que-son",
     franchise: "Los Boxtrolls",
-    emoji: "📦",
+    emoji: "🎬",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué llevan puesto los boxtrolls a modo de ropa?",
@@ -2602,7 +2602,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "kubo-instrumento",
     franchise: "Kubo",
-    emoji: "🪕",
+    emoji: "🎎",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Con qué hace magia Kubo?",
@@ -2782,7 +2782,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "madagascar-gloria",
     franchise: "Madagascar",
-    emoji: "🦛",
+    emoji: "🌍",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué animal es Gloria?",
@@ -2809,7 +2809,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "madagascar-marty-rayas",
     franchise: "Madagascar",
-    emoji: "🦓",
+    emoji: "🌍",
     difficulty: "facil",
     format: "vf",
     prompt: "Marty es un caballo que sueña con conocer la naturaleza salvaje.",
@@ -2843,7 +2843,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "kfp-fideos",
     franchise: "Kung Fu Panda",
-    emoji: "🍜",
+    emoji: "🥟",
     difficulty: "facil",
     format: "vf",
     prompt: "Antes de ser Guerrero Dragón, Po trabajaba de carnicero.",
@@ -2917,7 +2917,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "croods-epoca",
     franchise: "Los Croods",
-    emoji: "🦴",
+    emoji: "🕳️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿En qué época vive la familia Croods?",
@@ -2938,7 +2938,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "beemovie-abeja",
     franchise: "Bee Movie",
-    emoji: "🐝",
+    emoji: "⚖️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué animal es Barry, el protagonista?",
@@ -2990,7 +2990,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "megamind-cabeza",
     franchise: "Megamind",
-    emoji: "🔵",
+    emoji: "🦹",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo es físicamente Megamind?",
@@ -3032,7 +3032,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "spirit-animal",
     franchise: "Spirit",
-    emoji: "🐎",
+    emoji: "🎬",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué animal es Spirit?",
@@ -3043,7 +3043,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "spirit-habla",
     franchise: "Spirit",
-    emoji: "🐴",
+    emoji: "🎬",
     difficulty: "media",
     format: "vf",
     prompt: "Spirit habla con los humanos a lo largo de la película.",
@@ -3064,7 +3064,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "anastasia-bartok",
     franchise: "Anastasia",
-    emoji: "🦇",
+    emoji: "🇷🇺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Bartok, el ayudante parlanchín del villano?",
@@ -3075,7 +3075,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "principito-cordero",
     franchise: "El Principito",
-    emoji: "🐑",
+    emoji: "🌹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué le pide el Principito al piloto que le dibuje nada más conocerse?",
@@ -3097,7 +3097,7 @@ export const ESTUDIOS: Question[] = [
   {
     id: "coco-guitarra",
     franchise: "Coco",
-    emoji: "🎸",
+    emoji: "💀",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué instrumento quiere tocar Miguel contra la voluntad de su familia?",

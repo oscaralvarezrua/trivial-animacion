@@ -145,6 +145,7 @@ lib/motor.ts             elegirPregunta, servirPregunta, responder,
                          partidaNueva, jugadorRival
 lib/barajar.ts           Barajado determinista por semilla (evita mismatch de hidratación)
 lib/preguntas.ts         Índice del banco, porId, validarBanco, PREGUNTA_PENDIENTE
+lib/pistas.ts            Detecta emojis que delatan o desvían la respuesta
 lib/banco/disney.ts      Clásicos Disney y WDAS
 lib/banco/estudios.ts    Pixar, DreamWorks, Illumination, Sony y otros
 lib/banco/series.ts      TV, Ghibli, anime, Clan y Boing
