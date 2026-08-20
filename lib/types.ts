@@ -1,8 +1,14 @@
 export type Player = "oscar" | "alicia";
 
+/**
+ * El emoji tiene que ir a juego con el color del jugador en `globals.css`, o
+ * el marcador se contradice a sí mismo. Se usan cuadrados de color, que están
+ * en todos los teclados y se ven igual en cualquier móvil; no hay cuadrado
+ * cian, así que Alicia lleva el azul, que es lo más cercano.
+ */
 export const PLAYERS: Record<Player, { nombre: string; emoji: string }> = {
-  oscar: { nombre: "Oscar", emoji: "🟦" },
-  alicia: { nombre: "Alicia", emoji: "🩷" },
+  oscar: { nombre: "Oscar", emoji: "🟨" },
+  alicia: { nombre: "Alicia", emoji: "🟦" },
 };
 
 export type Difficulty = "facil" | "media" | "dificil";

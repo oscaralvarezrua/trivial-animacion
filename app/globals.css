@@ -12,13 +12,20 @@
   --texto: #eef0f6;
   --apagado: #9aa0b4;
 
-  --oscar: #4c8dff;
-  --oscar-suave: #4c8dff26;
-  --alicia: #ff7ab8;
-  --alicia-suave: #ff7ab826;
+  /* Amarillo claro y cian. Los dos son claros y muy saturados, así que sobre el
+     fondo oscuro se leen igual de bien y ninguno pesa más que el otro, que es
+     lo que importa cuando marcan de quién es el turno. */
+  --oscar: #ffd76a;
+  --oscar-suave: #ffd76a26;
+  --alicia: #22d3ee;
+  --alicia-suave: #22d3ee26;
 
-  --acierto: #46d18b;
-  --acierto-suave: #46d18b1f;
+  /* Verde algo más verde y menos turquesa que el de antes. Con Alicia en cian
+     quedaban a 38° de tono, el par más justo de la paleta; así se separan 46°,
+     como el resto. Importa porque el botón del turno de Alicia sale justo al
+     lado de la franja verde del veredicto. */
+  --acierto: #4ade80;
+  --acierto-suave: #4ade801f;
   --fallo: #ff6b6b;
   --fallo-suave: #ff6b6b1f;
 
@@ -70,7 +77,14 @@ body {
   border-radius: 4px;
 }
 
-/* --- Piezas que se repiten --- */
+/* --- Piezas que se repiten ---
+ *
+ * Van en la capa `components` a propósito. Sin ella se definen después de las
+ * utilidades de Tailwind y les ganan por orden, así que un `bg-[…]` o un
+ * `border-[…]` puesto en el JSX no llegaba a aplicarse: la tarjeta del jugador
+ * al que le tocaba se quedaba sin teñir. En esta capa mandan las utilidades,
+ * que es lo que se espera al escribirlas. */
+@layer components {
 
 /* Etiqueta pequeña: formato de la pregunta, franquicia, categoría. */
 .chip {
@@ -92,6 +106,8 @@ body {
   border: 1px solid var(--borde);
   border-radius: var(--radio-grande);
   box-shadow: var(--sombra);
+}
+
 }
 
 /* La entrada de los paneles ya no se hace aquí: la lleva `motion` en

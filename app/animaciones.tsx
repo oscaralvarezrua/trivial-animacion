@@ -52,8 +52,12 @@ export function Panel({ id, children }: { id: string; children: ReactNode }) {
  * mueve nada.
  *
  * Se usa muelle en vez de duración fija porque un punto ganado tiene que
- * sentirse, y un muelle con poco amortiguamiento da ese golpecito seco que una
- * curva suave no da.
+ * sentirse, y un muelle da ese golpecito seco que una curva suave no da.
+ *
+ * Crece hacia su tamaño en vez de encoger desde uno mayor. Empezando por
+ * encima del 100 % el número se sale de la tarjeta mientras dura la animación,
+ * y con marcadores de tres cifras eso llega a asomar por el borde de la
+ * pantalla. Así nunca es más grande que en reposo.
  */
 export function Puntuacion({ valor, color }: { valor: number; color?: string }) {
   const quieto = useReducedMotion();
@@ -61,9 +65,9 @@ export function Puntuacion({ valor, color }: { valor: number; color?: string }) 
   return (
     <motion.p
       key={valor}
-      initial={quieto ? false : { scale: 1.3 }}
-      animate={{ scale: 1 }}
-      transition={{ type: "spring", stiffness: 520, damping: 22 }}
+      initial={quieto ? false : { scale: 0.6, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 500, damping: 30 }}
       className="text-4xl leading-none font-semibold tabular-nums sm:text-5xl"
       style={{ color, transformOrigin: "left bottom" }}
     >
