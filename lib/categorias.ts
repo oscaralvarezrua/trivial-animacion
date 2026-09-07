@@ -2,10 +2,12 @@
  * Categorías del banco.
  *
  * La categoría NO es un campo de cada pregunta, sino un mapa de franquicia a
- * categoría que vive aquí. Son 164 franquicias y 440 preguntas: tocar 440
+ * categoría que vive aquí. Son 273 franquicias y 1183 preguntas: tocar 1183
  * objetos para repetir un dato que ya se deduce de la franquicia sería pedir
  * que se desincronicen. Con el mapa hay un único sitio donde mirar y donde
  * corregir.
+ *
+ * Por lo mismo vive aquí el emoji: también se deduce de la categoría.
  *
  * `validarBanco()` comprueba que toda franquicia del banco esté aquí, así que
  * añadir una franquicia nueva sin categoría rompe `npm run validar`.
@@ -175,6 +177,7 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "One Piece": "Anime",
   Pokémon: "Anime",
   "Sailor Moon": "Anime",
+  "Mermaid Melody Pichi Pichi Pitch": "Anime",
   "Shin Chan": "Anime",
 
   // --- Series de dibujos ---
@@ -313,6 +316,11 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Henry Danger": "Series de imagen real",
   "Series de imagen real": "Series de imagen real",
 
+  // Europeas que aquí se vieron en Clan, Boing y Jetix.
+  "Winx Club": "Series de dibujos",
+  "Código Lyoko": "Series de dibujos",
+  Gormiti: "Series de dibujos",
+
   // --- Otros estudios ---
   // Sony, Blue Sky, Aardman, Laika, Warner y las mezclas de varios estudios.
   Anastasia: "Otros estudios",
@@ -340,4 +348,50 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
 /** La categoría de una franquicia, o null si no está mapeada. */
 export function categoriaDe(franquicia: string): Categoria | null {
   return POR_FRANQUICIA[franquicia] ?? null;
+}
+
+/**
+ * El emoji que acompaña a la franquicia en la cabecera de la pregunta.
+ *
+ * Antes cada pregunta traía el suyo y eso salió mal dos veces. La primera, que
+ * chivaban: 🦥 en «¿qué animal es Sid?» regalaba el punto. La segunda, que ni
+ * siquiera coincidían entre preguntas de la misma película: de 269 franquicias,
+ * 170 usaban más de un emoji, y Bob Esponja llegó a tener siete.
+ *
+ * Ahora lo pone la categoría, y eso lo arregla de raíz por una razón que no
+ * depende del criterio de nadie: **al lado del emoji ya se enseña la
+ * franquicia, y la franquicia determina la categoría**. Así que el emoji no
+ * añade ni un dato que no estuviera ya en pantalla, y lo que no informa no
+ * puede delatar. Con un emoji por pregunta había 1080 sitios que vigilar; así
+ * no queda ninguno.
+ *
+ * De paso son los mismos que agrupan el resumen de fin de partida, así que la
+ * categoría se lee igual jugando que en las estadísticas.
+ *
+ * Al elegirlos se ha evitado cualquiera que nombre una cosa (un animal, un
+ * color, un objeto): todos dicen de qué estudio o de qué clase de contenido es
+ * la pregunta, que es justo lo que la franquicia ya cuenta.
+ */
+export const EMOJI_DE_CATEGORIA: Record<Categoria, string> = {
+  Disney: "🏰",
+  Pixar: "💡",
+  DreamWorks: "🌙",
+  Illumination: "🎦",
+  Ghibli: "⛩️",
+  Anime: "🎌",
+  "Series de dibujos": "📺",
+  Infantil: "🎠",
+  "Animación española": "🇪🇸",
+  Superhéroes: "🦸",
+  "Series de imagen real": "🎬",
+  "Otros estudios": "🎞️",
+};
+
+/**
+ * El emoji de una franquicia. El de reserva solo saltaría con una franquicia
+ * sin categoría, cosa que `validarBanco()` no deja pasar.
+ */
+export function emojiDe(franquicia: string): string {
+  const categoria = categoriaDe(franquicia);
+  return categoria ? EMOJI_DE_CATEGORIA[categoria] : "🎞️";
 }

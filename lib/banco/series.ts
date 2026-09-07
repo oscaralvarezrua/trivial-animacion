@@ -6,7 +6,6 @@ export const SERIES: Question[] = [
   {
     id: "bobesponja-patricio",
     franchise: "Bob Esponja",
-    emoji: "🧽",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la estrella de mar, mejor amigo de Bob Esponja?",
@@ -17,7 +16,6 @@ export const SERIES: Question[] = [
   {
     id: "bobesponja-restaurante",
     franchise: "Bob Esponja",
-    emoji: "🧽",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el restaurante en el que trabaja Bob Esponja?",
@@ -27,7 +25,6 @@ export const SERIES: Question[] = [
   {
     id: "bobesponja-arenita",
     franchise: "Bob Esponja",
-    emoji: "🧽",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Arenita Mejillas, que vive dentro de una cúpula de aire?",
@@ -38,7 +35,6 @@ export const SERIES: Question[] = [
   {
     id: "bobesponja-calamardo",
     franchise: "Bob Esponja",
-    emoji: "🧽",
     difficulty: "facil",
     format: "describir",
     prompt:
@@ -52,7 +48,6 @@ export const SERIES: Question[] = [
   {
     id: "avatar-hermanos",
     franchise: "Avatar: la leyenda de Aang",
-    emoji: "💨",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llaman los dos hermanos de la Tribu Agua que encuentran a Aang en el hielo?",
@@ -68,7 +63,6 @@ export const SERIES: Question[] = [
   {
     id: "avatar-appa",
     franchise: "Avatar: la leyenda de Aang",
-    emoji: "💨",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Appa, la montura voladora de Aang?",
@@ -86,7 +80,6 @@ export const SERIES: Question[] = [
   {
     id: "padrinos-vicky",
     franchise: "Los Padrinos Mágicos",
-    emoji: "🪄",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la niñera tirana que amarga la vida a Timmy?",
@@ -99,7 +92,6 @@ export const SERIES: Question[] = [
   {
     id: "tortugas-splinter",
     franchise: "Las Tortugas Ninja",
-    emoji: "🐢",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la rata que ejerce de maestro y padre de las tortugas?",
@@ -110,7 +102,6 @@ export const SERIES: Question[] = [
   {
     id: "tortugas-nombres",
     franchise: "Las Tortugas Ninja",
-    emoji: "🐢",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué se tomaron prestados los nombres de las cuatro tortugas?",
@@ -127,7 +118,6 @@ export const SERIES: Question[] = [
   {
     id: "tortugas-destructor",
     franchise: "Las Tortugas Ninja",
-    emoji: "🐢",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el enemigo acorazado que dirige el Clan del Pie?",
@@ -141,7 +131,6 @@ export const SERIES: Question[] = [
   {
     id: "horaaventuras-jake",
     franchise: "Hora de aventuras",
-    emoji: "🗡️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el perro elástico que acompaña a Finn?",
@@ -152,7 +141,6 @@ export const SERIES: Question[] = [
   {
     id: "horaaventuras-chicle",
     franchise: "Hora de aventuras",
-    emoji: "🗡️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Quién gobierna el Dulce Reino?",
@@ -170,7 +158,6 @@ export const SERIES: Question[] = [
   {
     id: "escandalosos-hermanos",
     franchise: "Somos osos",
-    emoji: "🐻",
     difficulty: "facil",
     format: "multiple",
     prompt: "Además de Panda, ¿cómo se llaman los otros dos hermanos osos?",
@@ -183,7 +170,6 @@ export const SERIES: Question[] = [
   {
     id: "gumball-darwin",
     franchise: "El asombroso mundo de Gumball",
-    emoji: "🐟",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el pez de colores que se convirtió en hermano adoptivo de Gumball?",
@@ -196,7 +182,6 @@ export const SERIES: Question[] = [
   {
     id: "supernenas-mojo",
     franchise: "Las Supernenas",
-    emoji: "💥",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el mono de cerebro descomunal que es su archienemigo?",
@@ -207,7 +192,6 @@ export const SERIES: Question[] = [
   {
     id: "supernenas-nombres",
     franchise: "Las Supernenas",
-    emoji: "💥",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman las tres Supernenas en el doblaje español?",
@@ -225,7 +209,6 @@ export const SERIES: Question[] = [
   {
     id: "ben10-abuelo",
     franchise: "Ben 10",
-    emoji: "⌚",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el abuelo con el que Ben y Gwen viajan en autocaravana?",
@@ -238,7 +221,6 @@ export const SERIES: Question[] = [
   {
     id: "steven-gemas",
     franchise: "Steven Universe",
-    emoji: "💎",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman las tres Gemas de Cristal que crían a Steven?",
@@ -256,7 +238,6 @@ export const SERIES: Question[] = [
   {
     id: "phineas-candace",
     franchise: "Phineas y Ferb",
-    emoji: "🔺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la hermana mayor que intenta pillar a Phineas y Ferb?",
@@ -267,7 +248,6 @@ export const SERIES: Question[] = [
   {
     id: "phineas-ornitorrinco",
     franchise: "Phineas y Ferb",
-    emoji: "🔺",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Perry, la mascota de Phineas y Ferb?",
@@ -280,7 +260,6 @@ export const SERIES: Question[] = [
   {
     id: "gravityfalls-bill",
     franchise: "Gravity Falls",
-    emoji: "🔻",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el demonio triangular amarillo de un solo ojo?",
@@ -293,7 +272,6 @@ export const SERIES: Question[] = [
   {
     id: "kimpossible-ron",
     franchise: "Kim Possible",
-    emoji: "🕵️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el mejor amigo y compañero de misiones de Kim?",
@@ -306,7 +284,6 @@ export const SERIES: Question[] = [
   {
     id: "scooby-furgoneta",
     franchise: "Scooby-Doo",
-    emoji: "🐶",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la furgoneta en la que viaja la pandilla?",
@@ -316,7 +293,6 @@ export const SERIES: Question[] = [
   {
     id: "scooby-vilma",
     franchise: "Scooby-Doo",
-    emoji: "🐶",
     difficulty: "facil",
     format: "describir",
     prompt:
@@ -330,7 +306,6 @@ export const SERIES: Question[] = [
   {
     id: "picapiedra-pablo",
     franchise: "Los Picapiedra",
-    emoji: "🦕",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el vecino y mejor amigo de Pedro Picapiedra?",
@@ -342,7 +317,6 @@ export const SERIES: Question[] = [
   {
     id: "looney-coyote",
     franchise: "Looney Tunes",
-    emoji: "🥕",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A quién persigue sin descanso el Coyote?",
@@ -353,7 +327,6 @@ export const SERIES: Question[] = [
   {
     id: "looney-lucas",
     franchise: "Looney Tunes",
-    emoji: "🥕",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el pato negro, eterno rival de Bugs Bunny?",
@@ -366,7 +339,6 @@ export const SERIES: Question[] = [
   {
     id: "simpson-springfield",
     franchise: "Los Simpson",
-    emoji: "🍩",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la ciudad donde viven los Simpson?",
@@ -377,7 +349,6 @@ export const SERIES: Question[] = [
   {
     id: "simpson-burns",
     franchise: "Los Simpson",
-    emoji: "🍩",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el dueño de la central nuclear donde trabaja Homer?",
@@ -388,7 +359,6 @@ export const SERIES: Question[] = [
   {
     id: "simpson-krusty",
     franchise: "Los Simpson",
-    emoji: "🍩",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el payaso de la televisión que idolatra Bart?",
@@ -401,7 +371,6 @@ export const SERIES: Question[] = [
   {
     id: "futurama-bender",
     franchise: "Futurama",
-    emoji: "🚀",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el robot bebedor y ladrón de la tripulación de Planet Express?",
@@ -414,7 +383,6 @@ export const SERIES: Question[] = [
   {
     id: "chihiro-sincara",
     franchise: "El viaje de Chihiro",
-    emoji: "🏮",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el espíritu enmascarado y silencioso que devora todo en la casa de baños?",
@@ -425,7 +393,6 @@ export const SERIES: Question[] = [
   {
     id: "chihiro-haku",
     franchise: "El viaje de Chihiro",
-    emoji: "🏮",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el chico que ayuda a Chihiro y que puede transformarse en dragón?",
@@ -436,7 +403,6 @@ export const SERIES: Question[] = [
   {
     id: "totoro-gatobus",
     franchise: "Mi vecino Totoro",
-    emoji: "🌰",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el autobús con forma de gato de doce patas?",
@@ -446,7 +412,6 @@ export const SERIES: Question[] = [
   {
     id: "totoro-hermanas",
     franchise: "Mi vecino Totoro",
-    emoji: "🌰",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman las dos hermanas protagonistas?",
@@ -457,7 +422,6 @@ export const SERIES: Question[] = [
   {
     id: "mononoke-ashitaka",
     franchise: "La princesa Mononoke",
-    emoji: "🐺",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el joven guerrero maldito que llega al bosque?",
@@ -468,7 +432,6 @@ export const SERIES: Question[] = [
   {
     id: "howl-sophie",
     franchise: "El castillo ambulante",
-    emoji: "🏚️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la joven sombrerera a la que una bruja convierte en anciana?",
@@ -479,7 +442,6 @@ export const SERIES: Question[] = [
   {
     id: "nicky-jiji",
     franchise: "Nicky, la aprendiz de bruja",
-    emoji: "🧹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el gato negro que acompaña a Nicky?",
@@ -490,7 +452,6 @@ export const SERIES: Question[] = [
   {
     id: "ponyo-pez",
     franchise: "Ponyo",
-    emoji: "🐡",
     difficulty: "facil",
     format: "vf",
     prompt: "Ponyo es una niña humana que desea convertirse en pez.",
@@ -502,7 +463,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-siete",
     franchise: "Dragon Ball",
-    emoji: "🐉",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cuántas bolas de dragón hay que reunir para invocar a Shenron?",
@@ -513,7 +473,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-vegeta",
     franchise: "Dragon Ball",
-    emoji: "🐉",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el príncipe de los saiyans, eterno rival de Goku?",
@@ -524,7 +483,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-roshi",
     franchise: "Dragon Ball",
-    emoji: "🐉",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el anciano maestro de artes marciales que vive en una isla?",
@@ -537,7 +495,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-jessiejames",
     franchise: "Pokémon",
-    emoji: "⚡",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llaman los dos humanos del Team Rocket que persiguen a Pikachu?",
@@ -553,7 +510,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-paleta",
     franchise: "Pokémon",
-    emoji: "⚡",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En qué pueblo empieza Ash su viaje?",
@@ -565,7 +521,6 @@ export const SERIES: Question[] = [
   {
     id: "naruto-konoha",
     franchise: "Naruto",
-    emoji: "🍥",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la aldea en la que vive Naruto?",
@@ -575,7 +530,6 @@ export const SERIES: Question[] = [
   {
     id: "naruto-kurama",
     franchise: "Naruto",
-    emoji: "🍥",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué criatura está sellada dentro de Naruto?",
@@ -594,7 +548,6 @@ export const SERIES: Question[] = [
   {
     id: "onepiece-luffy",
     franchise: "One Piece",
-    emoji: "🏴‍☠️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el capitán de la banda de los Sombrero de Paja?",
@@ -604,7 +557,6 @@ export const SERIES: Question[] = [
   {
     id: "onepiece-zoro",
     franchise: "One Piece",
-    emoji: "🏴‍☠️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el espadachín que pelea con tres katanas a la vez?",
@@ -617,7 +569,6 @@ export const SERIES: Question[] = [
   {
     id: "doraemon-bolsillo",
     franchise: "Doraemon",
-    emoji: "🔔",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De dónde saca Doraemon todos sus inventos del futuro?",
@@ -628,7 +579,6 @@ export const SERIES: Question[] = [
   {
     id: "doraemon-nobita",
     franchise: "Doraemon",
-    emoji: "🔔",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el niño al que acompaña Doraemon?",
@@ -641,7 +591,6 @@ export const SERIES: Question[] = [
   {
     id: "shinchan-nevado",
     franchise: "Shin Chan",
-    emoji: "✏️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el perro blanco de la familia Nohara?",
@@ -652,7 +601,6 @@ export const SERIES: Question[] = [
   {
     id: "shinchan-himawari",
     franchise: "Shin Chan",
-    emoji: "✏️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama la hermana pequeña de Shin Chan?",
@@ -665,7 +613,6 @@ export const SERIES: Question[] = [
   {
     id: "conan-shinichi",
     franchise: "Detective Conan",
-    emoji: "🔍",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cuál es la verdadera identidad de Conan Edogawa?",
@@ -678,7 +625,6 @@ export const SERIES: Question[] = [
   {
     id: "sailormoon-luna",
     franchise: "Sailor Moon",
-    emoji: "🌙",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la gata negra que guía a la protagonista?",
@@ -691,7 +637,6 @@ export const SERIES: Question[] = [
   {
     id: "mortadelo-tia",
     franchise: "Mortadelo y Filemón",
-    emoji: "🕵️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la organización de espionaje para la que trabajan?",
@@ -704,7 +649,6 @@ export const SERIES: Question[] = [
   {
     id: "pocoyo-color",
     franchise: "Pocoyó",
-    emoji: "🦆",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color es la ropa de Pocoyó?",
@@ -717,7 +661,6 @@ export const SERIES: Question[] = [
   {
     id: "peppa-george",
     franchise: "Peppa Pig",
-    emoji: "🐷",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el hermano pequeño de Peppa?",
@@ -730,7 +673,6 @@ export const SERIES: Question[] = [
   {
     id: "davidgnomo-zorro",
     franchise: "David el Gnomo",
-    emoji: "🍄",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué animal usa David el Gnomo como montura para desplazarse?",
@@ -743,7 +685,6 @@ export const SERIES: Question[] = [
   {
     id: "tresmellizas-bruja",
     franchise: "Las Tres Mellizas",
-    emoji: "👧",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama la bruja que castiga a las mellizas metiéndolas en cuentos?",
@@ -761,7 +702,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-ghibli",
     franchise: "Studio Ghibli",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Studio Ghibli de la más antigua a la más reciente.",
@@ -777,7 +717,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-ciudades",
     franchise: "Lugares de ficción",
-    emoji: "🔗",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada lugar con la obra a la que pertenece.",
@@ -793,7 +732,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-mascotas-series",
     franchise: "Mascotas de series",
-    emoji: "🔗",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada animal con su dueño o compañero.",
@@ -808,7 +746,6 @@ export const SERIES: Question[] = [
   {
     id: "describir-doraemon",
     franchise: "Anime clásico",
-    emoji: "🔎",
     difficulty: "facil",
     format: "describir",
     prompt:
@@ -820,7 +757,6 @@ export const SERIES: Question[] = [
   {
     id: "describir-walle",
     franchise: "Robots de la animación",
-    emoji: "🔎",
     difficulty: "facil",
     format: "describir",
     prompt:
@@ -834,7 +770,6 @@ export const SERIES: Question[] = [
   {
     id: "heidi-clara",
     franchise: "Heidi",
-    emoji: "🏔️",
     difficulty: "facil",
     format: "describir",
     prompt: "Niña de ciudad que va en silla de ruedas y se hace amiga de Heidi en Fráncfort.",
@@ -845,7 +780,6 @@ export const SERIES: Question[] = [
   {
     id: "heidi-pedro",
     franchise: "Heidi",
-    emoji: "🏔️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A qué se dedica Pedro, el amigo de Heidi?",
@@ -858,7 +792,6 @@ export const SERIES: Question[] = [
   {
     id: "marco-madre",
     franchise: "Marco",
-    emoji: "🐒",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A quién busca Marco cruzando medio mundo?",
@@ -871,7 +804,6 @@ export const SERIES: Question[] = [
   {
     id: "abejamaya-willy",
     franchise: "La abeja Maya",
-    emoji: "🐝",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la abeja gordita y dormilona, mejor amigo de Maya?",
@@ -884,7 +816,6 @@ export const SERIES: Question[] = [
   {
     id: "willyfog-dias",
     franchise: "Willy Fog",
-    emoji: "🎩",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En cuántos días apuesta Willy Fog que dará la vuelta al mundo?",
@@ -897,7 +828,6 @@ export const SERIES: Question[] = [
   {
     id: "dartacan-pom",
     franchise: "D'Artacan",
-    emoji: "⚔️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el ratón que acompaña a D'Artacan?",
@@ -910,7 +840,6 @@ export const SERIES: Question[] = [
   {
     id: "fruittis-personajes",
     franchise: "Los Fruittis",
-    emoji: "🍍",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman los tres protagonistas de Los Fruittis?",
@@ -928,7 +857,6 @@ export const SERIES: Question[] = [
   {
     id: "trotamusicos-cuento",
     franchise: "Los Trotamúsicos",
-    emoji: "🎺",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué cuento clásico se basa Los Trotamúsicos?",
@@ -946,7 +874,6 @@ export const SERIES: Question[] = [
   {
     id: "oliverbenji-portero",
     franchise: "Oliver y Benji",
-    emoji: "🎬",
     difficulty: "facil",
     format: "vf",
     prompt: "Benji es el delantero estrella del equipo y el que mete todos los goles.",
@@ -958,7 +885,6 @@ export const SERIES: Question[] = [
   {
     id: "pitufos-gato",
     franchise: "Los Pitufos",
-    emoji: "🐈",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el gato de Gargamel?",
@@ -971,7 +897,6 @@ export const SERIES: Question[] = [
   {
     id: "gadget-perro",
     franchise: "Inspector Gadget",
-    emoji: "🕵️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el perro que ayuda a Penny a resolver los casos?",
@@ -985,7 +910,6 @@ export const SERIES: Question[] = [
   {
     id: "rugrats-tommy",
     franchise: "Los Rugrats",
-    emoji: "🍼",
     difficulty: "facil",
     format: "describir",
     prompt: "Bebé calvo en pañales azules que lidera al grupo y siempre lleva un destornillador.",
@@ -999,7 +923,6 @@ export const SERIES: Question[] = [
   {
     id: "coraje-duenos",
     franchise: "Agallas, el perro cobarde",
-    emoji: "🐕",
     difficulty: "facil",
     format: "vf",
     prompt: "Agallas vive con un matrimonio de ancianos en una granja en medio de la nada.",
@@ -1012,7 +935,6 @@ export const SERIES: Question[] = [
   {
     id: "patrullacanina-marshall",
     franchise: "La Patrulla Canina",
-    emoji: "🚒",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué es Marshall, el dálmata torpón de la patrulla?",
@@ -1025,7 +947,6 @@ export const SERIES: Question[] = [
   {
     id: "bluey-raza",
     franchise: "Bluey",
-    emoji: "🐶",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué país es la serie Bluey, protagonizada por una familia de perros?",
@@ -1038,7 +959,6 @@ export const SERIES: Question[] = [
   {
     id: "peppa-charcos",
     franchise: "Peppa Pig",
-    emoji: "🐷",
     difficulty: "facil",
     format: "vf",
     prompt: "Lo que más le gusta a Peppa es saltar en la cama elástica.",
@@ -1050,7 +970,6 @@ export const SERIES: Question[] = [
   {
     id: "pocoyo-pato",
     franchise: "Pocoyó",
-    emoji: "🦆",
     difficulty: "facil",
     format: "vf",
     prompt: "Pato es el amigo amarillo de Pocoyó, y Elly, la elefanta rosa.",
@@ -1063,7 +982,6 @@ export const SERIES: Question[] = [
   {
     id: "masha-oso",
     franchise: "Masha y el Oso",
-    emoji: "🐻",
     difficulty: "facil",
     format: "vf",
     prompt: "En la serie, la niña vive sus travesuras junto a un oso que fue artista de circo.",
@@ -1082,7 +1000,6 @@ export const SERIES: Question[] = [
   {
     id: "gravityfalls-gemelos",
     franchise: "Gravity Falls",
-    emoji: "🌲",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llaman los dos hermanos gemelos que pasan el verano en el pueblo?",
@@ -1095,7 +1012,6 @@ export const SERIES: Question[] = [
   {
     id: "stevenuniverse-gemas",
     franchise: "Steven Universe",
-    emoji: "💎",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el grupo de gemas que protege la Tierra junto a Steven?",
@@ -1113,7 +1029,6 @@ export const SERIES: Question[] = [
   {
     id: "escandalosos-osos",
     franchise: "Somos osos",
-    emoji: "🎬",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué tres osos protagonizan Somos osos?",
@@ -1132,7 +1047,6 @@ export const SERIES: Question[] = [
   {
     id: "padrinos-nombres",
     franchise: "Los Padrinos Mágicos",
-    emoji: "🪄",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llaman los dos padrinos mágicos de Timmy?",
@@ -1145,7 +1059,6 @@ export const SERIES: Question[] = [
   {
     id: "ben10-reloj",
     franchise: "Ben 10",
-    emoji: "⌚",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el reloj que permite a Ben convertirse en alienígenas?",
@@ -1158,7 +1071,6 @@ export const SERIES: Question[] = [
   {
     id: "kimpossible-rufus",
     franchise: "Kim Possible",
-    emoji: "🕵️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Rufus, la mascota de Ron?",
@@ -1171,7 +1083,6 @@ export const SERIES: Question[] = [
   {
     id: "chihiro-padres",
     franchise: "El viaje de Chihiro",
-    emoji: "🐷",
     difficulty: "facil",
     format: "vf",
     prompt: "Los padres de Chihiro se convierten en cerdos por comerse una comida que no era suya.",
@@ -1181,7 +1092,6 @@ export const SERIES: Question[] = [
   {
     id: "castilloambulante-calcifer",
     franchise: "El castillo ambulante",
-    emoji: "🔥",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el demonio de fuego que mueve el castillo?",
@@ -1192,7 +1102,6 @@ export const SERIES: Question[] = [
   {
     id: "mononoke-san",
     franchise: "La princesa Mononoke",
-    emoji: "🎬",
     difficulty: "facil",
     format: "vf",
     prompt: "San, la princesa Mononoke, ha sido criada por una manada de osos.",
@@ -1202,7 +1111,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-equipo",
     franchise: "Pokémon",
-    emoji: "⚡",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la organización de Jessie, James y Meowth?",
@@ -1213,7 +1121,6 @@ export const SERIES: Question[] = [
   {
     id: "onepiece-sombrero",
     franchise: "One Piece",
-    emoji: "🏴‍☠️",
     difficulty: "facil",
     format: "vf",
     prompt: "A la tripulación de Luffy se la conoce como los Piratas del Sombrero de Paja.",
@@ -1223,7 +1130,6 @@ export const SERIES: Question[] = [
   {
     id: "conan-encogido",
     franchise: "Detective Conan",
-    emoji: "🔍",
     difficulty: "facil",
     format: "vf",
     prompt: "Conan siempre ha sido un niño: nunca llegó a tener otro cuerpo.",
@@ -1233,7 +1139,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-nube",
     franchise: "Dragon Ball",
-    emoji: "☁️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la nube amarilla en la que vuela Goku?",
@@ -1246,7 +1151,6 @@ export const SERIES: Question[] = [
   {
     id: "simpsons-vecino",
     franchise: "Los Simpson",
-    emoji: "🍩",
     difficulty: "facil",
     format: "describir",
     prompt: "Vecino de bigote y jersey verde, muy religioso, que saluda con un «hola, holita».",
@@ -1257,7 +1161,6 @@ export const SERIES: Question[] = [
   {
     id: "looney-correcaminos",
     franchise: "Looney Tunes",
-    emoji: "🐦",
     difficulty: "facil",
     format: "vf",
     prompt: "El Coyote nunca llega a atrapar al Correcaminos.",
@@ -1267,7 +1170,6 @@ export const SERIES: Question[] = [
   {
     id: "bobesponja-mascota",
     franchise: "Bob Esponja",
-    emoji: "🧽",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Gary, la mascota de Bob Esponja?",
@@ -1281,7 +1183,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-clasicos-tv",
     franchise: "Anime clásico",
-    emoji: "📺",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas series de la más antigua a la más reciente.",
@@ -1291,7 +1192,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-series-mascotas",
     franchise: "Mascotas de series",
-    emoji: "🐾",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada mascota con su serie.",
@@ -1306,7 +1206,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-anime-protagonistas",
     franchise: "Anime clásico",
-    emoji: "📺",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada protagonista con su serie.",
@@ -1321,7 +1220,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-ghibli-criaturas",
     franchise: "Studio Ghibli",
-    emoji: "🌳",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada criatura o personaje con su película de Ghibli.",
@@ -1337,7 +1235,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-clasicos-espanoles",
     franchise: "Series españolas",
-    emoji: "🇪🇸",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada personaje con su serie.",
@@ -1353,7 +1250,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-cartoon-network",
     franchise: "Series de dibujos",
-    emoji: "📺",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada personaje con su serie.",
@@ -1369,7 +1265,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-infantil-preescolar",
     franchise: "Series preescolares",
-    emoji: "🧸",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada personaje con su serie.",
@@ -1384,7 +1279,6 @@ export const SERIES: Question[] = [
   {
     id: "completar-bobesponja-lema",
     franchise: "Bob Esponja",
-    emoji: "🧽",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa dónde vive Bob Esponja: «una piña debajo del ___».",
@@ -1394,7 +1288,6 @@ export const SERIES: Question[] = [
   {
     id: "completar-simpsons-homer",
     franchise: "Los Simpson",
-    emoji: "🍩",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa la exclamación de Homer Simpson: «¡___!», cuando algo le sale mal.",
@@ -1405,7 +1298,6 @@ export const SERIES: Question[] = [
   {
     id: "completar-pokemon-lema",
     franchise: "Pokémon",
-    emoji: "⚡",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el lema de la serie: «¡Hazte con ___!».",
@@ -1415,7 +1307,6 @@ export const SERIES: Question[] = [
   {
     id: "completar-pitufos-cancion",
     franchise: "Los Pitufos",
-    emoji: "🔵",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el nombre de la única chica del pueblo pitufo: «Pituf___».",
@@ -1425,7 +1316,6 @@ export const SERIES: Question[] = [
   {
     id: "completar-tortugas-comida",
     franchise: "Las Tortugas Ninja",
-    emoji: "🐢",
     difficulty: "facil",
     format: "completar",
     prompt:
@@ -1436,7 +1326,6 @@ export const SERIES: Question[] = [
   {
     id: "completar-heidi-cancion",
     franchise: "Heidi",
-    emoji: "🏔️",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa la sintonía de la serie: «Abuelito, dime ___».",
@@ -1446,7 +1335,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-disney-pixar-mezcla",
     franchise: "Lugares de ficción",
-    emoji: "🗺️",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas películas de la más antigua a la más reciente.",
@@ -1456,7 +1344,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-anime-90",
     franchise: "Anime clásico",
-    emoji: "📺",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas series de anime de la más antigua a la más reciente.",
@@ -1466,7 +1353,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-series-espanolas",
     franchise: "Series españolas",
-    emoji: "🇪🇸",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas series españolas de la más antigua a la más reciente.",
@@ -1479,7 +1365,6 @@ export const SERIES: Question[] = [
   {
     id: "describir-pikachu",
     franchise: "Pokémon",
-    emoji: "⚡",
     difficulty: "facil",
     format: "describir",
     prompt: "Ratón eléctrico amarillo, con las mejillas rojas y la cola en forma de rayo.",
@@ -1490,7 +1375,6 @@ export const SERIES: Question[] = [
   {
     id: "describir-shinchan",
     franchise: "Shin Chan",
-    emoji: "🍑",
     difficulty: "facil",
     format: "describir",
     prompt: "Niño de cinco años, dibujado con cuatro trazos, que enseña el culete y saca de quicio a su madre.",
@@ -1501,7 +1385,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-pixar-decadas",
     franchise: "Pixar clásico",
-    emoji: "🎞️",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas películas de Pixar de la más antigua a la más reciente.",
@@ -1511,7 +1394,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-pixar-2000",
     franchise: "Pixar clásico",
-    emoji: "🎞️",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas películas de Pixar de la más antigua a la más reciente.",
@@ -1521,7 +1403,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-ghibli-brujas",
     franchise: "Studio Ghibli",
-    emoji: "🎞️",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas películas de Ghibli de la más antigua a la más reciente.",
@@ -1537,7 +1418,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-estudios-mezcla",
     franchise: "Estudios de animación",
-    emoji: "🎞️",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas películas de la más antigua a la más reciente.",
@@ -1547,7 +1427,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-animales-cine",
     franchise: "Estudios de animación",
-    emoji: "🐾",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas películas de animales de la más antigua a la más reciente.",
@@ -1557,7 +1436,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-anime-decadas",
     franchise: "Anime clásico",
-    emoji: "📺",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas series de anime de la más antigua a la más reciente.",
@@ -1567,7 +1445,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-dibujos-tv",
     franchise: "Series de dibujos",
-    emoji: "📺",
     difficulty: "facil",
     format: "orden",
     prompt: "Ordena estas series de la más antigua a la más reciente.",
@@ -1578,7 +1455,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-villanos-series",
     franchise: "Series de dibujos",
-    emoji: "😈",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada villano con su serie.",
@@ -1594,7 +1470,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-lugares-series",
     franchise: "Lugares de ficción",
-    emoji: "🗺️",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada lugar con la serie a la que pertenece.",
@@ -1610,7 +1485,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-objetos-series",
     franchise: "Series de dibujos",
-    emoji: "🎒",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada objeto con la historia en la que aparece.",
@@ -1626,7 +1500,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-comidas",
     franchise: "Lugares de ficción",
-    emoji: "🗺️",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada comida con la historia en la que es famosa.",
@@ -1644,7 +1517,6 @@ export const SERIES: Question[] = [
   {
     id: "reyleon-scar",
     franchise: "El Rey León",
-    emoji: "🦁",
     difficulty: "media",
     format: "describir",
     prompt: "León de melena negra y cicatriz en el ojo que envidia el trono de su hermano.",
@@ -1655,7 +1527,6 @@ export const SERIES: Question[] = [
   {
     id: "bella-potts",
     franchise: "La Bella y la Bestia",
-    emoji: "🌹",
     difficulty: "media",
     format: "describir",
     prompt: "Tetera bonachona del castillo encantado, que hace de madre de todos y canta la canción principal.",
@@ -1666,7 +1537,6 @@ export const SERIES: Question[] = [
   {
     id: "enredados-flynn",
     franchise: "Enredados",
-    emoji: "💇",
     difficulty: "media",
     format: "describir",
     prompt: "Ladrón chulesco que se cuela en la torre huyendo de la guardia y acaba guiando a Rapunzel.",
@@ -1677,7 +1547,6 @@ export const SERIES: Question[] = [
   {
     id: "peterpan-garfio",
     franchise: "Peter Pan",
-    emoji: "🧚",
     difficulty: "facil",
     format: "describir",
     prompt: "Capitán pirata de melena negra con un garfio en lugar de mano, aterrado por un cocodrilo.",
@@ -1688,7 +1557,6 @@ export const SERIES: Question[] = [
   {
     id: "selva-bagheera",
     franchise: "El libro de la selva",
-    emoji: "🐆",
     difficulty: "facil",
     format: "describir",
     prompt: "Pantera negra sensata y protectora que se empeña en llevar a Mowgli con los hombres.",
@@ -1699,7 +1567,6 @@ export const SERIES: Question[] = [
   {
     id: "frozen-sven",
     franchise: "Frozen",
-    emoji: "🦌",
     difficulty: "facil",
     format: "describir",
     prompt: "Reno leal al que su dueño pone voz para hacer que conteste por él.",
@@ -1710,7 +1577,6 @@ export const SERIES: Question[] = [
   {
     id: "bobesponja-cangrejo",
     franchise: "Bob Esponja",
-    emoji: "🦀",
     difficulty: "facil",
     format: "describir",
     prompt: "Cangrejo tacaño, dueño del restaurante, capaz de cualquier cosa por una moneda.",
@@ -1721,7 +1587,6 @@ export const SERIES: Question[] = [
   {
     id: "aladdin-abu",
     franchise: "Aladdín",
-    emoji: "🧞",
     difficulty: "facil",
     format: "describir",
     prompt: "Mono ladronzuelo con fez rojo y chalequito morado que acompaña a Aladdín.",
@@ -1732,7 +1597,6 @@ export const SERIES: Question[] = [
   {
     id: "monstruos-mike",
     franchise: "Monstruos S.A.",
-    emoji: "👁️",
     difficulty: "facil",
     format: "describir",
     prompt: "Monstruo verde, redondo y con un único ojo enorme, compañero inseparable de Sulley.",
@@ -1743,7 +1607,6 @@ export const SERIES: Question[] = [
   {
     id: "kfp-tailung",
     franchise: "Kung Fu Panda",
-    emoji: "🐼",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el leopardo de las nieves que escapa de prisión para vengarse?",
@@ -1754,7 +1617,6 @@ export const SERIES: Question[] = [
   {
     id: "pocahontas-colibri",
     franchise: "Pocahontas",
-    emoji: "🍃",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el colibrí gruñón que acompaña a Pocahontas?",
@@ -1766,7 +1628,6 @@ export const SERIES: Question[] = [
   {
     id: "tiana-louis",
     franchise: "Tiana y el sapo",
-    emoji: "🐊",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el cocodrilo que sueña con tocar la trompeta en una banda de jazz?",
@@ -1777,7 +1638,6 @@ export const SERIES: Question[] = [
   {
     id: "sailormoon-artemis",
     franchise: "Sailor Moon",
-    emoji: "🌙",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el gato blanco que acompaña a las guerreras, pareja de Luna?",
@@ -1788,7 +1648,6 @@ export const SERIES: Question[] = [
   {
     id: "zootropolis-nick",
     franchise: "Zootrópolis",
-    emoji: "🦊",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el zorro estafador que acaba ayudando a Judy?",
@@ -1799,7 +1658,6 @@ export const SERIES: Question[] = [
   {
     id: "grinch-cindy",
     franchise: "El Grinch",
-    emoji: "🎄",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la niña que se cruza con el Grinch y le hace replantearse todo?",
@@ -1810,7 +1668,6 @@ export const SERIES: Question[] = [
   {
     id: "tortugas-april",
     franchise: "Las Tortugas Ninja",
-    emoji: "🐢",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la reportera pelirroja amiga de las tortugas?",
@@ -1821,7 +1678,6 @@ export const SERIES: Question[] = [
   {
     id: "picapiedra-dinosaurio",
     franchise: "Los Picapiedra",
-    emoji: "🦕",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la mascota de la familia Picapiedra, que se comporta como un perro?",
@@ -1832,7 +1688,6 @@ export const SERIES: Question[] = [
   {
     id: "nicky-edad",
     franchise: "Nicky, la aprendiz de bruja",
-    emoji: "🧹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A qué edad tienen que irse de casa las brujas para formarse por su cuenta?",
@@ -1843,7 +1698,6 @@ export const SERIES: Question[] = [
   {
     id: "shinchan-madre",
     franchise: "Shin Chan",
-    emoji: "🍑",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la madre de Shin Chan, la que más le sufre?",
@@ -1854,7 +1708,6 @@ export const SERIES: Question[] = [
   {
     id: "mortadelo-secretaria",
     franchise: "Mortadelo y Filemón",
-    emoji: "🕶️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la secretaria de la T.I.A., enamorada de Mortadelo?",
@@ -1865,7 +1718,6 @@ export const SERIES: Question[] = [
   {
     id: "toystory-serpiente",
     franchise: "Toy Story",
-    emoji: "🤠",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa lo que dice Woody cuando le tiran del cordel: «¡Hay una serpiente en mi ___!».",
@@ -1875,7 +1727,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-ondavital",
     franchise: "Dragon Ball",
-    emoji: "💥",
     difficulty: "facil",
     format: "completar",
     prompt:
@@ -1889,7 +1740,6 @@ export const SERIES: Question[] = [
   {
     id: "mazinger-que-es",
     franchise: "Mazinger Z",
-    emoji: "🤖",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué es Mazinger Z?",
@@ -1900,7 +1750,6 @@ export const SERIES: Question[] = [
   {
     id: "mazinger-koji",
     franchise: "Mazinger Z",
-    emoji: "🕹️",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el joven que pilota a Mazinger Z?",
@@ -1911,7 +1760,6 @@ export const SERIES: Question[] = [
   {
     id: "mazinger-puños",
     franchise: "Mazinger Z",
-    emoji: "👊",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el ataque más famoso de Mazinger Z: «¡Puños ___!».",
@@ -1921,7 +1769,6 @@ export const SERIES: Question[] = [
   {
     id: "mazinger-generacion",
     franchise: "Mazinger Z",
-    emoji: "📺",
     difficulty: "facil",
     format: "vf",
     prompt: "Mazinger Z nunca llegó a emitirse en la televisión española.",
@@ -1933,7 +1780,6 @@ export const SERIES: Question[] = [
   {
     id: "zodiaco-armaduras",
     franchise: "Los Caballeros del Zodiaco",
-    emoji: "♈",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué visten los protagonistas para combatir?",
@@ -1944,7 +1790,6 @@ export const SERIES: Question[] = [
   {
     id: "zodiaco-signos",
     franchise: "Los Caballeros del Zodiaco",
-    emoji: "⭐",
     difficulty: "facil",
     format: "vf",
     prompt: "Las armaduras de los caballeros se corresponden con constelaciones y signos del zodiaco.",
@@ -1954,7 +1799,6 @@ export const SERIES: Question[] = [
   {
     id: "zodiaco-seiya",
     franchise: "Los Caballeros del Zodiaco",
-    emoji: "🐴",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el protagonista, el caballero de Pegaso?",
@@ -1965,7 +1809,6 @@ export const SERIES: Question[] = [
   {
     id: "zodiaco-diosa",
     franchise: "Los Caballeros del Zodiaco",
-    emoji: "🏛️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿A qué diosa protegen los caballeros?",
@@ -1978,7 +1821,6 @@ export const SERIES: Question[] = [
   {
     id: "digimon-que-son",
     franchise: "Digimon",
-    emoji: "🥚",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué son los digimon?",
@@ -1994,7 +1836,6 @@ export const SERIES: Question[] = [
   {
     id: "digimon-digievolucion",
     franchise: "Digimon",
-    emoji: "✨",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el proceso por el que un digimon se transforma en otro más fuerte?",
@@ -2005,7 +1846,6 @@ export const SERIES: Question[] = [
   {
     id: "digimon-niños",
     franchise: "Digimon",
-    emoji: "🏕️",
     difficulty: "media",
     format: "vf",
     prompt:
@@ -2016,7 +1856,6 @@ export const SERIES: Question[] = [
   {
     id: "digimon-agumon",
     franchise: "Digimon",
-    emoji: "🦖",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el digimon naranja con forma de dinosaurio del protagonista?",
@@ -2029,7 +1868,6 @@ export const SERIES: Question[] = [
   {
     id: "ranma-transformacion",
     franchise: "Ranma ½",
-    emoji: "💧",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué le pasa a Ranma cuando le cae agua fría encima?",
@@ -2045,7 +1883,6 @@ export const SERIES: Question[] = [
   {
     id: "ranma-caliente",
     franchise: "Ranma ½",
-    emoji: "♨️",
     difficulty: "media",
     format: "vf",
     prompt: "Con agua caliente, la transformación de Ranma se vuelve permanente.",
@@ -2055,7 +1892,6 @@ export const SERIES: Question[] = [
   {
     id: "ranma-padre",
     franchise: "Ranma ½",
-    emoji: "💧",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué se convierte el padre de Ranma con el agua fría?",
@@ -2068,7 +1904,6 @@ export const SERIES: Question[] = [
   {
     id: "eraseunavez-maestro",
     franchise: "Érase una vez el hombre",
-    emoji: "🧔",
     difficulty: "media",
     format: "describir",
     prompt: "Anciano de barba blanca que aparece en cada época de la serie para explicar la historia.",
@@ -2079,7 +1914,6 @@ export const SERIES: Question[] = [
   {
     id: "eraseunavez-tema",
     franchise: "Érase una vez el hombre",
-    emoji: "📚",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué trata Érase una vez el hombre?",
@@ -2095,7 +1929,6 @@ export const SERIES: Question[] = [
   {
     id: "eraseunavez-cuerpo",
     franchise: "Érase una vez el hombre",
-    emoji: "🫀",
     difficulty: "facil",
     format: "vf",
     prompt: "Érase una vez el hombre nunca tuvo una versión dedicada al cuerpo humano.",
@@ -2107,7 +1940,6 @@ export const SERIES: Question[] = [
   {
     id: "chicho-deporte",
     franchise: "Chicho Terremoto",
-    emoji: "📏",
     difficulty: "media",
     format: "corta",
     prompt: "¿A qué deporte juega Chicho Terremoto?",
@@ -2118,7 +1950,6 @@ export const SERIES: Question[] = [
   {
     id: "chicho-altura",
     franchise: "Chicho Terremoto",
-    emoji: "📏",
     difficulty: "media",
     format: "vf",
     prompt: "Chicho destaca en la cancha porque es el más alto del equipo.",
@@ -2128,7 +1959,6 @@ export const SERIES: Question[] = [
   {
     id: "musculman-lucha",
     franchise: "Musculman",
-    emoji: "🤼",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué se dedican los personajes de Musculman?",
@@ -2139,7 +1969,6 @@ export const SERIES: Question[] = [
   {
     id: "musculman-fideos",
     franchise: "Musculman",
-    emoji: "🤼",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿De qué planeta viene Musculman?",
@@ -2150,7 +1979,6 @@ export const SERIES: Question[] = [
   {
     id: "candycandy-huerfana",
     franchise: "Candy Candy",
-    emoji: "🎀",
     difficulty: "media",
     format: "vf",
     prompt: "Candy es la hija de una familia rica que se escapa de casa.",
@@ -2160,7 +1988,6 @@ export const SERIES: Question[] = [
   {
     id: "candycandy-tono",
     franchise: "Candy Candy",
-    emoji: "😢",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Por qué se recuerda sobre todo a Candy Candy?",
@@ -2176,7 +2003,6 @@ export const SERIES: Question[] = [
   {
     id: "banner-animal",
     franchise: "Banner y Flappy",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué animales son Banner y Flappy?",
@@ -2189,7 +2015,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-bulma",
     franchise: "Dragon Ball",
-    emoji: "💙",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la chica del pelo azul que acompaña a Goku al principio?",
@@ -2200,7 +2025,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-cola",
     franchise: "Dragon Ball",
-    emoji: "🐉",
     difficulty: "facil",
     format: "vf",
     prompt: "De pequeño, Goku tenía alas.",
@@ -2210,7 +2034,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-krilin",
     franchise: "Dragon Ball",
-    emoji: "🥋",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el amigo bajito y calvo de Goku, sin nariz?",
@@ -2221,7 +2044,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-esferas",
     franchise: "Dragon Ball",
-    emoji: "🐉",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué pasa al reunir las siete bolas de dragón?",
@@ -2237,7 +2059,6 @@ export const SERIES: Question[] = [
   {
     id: "dragonball-supersaiyan",
     franchise: "Dragon Ball",
-    emoji: "🐉",
     difficulty: "media",
     format: "corta",
     prompt: "¿De qué color se le pone el pelo a Goku al transformarse en Super Saiyan?",
@@ -2248,7 +2069,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-ash-sueño",
     franchise: "Pokémon",
-    emoji: "🏆",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué quiere llegar a ser Ash?",
@@ -2259,7 +2079,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-pokeball",
     franchise: "Pokémon",
-    emoji: "⚪",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la bola con la que se atrapan los pokémon?",
@@ -2270,7 +2089,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-pikachu-tipo",
     franchise: "Pokémon",
-    emoji: "⚡",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué tipo es Pikachu?",
@@ -2281,7 +2099,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-meowth",
     franchise: "Pokémon",
-    emoji: "🐱",
     difficulty: "media",
     format: "vf",
     prompt: "El Meowth del Equipo Rocket es de los pocos pokémon que hablan como las personas.",
@@ -2291,7 +2108,6 @@ export const SERIES: Question[] = [
   {
     id: "pokemon-numero-inicial",
     franchise: "Pokémon",
-    emoji: "🔥",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cuáles son los tres pokémon iniciales de la primera generación?",
@@ -2307,7 +2123,6 @@ export const SERIES: Question[] = [
   {
     id: "doraemon-puerta",
     franchise: "Doraemon",
-    emoji: "🔔",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el invento de Doraemon que lleva a cualquier sitio al cruzarlo?",
@@ -2318,7 +2133,6 @@ export const SERIES: Question[] = [
   {
     id: "doraemon-miedo",
     franchise: "Doraemon",
-    emoji: "🐭",
     difficulty: "media",
     format: "vf",
     prompt: "A Doraemon, siendo un gato robot, le encanta cazar ratones.",
@@ -2328,7 +2142,6 @@ export const SERIES: Question[] = [
   {
     id: "doraemon-gigante",
     franchise: "Doraemon",
-    emoji: "😤",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el abusón grandullón que atormenta a Nobita?",
@@ -2339,7 +2152,6 @@ export const SERIES: Question[] = [
   {
     id: "shinchan-hermana-perro",
     franchise: "Shin Chan",
-    emoji: "🐶",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el padre de Shin Chan?",
@@ -2350,7 +2162,6 @@ export const SERIES: Question[] = [
   {
     id: "shinchan-baile",
     franchise: "Shin Chan",
-    emoji: "🍑",
     difficulty: "facil",
     format: "vf",
     prompt: "Shin Chan es famoso por enseñar el culete y hacer el baile del elefante.",
@@ -2360,7 +2171,6 @@ export const SERIES: Question[] = [
   {
     id: "shinchan-edad",
     franchise: "Shin Chan",
-    emoji: "🎂",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cuántos años tiene Shin Chan?",
@@ -2371,7 +2181,6 @@ export const SERIES: Question[] = [
   {
     id: "naruto-sueño",
     franchise: "Naruto",
-    emoji: "🍥",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué quiere llegar a ser Naruto?",
@@ -2382,7 +2191,6 @@ export const SERIES: Question[] = [
   {
     id: "naruto-comida",
     franchise: "Naruto",
-    emoji: "🍥",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cuál es la comida favorita de Naruto?",
@@ -2393,7 +2201,6 @@ export const SERIES: Question[] = [
   {
     id: "onepiece-tesoro",
     franchise: "One Piece",
-    emoji: "💰",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el tesoro que busca Luffy y que da nombre a la serie?",
@@ -2404,7 +2211,6 @@ export const SERIES: Question[] = [
   {
     id: "onepiece-goma",
     franchise: "One Piece",
-    emoji: "🫳",
     difficulty: "facil",
     format: "vf",
     prompt: "Luffy tiene el cuerpo de acero por haber comido una fruta del diablo.",
@@ -2414,7 +2220,6 @@ export const SERIES: Question[] = [
   {
     id: "sailormoon-transformacion",
     franchise: "Sailor Moon",
-    emoji: "🌙",
     difficulty: "facil",
     format: "vf",
     prompt: "Las protagonistas son chicas normales que se transforman en guerreras.",
@@ -2424,7 +2229,6 @@ export const SERIES: Question[] = [
   {
     id: "sailormoon-planetas",
     franchise: "Sailor Moon",
-    emoji: "🪐",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Con qué se corresponden los nombres de las guerreras?",
@@ -2435,7 +2239,6 @@ export const SERIES: Question[] = [
   {
     id: "conan-gafas",
     franchise: "Detective Conan",
-    emoji: "👓",
     difficulty: "facil",
     format: "vf",
     prompt: "Conan lleva unas gafas que en realidad son un aparato con funciones ocultas.",
@@ -2445,7 +2248,6 @@ export const SERIES: Question[] = [
   {
     id: "conan-capitulos",
     franchise: "Detective Conan",
-    emoji: "📺",
     difficulty: "media",
     format: "vf",
     prompt: "Detective Conan terminó con menos de cien episodios.",
@@ -2455,7 +2257,6 @@ export const SERIES: Question[] = [
   {
     id: "heidi-cabra",
     franchise: "Heidi",
-    emoji: "🐐",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la cabrita blanca preferida de Heidi?",
@@ -2466,7 +2267,6 @@ export const SERIES: Question[] = [
   {
     id: "heidi-ciudad",
     franchise: "Heidi",
-    emoji: "🏙️",
     difficulty: "media",
     format: "vf",
     prompt: "Heidi se adapta encantada a la vida en la ciudad y no echa de menos la montaña.",
@@ -2476,7 +2276,6 @@ export const SERIES: Question[] = [
   {
     id: "marco-pais",
     franchise: "Marco",
-    emoji: "🚢",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué continente viaja Marco buscando a su madre?",
@@ -2487,7 +2286,6 @@ export const SERIES: Question[] = [
   {
     id: "abejamaya-donde",
     franchise: "La abeja Maya",
-    emoji: "🌻",
     difficulty: "facil",
     format: "vf",
     prompt: "Maya adora la vida ordenada de la colmena y nunca se plantea marcharse.",
@@ -2497,7 +2295,6 @@ export const SERIES: Question[] = [
   {
     id: "oliverbenji-campo",
     franchise: "Oliver y Benji",
-    emoji: "⚽",
     difficulty: "facil",
     format: "vf",
     prompt: "En Oliver y Benji, cada partido se resuelve en un solo episodio.",
@@ -2509,7 +2306,6 @@ export const SERIES: Question[] = [
   {
     id: "orden-anime-espana",
     franchise: "Anime clásico",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de anime de la más antigua a la más reciente.",
@@ -2520,7 +2316,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-anime-companeros",
     franchise: "Anime clásico",
-    emoji: "🐾",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada protagonista con su compañero.",
@@ -2536,7 +2331,6 @@ export const SERIES: Question[] = [
   {
     id: "relacionar-anime-frases",
     franchise: "Anime clásico",
-    emoji: "💬",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada ataque o lema con su serie.",
@@ -2548,5 +2342,303 @@ export const SERIES: Question[] = [
     ],
     official:
       "Onda vital–Dragon Ball, Puños fuera–Mazinger Z, Hazte con todos–Pokémon y Abuelito dime tú–Heidi",
+  },
+  // --- Pokémon: ampliación ---
+  // Se amplía a propósito por encima de la media del banco: es una de las
+  // franquicias que se ha pedido que salgan a menudo. Casi todo en media y
+  // difícil, que es lo que se ha pedido también.
+  {
+    id: "pokemon-oak",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el profesor que entrega a Ash su primer pokémon?",
+    hint: "(Solo el apellido.)",
+    accepted: [["Oak", "profesor Oak", "Samuel Oak"]],
+    official: "El profesor Oak",
+  },
+  {
+    id: "pokemon-misty",
+    franchise: "Pokémon",
+    difficulty: "facil",
+    format: "corta",
+    prompt: "¿Cómo se llama la líder de gimnasio pelirroja que viaja con Ash desde el principio?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Misty"]],
+    official: "Misty",
+  },
+  {
+    id: "pokemon-brock",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el criador pokémon que cocina para el grupo y se enamora de todas?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Brock"]],
+    official: "Brock",
+  },
+  {
+    id: "pokemon-gary",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el rival de Ash, nieto del profesor Oak?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Gary", "Gary Oak"]],
+    official: "Gary Oak",
+  },
+  {
+    id: "pokemon-togepi",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el pokémon que nace de un huevo y al que cuida Misty?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Togepi"]],
+    official: "Togepi",
+  },
+  {
+    id: "pokemon-pokedex",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el aparato que da los datos de cada pokémon al apuntarle con él?",
+    accepted: [["Pokédex", "la Pokédex"]],
+    official: "La Pokédex",
+  },
+  {
+    id: "pokemon-psyduck",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Qué pokémon de Misty sale de la pokéball cuando le da la gana y siempre con dolor de cabeza?",
+    options: ["Psyduck", "Staryu", "Goldeen", "Horsea"],
+    correct: 0,
+    official: "Psyduck",
+  },
+  {
+    id: "pokemon-medalla",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Qué se lleva un entrenador al ganar a un líder de gimnasio?",
+    options: ["Una medalla", "Una pokéball dorada", "Una piedra evolutiva", "Un pokémon nuevo"],
+    correct: 0,
+    official: "Una medalla",
+  },
+  {
+    id: "pokemon-ocho-medallas",
+    franchise: "Pokémon",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cuántas medallas hay que reunir para poder entrar en la Liga Añil?",
+    options: ["8", "6", "10", "12"],
+    correct: 0,
+    official: "8",
+  },
+  {
+    id: "pokemon-plateada",
+    franchise: "Pokémon",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿En qué ciudad está el gimnasio de Brock, el primero que visita Ash?",
+    options: ["Ciudad Plateada", "Ciudad Celeste", "Ciudad Carmín", "Ciudad Azulona"],
+    correct: 0,
+    official: "Ciudad Plateada",
+  },
+  {
+    id: "pokemon-mewtwo",
+    franchise: "Pokémon",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Qué pokémon ocupa el número 150 de la Pokédex original, creado en un laboratorio?",
+    options: ["Mewtwo", "Mew", "Dragonite", "Zapdos"],
+    correct: 0,
+    official: "Mewtwo",
+  },
+  {
+    id: "pokemon-articuno",
+    franchise: "Pokémon",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "De los tres pájaros legendarios de la primera generación, ¿cuál es el de tipo hielo?",
+    options: ["Articuno", "Zapdos", "Moltres", "Lugia"],
+    correct: 0,
+    official: "Articuno",
+  },
+  {
+    id: "pokemon-151",
+    franchise: "Pokémon",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cuántos pokémon había en la primera generación?",
+    options: ["151", "150", "100", "251"],
+    correct: 0,
+    official: "151",
+  },
+  {
+    id: "pokemon-jolteon",
+    franchise: "Pokémon",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿En qué evoluciona Eevee al usar con él la piedra trueno?",
+    options: ["Jolteon", "Flareon", "Vaporeon", "Umbreon"],
+    correct: 0,
+    official: "Jolteon",
+  },
+  {
+    id: "pokemon-snorlax",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "describir",
+    prompt: "Pokémon enorme y tragón que se queda dormido cortando la carretera y solo se despierta con una flauta.",
+    hint: "(Solo el nombre.)",
+    accepted: [["Snorlax"]],
+    official: "Snorlax",
+  },
+  {
+    id: "pokemon-lema-rocket",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "completar",
+    prompt: "Completa el principio del lema del Equipo Rocket: «Prepárense para los ___».",
+    accepted: [["problemas"]],
+    official: "Prepárense para los problemas",
+  },
+  {
+    id: "pokemon-orden-charmander",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "orden",
+    prompt: "Ordena la línea evolutiva de Charmander de la primera forma a la última.",
+    items: ["Charmander", "Charmeleon", "Charizard"],
+    official: "Charmander, Charmeleon y Charizard",
+  },
+  {
+    id: "pokemon-relacionar-gimnasios",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "relacionar",
+    prompt: "Relaciona cada líder de gimnasio de Kanto con el tipo de sus pokémon.",
+    pairs: [
+      { left: "Brock", right: "Roca" },
+      { left: "Misty", right: "Agua" },
+      { left: "Lt. Surge", right: "Eléctrico" },
+      { left: "Sabrina", right: "Psíquico" },
+    ],
+    official: "Brock–Roca, Misty–Agua, Lt. Surge–Eléctrico y Sabrina–Psíquico",
+  },
+  {
+    id: "pokemon-vf-meowth",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Meowth acaba evolucionando a Persian a lo largo de la serie.",
+    correct: false,
+    official: "Falso",
+    note: "Se niega a evolucionar: aprendió a hablar en vez de hacerse más fuerte.",
+  },
+  {
+    id: "pokemon-vf-liga",
+    franchise: "Pokémon",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Ash gana la Liga Añil la primera vez que se presenta.",
+    correct: false,
+    official: "Falso",
+    note: "Se queda en los octavos de final; tardó muchas temporadas en ganar una liga.",
+  },
+  // --- Mermaid Melody Pichi Pichi Pitch ---
+  // Van pocas, como las de Gormiti, y sobre lo más asentado de la serie.
+  {
+    id: "mermaid-lucia",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama la sirena rosa que protagoniza la serie?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Lucia", "Lucía", "Lucia Nanami"]],
+    official: "Lucia",
+  },
+  {
+    id: "mermaid-cantar",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Cómo se enfrentan las princesas sirenas a sus enemigos?",
+    options: ["Cantando", "Con espadas de coral", "Con hechizos de agua", "Llamando a las ballenas"],
+    correct: 0,
+    official: "Cantando",
+  },
+  {
+    id: "mermaid-perla",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Qué guarda cada princesa sirena y necesita para transformarse?",
+    options: ["Una perla", "Una caracola", "Una corona", "Un colgante de estrella"],
+    correct: 0,
+    official: "Una perla",
+    note: "Cada una es del color de su princesa, y ese color la identifica en toda la serie.",
+  },
+  {
+    id: "mermaid-siete",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cuántas princesas sirenas hay en total, una por cada mar del mundo?",
+    options: ["7", "5", "6", "8"],
+    correct: 0,
+    official: "7",
+  },
+  {
+    id: "mermaid-espuma",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Qué le pasa a una sirena si le confiesa a un humano que lo es?",
+    options: [
+      "Se convierte en espuma",
+      "Pierde la voz para siempre",
+      "Pierde su perla",
+      "No puede volver al mar",
+    ],
+    correct: 0,
+    official: "Se convierte en espuma",
+    note: "De ahí que Lucia no pueda decirle a Kaito quién es, que es el nudo de toda la serie.",
+  },
+  {
+    id: "mermaid-kaito",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "media",
+    format: "describir",
+    prompt:
+      "Chico surfero al que la protagonista salvó de un naufragio siendo niños y al que busca años después, sin poder decirle quién es.",
+    hint: "(Solo el nombre.)",
+    accepted: [["Kaito"]],
+    official: "Kaito",
+  },
+  {
+    id: "mermaid-relacionar-colores",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "media",
+    format: "relacionar",
+    prompt: "Relaciona cada una de las tres primeras princesas sirenas con su color.",
+    pairs: [
+      { left: "Lucia", right: "Rosa" },
+      { left: "Hanon", right: "Azul" },
+      { left: "Rina", right: "Verde" },
+    ],
+    official: "Lucia–rosa, Hanon–azul y Rina–verde",
+  },
+  {
+    id: "mermaid-vf-kaito",
+    franchise: "Mermaid Melody Pichi Pichi Pitch",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Kaito sabe desde el primer capítulo que Lucia es la sirena que le salvó.",
+    correct: false,
+    official: "Falso",
+    note: "No la reconoce, y ella no se lo puede contar; en eso se sostiene la serie entera.",
   },
 ];

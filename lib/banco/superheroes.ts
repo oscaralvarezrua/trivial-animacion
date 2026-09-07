@@ -14,7 +14,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-lobezno",
     franchise: "Marvel",
-    emoji: "🐾",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama en España el mutante gruñón de las garras de adamantium?",
@@ -26,7 +25,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-xavier",
     franchise: "Marvel",
-    emoji: "🧠",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Quién dirige la escuela donde se forman los mutantes?",
@@ -37,7 +35,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-tormenta",
     franchise: "Marvel",
-    emoji: "⛈️",
     difficulty: "facil",
     format: "describir",
     prompt: "Mutante de pelo blanco y ojos en blanco que controla el tiempo atmosférico.",
@@ -48,7 +45,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-picara",
     franchise: "Marvel",
-    emoji: "🧤",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama en España la mutante que absorbe los poderes de quien toca?",
@@ -59,7 +55,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-rondador",
     franchise: "Marvel",
-    emoji: "💨",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el mutante azul con cola que se teletransporta?",
@@ -70,7 +65,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-magneto",
     franchise: "Marvel",
-    emoji: "🧲",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el villano que domina el magnetismo y lleva casco morado?",
@@ -81,7 +75,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-nombre",
     franchise: "Marvel",
-    emoji: "❌",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se conoció en España al grupo de mutantes de la escuela de Xavier?",
@@ -92,7 +85,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "patrullax-relacionar-nombres",
     franchise: "Marvel",
-    emoji: "🔤",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada personaje con el nombre que recibió en España.",
@@ -110,7 +102,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "xmen97-continuacion",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "facil",
     format: "vf",
     prompt: "X-Men '97 retoma la serie animada de los 90 conservando su estilo y su cabecera.",
@@ -120,7 +111,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "xmen97-plataforma",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿En qué plataforma se estrenó X-Men '97?",
@@ -131,7 +121,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "xmen97-original",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué década es la serie de la Patrulla X que X-Men '97 continúa?",
@@ -144,7 +133,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-capitan",
     franchise: "Marvel",
-    emoji: "🛡️",
     difficulty: "facil",
     format: "describir",
     prompt: "Héroe con un escudo redondo de estrella que pasó décadas congelado en el hielo.",
@@ -155,7 +143,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-ironman",
     franchise: "Marvel",
-    emoji: "🤖",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el héroe que es en realidad Tony Stark dentro de una armadura?",
@@ -166,7 +153,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-thor",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el arma de Thor?",
@@ -177,7 +163,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-hulk-color",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color se pone Bruce Banner cuando se enfada?",
@@ -188,7 +173,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-lamasa",
     franchise: "Marvel",
-    emoji: "💚",
     difficulty: "media",
     format: "vf",
     prompt: "En España, Hulk se conoció durante años con el nombre de «La Masa».",
@@ -200,7 +184,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-lacosa",
     franchise: "Marvel",
-    emoji: "🧡",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama en español el miembro de los 4 Fantásticos hecho de roca naranja?",
@@ -211,7 +194,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-estela",
     franchise: "Marvel",
-    emoji: "🏄",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama en España el héroe plateado que surca el espacio sobre una tabla?",
@@ -224,7 +206,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "whatif-premisa",
     franchise: "Marvel",
-    emoji: "❓",
     difficulty: "facil",
     format: "vf",
     prompt: "What If…? cuenta las mismas historias de siempre de Marvel, sin cambiar nada.",
@@ -234,7 +215,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "whatif-vigilante",
     franchise: "Marvel",
-    emoji: "👁️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Quién narra los episodios de What If…?",
@@ -245,7 +225,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "whatif-carter",
     franchise: "Marvel",
-    emoji: "❓",
     difficulty: "dificil",
     format: "multiple",
     prompt: "En What If…?, ¿en qué se convierte Peggy Carter al tomar ella el suero?",
@@ -258,7 +237,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvelzombies-premisa",
     franchise: "Marvel",
-    emoji: "🧟",
     difficulty: "facil",
     format: "vf",
     prompt: "En Marvel Zombies los propios héroes acaban convertidos en zombis.",
@@ -268,7 +246,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvelzombies-origen",
     franchise: "Marvel",
-    emoji: "🧟",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿De qué serie animada de Marvel salió la idea de Marvel Zombies?",
@@ -281,7 +258,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "moongirl-dinosaurio",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué acompaña a Moon Girl en su serie?",
@@ -292,7 +268,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "moongirl-quien",
     franchise: "Marvel",
-    emoji: "🌙",
     difficulty: "media",
     format: "describir",
     prompt: "Niña superdotada que fabrica inventos en su laboratorio secreto y va con un tiranosaurio.",
@@ -305,7 +280,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-groot",
     franchise: "Marvel",
-    emoji: "🌱",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué única frase dice Groot una y otra vez?",
@@ -316,7 +290,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-hitmonkey",
     franchise: "Marvel",
-    emoji: "🐒",
     difficulty: "media",
     format: "vf",
     prompt: "Hit-Monkey va de un mono que monta una agencia de detectives en Nueva York.",
@@ -326,7 +299,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "marvel-orden-series",
     franchise: "Marvel",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de Marvel de la más antigua a la más reciente.",
@@ -339,7 +311,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-lema",
     franchise: "Spider-Man",
-    emoji: "🕷️",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el lema de Spider-Man: «Un gran poder conlleva una gran ___».",
@@ -349,7 +320,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-tia",
     franchise: "Spider-Man",
-    emoji: "🕷️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la tía que cría a Peter Parker?",
@@ -360,7 +330,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-duende",
     franchise: "Spider-Man",
-    emoji: "🎃",
     difficulty: "facil",
     format: "describir",
     prompt: "Villano de máscara verde y traje morado que vuela en un planeador y lanza calabazas.",
@@ -371,7 +340,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-veneno",
     franchise: "Spider-Man",
-    emoji: "🖤",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama en español el simbionte negro que se pega a Peter Parker?",
@@ -382,7 +350,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-octopus",
     franchise: "Spider-Man",
-    emoji: "🐙",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué científico con cuatro brazos mecánicos es enemigo de Spider-Man?",
@@ -393,7 +360,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-ciudad",
     franchise: "Spider-Man",
-    emoji: "🏙️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En qué ciudad se columpia Spider-Man entre rascacielos?",
@@ -404,7 +370,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-multiverso",
     franchise: "Spider-Man",
-    emoji: "🕸️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se titula la película que continúa Spider-Man: Un nuevo universo?",
@@ -420,7 +385,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-cientos",
     franchise: "Spider-Man",
-    emoji: "🕸️",
     difficulty: "facil",
     format: "vf",
     prompt: "En Cruzando el Multiverso aparecen cientos de versiones distintas de Spider-Man.",
@@ -430,7 +394,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-peni",
     franchise: "Spider-Man",
-    emoji: "🤖",
     difficulty: "media",
     format: "corta",
     prompt:
@@ -442,7 +405,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderman-araña",
     franchise: "Spider-Man",
-    emoji: "🖤",
     difficulty: "media",
     format: "vf",
     prompt: "Peter Parker consigue sus poderes por la picadura de un escorpión radiactivo.",
@@ -454,7 +416,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-gotham",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la ciudad que protege Batman?",
@@ -465,7 +426,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-joker",
     franchise: "DC",
-    emoji: "🃏",
     difficulty: "facil",
     format: "describir",
     prompt: "Villano de piel blanca, pelo verde y sonrisa permanente, obsesionado con Batman.",
@@ -476,7 +436,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-brucewayne",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es la identidad secreta de Batman?",
@@ -487,7 +446,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-enigma",
     franchise: "DC",
-    emoji: "❓",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama en España el villano de las adivinanzas y los interrogantes?",
@@ -498,7 +456,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-relacionar-ciudades",
     franchise: "DC",
-    emoji: "🗺️",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada héroe con el lugar al que pertenece.",
@@ -514,7 +471,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-flash",
     franchise: "DC",
-    emoji: "⚡",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el héroe de rojo que corre a una velocidad imposible?",
@@ -525,7 +481,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-linterna",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama en español el héroe cuyo poder sale de un anillo?",
@@ -536,7 +491,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-batmanfuturo",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "media",
     format: "multiple",
     prompt: "En Batman del futuro, ¿cómo se llama el joven que hereda el traje?",
@@ -547,7 +501,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-batmanfuturo-bruce",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "media",
     format: "vf",
     prompt: "En Batman del futuro, Bruce Wayne sigue vivo pero ya anciano, guiando al nuevo Batman.",
@@ -557,7 +510,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-titanes-lider",
     franchise: "DC",
-    emoji: "🟡",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Quién lidera a los Jóvenes Titanes?",
@@ -568,7 +520,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-titanes-starfire",
     franchise: "DC",
-    emoji: "🟠",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la titán alienígena de pelo naranja que vuela?",
@@ -579,7 +530,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-titanes-go",
     franchise: "DC",
-    emoji: "🟡",
     difficulty: "facil",
     format: "vf",
     prompt: "Los Jóvenes Titanes en Acción es una versión más oscura y seria que la serie original.",
@@ -589,7 +539,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-superman-nombre",
     franchise: "DC",
-    emoji: "🔵",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cuál es el nombre kryptoniano de Superman?",
@@ -600,7 +549,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-kryptonita",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué mineral deja a Superman sin fuerzas?",
@@ -611,7 +559,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-harley",
     franchise: "DC",
-    emoji: "🔨",
     difficulty: "media",
     format: "describir",
     prompt: "Villana de coletas roja y azul, bate de béisbol y pasado como psiquiatra del Joker.",
@@ -622,7 +569,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-harley-origen",
     franchise: "DC",
-    emoji: "🔨",
     difficulty: "media",
     format: "vf",
     prompt: "Harley Quinn nació en la serie animada de Batman, no en los cómics.",
@@ -632,7 +578,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-superman-anime",
     franchise: "DC",
-    emoji: "🔵",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Con qué estilo de dibujo está hecha la serie Mis aventuras con Superman?",
@@ -643,7 +588,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-creature-commandos",
     franchise: "DC",
-    emoji: "👹",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Quién está detrás de Creature Commandos, la serie que abre el nuevo universo DC?",
@@ -654,7 +598,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-caped-crusader",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué plataforma se estrenó la serie Batman: El enmascarado?",
@@ -665,7 +608,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dc-orden-series",
     franchise: "DC",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de DC de la más antigua a la más reciente.",
@@ -683,7 +625,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-primera",
     franchise: "Marvel",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué año se estrenó Iron Man, la película que abrió el Universo Cinematográfico?",
@@ -694,7 +635,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-tony-frase",
     franchise: "Marvel",
-    emoji: "🔴",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa lo que dice Tony Stark al final de la primera película: «Yo soy ___».",
@@ -704,7 +644,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-thanos",
     franchise: "Marvel",
-    emoji: "🟣",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el titán morado que quiere borrar a la mitad del universo?",
@@ -715,7 +654,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-chasquido",
     franchise: "Marvel",
-    emoji: "🫰",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Con qué gesto hace desaparecer Thanos a la mitad de los seres vivos?",
@@ -726,7 +664,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-gemas",
     franchise: "Marvel",
-    emoji: "💎",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cuántas Gemas del Infinito hay?",
@@ -737,7 +674,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-guantelete",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "media",
     format: "corta",
     prompt: "¿En qué objeto engarza Thanos las Gemas del Infinito?",
@@ -748,7 +684,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-ultron",
     franchise: "Marvel",
-    emoji: "🤖",
     difficulty: "media",
     format: "multiple",
     prompt: "En La era de Ultrón, ¿quién crea sin querer al villano que da título a la película?",
@@ -759,7 +694,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-vision",
     franchise: "Marvel",
-    emoji: "💛",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el androide rojo con una gema en la frente que nace en La era de Ultrón?",
@@ -770,7 +704,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-gemelos",
     franchise: "Marvel",
-    emoji: "🔴",
     difficulty: "media",
     format: "vf",
     prompt: "En La era de Ultrón aparecen por primera vez los hermanos Bruja Escarlata y Mercurio.",
@@ -780,7 +713,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-endgame-tiempo",
     franchise: "Marvel",
-    emoji: "⏳",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el plan de los Vengadores en Endgame para deshacer el chasquido?",
@@ -796,7 +728,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-endgame-final",
     franchise: "Marvel",
-    emoji: "💔",
     difficulty: "facil",
     format: "vf",
     prompt: "En Endgame, Tony Stark sobrevive al chasquido final y se retira tranquilamente.",
@@ -806,7 +737,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-escudo",
     franchise: "Marvel",
-    emoji: "🛡️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué material está hecho el escudo del Capitán América?",
@@ -817,7 +747,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-escudo-final",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "media",
     format: "corta",
     prompt: "Al final de Endgame, ¿a quién le entrega el Capitán América su escudo?",
@@ -828,7 +757,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-bucky",
     franchise: "Marvel",
-    emoji: "🦾",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se conoce a Bucky Barnes tras ser capturado y manipulado?",
@@ -839,7 +767,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-loki",
     franchise: "Marvel",
-    emoji: "🐍",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el hermano adoptivo de Thor, dios del engaño?",
@@ -850,7 +777,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-hela",
     franchise: "Marvel",
-    emoji: "🔨",
     difficulty: "dificil",
     format: "multiple",
     prompt: "En Thor: Ragnarok, ¿quién destroza el martillo de Thor con una mano?",
@@ -861,7 +787,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-wakanda",
     franchise: "Marvel",
-    emoji: "🐆",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el país africano que gobierna Pantera Negra?",
@@ -872,7 +797,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-tchalla",
     franchise: "Marvel",
-    emoji: "🖤",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el rey que se esconde tras la máscara de Pantera Negra?",
@@ -883,7 +807,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-starlord",
     franchise: "Marvel",
-    emoji: "🎧",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se hace llamar Peter Quill, el líder de los Guardianes de la Galaxia?",
@@ -894,7 +817,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-rocket",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué animal es Rocket, el guardián que maneja las armas?",
@@ -905,7 +827,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-guardianes-musica",
     franchise: "Marvel",
-    emoji: "📼",
     difficulty: "media",
     format: "vf",
     prompt: "Star-Lord conserva un walkman con una cinta de canciones que le dejó su madre.",
@@ -915,7 +836,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-strange",
     franchise: "Marvel",
-    emoji: "🧙",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué se dedicaba Stephen Strange antes del accidente que le arruina las manos?",
@@ -926,7 +846,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-antman",
     franchise: "Marvel",
-    emoji: "🐜",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el poder del traje de Ant-Man?",
@@ -942,7 +861,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-viudanegra",
     franchise: "Marvel",
-    emoji: "🕸️",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cuál es el nombre real de la Viuda Negra?",
@@ -953,7 +871,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-capitanamarvel",
     franchise: "Marvel",
-    emoji: "⭐",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cuál es el nombre real de Capitana Marvel?",
@@ -964,7 +881,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-furia",
     franchise: "Marvel",
-    emoji: "🕶️",
     difficulty: "facil",
     format: "describir",
     prompt: "Hombre calvo, negro, con gabardina y un parche en el ojo, que recluta a los Vengadores.",
@@ -975,7 +891,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-shield",
     franchise: "Marvel",
-    emoji: "🦅",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la agencia secreta que dirige Nick Furia?",
@@ -986,7 +901,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-stanlee",
     franchise: "Marvel",
-    emoji: "👴",
     difficulty: "media",
     format: "vf",
     prompt: "Stan Lee, el creador de muchos de estos personajes, aparecía de refilón en casi todas las películas.",
@@ -996,7 +910,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-deadpool",
     franchise: "Marvel",
-    emoji: "❤️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué hace Deadpool constantemente y casi ningún otro héroe hace?",
@@ -1012,7 +925,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-hulk-actor",
     franchise: "Marvel",
-    emoji: "💚",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué actor ha interpretado a Hulk en la mayoría de las películas de los Vengadores?",
@@ -1023,7 +935,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-ironman-actor",
     franchise: "Marvel",
-    emoji: "🎭",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué actor interpreta a Tony Stark?",
@@ -1034,7 +945,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-capi-actor",
     franchise: "Marvel",
-    emoji: "🎭",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué actor interpreta al Capitán América?",
@@ -1045,7 +955,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-thor-actor",
     franchise: "Marvel",
-    emoji: "🎭",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué actor australiano interpreta a Thor?",
@@ -1056,7 +965,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-wandavision",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué tiene de raro la serie WandaVision?",
@@ -1072,7 +980,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-loki-serie",
     franchise: "Marvel",
-    emoji: "⏱️",
     difficulty: "media",
     format: "vf",
     prompt: "En su serie, Loki acaba trabajando para una agencia que vigila el tiempo.",
@@ -1082,7 +989,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-mssmarvel",
     franchise: "Marvel",
-    emoji: "💜",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿De qué origen es Kamala Khan, la protagonista de Ms. Marvel?",
@@ -1093,7 +999,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-orden-fases",
     franchise: "Marvel",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Marvel de la más antigua a la más reciente.",
@@ -1104,7 +1009,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-orden-guardianes",
     franchise: "Marvel",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Marvel de la más antigua a la más reciente.",
@@ -1115,7 +1019,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-relacionar-actores",
     franchise: "Marvel",
-    emoji: "🎭",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada actor con el personaje que interpreta.",
@@ -1131,7 +1034,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-relacionar-equipos",
     franchise: "Marvel",
-    emoji: "🤝",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada héroe con su compañero inseparable.",
@@ -1147,7 +1049,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-civilwar",
     franchise: "Marvel",
-    emoji: "⚔️",
     difficulty: "media",
     format: "multiple",
     prompt: "En Civil War, ¿qué divide a los Vengadores en dos bandos?",
@@ -1163,7 +1064,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-eternals",
     franchise: "Marvel",
-    emoji: "🌌",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué son los Eternos?",
@@ -1179,7 +1079,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-shangchi",
     franchise: "Marvel",
-    emoji: "💍",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cuál es el arma característica del padre de Shang-Chi?",
@@ -1190,7 +1089,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-hawkeye",
     franchise: "Marvel",
-    emoji: "📺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Con qué arma lucha Ojo de Halcón?",
@@ -1201,7 +1099,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-vengadores-frase",
     franchise: "Marvel",
-    emoji: "🗣️",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa la orden que da el Capitán América en Endgame: «Vengadores… ___».",
@@ -1211,7 +1108,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-mjolnir-capi",
     franchise: "Marvel",
-    emoji: "🔨",
     difficulty: "media",
     format: "vf",
     prompt: "En Endgame, el Capitán América consigue levantar el martillo de Thor.",
@@ -1221,7 +1117,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-hulk-transformacion",
     franchise: "Marvel",
-    emoji: "😡",
     difficulty: "facil",
     format: "vf",
     prompt: "Bruce Banner se transforma en Hulk cuando se queda tranquilo y relajado.",
@@ -1231,7 +1126,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-xmen-fox",
     franchise: "Marvel",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué actor interpretó a Lobezno durante casi veinte años en el cine?",
@@ -1242,7 +1136,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-groot-actor",
     franchise: "Marvel",
-    emoji: "🌱",
     difficulty: "media",
     format: "vf",
     prompt: "Groot y Rocket están hechos por ordenador, no son actores disfrazados.",
@@ -1252,7 +1145,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-thanos-hija",
     franchise: "Marvel",
-    emoji: "💚",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la guardiana de piel verde que es hija adoptiva de Thanos?",
@@ -1263,7 +1155,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-escenas-postcreditos",
     franchise: "Marvel",
-    emoji: "🍿",
     difficulty: "facil",
     format: "vf",
     prompt: "Las películas de Marvel tienen escenas escondidas después de los títulos de crédito.",
@@ -1273,7 +1164,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-torre",
     franchise: "Marvel",
-    emoji: "🏢",
     difficulty: "media",
     format: "vf",
     prompt: "La torre de los Vengadores en Nueva York era antes la Torre Wayne.",
@@ -1283,7 +1173,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-jarvis",
     franchise: "Marvel",
-    emoji: "🗣️",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la inteligencia artificial que asiste a Tony Stark?",
@@ -1294,7 +1183,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-drax",
     franchise: "Marvel",
-    emoji: "🗡️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué le pasa a Drax con las metáforas?",
@@ -1310,7 +1198,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "ucm-pelicula-oscar",
     franchise: "Marvel",
-    emoji: "🏆",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué película de Marvel fue la primera de superhéroes nominada al Óscar a mejor película?",
@@ -1323,7 +1210,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-nolan-actor",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué actor fue Batman en la trilogía de Christopher Nolan?",
@@ -1334,7 +1220,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-ledger",
     franchise: "DC",
-    emoji: "🃏",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué actor ganó un Óscar póstumo por interpretar al Joker en El caballero oscuro?",
@@ -1345,7 +1230,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-bane",
     franchise: "DC",
-    emoji: "😷",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el villano de la máscara que le parte la espalda a Batman en la tercera de Nolan?",
@@ -1356,7 +1240,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-joker-phoenix",
     franchise: "DC",
-    emoji: "🎭",
     difficulty: "media",
     format: "vf",
     prompt: "La película Joker de 2019 le dio un Óscar a Joaquin Phoenix.",
@@ -1366,7 +1249,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-pattinson",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué actor protagoniza The Batman de 2022?",
@@ -1377,7 +1259,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-keaton",
     franchise: "DC",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué director hizo el Batman de 1989 con Michael Keaton?",
@@ -1388,7 +1269,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-nicholson",
     franchise: "DC",
-    emoji: "🃏",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué actor hizo del Joker en el Batman de 1989?",
@@ -1399,7 +1279,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-superman-cavill",
     franchise: "DC",
-    emoji: "🔵",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué actor interpretó a Superman en El hombre de acero?",
@@ -1410,7 +1289,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-superman-reeve",
     franchise: "DC",
-    emoji: "🎞️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Quién fue el Superman de las películas de los años setenta y ochenta?",
@@ -1421,7 +1299,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-wonderwoman",
     franchise: "DC",
-    emoji: "⚔️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué actriz israelí interpreta a Wonder Woman en el cine?",
@@ -1432,7 +1309,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-lazo",
     franchise: "DC",
-    emoji: "🪢",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué hace el lazo de Wonder Woman?",
@@ -1448,7 +1324,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-aquaman",
     franchise: "DC",
-    emoji: "🔱",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué actor interpreta a Aquaman?",
@@ -1459,7 +1334,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-harley-robbie",
     franchise: "DC",
-    emoji: "🔨",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué actriz australiana interpreta a Harley Quinn en el cine?",
@@ -1470,7 +1344,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-escuadron",
     franchise: "DC",
-    emoji: "💣",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Quiénes forman el Escuadrón Suicida?",
@@ -1486,7 +1359,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-shazam",
     franchise: "DC",
-    emoji: "⚡",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué tiene de particular Shazam?",
@@ -1502,7 +1374,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-batman-superman",
     franchise: "DC",
-    emoji: "🥊",
     difficulty: "media",
     format: "vf",
     prompt: "Batman y Superman llegaron a enfrentarse en una película que llevaba su duelo en el título.",
@@ -1512,7 +1383,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-smallville",
     franchise: "DC",
-    emoji: "📺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué trata la serie Smallville?",
@@ -1528,7 +1398,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-arrow",
     franchise: "DC",
-    emoji: "🏹",
     difficulty: "media",
     format: "vf",
     prompt: "Arrow fue una serie aislada que no dio pie a ninguna otra de DC en televisión.",
@@ -1538,7 +1407,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-gotham-serie",
     franchise: "DC",
-    emoji: "🚔",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿A quién sigue la serie Gotham?",
@@ -1554,7 +1422,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-orden-batman",
     franchise: "DC",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Batman de la más antigua a la más reciente.",
@@ -1565,7 +1432,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-relacionar-actores",
     franchise: "DC",
-    emoji: "🎭",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada actor con el personaje de DC que interpretó.",
@@ -1581,7 +1447,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-alfred",
     franchise: "DC",
-    emoji: "🤵",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el mayordomo que cría a Bruce Wayne?",
@@ -1592,7 +1457,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-baticueva",
     franchise: "DC",
-    emoji: "🕳️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el escondite subterráneo de Batman?",
@@ -1603,7 +1467,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-padres",
     franchise: "DC",
-    emoji: "🌹",
     difficulty: "facil",
     format: "vf",
     prompt: "Bruce Wayne se hace Batman después de ver cómo asesinan a sus padres siendo niño.",
@@ -1613,7 +1476,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-superman-planeta",
     franchise: "DC",
-    emoji: "🪐",
     difficulty: "media",
     format: "corta",
     prompt: "¿De qué planeta viene Superman?",
@@ -1624,7 +1486,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-loislane",
     franchise: "DC",
-    emoji: "📰",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la periodista de la que se enamora Clark Kent?",
@@ -1635,7 +1496,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-luthor",
     franchise: "DC",
-    emoji: "🧑‍🦲",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el empresario calvo que es el gran enemigo de Superman?",
@@ -1646,7 +1506,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-periodico",
     franchise: "DC",
-    emoji: "📰",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué periódico trabaja Clark Kent?",
@@ -1657,7 +1516,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-liga",
     franchise: "DC",
-    emoji: "🤝",
     difficulty: "facil",
     format: "vf",
     prompt: "Batman, Superman, Wonder Woman, Flash y Aquaman forman la Liga de la Justicia.",
@@ -1667,7 +1525,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-catwoman",
     franchise: "DC",
-    emoji: "🐈‍⬛",
     difficulty: "media",
     format: "describir",
     prompt: "Ladrona con traje de cuero negro y látigo, entre enemiga y aliada de Batman.",
@@ -1678,7 +1535,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-pinguino",
     franchise: "DC",
-    emoji: "🃏",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué villano de Batman va con paraguas y monóculo, y toma el nombre de un ave?",
@@ -1689,7 +1545,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-doscaras",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Con qué decide sus actos el villano Dos Caras?",
@@ -1700,7 +1555,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-flash-poder",
     franchise: "DC",
-    emoji: "⚡",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el poder de Flash?",
@@ -1711,7 +1565,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-robin",
     franchise: "DC",
-    emoji: "🟡",
     difficulty: "facil",
     format: "vf",
     prompt: "Robin es el ayudante de Superman.",
@@ -1721,7 +1574,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-gafas",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "facil",
     format: "vf",
     prompt: "Para pasar por humano, Superman se pone una máscara que le tapa media cara.",
@@ -1731,7 +1583,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-marvel-dc",
     franchise: "DC",
-    emoji: "🆚",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cuál de estos personajes NO es de DC?",
@@ -1742,7 +1593,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "dcreal-affleck",
     franchise: "DC",
-    emoji: "🦇",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué actor fue Batman en Batman v Superman y en la Liga de la Justicia?",
@@ -1755,7 +1605,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-maguire",
     franchise: "Spider-Man",
-    emoji: "🕷️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué actor fue el primer Spider-Man del cine moderno, en 2002?",
@@ -1766,7 +1615,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-garfield",
     franchise: "Spider-Man",
-    emoji: "🕸️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué actor protagonizó The Amazing Spider-Man?",
@@ -1777,7 +1625,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-holland",
     franchise: "Spider-Man",
-    emoji: "🧒",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué actor hace de Spider-Man en las películas de Marvel?",
@@ -1788,7 +1635,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-tres",
     franchise: "Spider-Man",
-    emoji: "🕸️",
     difficulty: "facil",
     format: "vf",
     prompt: "En No Way Home aparecen juntos los tres actores que han hecho de Spider-Man.",
@@ -1798,7 +1644,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-beso",
     franchise: "Spider-Man",
-    emoji: "💋",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo es el beso más famoso de la primera película de Raimi?",
@@ -1814,7 +1659,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-maryjane",
     franchise: "Spider-Man",
-    emoji: "❤️",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la pelirroja de la que Peter está enamorado en las de Raimi?",
@@ -1825,7 +1669,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-tio",
     franchise: "Spider-Man",
-    emoji: "😔",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el tío de Peter, cuya muerte le enseña la lección de su vida?",
@@ -1836,7 +1679,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-lagarto",
     franchise: "Spider-Man",
-    emoji: "🕸️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cuál es el villano de The Amazing Spider-Man con Andrew Garfield?",
@@ -1847,7 +1689,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-mysterio",
     franchise: "Spider-Man",
-    emoji: "🔮",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Quién es el villano de Spider-Man: Lejos de casa?",
@@ -1858,7 +1699,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-venom-actor",
     franchise: "Spider-Man",
-    emoji: "🖤",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué actor protagoniza las películas de Venom?",
@@ -1869,7 +1709,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-telarañas",
     franchise: "Spider-Man",
-    emoji: "🕸️",
     difficulty: "media",
     format: "vf",
     prompt: "En las películas de Tobey Maguire, las telarañas le salen del cuerpo, no de un aparato.",
@@ -1879,7 +1718,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-instituto",
     franchise: "Spider-Man",
-    emoji: "🎒",
     difficulty: "facil",
     format: "vf",
     prompt: "El Spider-Man de Tom Holland es un adulto con trabajo fijo cuando lo conocemos.",
@@ -1889,7 +1727,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-stark",
     franchise: "Spider-Man",
-    emoji: "🤝",
     difficulty: "media",
     format: "vf",
     prompt: "En el cine de Marvel, Tony Stark hace de mentor del joven Peter Parker.",
@@ -1899,7 +1736,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-orden",
     franchise: "Spider-Man",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Spider-Man de la más antigua a la más reciente.",
@@ -1915,7 +1751,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-relacionar-actores",
     franchise: "Spider-Man",
-    emoji: "🎭",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada actor con la etapa de Spider-Man que protagonizó.",
@@ -1931,7 +1766,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-jonah",
     franchise: "Spider-Man",
-    emoji: "📰",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el director del periódico que odia a Spider-Man?",
@@ -1942,7 +1776,6 @@ export const SUPERHEROES: Question[] = [
   {
     id: "spiderreal-fotografo",
     franchise: "Spider-Man",
-    emoji: "🕷️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué trabaja Peter Parker en las películas de Raimi?",

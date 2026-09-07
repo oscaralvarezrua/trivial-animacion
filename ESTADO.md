@@ -40,7 +40,7 @@ categoría (ahora hay una única fila en Supabase con id `oscar-alicia`).
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | 1080 preguntas en 12 categorías | Con 220 el último tramo de partida perdía variedad |
+| Tamaño del banco | 1183 preguntas en 12 categorías | Con 220 el último tramo de partida perdía variedad |
 | Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
@@ -110,8 +110,8 @@ jugador: aciertos sobre intentos en total, por formato y por categoría.
   porque es justo lo que se va a perder.
 
 La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
-categoría en `lib/categorias.ts`: 12 categorías y 269 franquicias. Repetir el
-dato en cada una de las 1080 preguntas era pedir que se desincronizara.
+categoría en `lib/categorias.ts`: 12 categorías y 273 franquicias. Repetir el
+dato en cada una de las 1183 preguntas era pedir que se desincronizara.
 `validarBanco()` comprueba que toda franquicia tenga categoría, así que añadir
 una nueva sin clasificarla rompe `npm run validar`.
 
@@ -123,8 +123,9 @@ pregunta viva en `banco/disney.ts`.
 - Una franquicia no se repite hasta pasadas 8 preguntas.
 - Nunca la misma franquicia para los dos dentro de una ronda.
 - Ningún formato más de 2 veces seguidas.
-- Dificultad sorteada **por ronda** (60 % fácil / 30 % media / 10 % difícil), así
+- Dificultad sorteada **por ronda** (45 % fácil / 40 % media / 15 % difícil), así
   Oscar y Alicia juegan siempre al mismo nivel.
+- **Ninguna dificultad más de 2 rondas seguidas**, que son 4 preguntas.
 - Las preguntas difíciles son siempre de elección múltiple.
 
 ### Conflicto de reglas resuelto
@@ -145,7 +146,7 @@ lib/motor.ts             elegirPregunta, servirPregunta, responder,
                          partidaNueva, jugadorRival
 lib/barajar.ts           Barajado determinista por semilla (evita mismatch de hidratación)
 lib/preguntas.ts         Índice del banco, porId, validarBanco, PREGUNTA_PENDIENTE
-lib/pistas.ts            Detecta emojis que delatan o desvían la respuesta
+lib/pistas.ts            Guarda de que el emoji de una categoría no delate ni desvíe
 lib/banco/disney.ts      Clásicos Disney y WDAS
 lib/banco/estudios.ts    Pixar, DreamWorks, Illumination, Sony y otros
 lib/banco/series.ts      TV, Ghibli, anime, Clan y Boing
@@ -155,7 +156,7 @@ lib/banco/imagen-real.ts Disney Channel y Nickelodeon en imagen real
 lib/partida-guardada.ts  Estado semilla 59-57 con la pregunta 83 pendiente
 lib/supabase.ts          Cliente con service role key, marcado server-only
 lib/acceso.ts            PIN: haySesion, exigirSesion, abrirSesion (server-only)
-lib/categorias.ts        Mapa de franquicia a categoría (Disney, Pixar, DreamWorks…)
+lib/categorias.ts        Mapa de franquicia a categoría y emoji de cada categoría
 lib/estadisticas.ts      Aciertos y fallos por jugador, formato y categoría
 app/acciones.ts          Server Actions: cargarPartida, guardarPartida, entrar
 app/page.tsx             Server Component: PIN, luego el estado o la pantalla de configuración
@@ -173,8 +174,7 @@ scripts/*.ts             Verificación (ver abajo)
 ```ts
 {
   id: "reyleon-pumba",          // único en todo el banco
-  franchise: "El Rey León",     // clave del bloqueo de 8 preguntas
-  emoji: "🦁",
+  franchise: "El Rey León",     // bloqueo de 8; de ella salen categoría y emoji
   difficulty: "facil",          // facil | media | dificil
   format: "corta",              // corta | multiple | vf | orden | relacionar | describir | completar
   prompt: "¿Cómo se llama el jabalí verrugoso que acompaña a Timón?",
@@ -189,6 +189,13 @@ Según el formato cambian los campos de respuesta: `multiple` usa
 `options` + `correct` (**la correcta va siempre en el índice 0**, la interfaz las
 baraja), `vf` usa `correct: boolean`, `orden` usa `items` en el orden correcto y
 `relacionar` usa `pairs: {left, right}[]`.
+
+**La pregunta no lleva emoji.** Lo pone la categoría, en `EMOJI_DE_CATEGORIA`
+(lib/categorias.ts), y por eso no hay forma de que delate nada: al lado del
+emoji ya se enseña la franquicia, la franquicia determina la categoría, y algo
+que no añade información no puede chivarse. Con un emoji por pregunta pasaron
+las dos cosas que podían pasar: 🦥 en «¿qué animal es Sid?», y 170 de las 269
+franquicias usando más de un emoji entre sus propias preguntas.
 
 ## Cómo funciona el corrector
 
@@ -225,41 +232,54 @@ npm run supabase    # claves y tabla, sin imprimir nunca su valor
 Estado actual de cada uno, comprobado el 19 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 1080 preguntas, 269 franquicias, reparto 49 % / 40 % / 10 %.
+- `validar`: 1183 preguntas, 273 franquicias, reparto 45 % / 43 % / 12 %.
 - `probar`: los 35 casos pasan.
-- `simular`: pasa. Comprueba a mano el veto del rebote en las preguntas de
-  verdadero o falso y los cinco casos de corrección del veredicto, y luego juega
-  una partida entera.
+- `simular`: pasa limpio. Comprueba a mano el veto del rebote en las preguntas
+  de verdadero o falso y los cinco casos de corrección del veredicto, y luego
+  juega una partida entera. En seis ejecuciones seguidas: racha máxima de 4 o 5
+  preguntas con la misma dificultad, y entre 0 y 2 rondas descompensadas de 502.
+  La partida se juega al azar, así que estas cifras bailan un poco.
 
-El `simular` pasa, pero **no sale limpio, y cada vez peor**: con 1080 preguntas
-quedan 16 rondas descompensadas de 459 y 9 franquicias repetidas antes de
-tiempo, con un reparto por ronda de 54 % / 37 % / 9 %.
+### El sorteo de dificultad, y por qué se cambió
 
-**La causa es el reparto de dificultad, y es la deuda pendiente del banco.** El
-sorteo pide un 60 % de fáciles y el banco tiene un 49 %. Cuando se le acaban las
-fáciles, `elegirPregunta` cede en la dificultad antes que en el formato, y
-Alicia acaba con una distinta a la de Oscar. No es un fallo del motor: es que
-falta oferta.
+Hasta el 7 de septiembre de 2026 el sorteo pedía 60 % / 30 % / 10 %. Se cambió
+porque jugando se notaban tandas largas de preguntas fáciles, y al medirlo
+resultó que el problema era doble.
 
-Y va a peor porque cada ampliación ha empeorado el porcentaje, no lo ha
-mejorado:
+**Uno: el sorteo pedía más fáciles de las que hay.** El banco tiene un 45 % y se
+pedía un 60 %, así que se las gastaba al principio. Medido jugando el banco
+entero, el primer cuarto salía al 71 % de fáciles y el último al 0 %. Además,
+cuando se le acababan, `elegirPregunta` cede en la dificultad antes que en el
+formato, y ahí es donde Alicia acababa con una distinta a la de Oscar.
 
-| Banco | Fáciles | Rondas descompensadas |
+**Dos: el sorteo era independiente en cada ronda.** Eso encadena rachas por pura
+estadística, y como una ronda son dos preguntas, tres rondas fáciles seguidas ya
+son seis preguntas del tirón. El 23 % de las preguntas caía dentro de una tanda
+de ocho o más fáciles seguidas.
+
+Se arreglaron las dos a la vez: **pesos 45/40/15** (lo que el banco tiene de
+verdad) y **tope de 2 rondas seguidas con la misma dificultad**, deducido del
+historial igual que el veto de formato, sin tocar el estado guardado.
+
+| | Antes | Ahora |
 | --- | --- | --- |
-| 220 | 62 % | 11 de 187 |
-| 440 | 56 % | 0-1 de 187 |
-| 840 | 53 % | 7 de 357 |
-| 1080 | **49 %** | **16 de 459** |
+| Fácil en el primer cuarto del banco | 71 % | 41 % |
+| Fácil en el último cuarto | 0 % | 46 % |
+| Preguntas en racha de 6+ iguales | 30 % | 6 % |
+| Preguntas en racha de 8+ iguales | 23 % | 2 % |
+| Rondas descompensadas | 21 de 502 | **0-2** |
+| Franquicias repetidas antes de tiempo | 18 | **0-1** |
 
-El motivo es siempre el mismo: los bloques que se han ido añadiendo
-(superhéroes, animación adulta, imagen real) tiran de forma natural hacia la
-dificultad media, porque preguntar por lo muy conocido de un tema que no
-dominas sigue saliendo «medio».
+`simular` mide ahora la racha máxima y falla por encima de 8 preguntas
+seguidas con la misma dificultad. Comprobado quitando el tope: sin él sale una
+racha de 16 y el script rompe.
 
-**Para arreglarlo hacen falta unas 130 preguntas fáciles más**, sin añadir ni
-una media ni difícil. Eso llevaría el banco a ~1210 con un 56 % de fáciles.
-Mientras no se haga, la degradación solo se nota en el tramo final de una
-partida completa, que a 2 preguntas por ronda son cientos de rondas por delante.
+Queda anotado por qué el banco tiene el reparto que tiene: cada ampliación lo ha
+ido corriendo hacia la media (220 → 62 % fáciles, 440 → 56 %, 840 → 53 %,
+1080 → 49 %, 1183 → 45 %), porque preguntar por lo muy conocido de un tema que
+no dominas sigue saliendo «medio». **Se ha decidido no compensarlo con preguntas
+fáciles**: un banco con un 60 % de fáciles se juega aburrido. El sorteo se
+adapta al banco, no al revés.
 
 ### Verificado en el navegador
 

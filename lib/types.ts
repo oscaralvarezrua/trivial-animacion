@@ -34,9 +34,13 @@ export const FORMAT_LABEL: Record<QuestionFormat, string> = {
 
 interface BaseQuestion {
   id: string;
-  /** Franquicia: se usa para el bloqueo de 8 preguntas. */
+  /**
+   * Franquicia: se usa para el bloqueo de 8 preguntas, y de ella salen la
+   * categoría y el emoji (ver `lib/categorias.ts`). La pregunta no lleva emoji
+   * propio a propósito: uno por pregunta acababa delatando la respuesta y ni
+   * siquiera coincidía entre preguntas de la misma película.
+   */
   franchise: string;
-  emoji: string;
   difficulty: Difficulty;
   prompt: string;
   /** Instrucción breve para responder, p. ej. "(Solo el nombre.)" */

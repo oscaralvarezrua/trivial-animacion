@@ -13,7 +13,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hannah-doblevida",
     franchise: "Hannah Montana",
-    emoji: "🎤",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el secreto de Miley Stewart?",
@@ -29,7 +28,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hannah-peluca",
     franchise: "Hannah Montana",
-    emoji: "💇",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color es la peluca con la que Miley se convierte en Hannah Montana?",
@@ -40,7 +38,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hannah-actriz",
     franchise: "Hannah Montana",
-    emoji: "⭐",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué actriz y cantante interpreta a Hannah Montana?",
@@ -51,7 +48,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hannah-padre",
     franchise: "Hannah Montana",
-    emoji: "🎸",
     difficulty: "media",
     format: "vf",
     prompt: "El actor que hace de padre de Miley en la serie es su padre también en la vida real.",
@@ -63,7 +59,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "magos-familia",
     franchise: "Los magos de Waverly Place",
-    emoji: "🪄",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué tienen de especial los hermanos Russo?",
@@ -74,7 +69,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "magos-alex",
     franchise: "Los magos de Waverly Place",
-    emoji: "🎭",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la hermana protagonista, la más gamberra de los tres?",
@@ -85,7 +79,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "magos-actriz",
     franchise: "Los magos de Waverly Place",
-    emoji: "⭐",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué actriz y cantante interpreta a Alex Russo?",
@@ -96,7 +89,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "magos-negocio",
     franchise: "Los magos de Waverly Place",
-    emoji: "🥪",
     difficulty: "media",
     format: "vf",
     prompt: "Los padres de los Russo regentan una tienda de bocadillos en Nueva York.",
@@ -108,7 +100,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "charlie-videodiarios",
     franchise: "Buena suerte Charlie",
-    emoji: "📹",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué graba Teddy a lo largo de toda la serie?",
@@ -124,7 +115,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "charlie-frase",
     franchise: "Buena suerte Charlie",
-    emoji: "🍀",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa cómo termina Teddy cada videodiario: «Buena suerte, ___».",
@@ -134,7 +124,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "charlie-apellido",
     franchise: "Buena suerte Charlie",
-    emoji: "🏠",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se apellida la familia protagonista?",
@@ -147,7 +136,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "zackcody-gemelos",
     franchise: "Zack y Cody",
-    emoji: "👬",
     difficulty: "facil",
     format: "vf",
     prompt: "Zack y Cody son hermanos gemelos.",
@@ -157,7 +145,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "zackcody-hotel",
     franchise: "Zack y Cody",
-    emoji: "🏨",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Dónde viven Zack y Cody en la primera serie?",
@@ -168,7 +155,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "zackcody-crucero",
     franchise: "Zack y Cody",
-    emoji: "🚢",
     difficulty: "media",
     format: "vf",
     prompt: "La continuación de la serie traslada a los gemelos a un crucero.",
@@ -178,7 +164,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "zackcody-london",
     franchise: "Zack y Cody",
-    emoji: "💅",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la heredera del hotel, tan rica como despistada?",
@@ -191,7 +176,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "raven-visiones",
     franchise: "Es tan Raven",
-    emoji: "🔮",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el don de Raven?",
@@ -207,7 +191,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "raven-lio",
     franchise: "Es tan Raven",
-    emoji: "😬",
     difficulty: "media",
     format: "vf",
     prompt: "Las visiones de Raven siempre le salen bien y evita el problema a la primera.",
@@ -217,7 +200,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "raven-disfraces",
     franchise: "Es tan Raven",
-    emoji: "🎭",
     difficulty: "media",
     format: "vf",
     prompt: "Raven se disfraza constantemente para colarse donde no debe.",
@@ -229,7 +211,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "lizzie-dibujo",
     franchise: "Lizzie McGuire",
-    emoji: "✏️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué recurso usa la serie para enseñar lo que Lizzie piensa de verdad?",
@@ -245,7 +226,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "lizzie-actriz",
     franchise: "Lizzie McGuire",
-    emoji: "⭐",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué actriz interpretó a Lizzie McGuire?",
@@ -258,7 +238,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "phil-futuro",
     franchise: "Phil del futuro",
-    emoji: "⏳",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Por qué se queda atrapada la familia de Phil en nuestra época?",
@@ -274,7 +253,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "cory-casablanca",
     franchise: "Cory en la Casa Blanca",
-    emoji: "🏛️",
     difficulty: "media",
     format: "vf",
     prompt: "Cory acaba viviendo en la Casa Blanca porque su padre trabaja allí de cocinero.",
@@ -286,7 +264,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "sonny-programa",
     franchise: "Sonny entre estrellas",
-    emoji: "📺",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué consigue Sonny al principio de la serie?",
@@ -302,7 +279,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "camprock-grupo",
     franchise: "Camp Rock",
-    emoji: "🎸",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué grupo de hermanos protagonizó Camp Rock junto a Demi Lovato?",
@@ -313,7 +289,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "camprock-campamento",
     franchise: "Camp Rock",
-    emoji: "🏕️",
     difficulty: "facil",
     format: "vf",
     prompt: "Camp Rock transcurre en un campamento de verano dedicado a la música.",
@@ -325,7 +300,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hsm-instituto",
     franchise: "High School Musical",
-    emoji: "🏀",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el instituto de High School Musical?",
@@ -336,7 +310,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hsm-troy",
     franchise: "High School Musical",
-    emoji: "⭐",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A qué deporte juega Troy Bolton?",
@@ -347,7 +320,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "hsm-actor",
     franchise: "High School Musical",
-    emoji: "⭐",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué actor saltó a la fama interpretando a Troy Bolton?",
@@ -360,7 +332,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "violetta-pais",
     franchise: "Violetta",
-    emoji: "🎹",
     difficulty: "media",
     format: "multiple",
     prompt: "¿En qué país se rodó Violetta?",
@@ -371,7 +342,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "violetta-talento",
     franchise: "Violetta",
-    emoji: "🎤",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el talento de Violetta que su padre intenta esconder?",
@@ -382,7 +352,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "soyluna-patines",
     franchise: "Soy Luna",
-    emoji: "🎬",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué deporte marca la vida de Luna?",
@@ -395,7 +364,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "jessie-nanny",
     franchise: "Jessie",
-    emoji: "🍼",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué trabaja Jessie al llegar a Nueva York?",
@@ -406,7 +374,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "austinally-musica",
     franchise: "Austin y Ally",
-    emoji: "🎼",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se reparten el trabajo Austin y Ally?",
@@ -422,7 +389,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "shakeitup-baile",
     franchise: "A todo ritmo",
-    emoji: "💃",
     difficulty: "media",
     format: "vf",
     prompt: "Las protagonistas de A todo ritmo consiguen entrar como bailarinas en un programa de televisión.",
@@ -432,7 +398,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "livymaddie-gemelas",
     franchise: "Liv y Maddie",
-    emoji: "👯",
     difficulty: "media",
     format: "vf",
     prompt: "En Liv y Maddie, una sola actriz interpreta a las dos hermanas gemelas.",
@@ -442,7 +407,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "descendientes-hijos",
     franchise: "Descendientes",
-    emoji: "🍎",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Quiénes son los protagonistas de Descendientes?",
@@ -458,7 +422,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "descendientes-maléfica",
     franchise: "Descendientes",
-    emoji: "💜",
     difficulty: "media",
     format: "corta",
     prompt: "¿De qué villana es hija Mal, la protagonista?",
@@ -471,7 +434,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "icarly-webshow",
     franchise: "iCarly",
-    emoji: "🍖",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué montan Carly y sus amigos?",
@@ -487,7 +449,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "icarly-sam",
     franchise: "iCarly",
-    emoji: "🍖",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la mejor amiga de Carly, la bruta que se pasa el día comiendo?",
@@ -498,7 +459,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "icarly-hermano",
     franchise: "iCarly",
-    emoji: "🎨",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿A qué se dedica Spencer, el hermano mayor de Carly?",
@@ -511,7 +471,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "drakejosh-hermanos",
     franchise: "Drake y Josh",
-    emoji: "👦",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué relación tienen Drake y Josh?",
@@ -527,7 +486,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "drakejosh-megan",
     franchise: "Drake y Josh",
-    emoji: "😈",
     difficulty: "media",
     format: "vf",
     prompt: "La hermana pequeña, Megan, se pasa la serie haciéndoles la vida imposible.",
@@ -537,7 +495,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "drakejosh-guitarra",
     franchise: "Drake y Josh",
-    emoji: "👦",
     difficulty: "media",
     format: "vf",
     prompt: "De los dos hermanos, el músico es Josh y el estudioso es Drake.",
@@ -549,7 +506,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "victorious-instituto",
     franchise: "Victorious",
-    emoji: "🎭",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué clase de instituto entra Tori Vega?",
@@ -565,7 +521,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "victorious-ariana",
     franchise: "Victorious",
-    emoji: "⭐",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué cantante hoy famosísima salía en Victorious haciendo de Cat?",
@@ -576,7 +531,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "victorious-spinoff",
     franchise: "Victorious",
-    emoji: "🐱",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Con qué otra serie de Nickelodeon se cruzó Victorious en un spin-off?",
@@ -589,7 +543,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "zoey-internado",
     franchise: "Zoey 101",
-    emoji: "🏫",
     difficulty: "media",
     format: "vf",
     prompt: "Zoey es de las primeras chicas en entrar en un internado que hasta entonces era solo de chicos.",
@@ -599,7 +552,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "bigtimerush-banda",
     franchise: "Big Time Rush",
-    emoji: "🎤",
     difficulty: "media",
     format: "multiple",
     prompt: "¿De qué va Big Time Rush?",
@@ -615,7 +567,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "thundermans-familia",
     franchise: "Los Thundermans",
-    emoji: "⚡",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué esconde la familia Thunderman a sus vecinos?",
@@ -631,7 +582,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "ned-manual",
     franchise: "Manual de supervivencia escolar de Ned",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué formato tiene esta serie?",
@@ -647,7 +597,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "henrydanger-ayudante",
     franchise: "Henry Danger",
-    emoji: "🦸",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué trabajo consigue Henry en la serie?",
@@ -665,7 +614,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "relacionar-disneychannel",
     franchise: "Series de imagen real",
-    emoji: "📺",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada protagonista con su serie.",
@@ -681,7 +629,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "relacionar-nickelodeon-real",
     franchise: "Series de imagen real",
-    emoji: "🟠",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada personaje con su serie de Nickelodeon.",
@@ -697,7 +644,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "relacionar-cantantes-series",
     franchise: "Series de imagen real",
-    emoji: "🎤",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada cantante con la serie en la que se dio a conocer.",
@@ -713,7 +659,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "orden-disneychannel",
     franchise: "Series de imagen real",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de Disney Channel de la más antigua a la más reciente.",
@@ -724,7 +669,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "orden-nickelodeon-real",
     franchise: "Series de imagen real",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de Nickelodeon de la más antigua a la más reciente.",
@@ -734,7 +678,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "imagenreal-cadena",
     franchise: "Series de imagen real",
-    emoji: "🏢",
     difficulty: "facil",
     format: "vf",
     prompt: "Hannah Montana, Los magos de Waverly Place y Buena suerte Charlie son todas de Disney Channel.",
@@ -744,7 +687,6 @@ export const IMAGEN_REAL: Question[] = [
   {
     id: "imagenreal-icarly-cadena",
     franchise: "Series de imagen real",
-    emoji: "🏢",
     difficulty: "facil",
     format: "vf",
     prompt: "iCarly, Drake y Josh y Victorious eran series de Disney Channel.",

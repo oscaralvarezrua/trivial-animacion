@@ -15,7 +15,6 @@ export const DISNEY: Question[] = [
   {
     id: "reyleon-pumba",
     franchise: "El Rey León",
-    emoji: "🦁",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el jabalí verrugoso que acompaña a Timón?",
@@ -26,7 +25,6 @@ export const DISNEY: Question[] = [
   {
     id: "reyleon-rafiki",
     franchise: "El Rey León",
-    emoji: "🦁",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el mandril chamán que presenta a Simba en la Roca del Rey?",
@@ -37,7 +35,6 @@ export const DISNEY: Question[] = [
   {
     id: "reyleon-zazu",
     franchise: "El Rey León",
-    emoji: "🦁",
     difficulty: "facil",
     format: "describir",
     prompt: "Es un cálao rojo, mayordomo del rey, siempre nervioso y con aires de secretario.",
@@ -48,7 +45,6 @@ export const DISNEY: Question[] = [
   {
     id: "reyleon-hakuna",
     franchise: "El Rey León",
-    emoji: "🦁",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el lema de Timón y Pumba: «Hakuna ___».",
@@ -61,7 +57,6 @@ export const DISNEY: Question[] = [
   {
     id: "sirenita-voz",
     franchise: "La Sirenita",
-    emoji: "🧜",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué le entrega Ariel a Úrsula a cambio de tener piernas?",
@@ -72,7 +67,6 @@ export const DISNEY: Question[] = [
   {
     id: "sirenita-triton",
     franchise: "La Sirenita",
-    emoji: "🧜",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el padre de Ariel, rey del mar?",
@@ -83,7 +77,6 @@ export const DISNEY: Question[] = [
   {
     id: "sirenita-morenas",
     franchise: "La Sirenita",
-    emoji: "🧜",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman las dos morenas que sirven a Úrsula?",
@@ -101,7 +94,6 @@ export const DISNEY: Question[] = [
   {
     id: "aladdin-rajah",
     franchise: "Aladdín",
-    emoji: "🧞",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la tigresa de Jasmín?",
@@ -112,7 +104,6 @@ export const DISNEY: Question[] = [
   {
     id: "aladdin-mundo",
     franchise: "Aladdín",
-    emoji: "🧞",
     difficulty: "facil",
     format: "completar",
     prompt:
@@ -123,7 +114,6 @@ export const DISNEY: Question[] = [
   {
     id: "aladdin-cueva",
     franchise: "Aladdín",
-    emoji: "🧞",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el lugar donde Aladdín encuentra la lámpara?",
@@ -141,7 +131,6 @@ export const DISNEY: Question[] = [
   {
     id: "bella-lumiere",
     franchise: "La Bella y la Bestia",
-    emoji: "🌹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el candelabro del castillo de la Bestia?",
@@ -152,7 +141,6 @@ export const DISNEY: Question[] = [
   {
     id: "bella-gaston",
     franchise: "La Bella y la Bestia",
-    emoji: "🌹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el cazador presumido que pretende casarse con Bella?",
@@ -163,7 +151,6 @@ export const DISNEY: Question[] = [
   {
     id: "bella-dindon",
     franchise: "La Bella y la Bestia",
-    emoji: "🌹",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama en el doblaje español el mayordomo convertido en reloj de sobremesa?",
@@ -177,7 +164,6 @@ export const DISNEY: Question[] = [
   {
     id: "blancanieves-enanito",
     franchise: "Blancanieves",
-    emoji: "🍎",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál de estos NO es uno de los siete enanitos?",
@@ -188,7 +174,6 @@ export const DISNEY: Question[] = [
   {
     id: "blancanieves-espejo",
     franchise: "Blancanieves",
-    emoji: "🍎",
     difficulty: "facil",
     format: "vf",
     prompt: "La Reina Malvada consulta a un espejo mágico para saber quién es la más bella.",
@@ -200,7 +185,6 @@ export const DISNEY: Question[] = [
   {
     id: "cenicienta-lucifer",
     franchise: "Cenicienta",
-    emoji: "👠",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el gato de la madrastra de Cenicienta?",
@@ -211,7 +195,6 @@ export const DISNEY: Question[] = [
   {
     id: "cenicienta-hora",
     franchise: "Cenicienta",
-    emoji: "👠",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A qué hora se rompe el hechizo del Hada Madrina?",
@@ -224,7 +207,6 @@ export const DISNEY: Question[] = [
   {
     id: "peterpan-campanilla",
     franchise: "Peter Pan",
-    emoji: "🧚",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el hada que acompaña a Peter Pan?",
@@ -235,7 +217,6 @@ export const DISNEY: Question[] = [
   {
     id: "peterpan-isla",
     franchise: "Peter Pan",
-    emoji: "🧚",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la isla donde nunca se crece?",
@@ -245,7 +226,6 @@ export const DISNEY: Question[] = [
   {
     id: "peterpan-barco",
     franchise: "Peter Pan",
-    emoji: "🧚",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el barco pirata del capitán Garfio?",
@@ -258,7 +238,6 @@ export const DISNEY: Question[] = [
   {
     id: "selva-baloo",
     franchise: "El libro de la selva",
-    emoji: "🐻",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el oso despreocupado que enseña a Mowgli a vivir sin agobios?",
@@ -269,7 +248,6 @@ export const DISNEY: Question[] = [
   {
     id: "selva-kaa",
     franchise: "El libro de la selva",
-    emoji: "🐻",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la serpiente pitón que hipnotiza a Mowgli?",
@@ -280,7 +258,6 @@ export const DISNEY: Question[] = [
   {
     id: "selva-sherekhan",
     franchise: "El libro de la selva",
-    emoji: "🐻",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el tigre de Bengala al que todos temen?",
@@ -291,7 +268,6 @@ export const DISNEY: Question[] = [
   {
     id: "selva-louie",
     franchise: "El libro de la selva",
-    emoji: "🐻",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el orangután que quiere aprender a hacer fuego?",
@@ -304,7 +280,6 @@ export const DISNEY: Question[] = [
   {
     id: "pinocho-grillo",
     franchise: "Pinocho",
-    emoji: "🪵",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el grillo que hace de conciencia de Pinocho?",
@@ -315,7 +290,6 @@ export const DISNEY: Question[] = [
   {
     id: "pinocho-geppetto",
     franchise: "Pinocho",
-    emoji: "🪵",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el carpintero que talla a Pinocho?",
@@ -326,7 +300,6 @@ export const DISNEY: Question[] = [
   {
     id: "pinocho-ballena",
     franchise: "Pinocho",
-    emoji: "🪵",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la enorme ballena que se traga a Geppetto?",
@@ -339,7 +312,6 @@ export const DISNEY: Question[] = [
   {
     id: "dumbo-pluma",
     franchise: "Dumbo",
-    emoji: "🐘",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué objeto cree Dumbo que le da el poder de volar?",
@@ -353,7 +325,6 @@ export const DISNEY: Question[] = [
   {
     id: "dalmatas-cruella",
     franchise: "101 dálmatas",
-    emoji: "🐕",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la villana obsesionada con hacerse un abrigo de piel de cachorro?",
@@ -363,7 +334,6 @@ export const DISNEY: Question[] = [
   {
     id: "dalmatas-padres",
     franchise: "101 dálmatas",
-    emoji: "🐕",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llaman los dos dálmatas adultos, padres de los cachorros?",
@@ -381,7 +351,6 @@ export const DISNEY: Question[] = [
   {
     id: "aristogatos-gatitos",
     franchise: "Los Aristogatos",
-    emoji: "🎹",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman los tres gatitos de Duquesa?",
@@ -399,7 +368,6 @@ export const DISNEY: Question[] = [
   {
     id: "hercules-hades",
     franchise: "Hércules",
-    emoji: "⚡",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el dios del inframundo que hace de villano?",
@@ -410,7 +378,6 @@ export const DISNEY: Question[] = [
   {
     id: "hercules-secuaces",
     franchise: "Hércules",
-    emoji: "⚡",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llaman los dos demonios torpes que sirven a Hades?",
@@ -426,7 +393,6 @@ export const DISNEY: Question[] = [
   {
     id: "hercules-meg",
     franchise: "Hércules",
-    emoji: "⚡",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la joven que trabaja para Hades y acaba enamorando a Hércules?",
@@ -439,7 +405,6 @@ export const DISNEY: Question[] = [
   {
     id: "mulan-shang",
     franchise: "Mulán",
-    emoji: "🐉",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el capitán que instruye a los reclutas del ejército chino?",
@@ -450,7 +415,6 @@ export const DISNEY: Question[] = [
   {
     id: "mulan-shanyu",
     franchise: "Mulán",
-    emoji: "🐉",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el líder de los hunos que invade China?",
@@ -463,7 +427,6 @@ export const DISNEY: Question[] = [
   {
     id: "tarzan-jane",
     franchise: "Tarzán",
-    emoji: "🌴",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la joven inglesa de la que se enamora Tarzán?",
@@ -474,7 +437,6 @@ export const DISNEY: Question[] = [
   {
     id: "tarzan-tantor",
     franchise: "Tarzán",
-    emoji: "🌴",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el elefante miedoso amigo de Tarzán?",
@@ -487,7 +449,6 @@ export const DISNEY: Question[] = [
   {
     id: "jorobado-quasimodo",
     franchise: "El jorobado de Notre Dame",
-    emoji: "🔔",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el campanero protagonista?",
@@ -498,7 +459,6 @@ export const DISNEY: Question[] = [
   {
     id: "jorobado-frollo",
     franchise: "El jorobado de Notre Dame",
-    emoji: "🔔",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el juez que tiene encerrado a Quasimodo en el campanario?",
@@ -511,7 +471,6 @@ export const DISNEY: Question[] = [
   {
     id: "pocahontas-meeko",
     franchise: "Pocahontas",
-    emoji: "🍃",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el mapache glotón que acompaña a Pocahontas?",
@@ -522,7 +481,6 @@ export const DISNEY: Question[] = [
   {
     id: "pocahontas-smith",
     franchise: "Pocahontas",
-    emoji: "🍃",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el colono inglés del que se enamora Pocahontas?",
@@ -534,7 +492,6 @@ export const DISNEY: Question[] = [
   {
     id: "stitch-jumba",
     franchise: "Lilo & Stitch",
-    emoji: "🌺",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el científico alienígena que creó a Stitch?",
@@ -545,7 +502,6 @@ export const DISNEY: Question[] = [
   {
     id: "stitch-pleakley",
     franchise: "Lilo & Stitch",
-    emoji: "🌺",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el alienígena de un solo ojo, experto en la Tierra, que acompaña a Jumba?",
@@ -558,7 +514,6 @@ export const DISNEY: Question[] = [
   {
     id: "zootropolis-flash",
     franchise: "Zootrópolis",
-    emoji: "🦊",
     difficulty: "facil",
     format: "describir",
     prompt:
@@ -570,7 +525,6 @@ export const DISNEY: Question[] = [
   {
     id: "zootropolis-mrbig",
     franchise: "Zootrópolis",
-    emoji: "🎬",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Mr. Big, el temido jefe del crimen de Tundratown?",
@@ -583,7 +537,6 @@ export const DISNEY: Question[] = [
   {
     id: "frozen-olaf",
     franchise: "Frozen",
-    emoji: "❄️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el muñeco de nieve que sueña con el verano?",
@@ -594,7 +547,6 @@ export const DISNEY: Question[] = [
   {
     id: "frozen-arendelle",
     franchise: "Frozen",
-    emoji: "❄️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el reino de Elsa y Anna?",
@@ -605,7 +557,6 @@ export const DISNEY: Question[] = [
   {
     id: "frozen-hans",
     franchise: "Frozen",
-    emoji: "❄️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el príncipe que resulta ser el villano de la primera película?",
@@ -618,7 +569,6 @@ export const DISNEY: Question[] = [
   {
     id: "enredados-maximus",
     franchise: "Enredados",
-    emoji: "🏰",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el caballo del palacio que persigue a Flynn como si fuera un sabueso?",
@@ -629,7 +579,6 @@ export const DISNEY: Question[] = [
   {
     id: "enredados-gothel",
     franchise: "Enredados",
-    emoji: "🏰",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama la mujer que encierra a Rapunzel en la torre?",
@@ -642,7 +591,6 @@ export const DISNEY: Question[] = [
   {
     id: "vaiana-heihei",
     franchise: "Vaiana",
-    emoji: "🌊",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el gallo bobo que se cuela en la barca de Vaiana?",
@@ -653,7 +601,6 @@ export const DISNEY: Question[] = [
   {
     id: "vaiana-tamatoa",
     franchise: "Vaiana",
-    emoji: "🌊",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el cangrejo gigante y presumido que colecciona objetos brillantes?",
@@ -664,7 +611,6 @@ export const DISNEY: Question[] = [
   {
     id: "vaiana-tala",
     franchise: "Vaiana",
-    emoji: "🌊",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la abuela de Vaiana, que baila con las mantarrayas?",
@@ -677,7 +623,6 @@ export const DISNEY: Question[] = [
   {
     id: "encanto-mirabel",
     franchise: "Encanto",
-    emoji: "🕯️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la protagonista, la única de la familia sin ningún don?",
@@ -688,7 +633,6 @@ export const DISNEY: Question[] = [
   {
     id: "encanto-madrigal",
     franchise: "Encanto",
-    emoji: "🕯️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cuál es el apellido de la familia protagonista?",
@@ -699,7 +643,6 @@ export const DISNEY: Question[] = [
   {
     id: "encanto-luisa",
     franchise: "Encanto",
-    emoji: "🕯️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el don de Luisa?",
@@ -717,7 +660,6 @@ export const DISNEY: Question[] = [
   {
     id: "bighero-hiro",
     franchise: "Big Hero 6",
-    emoji: "🤖",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el niño genio protagonista?",
@@ -728,7 +670,6 @@ export const DISNEY: Question[] = [
   {
     id: "bighero-ciudad",
     franchise: "Big Hero 6",
-    emoji: "🤖",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la ciudad donde transcurre la película?",
@@ -742,7 +683,6 @@ export const DISNEY: Question[] = [
   {
     id: "ralph-vanellope",
     franchise: "Rompe Ralph",
-    emoji: "🕹️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la niña con fallos de programación que conduce un kart?",
@@ -753,7 +693,6 @@ export const DISNEY: Question[] = [
   {
     id: "ralph-calhoun",
     franchise: "Rompe Ralph",
-    emoji: "🕹️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama la sargento del videojuego bélico Hero's Duty?",
@@ -766,7 +705,6 @@ export const DISNEY: Question[] = [
   {
     id: "tiana-ray",
     franchise: "Tiana y el sapo",
-    emoji: "🐸",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama la luciérnaga enamorada de una estrella?",
@@ -777,7 +715,6 @@ export const DISNEY: Question[] = [
   {
     id: "tiana-facilier",
     franchise: "Tiana y el sapo",
-    emoji: "🐸",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el brujo vudú que convierte al príncipe en sapo?",
@@ -796,7 +733,6 @@ export const DISNEY: Question[] = [
   {
     id: "emperador-pacha",
     franchise: "El emperador y sus locuras",
-    emoji: "🦙",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el campesino bonachón que ayuda a Kuzco a volver a palacio?",
@@ -809,7 +745,6 @@ export const DISNEY: Question[] = [
   {
     id: "atlantis-kida",
     franchise: "Atlantis",
-    emoji: "🔱",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama la princesa de Atlantis?",
@@ -822,7 +757,6 @@ export const DISNEY: Question[] = [
   {
     id: "tesoro-silver",
     franchise: "El planeta del tesoro",
-    emoji: "🚀",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el cocinero cíborg que hace de mentor y traidor?",
@@ -835,7 +769,6 @@ export const DISNEY: Question[] = [
   {
     id: "bolt-rino",
     franchise: "Bolt",
-    emoji: "⚡",
     difficulty: "media",
     format: "describir",
     prompt:
@@ -849,7 +782,6 @@ export const DISNEY: Question[] = [
   {
     id: "raya-namaari",
     franchise: "Raya y el último dragón",
-    emoji: "🐲",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama la guerrera de Colmillo que es rival de Raya?",
@@ -862,7 +794,6 @@ export const DISNEY: Question[] = [
   {
     id: "wish-magnifico",
     franchise: "Wish",
-    emoji: "⭐",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el rey que guarda los deseos de sus súbditos?",
@@ -875,7 +806,6 @@ export const DISNEY: Question[] = [
   {
     id: "hermanooso-koda",
     franchise: "Hermano Oso",
-    emoji: "🐾",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el osezno parlanchín que acompaña al protagonista?",
@@ -888,7 +818,6 @@ export const DISNEY: Question[] = [
   {
     id: "donald-daisy",
     franchise: "Pato Donald",
-    emoji: "🦆",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la novia del Pato Donald?",
@@ -901,7 +830,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-clasicos",
     franchise: "Clásicos Disney",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -911,7 +839,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-renacimiento",
     franchise: "Disney años 90 y 2000",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de la más antigua a la más reciente.",
@@ -921,7 +848,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-moderno",
     franchise: "Disney reciente",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de la más antigua a la más reciente.",
@@ -931,7 +857,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-mascotas-disney",
     franchise: "Mascotas Disney",
-    emoji: "🔗",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada animal con el personaje al que acompaña.",
@@ -946,7 +871,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-villanos-disney",
     franchise: "Villanos Disney",
-    emoji: "🔗",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada villano con su película.",
@@ -963,7 +887,6 @@ export const DISNEY: Question[] = [
   {
     id: "bellador-aurora",
     franchise: "La Bella Durmiente",
-    emoji: "🌹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la princesa que duerme cien años tras pincharse con una rueca?",
@@ -975,7 +898,6 @@ export const DISNEY: Question[] = [
   {
     id: "bellador-hadas",
     franchise: "La Bella Durmiente",
-    emoji: "🌹",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llaman las tres hadas madrinas de Aurora?",
@@ -991,7 +913,6 @@ export const DISNEY: Question[] = [
   {
     id: "bellador-malefica",
     franchise: "La Bella Durmiente",
-    emoji: "🌹",
     difficulty: "facil",
     format: "describir",
     prompt:
@@ -1003,7 +924,6 @@ export const DISNEY: Question[] = [
   {
     id: "bellador-vestido",
     franchise: "La Bella Durmiente",
-    emoji: "🌹",
     difficulty: "media",
     format: "vf",
     prompt: "Flora y Primavera se pelean por si el vestido de Aurora debe ser rosa o verde.",
@@ -1015,7 +935,6 @@ export const DISNEY: Question[] = [
   {
     id: "bambi-tambor",
     franchise: "Bambi",
-    emoji: "🦌",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el conejo amigo de Bambi que golpea el suelo con la pata?",
@@ -1026,7 +945,6 @@ export const DISNEY: Question[] = [
   {
     id: "bambi-flor",
     franchise: "Bambi",
-    emoji: "🦌",
     difficulty: "media",
     format: "describir",
     prompt:
@@ -1038,7 +956,6 @@ export const DISNEY: Question[] = [
   {
     id: "bambi-faline",
     franchise: "Bambi",
-    emoji: "🦌",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la cervatilla de la que se enamora Bambi?",
@@ -1051,7 +968,6 @@ export const DISNEY: Question[] = [
   {
     id: "alicia-gato",
     franchise: "Alicia en el País de las Maravillas",
-    emoji: "🐇",
     difficulty: "facil",
     format: "describir",
     prompt:
@@ -1063,7 +979,6 @@ export const DISNEY: Question[] = [
   {
     id: "alicia-conejo",
     franchise: "Alicia en el País de las Maravillas",
-    emoji: "🐇",
     difficulty: "facil",
     format: "completar",
     prompt:
@@ -1074,7 +989,6 @@ export const DISNEY: Question[] = [
   {
     id: "alicia-reina",
     franchise: "Alicia en el País de las Maravillas",
-    emoji: "🐇",
     difficulty: "media",
     format: "completar",
     prompt: "Completa la sentencia favorita de la Reina de Corazones: «¡Que le corten la ___!».",
@@ -1084,7 +998,6 @@ export const DISNEY: Question[] = [
   {
     id: "alicia-oruga",
     franchise: "Alicia en el País de las Maravillas",
-    emoji: "🐇",
     difficulty: "media",
     format: "vf",
     prompt: "La Oruga Azul fuma en narguile y habla formando letras con el humo.",
@@ -1096,7 +1009,6 @@ export const DISNEY: Question[] = [
   {
     id: "robinhood-animal",
     franchise: "Robin Hood",
-    emoji: "🏹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué animal es Robin Hood en la película de Disney?",
@@ -1107,7 +1019,6 @@ export const DISNEY: Question[] = [
   {
     id: "robinhood-juan",
     franchise: "Robin Hood",
-    emoji: "🏹",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es el Príncipe Juan, el villano que se chupa el dedo?",
@@ -1118,7 +1029,6 @@ export const DISNEY: Question[] = [
   {
     id: "robinhood-littlejohn",
     franchise: "Robin Hood",
-    emoji: "🏹",
     difficulty: "media",
     format: "describir",
     prompt: "Oso grandote y bonachón, el mejor amigo de Robin y su compañero de fechorías.",
@@ -1131,7 +1041,6 @@ export const DISNEY: Question[] = [
   {
     id: "aristogatos-duquesa",
     franchise: "Los Aristogatos",
-    emoji: "🎹",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la elegante gata blanca madre de los tres gatitos?",
@@ -1142,7 +1051,6 @@ export const DISNEY: Question[] = [
   {
     id: "aristogatos-omalley",
     franchise: "Los Aristogatos",
-    emoji: "🎹",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el gato callejero que ayuda a Duquesa y a sus gatitos a volver a casa?",
@@ -1153,7 +1061,6 @@ export const DISNEY: Question[] = [
   {
     id: "aristogatos-edgar",
     franchise: "Los Aristogatos",
-    emoji: "🎹",
     difficulty: "media",
     format: "vf",
     prompt:
@@ -1166,7 +1073,6 @@ export const DISNEY: Question[] = [
   {
     id: "dumbo-timothy",
     franchise: "Dumbo",
-    emoji: "🎬",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué animal es Timothy, el amigo que convence a Dumbo de que puede volar?",
@@ -1177,7 +1083,6 @@ export const DISNEY: Question[] = [
   {
     id: "dumbo-madre",
     franchise: "Dumbo",
-    emoji: "🐘",
     difficulty: "facil",
     format: "vf",
     prompt:
@@ -1191,7 +1096,6 @@ export const DISNEY: Question[] = [
   {
     id: "pooh-igor",
     franchise: "Winnie the Pooh",
-    emoji: "🍯",
     difficulty: "facil",
     format: "describir",
     prompt: "Burro gris y melancólico al que se le cae la cola y que nunca espera nada bueno.",
@@ -1202,7 +1106,6 @@ export const DISNEY: Question[] = [
   {
     id: "pooh-miel",
     franchise: "Winnie the Pooh",
-    emoji: "🎬",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué es lo que más le gusta comer a Winnie the Pooh?",
@@ -1213,7 +1116,6 @@ export const DISNEY: Question[] = [
   {
     id: "pooh-tigger",
     franchise: "Winnie the Pooh",
-    emoji: "🍯",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Tigger, el amigo naranja que se mueve dando botes?",
@@ -1226,7 +1128,6 @@ export const DISNEY: Question[] = [
   {
     id: "mickey-perro",
     franchise: "Mickey Mouse",
-    emoji: "🐭",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el perro de Mickey Mouse?",
@@ -1237,7 +1138,6 @@ export const DISNEY: Question[] = [
   {
     id: "mickey-aprendiz",
     franchise: "Mickey Mouse",
-    emoji: "🐭",
     difficulty: "media",
     format: "describir",
     prompt:
@@ -1249,7 +1149,6 @@ export const DISNEY: Question[] = [
   {
     id: "mickey-goofy",
     franchise: "Mickey Mouse",
-    emoji: "🐭",
     difficulty: "media",
     format: "vf",
     prompt: "Pluto y Goofy son los dos perros de la pandilla, pero solo uno de ellos habla.",
@@ -1262,7 +1161,6 @@ export const DISNEY: Question[] = [
   {
     id: "donald-sobrinos",
     franchise: "Pato Donald",
-    emoji: "🦆",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llaman en España los tres sobrinos del Pato Donald?",
@@ -1278,7 +1176,6 @@ export const DISNEY: Question[] = [
   {
     id: "donald-tio",
     franchise: "Pato Donald",
-    emoji: "🦆",
     difficulty: "facil",
     format: "describir",
     prompt: "Pato riquísimo con chistera y monóculo que se baña en su depósito lleno de monedas.",
@@ -1291,7 +1188,6 @@ export const DISNEY: Question[] = [
   {
     id: "hermanooso-kenai",
     franchise: "Hermano Oso",
-    emoji: "🐻",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el joven al que los espíritus convierten en oso?",
@@ -1302,7 +1198,6 @@ export const DISNEY: Question[] = [
   {
     id: "hermanooso-castigo",
     franchise: "Hermano Oso",
-    emoji: "🐻",
     difficulty: "media",
     format: "vf",
     prompt: "Kenai se convierte en oso como castigo de los espíritus por haber matado a uno.",
@@ -1314,7 +1209,6 @@ export const DISNEY: Question[] = [
   {
     id: "kuzco-animal",
     franchise: "El emperador y sus locuras",
-    emoji: "🎒",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En qué animal convierten al emperador Kuzco?",
@@ -1325,7 +1219,6 @@ export const DISNEY: Question[] = [
   {
     id: "kuzco-yzma",
     franchise: "El emperador y sus locuras",
-    emoji: "🦙",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la consejera que intenta destronar a Kuzco?",
@@ -1339,7 +1232,6 @@ export const DISNEY: Question[] = [
   {
     id: "atlantis-milo",
     franchise: "Atlantis",
-    emoji: "🌊",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el lingüista con gafas que guía la expedición a Atlantis?",
@@ -1350,7 +1242,6 @@ export const DISNEY: Question[] = [
   {
     id: "atlantis-rourke",
     franchise: "Atlantis",
-    emoji: "🌊",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el comandante que dirige la expedición y acaba traicionando a Milo?",
@@ -1363,7 +1254,6 @@ export const DISNEY: Question[] = [
   {
     id: "planetatesoro-jim",
     franchise: "El planeta del tesoro",
-    emoji: "🪐",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el joven protagonista que embarca en busca del tesoro de Flint?",
@@ -1374,7 +1264,6 @@ export const DISNEY: Question[] = [
   {
     id: "planetatesoro-morph",
     franchise: "El planeta del tesoro",
-    emoji: "🪐",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama la masa rosa que cambia de forma e imita a todo el mundo?",
@@ -1387,7 +1276,6 @@ export const DISNEY: Question[] = [
   {
     id: "rescatadores-ratones",
     franchise: "Los Rescatadores",
-    emoji: "🐁",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman los dos ratones de la Sociedad de Rescate?",
@@ -1405,7 +1293,6 @@ export const DISNEY: Question[] = [
   {
     id: "todytoby-animales",
     franchise: "Tod y Toby",
-    emoji: "🎬",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué son Tod y Toby, los dos amigos a los que la vida acaba enfrentando?",
@@ -1423,7 +1310,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-clasicos-40",
     franchise: "Clásicos Disney",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estos clásicos de Disney de la más antigua a la más reciente.",
@@ -1433,7 +1319,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-clasicos-50",
     franchise: "Clásicos Disney",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -1444,7 +1329,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-60-70",
     franchise: "Clásicos Disney",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -1455,7 +1339,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-90-primeras",
     franchise: "Disney años 90 y 2000",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -1466,7 +1349,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-finales-90",
     franchise: "Disney años 90 y 2000",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -1477,7 +1359,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-2000",
     franchise: "Disney años 90 y 2000",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -1488,7 +1369,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-2010",
     franchise: "Disney reciente",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -1498,7 +1378,6 @@ export const DISNEY: Question[] = [
   {
     id: "orden-disney-2020",
     franchise: "Disney reciente",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas películas de Disney de la más antigua a la más reciente.",
@@ -1509,7 +1388,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-princesas-reino",
     franchise: "Princesas Disney",
-    emoji: "👑",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada princesa con el lugar donde transcurre su historia.",
@@ -1524,7 +1402,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-princesas-companero",
     franchise: "Princesas Disney",
-    emoji: "👑",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada protagonista con su acompañante.",
@@ -1539,7 +1416,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-villanos-clasicos",
     franchise: "Villanos Disney",
-    emoji: "😈",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada villano con la película en la que aparece.",
@@ -1554,7 +1430,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-villanos-viejos",
     franchise: "Villanos Disney",
-    emoji: "😈",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cuál de estos villanos NO pertenece a la película que se indica?",
@@ -1570,7 +1445,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-mascotas-dueno",
     franchise: "Mascotas Disney",
-    emoji: "🐾",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada mascota con su dueño.",
@@ -1585,7 +1459,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-conciencias",
     franchise: "Compañeros Disney",
-    emoji: "🎭",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada personaje con la película en la que hace de guía o consejero.",
@@ -1600,7 +1473,6 @@ export const DISNEY: Question[] = [
   {
     id: "relacionar-transformaciones",
     franchise: "Compañeros Disney",
-    emoji: "🎭",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué película alguien se convierte en rana?",
@@ -1614,7 +1486,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-sirenita-cancion",
     franchise: "La Sirenita",
-    emoji: "🧜",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el título de la canción de Sebastián: «Bajo el ___».",
@@ -1624,7 +1495,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-frozen-cancion",
     franchise: "Frozen",
-    emoji: "❄️",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el estribillo de Elsa en el doblaje español: «Suéltalo, ___».",
@@ -1634,7 +1504,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-hercules-cancion",
     franchise: "Hércules",
-    emoji: "⚡",
     difficulty: "media",
     format: "completar",
     prompt: "Completa el título de la canción sobre la fama de Hércules: «De cero a ___».",
@@ -1644,7 +1513,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-blancanieves-espejo",
     franchise: "Blancanieves",
-    emoji: "🍎",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa lo que pregunta la Reina: «Espejito, espejito, ¿quién es la más ___ del reino?».",
@@ -1654,7 +1522,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-genio-aladdin",
     franchise: "Aladdín",
-    emoji: "🧞",
     difficulty: "media",
     format: "completar",
     prompt: "Completa lo que ofrece el Genio al salir de la lámpara: «Tienes derecho a tres ___».",
@@ -1664,7 +1531,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-peterpan-estrella",
     franchise: "Peter Pan",
-    emoji: "🧚",
     difficulty: "media",
     format: "completar",
     prompt: "Completa las señas de la isla de Peter Pan: «La segunda estrella a la ___».",
@@ -1674,7 +1540,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-mulan-mushu",
     franchise: "Mulán",
-    emoji: "🗡️",
     difficulty: "media",
     format: "completar",
     prompt: "Completa el nombre del dragón guardián de Mulán: «Mu___».",
@@ -1684,7 +1549,6 @@ export const DISNEY: Question[] = [
   {
     id: "completar-encanto-bruno",
     franchise: "Encanto",
-    emoji: "🕯️",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el título de la canción de Encanto: «No se habla de ___».",
@@ -1696,7 +1560,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-reyleon-scar",
     franchise: "El Rey León",
-    emoji: "🦁",
     difficulty: "facil",
     format: "vf",
     prompt: "Scar es el padre de Simba y el hermano mayor de Mufasa.",
@@ -1706,7 +1569,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-frozen-olaf",
     franchise: "Frozen",
-    emoji: "❄️",
     difficulty: "facil",
     format: "vf",
     prompt: "Olaf sueña con que llegue el invierno eterno para no derretirse nunca.",
@@ -1716,7 +1578,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-cenicienta-zapato",
     franchise: "Cenicienta",
-    emoji: "🎬",
     difficulty: "facil",
     format: "vf",
     prompt: "A Cenicienta se le cae un guante al salir corriendo del baile.",
@@ -1726,7 +1587,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-pinocho-nariz",
     franchise: "Pinocho",
-    emoji: "🪵",
     difficulty: "facil",
     format: "vf",
     prompt: "A Pinocho le crecen las orejas cada vez que dice una mentira.",
@@ -1737,7 +1597,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-jorobado-quasimodo",
     franchise: "El jorobado de Notre Dame",
-    emoji: "🎬",
     difficulty: "media",
     format: "vf",
     prompt:
@@ -1748,7 +1607,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-tarzan-gorilas",
     franchise: "Tarzán",
-    emoji: "🌴",
     difficulty: "facil",
     format: "vf",
     prompt: "A Tarzán lo cría una manada de chimpancés.",
@@ -1759,7 +1617,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-zootropolis-judy",
     franchise: "Zootrópolis",
-    emoji: "🎬",
     difficulty: "media",
     format: "vf",
     prompt: "Judy Hopps llega a Zootrópolis siendo ya una policía veterana y con galones.",
@@ -1769,7 +1626,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-encanto-mirabel",
     franchise: "Encanto",
-    emoji: "🕯️",
     difficulty: "media",
     format: "vf",
     prompt: "Mirabel es la única de la familia Madrigal que no recibe ningún don.",
@@ -1779,7 +1635,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-vaiana-maui",
     franchise: "Vaiana",
-    emoji: "🌊",
     difficulty: "media",
     format: "vf",
     prompt: "Maui es un semidiós que cambia de forma gracias a un collar mágico.",
@@ -1791,7 +1646,6 @@ export const DISNEY: Question[] = [
   {
     id: "describir-ursula",
     franchise: "La Sirenita",
-    emoji: "🧜",
     difficulty: "facil",
     format: "describir",
     prompt: "Bruja del mar mitad pulpo, con el pelo blanco y dos morenas como secuaces.",
@@ -1802,7 +1656,6 @@ export const DISNEY: Question[] = [
   {
     id: "describir-hada-madrina",
     franchise: "Cenicienta",
-    emoji: "👠",
     difficulty: "facil",
     format: "describir",
     prompt: "Señora regordeta con capa azul que convierte una calabaza en carroza.",
@@ -1815,7 +1668,6 @@ export const DISNEY: Question[] = [
   {
     id: "bella-chip",
     franchise: "La Bella y la Bestia",
-    emoji: "🌹",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la tacita, hijo de la señora Potts?",
@@ -1826,7 +1678,6 @@ export const DISNEY: Question[] = [
   {
     id: "enredados-camaleon",
     franchise: "Enredados",
-    emoji: "💇",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el camaleón que acompaña a Rapunzel?",
@@ -1837,7 +1688,6 @@ export const DISNEY: Question[] = [
   {
     id: "bighero-hermano",
     franchise: "Big Hero 6",
-    emoji: "🤖",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el hermano de Hiro, el que construyó a Baymax?",
@@ -1848,7 +1698,6 @@ export const DISNEY: Question[] = [
   {
     id: "raya-dragon",
     franchise: "Raya y el último dragón",
-    emoji: "🐉",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la dragona de agua que Raya consigue despertar?",
@@ -1859,7 +1708,6 @@ export const DISNEY: Question[] = [
   {
     id: "wish-estrella",
     franchise: "Wish",
-    emoji: "⭐",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la joven que pide un deseo y hace bajar a una estrella?",
@@ -1870,7 +1718,6 @@ export const DISNEY: Question[] = [
   {
     id: "lilo-experimento",
     franchise: "Lilo & Stitch",
-    emoji: "👽",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Con qué número de experimento se conoce a Stitch?",
@@ -1881,7 +1728,6 @@ export const DISNEY: Question[] = [
   {
     id: "sirenita-eric",
     franchise: "La Sirenita",
-    emoji: "🧜",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el príncipe humano del que se enamora Ariel?",
@@ -1892,7 +1738,6 @@ export const DISNEY: Question[] = [
   {
     id: "vf-ratatouille-pelo",
     franchise: "Ratatouille",
-    emoji: "🐀",
     difficulty: "facil",
     format: "vf",
     prompt: "Remy dirige a Linguini escondido bajo su gorro, tirándole del pelo como si fueran riendas.",
@@ -1904,7 +1749,6 @@ export const DISNEY: Question[] = [
   {
     id: "fantasia-dialogos",
     franchise: "Fantasía",
-    emoji: "🎼",
     difficulty: "facil",
     format: "vf",
     prompt: "Fantasía no tiene apenas diálogo: son piezas de música clásica ilustradas con dibujos.",
@@ -1914,7 +1758,6 @@ export const DISNEY: Question[] = [
   {
     id: "fantasia-musica",
     franchise: "Fantasía",
-    emoji: "🎻",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué clase de música acompaña a Fantasía?",
@@ -1925,7 +1768,6 @@ export const DISNEY: Question[] = [
   {
     id: "fantasia-chernabog",
     franchise: "Fantasía",
-    emoji: "😈",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el demonio alado del episodio de la montaña?",
@@ -1938,7 +1780,6 @@ export const DISNEY: Question[] = [
   {
     id: "damavagabundo-espaguetis",
     franchise: "La dama y el vagabundo",
-    emoji: "🐶",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué plato comparten los dos perros en la escena más famosa de la película?",
@@ -1949,7 +1790,6 @@ export const DISNEY: Question[] = [
   {
     id: "damavagabundo-reina",
     franchise: "La dama y el vagabundo",
-    emoji: "🐶",
     difficulty: "facil",
     format: "describir",
     prompt: "Perrita cocker spaniel de casa buena, con collar azul y orejas largas.",
@@ -1960,7 +1800,6 @@ export const DISNEY: Question[] = [
   {
     id: "damavagabundo-golfo",
     franchise: "La dama y el vagabundo",
-    emoji: "🦴",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama en España el perro callejero que enseña la calle a Reina?",
@@ -1971,7 +1810,6 @@ export const DISNEY: Question[] = [
   {
     id: "damavagabundo-siameses",
     franchise: "La dama y el vagabundo",
-    emoji: "🐈",
     difficulty: "media",
     format: "vf",
     prompt: "Los dos gatos siameses de la película son los buenos y ayudan a Reina.",
@@ -1983,7 +1821,6 @@ export const DISNEY: Question[] = [
   {
     id: "merlin-grillo",
     franchise: "Merlín el encantador",
-    emoji: "🗡️",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama en España el niño escudero al que Merlín toma como aprendiz?",
@@ -1995,7 +1832,6 @@ export const DISNEY: Question[] = [
   {
     id: "merlin-espada",
     franchise: "Merlín el encantador",
-    emoji: "🪨",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué hace al protagonista digno de ser rey?",
@@ -2011,7 +1847,6 @@ export const DISNEY: Question[] = [
   {
     id: "merlin-arquimedes",
     franchise: "Merlín el encantador",
-    emoji: "🦉",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el búho sabihondo y cascarrabias de Merlín?",
@@ -2024,7 +1859,6 @@ export const DISNEY: Question[] = [
   {
     id: "basil-animal",
     franchise: "Basil el ratón superdetective",
-    emoji: "🔍",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué animal es Basil, el superdetective?",
@@ -2035,7 +1869,6 @@ export const DISNEY: Question[] = [
   {
     id: "basil-holmes",
     franchise: "Basil el ratón superdetective",
-    emoji: "🎩",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué detective de novela parodia Basil?",
@@ -2046,7 +1879,6 @@ export const DISNEY: Question[] = [
   {
     id: "basil-ratigan",
     franchise: "Basil el ratón superdetective",
-    emoji: "🐀",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama la rata que hace de villano de la película?",
@@ -2059,7 +1891,6 @@ export const DISNEY: Question[] = [
   {
     id: "oliver-animal",
     franchise: "Oliver y su pandilla",
-    emoji: "🏙️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Oliver?",
@@ -2070,7 +1901,6 @@ export const DISNEY: Question[] = [
   {
     id: "oliver-ciudad",
     franchise: "Oliver y su pandilla",
-    emoji: "🏙️",
     difficulty: "media",
     format: "corta",
     prompt: "¿En qué ciudad transcurre la película?",
@@ -2081,7 +1911,6 @@ export const DISNEY: Question[] = [
   {
     id: "oliver-dodger",
     franchise: "Oliver y su pandilla",
-    emoji: "🕶️",
     difficulty: "media",
     format: "describir",
     prompt: "Perro callejero chulesco con pañuelo al cuello que lidera la pandilla de golfos.",
@@ -2094,7 +1923,6 @@ export const DISNEY: Question[] = [
   {
     id: "caldero-taran",
     franchise: "El caldero mágico",
-    emoji: "🍲",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué se dedica Taran, el protagonista, al empezar la película?",
@@ -2105,7 +1933,6 @@ export const DISNEY: Question[] = [
   {
     id: "caldero-rey",
     franchise: "El caldero mágico",
-    emoji: "💀",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el villano que busca el caldero para crear un ejército de muertos?",
@@ -2118,7 +1945,6 @@ export const DISNEY: Question[] = [
   {
     id: "chickenlittle-cielo",
     franchise: "Chicken Little",
-    emoji: "☁️",
     difficulty: "facil",
     format: "vf",
     prompt: "Chicken Little se hace famoso en el pueblo por avisar de que el cielo se está cayendo.",
@@ -2128,7 +1954,6 @@ export const DISNEY: Question[] = [
   {
     id: "chickenlittle-animal",
     franchise: "Chicken Little",
-    emoji: "☁️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Chicken Little?",
@@ -2141,7 +1966,6 @@ export const DISNEY: Question[] = [
   {
     id: "frozen2-voz",
     franchise: "Frozen",
-    emoji: "🍂",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué empuja a Elsa a salir de Arendelle en Frozen 2?",
@@ -2157,7 +1981,6 @@ export const DISNEY: Question[] = [
   {
     id: "frozen2-espiritus",
     franchise: "Frozen",
-    emoji: "🌬️",
     difficulty: "facil",
     format: "vf",
     prompt: "En Frozen 2 aparecen espíritus de la naturaleza: aire, fuego, agua y tierra.",
@@ -2167,7 +1990,6 @@ export const DISNEY: Question[] = [
   {
     id: "frozen2-cancion",
     franchise: "Frozen",
-    emoji: "❄️",
     difficulty: "media",
     format: "completar",
     prompt: "Completa el título de la canción de Elsa en Frozen 2: «Mucho más ___».",
@@ -2179,7 +2001,6 @@ export const DISNEY: Question[] = [
   {
     id: "ralph2-internet",
     franchise: "Rompe Ralph",
-    emoji: "🌐",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A dónde viajan Ralph y Vanellope en la segunda película?",
@@ -2190,7 +2011,6 @@ export const DISNEY: Question[] = [
   {
     id: "ralph2-princesas",
     franchise: "Rompe Ralph",
-    emoji: "👑",
     difficulty: "media",
     format: "vf",
     prompt: "En Ralph rompe internet, Vanellope se encuentra con todas las princesas Disney juntas.",
@@ -2200,7 +2020,6 @@ export const DISNEY: Question[] = [
   {
     id: "ralph2-motivo",
     franchise: "Rompe Ralph",
-    emoji: "🕹️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Por qué tienen que entrar en internet?",

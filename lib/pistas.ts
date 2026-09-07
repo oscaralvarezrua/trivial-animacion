@@ -3,8 +3,8 @@ import type { Question } from "./types";
 /**
  * Emojis que estropean la pregunta.
  *
- * Cada pregunta lleva un emoji que se pinta junto a la franquicia. Es
- * decorativo, pero puede arruinar la pregunta de dos maneras:
+ * El emoji que se pinta junto a la franquicia es decorativo, pero puede
+ * arruinar la pregunta de dos maneras:
  *
  * 1. **Regalando la respuesta.** 🦥 en «¿qué animal es Sid?» da el punto.
  * 2. **Empujando a una equivocada.** 🦣 en esa misma pregunta no regala nada,
@@ -20,6 +20,12 @@ import type { Question } from "./types";
  *
  * Solo se vigilan las familias que pueden ser respuesta de verdad. Un 🎬 o un
  * 📺 no delatan nada y no hace falta listarlos.
+ *
+ * Desde que el emoji lo pone la categoría y no la pregunta, esto ya no debería
+ * saltar nunca: los doce emojis de `EMOJI_DE_CATEGORIA` son de estudio o de
+ * medio, ninguno nombra una cosa. Se mantiene precisamente para eso, para que
+ * elegir un 🐱 de categoría rompa `npm run validar` en vez de colarse en 90
+ * preguntas de golpe.
  */
 
 type Familia = "animal" | "color" | "comida" | "objeto" | "elemento";
@@ -134,11 +140,12 @@ function textoRespuesta(q: Question): string {
 }
 
 /**
- * Qué problema tiene el emoji de esta pregunta, si tiene alguno. Devuelve null
- * cuando es inocente.
+ * Qué problema tiene este emoji en esta pregunta, si tiene alguno. Devuelve
+ * null cuando es inocente. El emoji se pasa aparte porque ya no vive en la
+ * pregunta, sino en la categoría de su franquicia.
  */
-export function pistaDelEmoji(q: Question): string | null {
-  const familia = FAMILIA_DEL_EMOJI.get(q.emoji);
+export function pistaDelEmoji(emoji: string, q: Question): string | null {
+  const familia = FAMILIA_DEL_EMOJI.get(emoji);
   if (!familia) return null;
 
   const respuesta = textoRespuesta(q);

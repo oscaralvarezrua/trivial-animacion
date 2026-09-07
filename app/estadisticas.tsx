@@ -8,6 +8,7 @@ import {
   rebotesPasados,
   type Recuento,
 } from "@/lib/estadisticas";
+import { EMOJI_DE_CATEGORIA } from "@/lib/categorias";
 import { FORMAT_LABEL, PLAYERS, type GameState, type Player } from "@/lib/types";
 
 /**
@@ -91,7 +92,11 @@ function ColumnaJugador({
 
           <Bloque titulo="Por categoría">
             {filas(stats.porCategoria).map(({ clave, recuento }) => (
-              <Fila key={clave} etiqueta={clave} recuento={recuento} />
+              <Fila
+                key={clave}
+                etiqueta={`${EMOJI_DE_CATEGORIA[clave]} ${clave}`}
+                recuento={recuento}
+              />
             ))}
           </Bloque>
         </>

@@ -14,11 +14,50 @@ const ESPERA_FRANQUICIA = 8;
 /** Ningún formato puede salir más de dos veces seguidas. */
 const MAX_FORMATO_SEGUIDO = 2;
 
+/**
+ * Reparto de dificultad por ronda.
+ *
+ * Estuvo en 60/30/10 hasta que se midió lo que salía de verdad, y salía mal por
+ * dos motivos que se sumaban. Uno, que el banco solo tiene un 45 % de fáciles,
+ * así que el sorteo se las gastaba al principio: el primer cuarto del banco se
+ * jugaba al 71 % de fáciles y el último se quedaba sin ninguna. Y dos, que
+ * pedir un 60 % encadena rachas larguísimas: casi una de cada cuatro preguntas
+ * caía dentro de una tacada de ocho fáciles seguidas.
+ *
+ * Ahora va al 45/40/15, que es lo que el banco tiene. Deja de agotar las
+ * fáciles antes de tiempo y el reparto se sostiene de la primera pregunta a la
+ * última.
+ */
 const REPARTO_DIFICULTAD: [Difficulty, number][] = [
-  ["facil", 0.6],
-  ["media", 0.3],
-  ["dificil", 0.1],
+  ["facil", 0.45],
+  ["media", 0.4],
+  ["dificil", 0.15],
 ];
+
+/** Ninguna dificultad puede salir más de dos rondas seguidas. */
+const MAX_RONDAS_MISMA_DIFICULTAD = 2;
+
+/**
+ * La dificultad que no puede volver a tocar, por llevar ya dos rondas seguidas.
+ *
+ * Bajar el peso de las fáciles reparte mejor el banco, pero por sí solo no
+ * quita las rachas: el sorteo es independiente en cada ronda, así que nada le
+ * impide sacar seis fáciles seguidas de vez en cuando. Y como una ronda son dos
+ * preguntas, una racha de tres rondas ya son seis preguntas fáciles del tirón,
+ * que es justo lo que se notaba jugando.
+ *
+ * Esto le pone techo: dos rondas seguidas, cuatro preguntas, y a otra cosa. Se
+ * deduce del historial, igual que el veto de formato, así que no hace falta
+ * guardar nada nuevo en el estado ni migrar la partida.
+ */
+function dificultadVetada(historial: HistoryEntry[]): Difficulty | null {
+  const preguntas = MAX_RONDAS_MISMA_DIFICULTAD * 2;
+  if (historial.length < preguntas) return null;
+
+  const ultimas = historial.slice(-preguntas);
+  const dificultad = ultimas[0].difficulty;
+  return ultimas.every((e) => e.difficulty === dificultad) ? dificultad : null;
+}
 
 /**
  * Dos reglas del juego chocan entre sí: las preguntas difíciles tienen que ser
@@ -29,10 +68,20 @@ const REPARTO_DIFICULTAD: [Difficulty, number][] = [
  * Se arregla en el origen: cuando la última pregunta fue de opciones, esta
  * ronda no puede ser difícil. Así ninguna de las dos reglas llega a romperse.
  */
-function sortearDificultad(permitirDificil: boolean): Difficulty {
-  const opciones = permitirDificil
+function sortearDificultad(
+  permitirDificil: boolean,
+  vetada: Difficulty | null = null,
+): Difficulty {
+  let opciones = permitirDificil
     ? REPARTO_DIFICULTAD
     : REPARTO_DIFICULTAD.filter(([d]) => d !== "dificil");
+
+  // El veto se aplica solo si deja algo con lo que sortear. Puede quedarse sin
+  // opciones cuando coincide con el de «difícil» tras una pregunta de opciones,
+  // y entonces manda la regla de formato, que es la que rompe el juego.
+  if (vetada && opciones.some(([d]) => d !== vetada)) {
+    opciones = opciones.filter(([d]) => d !== vetada);
+  }
 
   const total = opciones.reduce((suma, [, peso]) => suma + peso, 0);
   const tirada = Math.random() * total;
@@ -120,7 +169,7 @@ export function servirPregunta(estado: GameState): GameState {
   const arrancaRonda = estado.turn === "oscar";
   const anterior = estado.history.at(-1);
   const dificultad = arrancaRonda
-    ? sortearDificultad(anterior?.format !== "multiple")
+    ? sortearDificultad(anterior?.format !== "multiple", dificultadVetada(estado.history))
     : (estado.roundDifficulty ?? sortearDificultad(true));
 
   const siguiente = elegirPregunta(

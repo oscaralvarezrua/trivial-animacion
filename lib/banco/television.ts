@@ -12,7 +12,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-quien",
     franchise: "Tom y Jerry",
-    emoji: "🤐",
     difficulty: "facil",
     format: "corta",
     prompt: "De los dos protagonistas, ¿cuál es el gato?",
@@ -23,7 +22,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-jerry",
     franchise: "Tom y Jerry",
-    emoji: "🐭",
     difficulty: "facil",
     format: "describir",
     prompt: "Ratón marrón, pequeño y listísimo, que siempre acaba ganando la partida al gato.",
@@ -34,7 +32,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-hablan",
     franchise: "Tom y Jerry",
-    emoji: "🤐",
     difficulty: "facil",
     format: "vf",
     prompt: "En sus cortos clásicos, Tom y Jerry casi nunca hablan.",
@@ -44,7 +41,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-spike",
     franchise: "Tom y Jerry",
-    emoji: "🐶",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Spike, que suele darle un escarmiento a Tom?",
@@ -55,7 +51,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-final",
     franchise: "Tom y Jerry",
-    emoji: "🧀",
     difficulty: "facil",
     format: "vf",
     prompt: "En los cortos clásicos, Tom acaba comiéndose a Jerry en más de la mitad de ellos.",
@@ -65,7 +60,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-oscars",
     franchise: "Tom y Jerry",
-    emoji: "🏆",
     difficulty: "media",
     format: "vf",
     prompt: "Pese a su fama, los cortos de Tom y Jerry nunca ganaron un Óscar.",
@@ -75,7 +69,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-color",
     franchise: "Tom y Jerry",
-    emoji: "🐱",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color es Tom?",
@@ -86,7 +79,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tomyjerry-persecucion",
     franchise: "Tom y Jerry",
-    emoji: "💥",
     difficulty: "media",
     format: "describir",
     prompt:
@@ -100,7 +92,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pantera-color",
     franchise: "La Pantera Rosa",
-    emoji: "🎬",
     difficulty: "facil",
     format: "corta",
     prompt: "¿De qué color es la pantera protagonista?",
@@ -111,7 +102,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pantera-habla",
     franchise: "La Pantera Rosa",
-    emoji: "🩷",
     difficulty: "media",
     format: "vf",
     prompt: "La Pantera Rosa es un personaje muy hablador que comenta todo lo que hace.",
@@ -121,7 +111,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pantera-musica",
     franchise: "La Pantera Rosa",
-    emoji: "🩷",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué instrumento lleva el peso de la famosa sintonía de la Pantera Rosa?",
@@ -132,7 +121,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pantera-origen",
     franchise: "La Pantera Rosa",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿De dónde salió originalmente la Pantera Rosa?",
@@ -148,7 +136,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pantera-inspector",
     franchise: "La Pantera Rosa",
-    emoji: "🕵️",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el inspector torpe asociado a la Pantera Rosa?",
@@ -161,7 +148,6 @@ export const TELEVISION: Question[] = [
   {
     id: "popeye-espinacas",
     franchise: "Popeye",
-    emoji: "💚",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué come Popeye para volverse fortísimo de golpe?",
@@ -172,7 +158,6 @@ export const TELEVISION: Question[] = [
   {
     id: "popeye-novia",
     franchise: "Popeye",
-    emoji: "💚",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la novia flaquísima de Popeye?",
@@ -183,7 +168,6 @@ export const TELEVISION: Question[] = [
   {
     id: "popeye-oficio",
     franchise: "Popeye",
-    emoji: "💚",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A qué se dedica Popeye?",
@@ -194,7 +178,6 @@ export const TELEVISION: Question[] = [
   {
     id: "popeye-brutus",
     franchise: "Popeye",
-    emoji: "💪",
     difficulty: "media",
     format: "vf",
     prompt: "El rival grandullón y barbudo de Popeye se llama Brutus.",
@@ -206,7 +189,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dexter-laboratorio",
     franchise: "El laboratorio de Dexter",
-    emoji: "🧪",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Dónde tiene Dexter escondido su laboratorio?",
@@ -217,7 +199,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dexter-hermana",
     franchise: "El laboratorio de Dexter",
-    emoji: "💃",
     difficulty: "facil",
     format: "describir",
     prompt: "Hermana mayor rubia y bailonga que entra en el laboratorio y lo destroza todo sin querer.",
@@ -228,7 +209,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dexter-acento",
     franchise: "El laboratorio de Dexter",
-    emoji: "🧪",
     difficulty: "media",
     format: "vf",
     prompt: "Los padres de Dexter saben perfectamente que su hijo tiene un laboratorio en casa.",
@@ -240,7 +220,6 @@ export const TELEVISION: Question[] = [
   {
     id: "johnnybravo-pelo",
     franchise: "Johnny Bravo",
-    emoji: "🕶️",
     difficulty: "media",
     format: "describir",
     prompt: "Rubio cachas con tupé, gafas de sol y camiseta negra, al que ninguna chica hace caso.",
@@ -251,7 +230,6 @@ export const TELEVISION: Question[] = [
   {
     id: "johnnybravo-exito",
     franchise: "Johnny Bravo",
-    emoji: "💔",
     difficulty: "media",
     format: "vf",
     prompt: "Johnny Bravo se pasa la serie ligando con éxito con todas las chicas.",
@@ -263,7 +241,6 @@ export const TELEVISION: Question[] = [
   {
     id: "vacaypollo-hermanos",
     franchise: "Vaca y Pollo",
-    emoji: "🐄",
     difficulty: "media",
     format: "vf",
     prompt: "En Vaca y Pollo, los dos protagonistas son padre e hijo.",
@@ -273,7 +250,6 @@ export const TELEVISION: Question[] = [
   {
     id: "vacaypollo-villano",
     franchise: "Vaca y Pollo",
-    emoji: "😈",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el villano rojo y sin pantalones que atormenta a los hermanos?",
@@ -286,7 +262,6 @@ export const TELEVISION: Question[] = [
   {
     id: "ededdeddy-nombres",
     franchise: "Ed, Edd y Eddy",
-    emoji: "🍬",
     difficulty: "media",
     format: "vf",
     prompt: "Los tres protagonistas se llaman parecido y se pasan la serie intentando ganar dinero.",
@@ -299,7 +274,6 @@ export const TELEVISION: Question[] = [
   {
     id: "billymandy-muerte",
     franchise: "Las macabras aventuras de Billy y Mandy",
-    emoji: "💀",
     difficulty: "media",
     format: "corta",
     prompt: "¿Quién es el amigo obligado de Billy y Mandy tras perder una apuesta?",
@@ -312,7 +286,6 @@ export const TELEVISION: Question[] = [
   {
     id: "foster-casa",
     franchise: "Foster",
-    emoji: "🏠",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Quiénes viven en la casa de Foster?",
@@ -330,7 +303,6 @@ export const TELEVISION: Question[] = [
   {
     id: "oyearnold-cabeza",
     franchise: "Oye Arnold",
-    emoji: "🏈",
     difficulty: "media",
     format: "describir",
     prompt: "Niño rubio con gorra azul cuya cabeza tiene forma de balón de rugby.",
@@ -341,7 +313,6 @@ export const TELEVISION: Question[] = [
   {
     id: "oyearnold-helga",
     franchise: "Oye Arnold",
-    emoji: "🎀",
     difficulty: "media",
     format: "vf",
     prompt: "Helga trata fatal a Arnold en público, pero en secreto está enamorada de él.",
@@ -353,7 +324,6 @@ export const TELEVISION: Question[] = [
   {
     id: "castores-hermanos",
     franchise: "Los Castores Cascarrabias",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué son Norbert y Dagoberto, los protagonistas de la serie?",
@@ -366,7 +336,6 @@ export const TELEVISION: Question[] = [
   {
     id: "zim-mision",
     franchise: "Invasor Zim",
-    emoji: "👽",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cuál es la misión de Zim en la Tierra?",
@@ -377,7 +346,6 @@ export const TELEVISION: Question[] = [
   {
     id: "zim-gir",
     franchise: "Invasor Zim",
-    emoji: "🤖",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el robot atolondrado que ayuda a Zim disfrazado de perro verde?",
@@ -390,7 +358,6 @@ export const TELEVISION: Question[] = [
   {
     id: "jimmyneutron-perro",
     franchise: "Jimmy Neutrón",
-    emoji: "🐕",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el perro robot de Jimmy Neutrón?",
@@ -401,7 +368,6 @@ export const TELEVISION: Question[] = [
   {
     id: "jimmyneutron-pelo",
     franchise: "Jimmy Neutrón",
-    emoji: "🧠",
     difficulty: "media",
     format: "vf",
     prompt: "Jimmy Neutrón lleva la cabeza rapada al cero.",
@@ -413,7 +379,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dannyphantom-poderes",
     franchise: "Danny Phantom",
-    emoji: "👻",
     difficulty: "media",
     format: "multiple",
     prompt: "¿En qué se convierte Danny tras el accidente en el laboratorio de sus padres?",
@@ -426,7 +391,6 @@ export const TELEVISION: Question[] = [
   {
     id: "thornberrys-eliza",
     franchise: "Los Thornberrys",
-    emoji: "🦓",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué don tiene Eliza Thornberry?",
@@ -444,7 +408,6 @@ export const TELEVISION: Question[] = [
   {
     id: "rocko-animal",
     franchise: "La vida moderna de Rocko",
-    emoji: "🎬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué animal es Rocko?",
@@ -457,7 +420,6 @@ export const TELEVISION: Question[] = [
   {
     id: "relacionar-cn-noventas",
     franchise: "Series de dibujos",
-    emoji: "📺",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada personaje con su serie.",
@@ -473,7 +435,6 @@ export const TELEVISION: Question[] = [
   {
     id: "orden-nickelodeon",
     franchise: "Series de dibujos",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de la más antigua a la más reciente.",
@@ -484,7 +445,6 @@ export const TELEVISION: Question[] = [
   {
     id: "orden-cartoonnetwork",
     franchise: "Series de dibujos",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de Cartoon Network de la más antigua a la más reciente.",
@@ -502,7 +462,6 @@ export const TELEVISION: Question[] = [
   {
     id: "padrefamilia-bebe",
     franchise: "Padre de familia",
-    emoji: "👶",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el bebé de cabeza ovalada que habla y planea maldades?",
@@ -513,7 +472,6 @@ export const TELEVISION: Question[] = [
   {
     id: "padrefamilia-perro",
     franchise: "Padre de familia",
-    emoji: "🐕",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el perro que habla, bebe martinis y escribe novelas?",
@@ -524,7 +482,6 @@ export const TELEVISION: Question[] = [
   {
     id: "padrefamilia-ciudad",
     franchise: "Padre de familia",
-    emoji: "🏘️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué ciudad inventada viven los Griffin?",
@@ -535,7 +492,6 @@ export const TELEVISION: Question[] = [
   {
     id: "padrefamilia-gag",
     franchise: "Padre de familia",
-    emoji: "🐔",
     difficulty: "media",
     format: "vf",
     prompt: "Un gag recurrente de la serie son las peleas larguísimas de Peter con un pollo gigante.",
@@ -547,7 +503,6 @@ export const TELEVISION: Question[] = [
   {
     id: "southpark-kenny",
     franchise: "South Park",
-    emoji: "🧡",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el niño de la parka naranja al que no se le entiende al hablar?",
@@ -558,7 +513,6 @@ export const TELEVISION: Question[] = [
   {
     id: "southpark-estilo",
     franchise: "South Park",
-    emoji: "✂️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué imita el estilo visual de South Park?",
@@ -574,7 +528,6 @@ export const TELEVISION: Question[] = [
   {
     id: "southpark-estado",
     franchise: "South Park",
-    emoji: "🏔️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿En qué estado de Estados Unidos está el pueblo de South Park?",
@@ -585,7 +538,6 @@ export const TELEVISION: Question[] = [
   {
     id: "southpark-cartman",
     franchise: "South Park",
-    emoji: "😠",
     difficulty: "media",
     format: "describir",
     prompt: "Niño gordo, egoísta y malhablado, con gorro azul de pompón, que manda en el grupo.",
@@ -598,7 +550,6 @@ export const TELEVISION: Question[] = [
   {
     id: "rickymorty-parentesco",
     franchise: "Rick y Morty",
-    emoji: "🧪",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué son Rick y Morty el uno del otro?",
@@ -609,7 +560,6 @@ export const TELEVISION: Question[] = [
   {
     id: "rickymorty-pistola",
     franchise: "Rick y Morty",
-    emoji: "🌀",
     difficulty: "media",
     format: "corta",
     prompt: "¿Qué usa Rick para abrir portales a otras dimensiones?",
@@ -620,7 +570,6 @@ export const TELEVISION: Question[] = [
   {
     id: "rickymorty-frase",
     franchise: "Rick y Morty",
-    emoji: "🥒",
     difficulty: "media",
     format: "completar",
     prompt: "Completa el episodio más celebrado de la serie: «Rick ___», cuando se convierte en pepinillo.",
@@ -630,7 +579,6 @@ export const TELEVISION: Question[] = [
   {
     id: "rickymorty-tono",
     franchise: "Rick y Morty",
-    emoji: "🧪",
     difficulty: "media",
     format: "vf",
     prompt: "Rick y Morty es una serie infantil pensada para verse en familia.",
@@ -642,7 +590,6 @@ export const TELEVISION: Question[] = [
   {
     id: "arcane-videojuego",
     franchise: "Arcane",
-    emoji: "⚡",
     difficulty: "media",
     format: "multiple",
     prompt: "¿En qué videojuego se basa Arcane?",
@@ -653,7 +600,6 @@ export const TELEVISION: Question[] = [
   {
     id: "arcane-hermanas",
     franchise: "Arcane",
-    emoji: "💙",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llaman las dos hermanas protagonistas de Arcane?",
@@ -664,7 +610,6 @@ export const TELEVISION: Question[] = [
   {
     id: "arcane-ciudades",
     franchise: "Arcane",
-    emoji: "🏙️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman la ciudad de arriba y la de abajo en Arcane?",
@@ -680,7 +625,6 @@ export const TELEVISION: Question[] = [
   {
     id: "arcane-publico",
     franchise: "Arcane",
-    emoji: "⚡",
     difficulty: "media",
     format: "vf",
     prompt: "Arcane es una serie infantil, pese a estar basada en un videojuego competitivo.",
@@ -692,7 +636,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supermario-hermano",
     franchise: "Super Mario",
-    emoji: "🍄",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el hermano de Mario, el alto y de verde?",
@@ -703,7 +646,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supermario-villano",
     franchise: "Super Mario",
-    emoji: "🐢",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama el rey tortuga que secuestra a la princesa?",
@@ -714,7 +656,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supermario-princesa",
     franchise: "Super Mario",
-    emoji: "👑",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la princesa del Reino Champiñón?",
@@ -725,7 +666,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supermario-oficio",
     franchise: "Super Mario",
-    emoji: "🔧",
     difficulty: "facil",
     format: "vf",
     prompt: "Mario y Luigi son fontaneros.",
@@ -737,7 +677,6 @@ export const TELEVISION: Question[] = [
   {
     id: "autoslocos-patan",
     franchise: "Los Autos Locos",
-    emoji: "🏎️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el perro que se ríe entre dientes de su propio amo?",
@@ -748,7 +687,6 @@ export const TELEVISION: Question[] = [
   {
     id: "autoslocos-nodoyuna",
     franchise: "Los Autos Locos",
-    emoji: "🏁",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se llama en España el tramposo que hace todo lo posible por ganar la carrera?",
@@ -759,7 +697,6 @@ export const TELEVISION: Question[] = [
   {
     id: "autoslocos-gana",
     franchise: "Los Autos Locos",
-    emoji: "🏆",
     difficulty: "facil",
     format: "vf",
     prompt: "Pierre Nodoyuna acaba ganando casi todas las carreras gracias a sus trampas.",
@@ -769,7 +706,6 @@ export const TELEVISION: Question[] = [
   {
     id: "autoslocos-que",
     franchise: "Los Autos Locos",
-    emoji: "🏎️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿En qué compiten los personajes de esta serie?",
@@ -782,7 +718,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dongato-quien",
     franchise: "Don Gato",
-    emoji: "🎩",
     difficulty: "facil",
     format: "describir",
     prompt: "Gato amarillo con chaleco morado y sombrero que lidera una pandilla en un callejón.",
@@ -793,7 +728,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dongato-matute",
     franchise: "Don Gato",
-    emoji: "👮",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el policía que intenta pillar a la pandilla?",
@@ -804,7 +738,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dongato-donde",
     franchise: "Don Gato",
-    emoji: "🗑️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Dónde vive la pandilla de Don Gato?",
@@ -815,7 +748,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dongato-benito",
     franchise: "Don Gato",
-    emoji: "🧢",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el gatito pequeño y despistado de la pandilla?",
@@ -828,7 +760,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supersonicos-epoca",
     franchise: "Los Supersónicos",
-    emoji: "🚀",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿En qué época viven Los Supersónicos?",
@@ -839,7 +770,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supersonicos-picapiedra",
     franchise: "Los Supersónicos",
-    emoji: "🛸",
     difficulty: "facil",
     format: "vf",
     prompt: "Los Supersónicos y Los Picapiedra son de estudios distintos y no tienen nada que ver.",
@@ -849,7 +779,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supersonicos-robotina",
     franchise: "Los Supersónicos",
-    emoji: "🤖",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la robot que se ocupa de la casa?",
@@ -862,7 +791,6 @@ export const TELEVISION: Question[] = [
   {
     id: "yogui-cestas",
     franchise: "El Oso Yogui",
-    emoji: "🐻",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué le roba Yogui a los visitantes del parque?",
@@ -873,7 +801,6 @@ export const TELEVISION: Question[] = [
   {
     id: "yogui-bubu",
     franchise: "El Oso Yogui",
-    emoji: "🐻",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el osito pequeño que acompaña a Yogui?",
@@ -884,7 +811,6 @@ export const TELEVISION: Question[] = [
   {
     id: "yogui-parque",
     franchise: "El Oso Yogui",
-    emoji: "🌲",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el parque en el que vive Yogui?",
@@ -897,7 +823,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-zanahoria",
     franchise: "Looney Tunes",
-    emoji: "🐦",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué está siempre comiendo Bugs Bunny?",
@@ -908,7 +833,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-frase",
     franchise: "Looney Tunes",
-    emoji: "🐰",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el saludo de Bugs Bunny: «¿Qué hay de nuevo, ___?».",
@@ -918,7 +842,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-piolin",
     franchise: "Looney Tunes",
-    emoji: "🐤",
     difficulty: "facil",
     format: "describir",
     prompt: "Canario amarillo diminuto y cabezón al que un gato lleva persiguiendo toda la vida.",
@@ -929,7 +852,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-silvestre",
     franchise: "Looney Tunes",
-    emoji: "🐈",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el gato ceceante que persigue a Piolín?",
@@ -940,7 +862,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-bugs-animal",
     franchise: "Looney Tunes",
-    emoji: "🥕",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Bugs Bunny?",
@@ -951,7 +872,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-porky",
     franchise: "Looney Tunes",
-    emoji: "🐷",
     difficulty: "media",
     format: "describir",
     prompt: "Cerdito tartamudo que sale al final a despedir el corto.",
@@ -962,7 +882,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-elmer",
     franchise: "Looney Tunes",
-    emoji: "🔫",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el cazador calvo que nunca consigue cazar a Bugs Bunny?",
@@ -973,7 +892,6 @@ export const TELEVISION: Question[] = [
   {
     id: "looney-speedy",
     franchise: "Looney Tunes",
-    emoji: "🐭",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el ratón mexicano más rápido del mundo?",
@@ -986,7 +904,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-maggie",
     franchise: "Los Simpson",
-    emoji: "🍼",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la bebé de la familia Simpson, la del chupete?",
@@ -997,7 +914,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-milhouse",
     franchise: "Los Simpson",
-    emoji: "👓",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el mejor amigo de Bart, el de las gafas y el pelo azul?",
@@ -1008,7 +924,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-homer",
     franchise: "Los Simpson",
-    emoji: "🍩",
     difficulty: "facil",
     format: "describir",
     prompt: "Padre calvo y barrigón, adicto a las rosquillas y a la cerveza, trabaja en la central nuclear.",
@@ -1019,7 +934,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-trabajo",
     franchise: "Los Simpson",
-    emoji: "☢️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Dónde trabaja Homer Simpson?",
@@ -1035,7 +949,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-lisa",
     franchise: "Los Simpson",
-    emoji: "🍩",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué instrumento toca Lisa Simpson?",
@@ -1046,7 +959,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-amarillos",
     franchise: "Los Simpson",
-    emoji: "💛",
     difficulty: "facil",
     format: "vf",
     prompt: "Los Simpson son de color amarillo.",
@@ -1056,7 +968,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-perro",
     franchise: "Los Simpson",
-    emoji: "🐕",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el perro galgo de la familia?",
@@ -1067,7 +978,6 @@ export const TELEVISION: Question[] = [
   {
     id: "simpsons-bart-frase",
     franchise: "Los Simpson",
-    emoji: "🛹",
     difficulty: "media",
     format: "completar",
     prompt: "Completa lo que responde Bart cuando le pillan: «Yo no he sido, nadie me ha visto, no ___ probar nada».",
@@ -1079,7 +989,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bobesponja-plankton",
     franchise: "Bob Esponja",
-    emoji: "🦠",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el ser diminuto que quiere robar la fórmula secreta?",
@@ -1090,7 +999,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bobesponja-trabajo",
     franchise: "Bob Esponja",
-    emoji: "🍔",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuál es el trabajo de Bob Esponja?",
@@ -1101,7 +1009,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bobesponja-hamburguesa",
     franchise: "Bob Esponja",
-    emoji: "🧽",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la hamburguesa estrella del restaurante?",
@@ -1112,7 +1019,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bobesponja-carne",
     franchise: "Bob Esponja",
-    emoji: "🚗",
     difficulty: "facil",
     format: "vf",
     prompt: "Bob Esponja lleva años sin conseguir aprobar el examen de conducir.",
@@ -1122,7 +1028,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bobesponja-arenita-quien",
     franchise: "Bob Esponja",
-    emoji: "🐿️",
     difficulty: "facil",
     format: "describir",
     prompt: "Ardilla de Texas que vive bajo el mar dentro de una cúpula de aire y hace kárate.",
@@ -1133,7 +1038,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bobesponja-ciudad",
     franchise: "Bob Esponja",
-    emoji: "🌊",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la ciudad submarina donde vive Bob Esponja?",
@@ -1146,7 +1050,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tortugas-leonardo",
     franchise: "Las Tortugas Ninja",
-    emoji: "🐢",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué color es el antifaz de Leonardo, el líder?",
@@ -1157,7 +1060,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tortugas-alcantarillas",
     franchise: "Las Tortugas Ninja",
-    emoji: "🐢",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Dónde viven las Tortugas Ninja?",
@@ -1168,7 +1070,6 @@ export const TELEVISION: Question[] = [
   {
     id: "tortugas-nunchakus",
     franchise: "Las Tortugas Ninja",
-    emoji: "🧡",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué arma usa Miguel Ángel, el del antifaz naranja?",
@@ -1181,7 +1082,6 @@ export const TELEVISION: Question[] = [
   {
     id: "picapiedra-vilma",
     franchise: "Los Picapiedra",
-    emoji: "👩",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama la mujer de Pedro Picapiedra?",
@@ -1192,7 +1092,6 @@ export const TELEVISION: Question[] = [
   {
     id: "picapiedra-epoca",
     franchise: "Los Picapiedra",
-    emoji: "🦕",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿En qué época viven Los Picapiedra?",
@@ -1203,7 +1102,6 @@ export const TELEVISION: Question[] = [
   {
     id: "picapiedra-grito",
     franchise: "Los Picapiedra",
-    emoji: "📢",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa el grito de Pedro Picapiedra: «¡Yabba dabba ___!».",
@@ -1215,7 +1113,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pitufos-papa",
     franchise: "Los Pitufos",
-    emoji: "🧙",
     difficulty: "facil",
     format: "describir",
     prompt: "Pitufo de barba blanca y ropa roja que manda en la aldea y prepara pociones.",
@@ -1226,7 +1123,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pitufos-pantalones",
     franchise: "Los Pitufos",
-    emoji: "🩳",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿De qué color son el gorro y los pantalones de casi todos los pitufos?",
@@ -1237,7 +1133,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pitufos-gruñon",
     franchise: "Los Pitufos",
-    emoji: "😠",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el pitufo que empieza todas sus frases con «yo odio»?",
@@ -1250,7 +1145,6 @@ export const TELEVISION: Question[] = [
   {
     id: "futurama-fry",
     franchise: "Futurama",
-    emoji: "🧊",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el repartidor de pizzas que se pasa mil años congelado?",
@@ -1261,7 +1155,6 @@ export const TELEVISION: Question[] = [
   {
     id: "futurama-empresa",
     franchise: "Futurama",
-    emoji: "📦",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama la empresa de reparto en la que trabajan?",
@@ -1272,7 +1165,6 @@ export const TELEVISION: Question[] = [
   {
     id: "futurama-leela",
     franchise: "Futurama",
-    emoji: "👁️",
     difficulty: "media",
     format: "describir",
     prompt: "Capitana de piel morada, coleta y un único ojo enorme en mitad de la cara.",
@@ -1285,7 +1177,6 @@ export const TELEVISION: Question[] = [
   {
     id: "horaaventuras-finn",
     franchise: "Hora de aventuras",
-    emoji: "🎒",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el niño humano del gorro blanco con orejas?",
@@ -1296,7 +1187,6 @@ export const TELEVISION: Question[] = [
   {
     id: "horaaventuras-reyhielo",
     franchise: "Hora de aventuras",
-    emoji: "👑",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Quién es el villano de la corona mágica que secuestra princesas?",
@@ -1307,7 +1197,6 @@ export const TELEVISION: Question[] = [
   {
     id: "horaaventuras-marceline",
     franchise: "Hora de aventuras",
-    emoji: "🎸",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la reina vampiro que toca el bajo?",
@@ -1320,7 +1209,6 @@ export const TELEVISION: Question[] = [
   {
     id: "gravityfalls-stan",
     franchise: "Gravity Falls",
-    emoji: "🏚️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el tío abuelo que regenta la Cabaña del Misterio?",
@@ -1331,7 +1219,6 @@ export const TELEVISION: Question[] = [
   {
     id: "gravityfalls-diario",
     franchise: "Gravity Falls",
-    emoji: "🌲",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué encuentra Dipper en el bosque y cambia todo el verano?",
@@ -1342,7 +1229,6 @@ export const TELEVISION: Question[] = [
   {
     id: "gravityfalls-pueblo",
     franchise: "Gravity Falls",
-    emoji: "🌲",
     difficulty: "facil",
     format: "vf",
     prompt: "Gravity Falls es un pueblo tranquilo y de lo más normal, sin nada raro.",
@@ -1354,7 +1240,6 @@ export const TELEVISION: Question[] = [
   {
     id: "phineas-doofenshmirtz",
     franchise: "Phineas y Ferb",
-    emoji: "🥼",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el científico malvado al que se enfrenta Perry?",
@@ -1365,7 +1250,6 @@ export const TELEVISION: Question[] = [
   {
     id: "phineas-frase",
     franchise: "Phineas y Ferb",
-    emoji: "🔨",
     difficulty: "facil",
     format: "completar",
     prompt: "Completa lo que dice Phineas cada mañana: «Ferb, ya sé lo que vamos a hacer ___».",
@@ -1375,7 +1259,6 @@ export const TELEVISION: Question[] = [
   {
     id: "phineas-verano",
     franchise: "Phineas y Ferb",
-    emoji: "☀️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué dedican los hermanos cada día de sus vacaciones de verano?",
@@ -1393,7 +1276,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supernenas-profesor",
     franchise: "Las Supernenas",
-    emoji: "🧪",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el científico que crea a las Supernenas?",
@@ -1404,7 +1286,6 @@ export const TELEVISION: Question[] = [
   {
     id: "supernenas-ingrediente",
     franchise: "Las Supernenas",
-    emoji: "⚗️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué ingrediente accidental les dio los superpoderes?",
@@ -1417,7 +1298,6 @@ export const TELEVISION: Question[] = [
   {
     id: "steven-playa",
     franchise: "Steven Universe",
-    emoji: "🏖️",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo se llama el pueblo costero donde vive Steven?",
@@ -1428,7 +1308,6 @@ export const TELEVISION: Question[] = [
   {
     id: "steven-gema",
     franchise: "Steven Universe",
-    emoji: "💎",
     difficulty: "facil",
     format: "vf",
     prompt: "Steven lleva la gema heredada de su madre incrustada en la frente.",
@@ -1440,7 +1319,6 @@ export const TELEVISION: Question[] = [
   {
     id: "gumball-hermana",
     franchise: "El asombroso mundo de Gumball",
-    emoji: "🐰",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la hermana pequeña y superdotada de Gumball?",
@@ -1451,7 +1329,6 @@ export const TELEVISION: Question[] = [
   {
     id: "gumball-animal",
     franchise: "El asombroso mundo de Gumball",
-    emoji: "🎬",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Gumball?",
@@ -1464,7 +1341,6 @@ export const TELEVISION: Question[] = [
   {
     id: "avatar-aang",
     franchise: "Avatar: la leyenda de Aang",
-    emoji: "💨",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el niño calvo con la flecha azul tatuada en la cabeza?",
@@ -1475,7 +1351,6 @@ export const TELEVISION: Question[] = [
   {
     id: "avatar-elementos",
     franchise: "Avatar: la leyenda de Aang",
-    emoji: "💨",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuáles son los cuatro elementos que se dominan en Avatar?",
@@ -1491,7 +1366,6 @@ export const TELEVISION: Question[] = [
   {
     id: "avatar-zuko",
     franchise: "Avatar: la leyenda de Aang",
-    emoji: "🔥",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el príncipe desterrado de la Nación del Fuego con una cicatriz en el ojo?",
@@ -1504,7 +1378,6 @@ export const TELEVISION: Question[] = [
   {
     id: "ben10-prima",
     franchise: "Ben 10",
-    emoji: "👧",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la prima de Ben que viaja con él?",
@@ -1515,7 +1388,6 @@ export const TELEVISION: Question[] = [
   {
     id: "ben10-que-hace",
     franchise: "Ben 10",
-    emoji: "⌚",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué le permite hacer a Ben el reloj que encuentra?",
@@ -1533,7 +1405,6 @@ export const TELEVISION: Question[] = [
   {
     id: "scooby-shaggy",
     franchise: "Scooby-Doo",
-    emoji: "🥪",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el chico flacucho y tragón, mejor amigo de Scooby?",
@@ -1544,7 +1415,6 @@ export const TELEVISION: Question[] = [
   {
     id: "scooby-animal",
     franchise: "Scooby-Doo",
-    emoji: "🐕",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué raza de perro es Scooby-Doo?",
@@ -1555,7 +1425,6 @@ export const TELEVISION: Question[] = [
   {
     id: "scooby-monstruos",
     franchise: "Scooby-Doo",
-    emoji: "👻",
     difficulty: "facil",
     format: "vf",
     prompt: "En Scooby-Doo, los monstruos casi siempre resultan ser una persona disfrazada.",
@@ -1565,7 +1434,6 @@ export const TELEVISION: Question[] = [
   {
     id: "scooby-galletas",
     franchise: "Scooby-Doo",
-    emoji: "🐶",
     difficulty: "media",
     format: "corta",
     prompt: "¿Con qué se soborna a Scooby para que se atreva a entrar en un sitio?",
@@ -1578,7 +1446,6 @@ export const TELEVISION: Question[] = [
   {
     id: "relacionar-hannabarbera",
     franchise: "Series de dibujos",
-    emoji: "📺",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada personaje con su serie.",
@@ -1594,7 +1461,6 @@ export const TELEVISION: Question[] = [
   {
     id: "relacionar-looney",
     franchise: "Series de dibujos",
-    emoji: "🐰",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada personaje de los Looney Tunes con lo que le define.",
@@ -1610,7 +1476,6 @@ export const TELEVISION: Question[] = [
   {
     id: "orden-hannabarbera",
     franchise: "Series de dibujos",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de la más antigua a la más reciente.",
@@ -1621,7 +1486,6 @@ export const TELEVISION: Question[] = [
   {
     id: "relacionar-parejas-persecucion",
     franchise: "Mascotas de series",
-    emoji: "🏃",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada perseguidor con su perseguido.",
@@ -1637,7 +1501,6 @@ export const TELEVISION: Question[] = [
   {
     id: "series-dibujos-dificil",
     franchise: "Series de dibujos",
-    emoji: "🏢",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué estudio está detrás de Los Picapiedra, Don Gato y El Oso Yogui?",
@@ -1650,7 +1513,6 @@ export const TELEVISION: Question[] = [
   {
     id: "casamickey-formato",
     franchise: "La casa de Mickey Mouse",
-    emoji: "🏠",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué le pide la serie al espectador todo el rato?",
@@ -1666,7 +1528,6 @@ export const TELEVISION: Question[] = [
   {
     id: "casamickey-pandilla",
     franchise: "La casa de Mickey Mouse",
-    emoji: "🐭",
     difficulty: "facil",
     format: "vf",
     prompt: "En La casa de Mickey Mouse salen Minnie, Donald, Daisy, Goofy y Pluto.",
@@ -1676,7 +1537,6 @@ export const TELEVISION: Question[] = [
   {
     id: "casamickey-publico",
     franchise: "La casa de Mickey Mouse",
-    emoji: "🧸",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A qué público va dirigida?",
@@ -1687,7 +1547,6 @@ export const TELEVISION: Question[] = [
   {
     id: "lilostitch-serie",
     franchise: "Lilo & Stitch",
-    emoji: "👽",
     difficulty: "media",
     format: "multiple",
     prompt: "¿A qué se dedican Lilo y Stitch en la serie de televisión?",
@@ -1703,7 +1562,6 @@ export const TELEVISION: Question[] = [
   {
     id: "americandragon-jake",
     franchise: "American Dragon",
-    emoji: "🐲",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué le pasa a Jake Long, el protagonista?",
@@ -1719,7 +1577,6 @@ export const TELEVISION: Question[] = [
   {
     id: "kuzco-cole",
     franchise: "El emperador y sus locuras",
-    emoji: "🎒",
     difficulty: "media",
     format: "vf",
     prompt: "La serie derivada de la película manda a Kuzco al colegio para poder ser emperador.",
@@ -1729,7 +1586,6 @@ export const TELEVISION: Question[] = [
   {
     id: "doctorajuguetes-oficio",
     franchise: "Doctora Juguetes",
-    emoji: "🩺",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A qué se dedica la Doctora Juguetes?",
@@ -1740,7 +1596,6 @@ export const TELEVISION: Question[] = [
   {
     id: "doctorajuguetes-estetoscopio",
     franchise: "Doctora Juguetes",
-    emoji: "✨",
     difficulty: "facil",
     format: "vf",
     prompt: "Los juguetes cobran vida cuando ella se pone su estetoscopio.",
@@ -1750,7 +1605,6 @@ export const TELEVISION: Question[] = [
   {
     id: "jakepiratas-villano",
     franchise: "Jake y los piratas de Nunca Jamás",
-    emoji: "🏴‍☠️",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué pirata clásico de Disney hace de villano en esta serie?",
@@ -1761,7 +1615,6 @@ export const TELEVISION: Question[] = [
   {
     id: "jakepiratas-mundo",
     franchise: "Jake y los piratas de Nunca Jamás",
-    emoji: "🗺️",
     difficulty: "facil",
     format: "vf",
     prompt: "La serie transcurre en la Isla del Tesoro, la de Long John Silver.",
@@ -1771,7 +1624,6 @@ export const TELEVISION: Question[] = [
   {
     id: "sofia-amuleto",
     franchise: "Sofía la Primera",
-    emoji: "💜",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cómo se convierte Sofía en princesa?",
@@ -1787,7 +1639,6 @@ export const TELEVISION: Question[] = [
   {
     id: "sofia-princesas",
     franchise: "Sofía la Primera",
-    emoji: "👑",
     difficulty: "media",
     format: "vf",
     prompt: "En la serie aparecen de visita princesas Disney clásicas como Cenicienta o Ariel.",
@@ -1797,7 +1648,6 @@ export const TELEVISION: Question[] = [
   {
     id: "star-varita",
     franchise: "Star contra las fuerzas del mal",
-    emoji: "🪄",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué es Star Butterfly?",
@@ -1813,7 +1663,6 @@ export const TELEVISION: Question[] = [
   {
     id: "star-marco",
     franchise: "Star contra las fuerzas del mal",
-    emoji: "🌎",
     difficulty: "media",
     format: "vf",
     prompt: "Star llega a la Tierra y se instala ella sola en un castillo abandonado.",
@@ -1823,7 +1672,6 @@ export const TELEVISION: Question[] = [
   {
     id: "randy-ninja",
     franchise: "Randy Cunningham",
-    emoji: "🥷",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué es Randy Cunningham además de estudiante?",
@@ -1834,7 +1682,6 @@ export const TELEVISION: Question[] = [
   {
     id: "pecezuelos-donde",
     franchise: "Pecezuelos",
-    emoji: "🐠",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Dónde transcurre Pecezuelos?",
@@ -1850,7 +1697,6 @@ export const TELEVISION: Question[] = [
   {
     id: "reemplazantes-telefono",
     franchise: "Los reemplazantes",
-    emoji: "☎️",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué pueden hacer los hermanos protagonistas con su teléfono?",
@@ -1866,7 +1712,6 @@ export const TELEVISION: Question[] = [
   {
     id: "wander-viajero",
     franchise: "Wander",
-    emoji: "🧡",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo es Wander, el protagonista naranja de esta serie?",
@@ -1884,7 +1729,6 @@ export const TELEVISION: Question[] = [
   {
     id: "caillou-edad",
     franchise: "Caillou",
-    emoji: "👦",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué llama la atención del aspecto de Caillou?",
@@ -1895,7 +1739,6 @@ export const TELEVISION: Question[] = [
   {
     id: "caillou-hermana",
     franchise: "Caillou",
-    emoji: "👧",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama la hermana pequeña de Caillou?",
@@ -1906,7 +1749,6 @@ export const TELEVISION: Question[] = [
   {
     id: "lazytown-sportacus",
     franchise: "Lazy Town",
-    emoji: "🤸",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué predica Sportacus, el héroe de bigote azul?",
@@ -1922,7 +1764,6 @@ export const TELEVISION: Question[] = [
   {
     id: "lazytown-robbie",
     franchise: "Lazy Town",
-    emoji: "😈",
     difficulty: "media",
     format: "corta",
     prompt: "¿Cómo se llama el villano vago que quiere que todos sigan siendo perezosos?",
@@ -1933,7 +1774,6 @@ export const TELEVISION: Question[] = [
   {
     id: "lazytown-stephanie",
     franchise: "Lazy Town",
-    emoji: "🤸",
     difficulty: "media",
     format: "vf",
     prompt: "La niña protagonista de Lazy Town tiene el pelo azul.",
@@ -1943,7 +1783,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dora-mochila",
     franchise: "Dora la exploradora",
-    emoji: "🎒",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué dos objetos ayudan a Dora en cada aventura?",
@@ -1954,7 +1793,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dora-zorro",
     franchise: "Dora la exploradora",
-    emoji: "🦊",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el zorro que intenta robarles las cosas?",
@@ -1965,7 +1803,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dora-idioma",
     franchise: "Dora la exploradora",
-    emoji: "🗣️",
     difficulty: "media",
     format: "vf",
     prompt: "La serie original enseña palabras en español a niños de habla inglesa.",
@@ -1975,7 +1812,6 @@ export const TELEVISION: Question[] = [
   {
     id: "backyardigans-patio",
     franchise: "Los Backyardigans",
-    emoji: "🏡",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Dónde ocurren de verdad las aventuras de los Backyardigans?",
@@ -1991,7 +1827,6 @@ export const TELEVISION: Question[] = [
   {
     id: "backyardigans-musica",
     franchise: "Los Backyardigans",
-    emoji: "🎵",
     difficulty: "media",
     format: "vf",
     prompt: "Todos los episodios de Los Backyardigans usan el mismo estilo musical.",
@@ -2001,7 +1836,6 @@ export const TELEVISION: Question[] = [
   {
     id: "littleeinsteins-nave",
     franchise: "Little Einsteins",
-    emoji: "🧒",
     difficulty: "media",
     format: "multiple",
     prompt: "¿En qué viajan los cuatro niños de Little Einsteins?",
@@ -2012,7 +1846,6 @@ export const TELEVISION: Question[] = [
   {
     id: "littleeinsteins-tema",
     franchise: "Little Einsteins",
-    emoji: "🎻",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué enseña la serie en cada episodio?",
@@ -2028,7 +1861,6 @@ export const TELEVISION: Question[] = [
   {
     id: "garfield-lasana",
     franchise: "El show de Garfield",
-    emoji: "🐶",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cuál es la comida favorita de Garfield?",
@@ -2039,7 +1871,6 @@ export const TELEVISION: Question[] = [
   {
     id: "garfield-odie",
     franchise: "El show de Garfield",
-    emoji: "🐶",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el perro baboso que convive con Garfield?",
@@ -2050,7 +1881,6 @@ export const TELEVISION: Question[] = [
   {
     id: "garfield-lunes",
     franchise: "El show de Garfield",
-    emoji: "😾",
     difficulty: "facil",
     format: "vf",
     prompt: "Garfield adora los lunes y odia dormir.",
@@ -2062,7 +1892,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bernard-oso",
     franchise: "Bernard",
-    emoji: "🤕",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animal es Bernard, el protagonista de esta serie sin diálogos?",
@@ -2073,7 +1902,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bernard-final",
     franchise: "Bernard",
-    emoji: "🤕",
     difficulty: "media",
     format: "vf",
     prompt: "En casi todos los episodios, a Bernard le acaba saliendo todo mal y se hace daño.",
@@ -2083,7 +1911,6 @@ export const TELEVISION: Question[] = [
   {
     id: "jellyjamm-planeta",
     franchise: "Jelly Jamm",
-    emoji: "🎵",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué tiene de especial el planeta de Jelly Jamm?",
@@ -2099,7 +1926,6 @@ export const TELEVISION: Question[] = [
   {
     id: "jellyjamm-origen",
     franchise: "Jelly Jamm",
-    emoji: "🇪🇸",
     difficulty: "media",
     format: "vf",
     prompt: "Jelly Jamm es una serie de producción española.",
@@ -2109,7 +1935,6 @@ export const TELEVISION: Question[] = [
   {
     id: "luckyfred-robot",
     franchise: "Lucky Fred",
-    emoji: "🤖",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué le toca en suerte a Fred en esta serie española?",
@@ -2120,7 +1945,6 @@ export const TELEVISION: Question[] = [
   {
     id: "sandra-cuentos",
     franchise: "Sandra detective de cuentos",
-    emoji: "🔎",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué investiga Sandra en esta serie española?",
@@ -2138,7 +1962,6 @@ export const TELEVISION: Question[] = [
   {
     id: "historiascorrientes-trabajo",
     franchise: "Historias corrientes",
-    emoji: "🌳",
     difficulty: "media",
     format: "multiple",
     prompt: "¿En qué trabajan Mordecai y Rigby?",
@@ -2149,7 +1972,6 @@ export const TELEVISION: Question[] = [
   {
     id: "historiascorrientes-animales",
     franchise: "Historias corrientes",
-    emoji: "🌳",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué animales son Mordecai y Rigby?",
@@ -2160,7 +1982,6 @@ export const TELEVISION: Question[] = [
   {
     id: "historiascorrientes-tono",
     franchise: "Historias corrientes",
-    emoji: "🌀",
     difficulty: "media",
     format: "vf",
     prompt:
@@ -2171,7 +1992,6 @@ export const TELEVISION: Question[] = [
   {
     id: "clarence-caracter",
     franchise: "Clarence",
-    emoji: "😄",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Cómo es Clarence, el protagonista?",
@@ -2187,7 +2007,6 @@ export const TELEVISION: Question[] = [
   {
     id: "clarence-amigos",
     franchise: "Clarence",
-    emoji: "👬",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llaman los dos mejores amigos de Clarence?",
@@ -2198,7 +2017,6 @@ export const TELEVISION: Question[] = [
   {
     id: "generatorrex-poder",
     franchise: "Generator Rex",
-    emoji: "🦾",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Qué puede hacer Rex con su cuerpo?",
@@ -2216,7 +2034,6 @@ export const TELEVISION: Question[] = [
   {
     id: "yokai-reloj",
     franchise: "Yo-Kai Watch",
-    emoji: "⌚",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Para qué sirve el reloj de Yo-Kai Watch?",
@@ -2232,7 +2049,6 @@ export const TELEVISION: Question[] = [
   {
     id: "yokai-jibanyan",
     franchise: "Yo-Kai Watch",
-    emoji: "🐱",
     difficulty: "dificil",
     format: "multiple",
     prompt: "¿Cómo se llama el yokai gato rojo más famoso de la serie?",
@@ -2243,7 +2059,6 @@ export const TELEVISION: Question[] = [
   {
     id: "inazuma-deporte",
     franchise: "Inazuma Eleven",
-    emoji: "🔥",
     difficulty: "facil",
     format: "corta",
     prompt: "¿A qué deporte se juega en Inazuma Eleven?",
@@ -2254,7 +2069,6 @@ export const TELEVISION: Question[] = [
   {
     id: "inazuma-tecnicas",
     franchise: "Inazuma Eleven",
-    emoji: "🔥",
     difficulty: "media",
     format: "vf",
     prompt: "En Inazuma Eleven los jugadores usan supertécnicas con nombre propio y efectos imposibles.",
@@ -2264,7 +2078,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bakugan-bolas",
     franchise: "Bakugan",
-    emoji: "🔴",
     difficulty: "media",
     format: "multiple",
     prompt: "¿Qué son los bakugan?",
@@ -2280,7 +2093,6 @@ export const TELEVISION: Question[] = [
   {
     id: "ninjago-lego",
     franchise: "Lego Ninjago",
-    emoji: "🧱",
     difficulty: "facil",
     format: "vf",
     prompt: "Los personajes de Ninjago son figuras de Lego.",
@@ -2290,7 +2102,6 @@ export const TELEVISION: Question[] = [
   {
     id: "ninjago-elementos",
     franchise: "Lego Ninjago",
-    emoji: "🥷",
     difficulty: "media",
     format: "vf",
     prompt: "Todos los ninjas de Ninjago dominan exactamente el mismo elemento.",
@@ -2302,7 +2113,6 @@ export const TELEVISION: Question[] = [
   {
     id: "relacionar-preescolar-2000",
     franchise: "Series preescolares",
-    emoji: "🧸",
     difficulty: "facil",
     format: "relacionar",
     prompt: "Relaciona cada personaje con su serie.",
@@ -2318,7 +2128,6 @@ export const TELEVISION: Question[] = [
   {
     id: "relacionar-disney-2000",
     franchise: "Disney reciente",
-    emoji: "📺",
     difficulty: "media",
     format: "relacionar",
     prompt: "Relaciona cada serie de Disney con su premisa.",
@@ -2334,7 +2143,6 @@ export const TELEVISION: Question[] = [
   {
     id: "orden-infantil-2000",
     franchise: "Series preescolares",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de la más antigua a la más reciente.",
@@ -2345,7 +2153,6 @@ export const TELEVISION: Question[] = [
   {
     id: "orden-boing-2010",
     franchise: "Series de dibujos",
-    emoji: "🎞️",
     difficulty: "media",
     format: "orden",
     prompt: "Ordena estas series de la más antigua a la más reciente.",
@@ -2356,7 +2163,6 @@ export const TELEVISION: Question[] = [
   {
     id: "casamickey-toodles",
     franchise: "La casa de Mickey Mouse",
-    emoji: "🧰",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Para qué llama Mickey a Toodles en cada episodio?",
@@ -2372,7 +2178,6 @@ export const TELEVISION: Question[] = [
   {
     id: "dora-botas-animal",
     franchise: "Dora la exploradora",
-    emoji: "🎒",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Qué animal es Botas, el amigo de Dora?",
@@ -2383,7 +2188,6 @@ export const TELEVISION: Question[] = [
   {
     id: "caillou-familia",
     franchise: "Caillou",
-    emoji: "👦",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Qué mascota tiene la familia de Caillou?",
@@ -2394,7 +2198,6 @@ export const TELEVISION: Question[] = [
   {
     id: "garfield-dueno",
     franchise: "El show de Garfield",
-    emoji: "🧑",
     difficulty: "facil",
     format: "corta",
     prompt: "¿Cómo se llama el dueño de Garfield?",
@@ -2405,7 +2208,6 @@ export const TELEVISION: Question[] = [
   {
     id: "lazytown-formato",
     franchise: "Lazy Town",
-    emoji: "🎭",
     difficulty: "facil",
     format: "vf",
     prompt: "Lazy Town mezcla actores de carne y hueso con muñecos.",
@@ -2415,7 +2217,6 @@ export const TELEVISION: Question[] = [
   {
     id: "doctorajuguetes-color",
     franchise: "Doctora Juguetes",
-    emoji: "🧸",
     difficulty: "facil",
     format: "vf",
     prompt: "La Doctora Juguetes es una niña que quiere ser médica como su madre.",
@@ -2425,7 +2226,6 @@ export const TELEVISION: Question[] = [
   {
     id: "sofia-edad",
     franchise: "Sofía la Primera",
-    emoji: "👑",
     difficulty: "facil",
     format: "vf",
     prompt: "Sofía nació princesa y siempre vivió en palacio.",
@@ -2435,7 +2235,6 @@ export const TELEVISION: Question[] = [
   {
     id: "inazuma-portero",
     franchise: "Inazuma Eleven",
-    emoji: "🥅",
     difficulty: "facil",
     format: "vf",
     prompt: "En Inazuma Eleven los partidos se juegan con las reglas normales del fútbol y sin nada raro.",
@@ -2445,7 +2244,6 @@ export const TELEVISION: Question[] = [
   {
     id: "ninjago-armas",
     franchise: "Lego Ninjago",
-    emoji: "⚔️",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿A qué se dedican los protagonistas de Ninjago?",
@@ -2456,7 +2254,6 @@ export const TELEVISION: Question[] = [
   {
     id: "bakugan-lanzar",
     franchise: "Bakugan",
-    emoji: "🎯",
     difficulty: "facil",
     format: "vf",
     prompt: "En Bakugan, los jugadores lanzan sus bolas sobre cartas para hacerlas abrirse.",
@@ -2466,7 +2263,6 @@ export const TELEVISION: Question[] = [
   {
     id: "yokai-invisibles",
     franchise: "Yo-Kai Watch",
-    emoji: "👻",
     difficulty: "facil",
     format: "vf",
     prompt: "Los yokai son visibles para todo el mundo sin necesidad de nada.",
@@ -2476,7 +2272,6 @@ export const TELEVISION: Question[] = [
   {
     id: "historiascorrientes-parque",
     franchise: "Historias corrientes",
-    emoji: "🌳",
     difficulty: "facil",
     format: "vf",
     prompt: "Mordecai y Rigby son dos animales que hablan y trabajan como cualquier persona.",
@@ -2486,7 +2281,6 @@ export const TELEVISION: Question[] = [
   {
     id: "clarence-tono",
     franchise: "Clarence",
-    emoji: "🌈",
     difficulty: "facil",
     format: "vf",
     prompt: "Clarence es un niño amargado al que nada le parece bien.",
@@ -2496,7 +2290,6 @@ export const TELEVISION: Question[] = [
   {
     id: "backyardigans-cuantos",
     franchise: "Los Backyardigans",
-    emoji: "🐧",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuántos amigos protagonizan Los Backyardigans?",
@@ -2507,7 +2300,6 @@ export const TELEVISION: Question[] = [
   {
     id: "littleeinsteins-cuantos",
     franchise: "Little Einsteins",
-    emoji: "🧒",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿Cuántos niños forman el equipo de Little Einsteins?",
@@ -2518,7 +2310,6 @@ export const TELEVISION: Question[] = [
   {
     id: "lilostitch-experimentos",
     franchise: "Lilo & Stitch",
-    emoji: "🧪",
     difficulty: "facil",
     format: "vf",
     prompt: "En la serie, Stitch no es el único experimento de Jumba: hay muchos más sueltos.",
@@ -2528,12 +2319,815 @@ export const TELEVISION: Question[] = [
   {
     id: "americandragon-ciudad",
     franchise: "American Dragon",
-    emoji: "🗽",
     difficulty: "facil",
     format: "multiple",
     prompt: "¿En qué ciudad vive Jake Long?",
     options: ["Nueva York", "Los Ángeles", "Chicago", "San Francisco"],
     correct: 0,
     official: "Nueva York",
+  },
+  // --- Phineas y Ferb: ampliación ---
+  {
+    id: "phineas-danville",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿En qué ciudad viven Phineas y Ferb?",
+    accepted: [["Danville"]],
+    official: "Danville",
+  },
+  {
+    id: "phineas-agente-p",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cuál es el nombre en clave de Perry cuando se pone el sombrero y se va de misión?",
+    accepted: [["Agente P", "el agente P"]],
+    official: "El agente P",
+  },
+  {
+    id: "phineas-isabella",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama la vecina que aparece cada día preguntando qué están haciendo?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Isabella"]],
+    official: "Isabella",
+  },
+  {
+    id: "phineas-baljeet",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el amigo empollón del grupo, al que le encantan las matemáticas?",
+    accepted: [["Baljeet"]],
+    official: "Baljeet",
+  },
+  {
+    id: "phineas-buford",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el matón del barrio que acaba siendo uno más de la pandilla?",
+    accepted: [["Buford"]],
+    official: "Buford",
+  },
+  {
+    id: "phineas-vanessa",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama la hija adolescente del doctor Doofenshmirtz?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Vanessa"]],
+    official: "Vanessa",
+  },
+  {
+    id: "phineas-jeremy",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el chico por el que Candace pierde el sentido?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Jeremy"]],
+    official: "Jeremy",
+  },
+  {
+    id: "phineas-stacy",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama la mejor amiga de Candace, con la que se pasa el día al teléfono?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Stacy"]],
+    official: "Stacy",
+  },
+  {
+    id: "phineas-monograma",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Quién le da a Perry las misiones desde una pantalla?",
+    options: [
+      "El mayor Monograma",
+      "El doctor Doofenshmirtz",
+      "Lawrence Fletcher",
+      "El agente Panda",
+    ],
+    correct: 0,
+    official: "El mayor Monograma",
+  },
+  {
+    id: "phineas-hermanastro",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Qué son Phineas y Ferb entre sí?",
+    options: ["Hermanastros", "Hermanos gemelos", "Primos", "Vecinos"],
+    correct: 0,
+    official: "Hermanastros",
+  },
+  {
+    id: "phineas-104",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Cuántos días de vacaciones de verano dice la canción de la cabecera que tienen?",
+    options: ["104", "100", "90", "120"],
+    correct: 0,
+    official: "104",
+  },
+  {
+    id: "phineas-inador",
+    franchise: "Phineas y Ferb",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿En qué acaba siempre el nombre de los cacharros que construye Doofenshmirtz?",
+    options: ["En «-inador»", "En «-trón»", "En «-matic»", "En «-izador»"],
+    correct: 0,
+    official: "En «-inador»",
+    note: "Congelador-inador, encogedor-inador, aburridor-inador… y así temporada tras temporada.",
+  },
+  {
+    id: "phineas-drusselstein",
+    franchise: "Phineas y Ferb",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿De qué país inventado cuenta Doofenshmirtz sus tristísimos recuerdos de infancia?",
+    options: ["Drusselstein", "Gimmelshtump", "Petrópolis", "Bergenstadt"],
+    correct: 0,
+    official: "Drusselstein",
+  },
+  {
+    id: "phineas-norm",
+    franchise: "Phineas y Ferb",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama el robot gigante y bonachón que fabrica Doofenshmirtz para que le ayude?",
+    options: ["Norm", "Rob", "Gus", "Tinman"],
+    correct: 0,
+    official: "Norm",
+  },
+  {
+    id: "phineas-area",
+    franchise: "Phineas y Ferb",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Qué territorio quiere dominar Doofenshmirtz en casi todos los episodios?",
+    options: [
+      "El Área de los Tres Estados",
+      "La ciudad de Danville",
+      "El planeta entero",
+      "El condado de Danville",
+    ],
+    correct: 0,
+    official: "El Área de los Tres Estados",
+  },
+  {
+    id: "phineas-describir",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "describir",
+    prompt:
+      "Niño pelirrojo con la cabeza en forma de triángulo que cada mañana se levanta con un invento pensado.",
+    hint: "(Solo el nombre.)",
+    accepted: [["Phineas"]],
+    official: "Phineas",
+  },
+  {
+    id: "phineas-donde-perry",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "completar",
+    prompt:
+      "Completa la pregunta que hacen los hermanos en cuanto la mascota desaparece: «Oye, ¿dónde está ___?».",
+    accepted: [["Perry"]],
+    official: "¿Dónde está Perry?",
+  },
+  {
+    id: "phineas-relacionar-familia",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "relacionar",
+    prompt: "Relaciona cada personaje con lo que es de quién.",
+    pairs: [
+      { left: "Candace", right: "Hermana mayor de Phineas" },
+      { left: "Vanessa", right: "Hija de Doofenshmirtz" },
+      { left: "Linda", right: "Madre de Phineas y Candace" },
+      { left: "Lawrence", right: "Padre de Ferb" },
+    ],
+    official:
+      "Candace–hermana mayor de Phineas, Vanessa–hija de Doofenshmirtz, Linda–madre de Phineas y Candace y Lawrence–padre de Ferb",
+  },
+  {
+    id: "phineas-vf-ferb",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Ferb apenas habla: hay episodios en los que solo suelta una frase.",
+    correct: true,
+    official: "Verdadero",
+  },
+  {
+    id: "phineas-vf-jefe",
+    franchise: "Phineas y Ferb",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Doofenshmirtz es el jefe de Perry y quien le manda las misiones.",
+    correct: false,
+    official: "Falso",
+    note: "Es justo su enemigo; quien le manda las misiones es el mayor Monograma.",
+  },
+
+  // --- Winx Club ---
+  // Serie italiana, emitida aquí en Clan y en Boing. Entra con bastante fondo a
+  // propósito, para que salga a menudo.
+  {
+    id: "winx-bloom",
+    franchise: "Winx Club",
+    difficulty: "facil",
+    format: "corta",
+    prompt: "¿Cómo se llama el hada pelirroja que protagoniza la serie?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Bloom"]],
+    official: "Bloom",
+  },
+  {
+    id: "winx-flora",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el hada del grupo que domina las plantas y la naturaleza?",
+    accepted: [["Flora"]],
+    official: "Flora",
+  },
+  {
+    id: "winx-musa",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el hada del grupo cuyo poder es la música?",
+    accepted: [["Musa"]],
+    official: "Musa",
+  },
+  {
+    id: "winx-tecna",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el hada del grupo cuyo poder es la tecnología?",
+    accepted: [["Tecna"]],
+    official: "Tecna",
+  },
+  {
+    id: "winx-aisha",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Qué hada se suma al grupo después de las cinco primeras?",
+    options: ["Aisha", "Roxy", "Daphne", "Griselda"],
+    correct: 0,
+    official: "Aisha",
+    note: "En los primeros doblajes se la llamó Layla.",
+  },
+  {
+    id: "winx-alfea",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama la escuela de hadas en la que estudian las Winx?",
+    accepted: [["Alfea"]],
+    official: "Alfea",
+  },
+  {
+    id: "winx-stella",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "describir",
+    prompt:
+      "Hada rubia, princesa y presumida, obsesionada con la moda, que saca su poder del sol y la luna.",
+    hint: "(Solo el nombre.)",
+    accepted: [["Stella"]],
+    official: "Stella",
+  },
+  {
+    id: "winx-llama-dragon",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cuál es el poder que hace especial a Bloom y que todos los villanos quieren?",
+    options: ["La Llama del Dragón", "El Cetro de Solaria", "El Códice", "La Luz de Alfea"],
+    correct: 0,
+    official: "La Llama del Dragón",
+  },
+  {
+    id: "winx-trix",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Cómo se llama el trío de brujas que son las primeras enemigas de las Winx?",
+    options: ["Las Trix", "Las Hechiceras", "Las Ancestrales", "Las Pixies"],
+    correct: 0,
+    official: "Las Trix",
+  },
+  {
+    id: "winx-relacionar-trix",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "relacionar",
+    prompt: "Relaciona cada bruja de las Trix con su poder.",
+    pairs: [
+      { left: "Icy", right: "El hielo" },
+      { left: "Darcy", right: "La oscuridad y las ilusiones" },
+      { left: "Stormy", right: "Las tormentas" },
+    ],
+    official: "Icy–el hielo, Darcy–la oscuridad y las ilusiones y Stormy–las tormentas",
+  },
+  {
+    id: "winx-kiko",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama el conejo que Bloom se lleva consigo de la Tierra?",
+    options: ["Kiko", "Pepe", "Amore", "Lockette"],
+    correct: 0,
+    official: "Kiko",
+  },
+  {
+    id: "winx-gardenia",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿En qué ciudad de la Tierra se crió Bloom sin saber que era un hada?",
+    options: ["Gardenia", "Magix", "Domino", "Solaria"],
+    correct: 0,
+    official: "Gardenia",
+  },
+  {
+    id: "winx-domino",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿De qué planeta es princesa Bloom en realidad?",
+    options: ["Domino", "Solaria", "Eraklyon", "Andros"],
+    correct: 0,
+    official: "Domino",
+  },
+  {
+    id: "winx-faragonda",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama la directora de Alfea?",
+    options: ["Faragonda", "Griffin", "Griselda", "Saladino"],
+    correct: 0,
+    official: "Faragonda",
+  },
+  {
+    id: "winx-magix",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama la ciudad en torno a la cual están las tres escuelas de magia?",
+    options: ["Magix", "Alfea", "Gardenia", "Eraklyon"],
+    correct: 0,
+    official: "Magix",
+  },
+  {
+    id: "winx-sky",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el príncipe del que se enamora Bloom?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Sky"]],
+    official: "Sky",
+  },
+  {
+    id: "winx-daphne",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama la hermana mayor de Bloom, que se le aparece convertida en ninfa?",
+    options: ["Daphne", "Roxy", "Diaspro", "Mirta"],
+    correct: 0,
+    official: "Daphne",
+  },
+  {
+    id: "winx-cinco",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Cuántas hadas forman el grupo en la primera temporada?",
+    options: ["5", "6", "4", "7"],
+    correct: 0,
+    official: "5",
+    note: "Bloom, Stella, Flora, Musa y Tecna. Aisha se suma más tarde.",
+  },
+  {
+    id: "winx-charmix",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cuál de estas transformaciones es la primera que consiguen las Winx?",
+    options: ["Charmix", "Enchantix", "Believix", "Sirenix"],
+    correct: 0,
+    official: "Charmix",
+  },
+  {
+    id: "winx-orden-transformaciones",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "orden",
+    prompt: "Ordena estas transformaciones de las Winx de la primera a la última.",
+    items: ["Charmix", "Enchantix", "Believix", "Sirenix"],
+    official: "Charmix, Enchantix, Believix y Sirenix",
+  },
+  {
+    id: "winx-italia",
+    franchise: "Winx Club",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿De qué país es original la serie?",
+    options: ["Italia", "Japón", "Francia", "Estados Unidos"],
+    correct: 0,
+    official: "Italia",
+    note: "La creó Iginio Straffi en el estudio Rainbow.",
+  },
+  {
+    id: "winx-vf-tierra",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Bloom se crió desde bebé en el mundo mágico, con sus padres verdaderos.",
+    correct: false,
+    official: "Falso",
+    note: "Se crió en la Tierra con unos padres adoptivos y no supo lo que era hasta adolescente.",
+  },
+  {
+    id: "winx-vf-alfea",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "vf",
+    prompt: "En Alfea estudian hadas venidas de planetas distintos, no solo del de Bloom.",
+    correct: true,
+    official: "Verdadero",
+  },
+  {
+    id: "winx-vf-brujas",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Las brujas estudian en la misma escuela que las hadas.",
+    correct: false,
+    official: "Falso",
+    note: "Tienen escuela propia, y de ahí sale buena parte de las broncas de la serie.",
+  },
+  {
+    id: "winx-completar-club",
+    franchise: "Winx Club",
+    difficulty: "media",
+    format: "completar",
+    prompt: "Completa el nombre que se dan a sí mismas las protagonistas: «___ Club».",
+    accepted: [["Winx"]],
+    official: "Winx Club",
+  },
+
+  // --- Código Lyoko ---
+  // Serie francesa, emitida aquí en Jetix y luego en Boing. También entra con
+  // fondo para que salga a menudo.
+  {
+    id: "lyoko-mundo",
+    franchise: "Código Lyoko",
+    difficulty: "facil",
+    format: "corta",
+    prompt: "¿Cómo se llama el mundo virtual al que viajan los protagonistas?",
+    accepted: [["Lyoko"]],
+    official: "Lyoko",
+  },
+  {
+    id: "lyoko-xana",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el programa maligno contra el que luchan?",
+    accepted: [["XANA", "Xana"]],
+    official: "XANA",
+  },
+  {
+    id: "lyoko-aelita",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama la chica de pelo rosa que al principio solo existe dentro de Lyoko?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Aelita"]],
+    official: "Aelita",
+  },
+  {
+    id: "lyoko-jeremie",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el chico con gafas que se queda al ordenador dirigiendo al resto?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Jérémie", "Jeremie", "Jeremy"]],
+    official: "Jérémie",
+  },
+  {
+    id: "lyoko-yumi",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama la chica japonesa del grupo, la mayor de los cinco?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Yumi"]],
+    official: "Yumi",
+  },
+  {
+    id: "lyoko-ulrich",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el chico del grupo que pelea con sables y hace artes marciales?",
+    hint: "(Solo el nombre.)",
+    accepted: [["Ulrich"]],
+    official: "Ulrich",
+  },
+  {
+    id: "lyoko-kiwi",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿Cómo se llama el perro que Odd tiene escondido en la habitación del internado?",
+    accepted: [["Kiwi"]],
+    official: "Kiwi",
+  },
+  {
+    id: "lyoko-odd",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "describir",
+    prompt:
+      "Chico rubio con una mancha morada en el flequillo, el gracioso del grupo, que en el mundo virtual es un felino.",
+    hint: "(Solo el nombre.)",
+    accepted: [["Odd"]],
+    official: "Odd",
+  },
+  {
+    id: "lyoko-kadic",
+    franchise: "Código Lyoko",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama el internado en el que estudian los protagonistas?",
+    options: ["Kadic", "Lycée Rousseau", "Saint-Michel", "Belpois"],
+    correct: 0,
+    official: "Kadic",
+  },
+  {
+    id: "lyoko-fabrica",
+    franchise: "Código Lyoko",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Dónde está escondido el superordenador que da acceso al mundo virtual?",
+    options: [
+      "En una fábrica abandonada",
+      "En el sótano del internado",
+      "En una central eléctrica",
+      "En el desván de Jérémie",
+    ],
+    correct: 0,
+    official: "En una fábrica abandonada",
+  },
+  {
+    id: "lyoko-escaner",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Qué tienen que hacer los chicos para entrar en el mundo virtual?",
+    options: [
+      "Meterse en un escáner",
+      "Ponerse unas gafas especiales",
+      "Dormirse conectados al ordenador",
+      "Cruzar un portal en el bosque",
+    ],
+    correct: 0,
+    official: "Meterse en un escáner",
+  },
+  {
+    id: "lyoko-torre",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Qué hay que hacer para cortar un ataque del enemigo?",
+    options: [
+      "Desactivar la torre que ha tomado",
+      "Apagar el superordenador",
+      "Destruir a todos sus monstruos",
+      "Reiniciar los escáneres",
+    ],
+    correct: 0,
+    official: "Desactivar la torre que ha tomado",
+  },
+  {
+    id: "lyoko-retorno",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "completar",
+    prompt:
+      "Completa lo que dice Jérémie al final de casi todos los capítulos para deshacer el desastre: «Retorno al ___».",
+    accepted: [["pasado"]],
+    official: "Retorno al pasado",
+  },
+  {
+    id: "lyoko-hopper",
+    franchise: "Código Lyoko",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama el científico que creó Lyoko y que resulta ser el padre de Aelita?",
+    options: ["Franz Hopper", "Jean-Pierre Delmas", "Waldo Schaeffer", "Michel Belpois"],
+    correct: 0,
+    official: "Franz Hopper",
+  },
+  {
+    id: "lyoko-william",
+    franchise: "Código Lyoko",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Qué alumno acaba poseído y convertido en guerrero del enemigo?",
+    options: ["William", "Herb", "Nicolás", "Jim"],
+    correct: 0,
+    official: "William",
+  },
+  {
+    id: "lyoko-sissi",
+    franchise: "Código Lyoko",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama la hija del director, que se pasa la serie fisgando al grupo?",
+    options: ["Sissi", "Emily", "Milly", "Tamiya"],
+    correct: 0,
+    official: "Sissi",
+  },
+  {
+    id: "lyoko-sector5",
+    franchise: "Código Lyoko",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama el territorio secreto de Lyoko que descubren más tarde?",
+    options: ["El Sector 5", "El Sector 0", "El Núcleo", "La Cúpula"],
+    correct: 0,
+    official: "El Sector 5",
+  },
+  {
+    id: "lyoko-francia",
+    franchise: "Código Lyoko",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿De qué país es original la serie?",
+    options: ["Francia", "Japón", "Canadá", "Italia"],
+    correct: 0,
+    official: "Francia",
+  },
+  {
+    id: "lyoko-relacionar-avatares",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "relacionar",
+    prompt: "Relaciona cada personaje con la pinta que tiene dentro del mundo virtual.",
+    pairs: [
+      { left: "Odd", right: "Un felino morado" },
+      { left: "Ulrich", right: "Un samurái" },
+      { left: "Yumi", right: "Una geisha" },
+      { left: "Aelita", right: "Una elfa" },
+    ],
+    official: "Odd–felino morado, Ulrich–samurái, Yumi–geisha y Aelita–elfa",
+  },
+  {
+    id: "lyoko-vf-territorios",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Los cuatro territorios principales del mundo virtual son el bosque, el desierto, la montaña y la ciudad.",
+    correct: false,
+    official: "Falso",
+    note: "El cuarto no es la ciudad, es el hielo.",
+  },
+  {
+    id: "lyoko-vf-aelita",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Aelita es desde el primer capítulo una alumna más del internado.",
+    correct: false,
+    official: "Falso",
+    note: "Al principio no puede salir del mundo virtual; lo de ir a clase llega después.",
+  },
+  {
+    id: "lyoko-vf-secreto",
+    franchise: "Código Lyoko",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Los protagonistas mantienen en secreto ante los profesores todo lo del superordenador.",
+    correct: true,
+    official: "Verdadero",
+  },
+
+  // --- Gormiti ---
+  // Empezó como muñecos italianos y de ahí saltó a la tele. Van pocas y de lo
+  // más asentado de la serie.
+  {
+    id: "gormiti-munecos",
+    franchise: "Gormiti",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Qué eran los Gormiti antes de llegar a la televisión?",
+    options: [
+      "Unos muñecos de colección",
+      "Una saga de videojuegos",
+      "Unos cómics",
+      "Un juego de cartas",
+    ],
+    correct: 0,
+    official: "Unos muñecos de colección",
+  },
+  {
+    id: "gormiti-isla",
+    franchise: "Gormiti",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cómo se llama la isla en la que viven los Gormiti?",
+    options: ["La isla de Gorm", "La isla de Gormia", "La isla Volcánica", "La isla del Bosque"],
+    correct: 0,
+    official: "La isla de Gorm",
+  },
+  {
+    id: "gormiti-elementos",
+    franchise: "Gormiti",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿Cómo se reparten los Gormiti en pueblos o tribus?",
+    options: [
+      "Por elementos de la naturaleza",
+      "Por colores",
+      "Por edades",
+      "Por el tamaño de cada uno",
+    ],
+    correct: 0,
+    official: "Por elementos de la naturaleza",
+  },
+  {
+    id: "gormiti-senores",
+    franchise: "Gormiti",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Qué título llevan los Gormiti que defienden la isla, y que da nombre a la serie?",
+    options: [
+      "Los Señores de la Naturaleza",
+      "Los Guardianes de Gorm",
+      "Los Caballeros del Bosque",
+      "Los Guerreros Elementales",
+    ],
+    correct: 0,
+    official: "Los Señores de la Naturaleza",
+  },
+  {
+    id: "gormiti-volcan",
+    franchise: "Gormiti",
+    difficulty: "media",
+    format: "multiple",
+    prompt: "¿De qué pueblo salen los Gormiti que hacen de malos?",
+    options: ["Del Volcán", "Del Mar", "Del Aire", "Del Bosque"],
+    correct: 0,
+    official: "Del Volcán",
+  },
+  {
+    id: "gormiti-chicos",
+    franchise: "Gormiti",
+    difficulty: "dificil",
+    format: "multiple",
+    prompt: "¿Cuántos chicos protagonizan la serie y acaban ligados al poder de los Gormiti?",
+    options: ["4", "3", "5", "2"],
+    correct: 0,
+    official: "4",
+  },
+  {
+    id: "gormiti-italia",
+    franchise: "Gormiti",
+    difficulty: "media",
+    format: "corta",
+    prompt: "¿De qué país salieron los Gormiti, tanto los muñecos como la serie?",
+    accepted: [["Italia"]],
+    official: "Italia",
+  },
+  {
+    id: "gormiti-vf-elemento",
+    franchise: "Gormiti",
+    difficulty: "media",
+    format: "vf",
+    prompt: "Cada Gormiti tiene los poderes del elemento de la naturaleza al que pertenece su pueblo.",
+    correct: true,
+    official: "Verdadero",
   },
 ];

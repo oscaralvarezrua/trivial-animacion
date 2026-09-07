@@ -17,6 +17,7 @@ import {
   responderRebote,
   servirPregunta,
 } from "@/lib/motor";
+import { emojiDe } from "@/lib/categorias";
 import { PREGUNTAS, porId } from "@/lib/preguntas";
 import {
   FORMAT_LABEL,
@@ -121,7 +122,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
               {PLAYERS[estado.turn].emoji} Pregunta {estado.nextNumber[estado.turn]}
             </Etiqueta>
             <Etiqueta className="chip">
-              {pregunta.emoji} {pregunta.franchise}
+              {emojiDe(pregunta.franchise)} {pregunta.franchise}
             </Etiqueta>
             <Etiqueta className="chip ml-auto">{FORMAT_LABEL[pregunta.format]}</Etiqueta>
           </Etiquetas>

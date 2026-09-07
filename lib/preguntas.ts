@@ -4,7 +4,7 @@ import { SERIES } from "./banco/series";
 import { SUPERHEROES } from "./banco/superheroes";
 import { IMAGEN_REAL } from "./banco/imagen-real";
 import { TELEVISION } from "./banco/television";
-import { categoriaDe } from "./categorias";
+import { categoriaDe, emojiDe } from "./categorias";
 import { pistaDelEmoji } from "./pistas";
 import type { Difficulty, Question } from "./types";
 
@@ -16,7 +16,6 @@ import type { Difficulty, Question } from "./types";
 export const PREGUNTA_PENDIENTE: Question = {
   id: "megamind-roxanne",
   franchise: "Megamind",
-  emoji: "🦸",
   difficulty: "media",
   format: "corta",
   prompt: "¿Cómo se llama la periodista de la que se enamora Megamind?",
@@ -72,8 +71,13 @@ export function validarBanco(): string[] {
       respuestas.add(clave);
     }
 
-    const pista = pistaDelEmoji(q);
-    if (pista) errores.push(`${q.id}: el emoji ${q.emoji} estropea la pregunta, ${pista}`);
+    const emoji = emojiDe(q.franchise);
+    const pista = pistaDelEmoji(emoji, q);
+    if (pista) {
+      errores.push(
+        `${q.id}: el emoji ${emoji} de la categoría estropea la pregunta, ${pista}`,
+      );
+    }
 
     if (!q.prompt.trim()) errores.push(`${q.id}: enunciado vacío`);
     if (!q.official.trim()) errores.push(`${q.id}: falta la respuesta oficial`);

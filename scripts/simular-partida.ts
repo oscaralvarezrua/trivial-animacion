@@ -222,6 +222,36 @@ for (let i = 0; i + 1 < conMargen.length; i += 2) {
 const rondas = Math.floor(conMargen.length / 2);
 const pct = (n: number) => `${Math.round((n / rondas) * 100)}%`;
 
+/**
+ * 6. Rachas de la misma dificultad.
+ *
+ * Se mide porque es lo que se notó jugando y no lo cazaba ninguna otra
+ * comprobación: el reparto global salía razonable y aun así se encadenaban ocho
+ * preguntas fáciles seguidas. Con el sorteo independiente por ronda al 60 % eso
+ * le tocaba al 23 % de las preguntas.
+ *
+ * El tope del sorteo son 2 rondas, o sea 4 preguntas. Se admite alguna más
+ * porque cuando no queda nada de la dificultad pedida `elegirPregunta` cede en
+ * la dificultad antes que en el formato, y eso alarga alguna racha suelta.
+ */
+const RACHA_ADMITIDA = 8;
+let rachaMaxima = 0;
+let rachaActual = 0;
+let dificultadRacha: Difficulty | null = null;
+
+for (const entrada of conMargen) {
+  rachaActual = entrada.difficulty === dificultadRacha ? rachaActual + 1 : 1;
+  dificultadRacha = entrada.difficulty;
+  rachaMaxima = Math.max(rachaMaxima, rachaActual);
+}
+
+if (rachaMaxima > RACHA_ADMITIDA) {
+  problemas.push(
+    `Racha de ${rachaMaxima} preguntas seguidas con la misma dificultad ` +
+      `(el máximo admitido es ${RACHA_ADMITIDA})`,
+  );
+}
+
 const rebotes = h.filter((e) => e.rebound);
 const porResultado = (r: string) => rebotes.filter((e) => e.rebound!.outcome === r).length;
 
@@ -252,6 +282,7 @@ console.log(
   `Dificultad por ronda -> fácil ${pct(porRonda.facil)}, ` +
     `media ${pct(porRonda.media)}, difícil ${pct(porRonda.dificil)}`,
 );
+console.log(`Racha máxima con la misma dificultad: ${rachaMaxima} preguntas`);
 console.log(`Franquicia repetida antes de 8 preguntas: ${repeticionesPronto}`);
 console.log(`Rondas con dificultad desigual entre los dos: ${desnivel}`);
 console.log(`Rondas con la misma franquicia para los dos: ${mismaFranquicia}`);
