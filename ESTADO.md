@@ -24,11 +24,29 @@ Así que ahora la aplicación es **Sabelotodo** y esta categoría es
 **🍿 Palomitas**: cine y series, de la animación clásica a Endgame. Las
 siguientes previstas son geografía, historia y arte.
 
-**El menú todavía no existe.** La cabecera de categoría en `app/juego.tsx` está
-fija a Palomitas a propósito: montar un selector de un solo elemento es trabajo
-tirado. Cuando haya una segunda categoría, ese componente es el sitio por donde
-empezar, y habrá que decidir si el estado de la partida pasa a ser uno por
-categoría (ahora hay una única fila en Supabase con id `oscar-alicia`).
+### Los temas
+
+Desde el 27 de septiembre de 2026 hay **dos**: **🍿 Palomitas** (cine, series y
+animación) y **🎵 Música** (canciones y artistas). El menú vive en la cabecera
+de `app/juego.tsx` y los temas se declaran en `lib/temas.ts`.
+
+Cuidado con el vocabulario, porque hay dos cosas que se llaman parecido:
+
+- **Tema** es Palomitas o Música: lo que se elige arriba y decide de qué banco
+  se sortea.
+- **Categoría** es el grupo dentro de un tema (Disney, Pixar, Reggaetón…): lo
+  que desglosa el resumen de fin de partida.
+
+**Cambiar de tema termina la partida.** Se enseña antes el resumen, igual que al
+reiniciar, y se empieza de cero en el tema nuevo. Se decidió así en vez de
+guardar una partida por tema: dos marcadores a medias obligan a decidir cuál es
+«el bueno», y el marcador es lo único que de verdad importa aquí. El efecto
+práctico es que sigue habiendo **una sola fila en Supabase** (`oscar-alicia`).
+
+Las partidas guardadas antes de que existieran los temas no traen el campo, y
+`temaDe()` las da por Palomitas, que es lo que eran.
+
+Las siguientes previstas son geografía, historia y arte.
 
 ## Decisiones tomadas (y por qué)
 
@@ -40,7 +58,7 @@ categoría (ahora hay una única fila en Supabase con id `oscar-alicia`).
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | 1183 preguntas en 12 categorías | Con 220 el último tramo de partida perdía variedad |
+| Tamaño del banco | 1925 preguntas en dos temas | Con 220 el último tramo de partida perdía variedad |
 | Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
@@ -110,8 +128,8 @@ jugador: aciertos sobre intentos en total, por formato y por categoría.
   porque es justo lo que se va a perder.
 
 La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
-categoría en `lib/categorias.ts`: 12 categorías y 273 franquicias. Repetir el
-dato en cada una de las 1183 preguntas era pedir que se desincronizara.
+categoría en `lib/categorias.ts`: 18 categorías y 518 franquicias. Repetir el
+dato en cada una de las 1925 preguntas era pedir que se desincronizara.
 `validarBanco()` comprueba que toda franquicia tenga categoría, así que añadir
 una nueva sin clasificarla rompe `npm run validar`.
 
@@ -157,6 +175,9 @@ lib/partida-guardada.ts  Estado semilla 59-57 con la pregunta 83 pendiente
 lib/supabase.ts          Cliente con service role key, marcado server-only
 lib/acceso.ts            PIN: haySesion, exigirSesion, abrirSesion (server-only)
 lib/categorias.ts        Mapa de franquicia a categoría y emoji de cada categoría
+lib/temas.ts             Los dos temas (Palomitas, Música) y el de reserva
+lib/banco/musica.ts      Música escrita a mano y contrastada
+lib/banco/musica-listas.ts  Música salida del fichero de 750 acertijos de Oscar
 lib/estadisticas.ts      Aciertos y fallos por jugador, formato y categoría
 app/acciones.ts          Server Actions: cargarPartida, guardarPartida, entrar
 app/page.tsx             Server Component: PIN, luego el estado o la pantalla de configuración
@@ -232,7 +253,8 @@ npm run supabase    # claves y tabla, sin imprimir nunca su valor
 Estado actual de cada uno, comprobado el 19 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 1183 preguntas, 273 franquicias, reparto 45 % / 43 % / 12 %.
+- `validar`: 1925 preguntas (1183 de Palomitas y 742 de Música), 518
+  franquicias, reparto global 45 % / 41 % / 14 %.
 - `probar`: los 35 casos pasan.
 - `simular`: pasa limpio. Comprueba a mano el veto del rebote en las preguntas
   de verdadero o falso y los cinco casos de corrección del veredicto, y luego

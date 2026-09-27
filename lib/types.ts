@@ -1,3 +1,5 @@
+import type { Tema } from "./temas";
+
 export type Player = "oscar" | "alicia";
 
 /**
@@ -31,6 +33,23 @@ export const FORMAT_LABEL: Record<QuestionFormat, string> = {
   describir: "Identifica el personaje",
   completar: "Completa la frase",
 };
+
+/**
+ * Dos formatos se llaman distinto según el tema, porque el mismo mecanismo
+ * pide otra cosa: en Palomitas `describir` describe un personaje y `completar`
+ * completa una frase de un guion; en Música describen una canción o un artista
+ * y completan un **título**, que no es lo mismo que una letra.
+ */
+const ETIQUETA_POR_TEMA: Partial<Record<Tema, Partial<Record<QuestionFormat, string>>>> = {
+  musica: {
+    describir: "Adivina cuál es",
+    completar: "Completa el título",
+  },
+};
+
+export function etiquetaFormato(formato: QuestionFormat, tema: Tema): string {
+  return ETIQUETA_POR_TEMA[tema]?.[formato] ?? FORMAT_LABEL[formato];
+}
 
 interface BaseQuestion {
   id: string;
@@ -130,6 +149,12 @@ export interface HistoryEntry {
 
 export interface GameState {
   version: number;
+  /**
+   * Tema en juego, que decide de qué banco se sirven las preguntas. Opcional
+   * porque las partidas guardadas antes de que existieran los temas no lo
+   * traen: `temaDe()` las da por Palomitas, que es lo que eran.
+   */
+  tema?: Tema;
   scores: Record<Player, number>;
   turn: Player;
   /** Número que le toca a cada jugador en su PRÓXIMA pregunta. */

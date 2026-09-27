@@ -2,13 +2,15 @@ import {
   corregirRebote,
   corregirTitular,
   descartarPregunta,
+  partidaNueva,
   pasarRebote,
   responder,
   responderRebote,
   servirPregunta,
 } from "../lib/motor";
 import { partidaGuardada } from "../lib/partida-guardada";
-import { PREGUNTAS } from "../lib/preguntas";
+import { TEMAS } from "../lib/temas";
+import { PREGUNTAS, preguntasDe } from "../lib/preguntas";
 import type { Difficulty, GameState } from "../lib/types";
 
 /**
@@ -17,7 +19,15 @@ import type { Difficulty, GameState } from "../lib/types";
  * verificando es qué preguntas se sirven y a quién.
  */
 
-const RONDAS = Math.floor(PREGUNTAS.length / 2);
+/**
+ * La partida principal se juega en Palomitas, que es el tema de la partida
+ * guardada, así que se mide contra el banco de ESE tema y no contra el total.
+ * Con el banco entero (Palomitas + Música) la simulación agotaba Palomitas y
+ * seguía dando vueltas con los filtros ya relajados del todo, y eso hacía
+ * saltar comprobaciones que en realidad se cumplen.
+ */
+const BANCO_PALOMITAS = preguntasDe("palomitas").length;
+const RONDAS = Math.floor(BANCO_PALOMITAS / 2);
 let estado: GameState = partidaGuardada();
 
 /**
@@ -175,7 +185,7 @@ const problemas: string[] = [];
  * final ya no hay entre qué elegir. Las reglas de variedad se exigen mientras
  * queda margen real, no en las últimas preguntas.
  */
-const MARGEN = Math.floor(PREGUNTAS.length * 0.85);
+const MARGEN = Math.floor(BANCO_PALOMITAS * 0.85);
 const conMargen = h.slice(0, MARGEN);
 
 // 1. Los turnos se alternan estrictamente y Oscar abre cada ronda.
@@ -294,6 +304,43 @@ if (repeticionesPronto > rondas * 0.1) {
   problemas.push("Demasiadas franquicias repetidas antes de tiempo");
 }
 if (desnivel > rondas * 0.15) problemas.push("Demasiadas rondas descompensadas");
+
+/**
+ * La partida de arriba se juega en Palomitas, que es el tema de la partida
+ * guardada. Los demás temas se juegan aparte y con menos exigencia: lo que se
+ * comprueba de ellos es que una partida entera llegue hasta el final sin
+ * atascarse y sin servir dos veces la misma pregunta.
+ *
+ * Hace falta porque un tema con pocas preguntas es justo donde `elegirPregunta`
+ * se queda sin candidatas, y eso no se ve jugando Palomitas.
+ */
+for (const tema of TEMAS) {
+  const banco = preguntasDe(tema);
+  if (tema === "palomitas") continue;
+
+  let e: GameState = partidaNueva(tema);
+  const servidas: string[] = [];
+
+  for (let i = 0; i < banco.length + 10; i++) {
+    if (!e.currentQuestionId) e = servirPregunta(e);
+    if (!e.currentQuestionId) break;
+
+    servidas.push(e.currentQuestionId);
+    e = responder(e, Math.random() < 0.6, "simulada");
+    if (e.rebote) e = pasarRebote(e);
+  }
+
+  const repetidas = servidas.length - new Set(servidas).size;
+  console.log(
+    `\nTema «${tema}»: ${servidas.length} preguntas servidas de ${banco.length} en el banco.`,
+  );
+  if (repetidas > 0) problemas.push(`El tema «${tema}» ha servido ${repetidas} preguntas repetidas`);
+  if (servidas.length < banco.length) {
+    problemas.push(
+      `El tema «${tema}» se ha quedado atascado: ha servido ${servidas.length} de ${banco.length}`,
+    );
+  }
+}
 
 if (problemas.length > 0) {
   console.log("\nProblemas:");

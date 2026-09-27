@@ -18,9 +18,10 @@ import {
   servirPregunta,
 } from "@/lib/motor";
 import { emojiDe } from "@/lib/categorias";
-import { PREGUNTAS, porId } from "@/lib/preguntas";
+import { porId, preguntasDe } from "@/lib/preguntas";
+import { TEMA, TEMAS, temaDe, type Tema } from "@/lib/temas";
 import {
-  FORMAT_LABEL,
+  etiquetaFormato,
   PLAYERS,
   type GameState,
   type Player,
@@ -33,6 +34,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   const [errata, setErrata] = useState(false);
   const [fallo, setFallo] = useState<string | null>(null);
   const [reiniciando, setReiniciando] = useState(false);
+  const [cambiandoA, setCambiandoA] = useState<Tema | null>(null);
   const [, empezarTransicion] = useTransition();
 
   /** Actualiza la pantalla ya y manda el estado a Supabase por detrás. */
@@ -60,10 +62,38 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   // Reiniciar borra el historial, y con él las estadísticas. Por eso la
   // confirmación no es un «¿seguro?» a secas: enseña antes el resumen de la
   // partida, que es lo único que se va a perder de verdad.
+  // Cambiar de tema termina la partida, así que se avisa con el mismo resumen
+  // que el reinicio: lo que se pierde es exactamente lo mismo.
+  if (cambiandoA) {
+    const destino = TEMA[cambiandoA];
+
+    return (
+      <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
+        <Categoria tema={temaDe(estado.tema)} />
+        <Marcador estado={estado} />
+        <Resumen
+          estado={estado}
+          titulo={`Cambiar a ${destino.emoji} ${destino.nombre}`}
+          entradilla={
+            estado.history.length === 0
+              ? `Empezaréis una partida nueva de ${destino.de}.`
+              : `Cambiar de categoría termina esta partida. Así queda el ${estado.scores.oscar}-${estado.scores.alicia}, y empezaréis de cero en ${destino.nombre}.`
+          }
+          accion={`Sí, cambiar a ${destino.nombre}`}
+          onConfirmar={() => {
+            setCambiandoA(null);
+            aplicar(partidaNueva(cambiandoA));
+          }}
+          onCancelar={() => setCambiandoA(null)}
+        />
+      </main>
+    );
+  }
+
   if (reiniciando) {
     return (
       <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
-        <Categoria />
+        <Categoria tema={temaDe(estado.tema)} />
         <Marcador estado={estado} />
         <Resumen
           estado={estado}
@@ -76,7 +106,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
           accion="Sí, reiniciar"
           onConfirmar={() => {
             setReiniciando(false);
-            aplicar(partidaNueva());
+            aplicar(partidaNueva(temaDe(estado.tema)));
           }}
           onCancelar={() => setReiniciando(false)}
         />
@@ -86,7 +116,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
-      <Categoria />
+      <Categoria tema={temaDe(estado.tema)} onCambiar={setCambiandoA} />
       <Marcador estado={estado} />
 
       {/* Cada rama lleva su propia clave de fase para que el panel entre y salga
@@ -124,7 +154,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
             <Etiqueta className="chip">
               {emojiDe(pregunta.franchise)} {pregunta.franchise}
             </Etiqueta>
-            <Etiqueta className="chip ml-auto">{FORMAT_LABEL[pregunta.format]}</Etiqueta>
+            <Etiqueta className="chip ml-auto">{etiquetaFormato(pregunta.format, temaDe(estado.tema))}</Etiqueta>
           </Etiquetas>
 
           <div className="flex flex-col gap-2">
@@ -170,7 +200,7 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
           titulo="Se ha acabado el banco de preguntas"
           entradilla="Habéis jugado todas. Aquí está cómo ha ido; después podéis empezar otra partida y volver a usarlas."
           accion="Partida nueva"
-          onConfirmar={() => aplicar(partidaNueva())}
+          onConfirmar={() => aplicar(partidaNueva(temaDe(estado.tema)))}
         />
       )}
       </Panel>
@@ -194,15 +224,56 @@ function faseActual(estado: GameState): string {
 }
 
 /**
- * Cabecera de categoría. Hoy solo hay una, «Palomitas», así que va fija: montar
- * un selector para un único elemento sería trabajo tirado. Cuando existan
- * geografía, historia o arte, esto pasa a ser el menú.
+ * Cabecera con el menú de categorías.
+ *
+ * Sin `onCambiar` se pinta igual pero sin poder pulsarse. Es lo que se usa en
+ * las pantallas de confirmación: ahí ya se está decidiendo qué hacer con la
+ * partida, y ofrecer a la vez otro cambio de categoría sería mandar a alguien a
+ * una confirmación desde dentro de otra.
+ *
+ * El botón de la categoría en juego se marca con `aria-current` y no hace nada
+ * al pulsarlo: cambiar a la que ya estás jugando terminaría la partida para
+ * empezar otra igual, que es justo lo que nadie quiere que pase por un clic mal
+ * dado.
  */
-function Categoria() {
+function Categoria({ tema, onCambiar }: { tema: Tema; onCambiar?: (t: Tema) => void }) {
   return (
     <header className="flex items-center justify-between gap-3">
       <p className="text-sm font-medium tracking-tight text-[var(--texto)]">Sabelotodo</p>
-      <span className="chip">🍿 Palomitas</span>
+
+      <nav className="flex flex-wrap items-center gap-2">
+        {TEMAS.map((t) => {
+          const enJuego = t === tema;
+
+          if (!onCambiar || enJuego) {
+            return (
+              <span
+                key={t}
+                aria-current={enJuego ? "page" : undefined}
+                className="chip"
+                style={
+                  enJuego
+                    ? { color: "var(--texto)", borderColor: "var(--borde-fuerte)" }
+                    : undefined
+                }
+              >
+                {TEMA[t].emoji} {TEMA[t].nombre}
+              </span>
+            );
+          }
+
+          return (
+            <button
+              key={t}
+              onClick={() => onCambiar(t)}
+              title={`Cambiar a ${TEMA[t].nombre}: ${TEMA[t].de}`}
+              className="chip hover:border-[var(--texto)] hover:text-[var(--texto)]"
+            >
+              {TEMA[t].emoji} {TEMA[t].nombre}
+            </button>
+          );
+        })}
+      </nav>
     </header>
   );
 }
@@ -505,7 +576,9 @@ function Pie({
   onPedirReinicio: () => void;
 }) {
   const usadas = estado.usedQuestionIds.length;
-  const total = PREGUNTAS.length;
+  // El banco del tema en juego, no el de todos: la barra mide lo que queda por
+  // jugar de esta categoría.
+  const total = preguntasDe(temaDe(estado.tema)).length;
 
   return (
     <footer className="mt-auto flex flex-col gap-3 pt-4 text-sm text-[var(--apagado)]">

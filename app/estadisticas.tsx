@@ -9,7 +9,8 @@ import {
   type Recuento,
 } from "@/lib/estadisticas";
 import { EMOJI_DE_CATEGORIA } from "@/lib/categorias";
-import { FORMAT_LABEL, PLAYERS, type GameState, type Player } from "@/lib/types";
+import { etiquetaFormato, PLAYERS, type GameState, type Player } from "@/lib/types";
+import { temaDe, type Tema } from "@/lib/temas";
 
 /**
  * Resumen de la partida por jugador, desglosado por formato y por categoría.
@@ -41,6 +42,7 @@ export function Estadisticas({ estado }: { estado: GameState }) {
             jugador={jugador}
             stats={stats[jugador]}
             pasados={pasados[jugador]}
+            tema={temaDe(estado.tema)}
           />
         ))}
       </div>
@@ -57,10 +59,12 @@ function ColumnaJugador({
   jugador,
   stats,
   pasados,
+  tema,
 }: {
   jugador: Player;
   stats: ReturnType<typeof calcularEstadisticas>[Player];
   pasados: number;
+  tema: Tema;
 }) {
   const total = stats.total;
   const pct = porcentaje(total);
@@ -86,7 +90,7 @@ function ColumnaJugador({
         <>
           <Bloque titulo="Por formato">
             {filas(stats.porFormato).map(({ clave, recuento }) => (
-              <Fila key={clave} etiqueta={FORMAT_LABEL[clave]} recuento={recuento} />
+              <Fila key={clave} etiqueta={etiquetaFormato(clave, tema)} recuento={recuento} />
             ))}
           </Bloque>
 

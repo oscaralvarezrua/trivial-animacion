@@ -4,8 +4,11 @@ import { SERIES } from "./banco/series";
 import { SUPERHEROES } from "./banco/superheroes";
 import { IMAGEN_REAL } from "./banco/imagen-real";
 import { TELEVISION } from "./banco/television";
+import { MUSICA } from "./banco/musica";
+import { MUSICA_LISTAS } from "./banco/musica-listas";
 import { categoriaDe, emojiDe } from "./categorias";
 import { pistaDelEmoji } from "./pistas";
+import { TEMAS, type Tema } from "./temas";
 import type { Difficulty, Question } from "./types";
 
 /**
@@ -24,15 +27,31 @@ export const PREGUNTA_PENDIENTE: Question = {
   official: "Roxanne Ritchi",
 };
 
-export const PREGUNTAS: Question[] = [
-  PREGUNTA_PENDIENTE,
-  ...DISNEY,
-  ...ESTUDIOS,
-  ...SERIES,
-  ...SUPERHEROES,
-  ...TELEVISION,
-  ...IMAGEN_REAL,
-];
+/**
+ * El banco de cada tema. La pregunta no lleva un campo `tema`: se deduce de en
+ * qué lista está, igual que la categoría se deduce de la franquicia. Con 1183
+ * preguntas, repetir el dato en cada objeto sería pedir que se desincronice.
+ */
+const POR_TEMA: Record<Tema, Question[]> = {
+  palomitas: [
+    PREGUNTA_PENDIENTE,
+    ...DISNEY,
+    ...ESTUDIOS,
+    ...SERIES,
+    ...SUPERHEROES,
+    ...TELEVISION,
+    ...IMAGEN_REAL,
+  ],
+  musica: [...MUSICA, ...MUSICA_LISTAS],
+};
+
+/** Todas las preguntas de todos los temas. Para validar y para `porId`. */
+export const PREGUNTAS: Question[] = TEMAS.flatMap((t) => POR_TEMA[t]);
+
+/** Las preguntas de un tema, que es de donde sortea el motor. */
+export function preguntasDe(tema: Tema): Question[] {
+  return POR_TEMA[tema];
+}
 
 const INDICE = new Map(PREGUNTAS.map((q) => [q.id, q]));
 
@@ -119,9 +138,52 @@ export function validarBanco(): string[] {
   }
 
   errores.push(...revisarVerdaderoFalso());
+  errores.push(...revisarTemas());
 
   return errores;
 }
+
+/**
+ * Cada tema tiene que poder sostener una partida por su cuenta.
+ *
+ * El sorteo de dificultad es el mismo para todos (45/40/15 en `lib/motor.ts`),
+ * pero el banco es de cada tema. Si un tema no tiene fáciles suficientes,
+ * `elegirPregunta` cede en la dificultad y Alicia acaba con una distinta a la
+ * de Oscar; es exactamente lo que pasó en Palomitas y costó medirlo.
+ *
+ * Aquí se avisa antes: el margen es ancho a propósito, porque un tema recién
+ * empezado nunca va a cuadrar al punto y no tiene sentido bloquear por eso.
+ */
+function revisarTemas(): string[] {
+  const errores: string[] = [];
+
+  for (const tema of TEMAS) {
+    const preguntas = POR_TEMA[tema];
+
+    if (preguntas.length < MINIMO_POR_TEMA) {
+      errores.push(
+        `El tema «${tema}» tiene ${preguntas.length} preguntas y hacen falta al menos ` +
+          `${MINIMO_POR_TEMA} para que una partida no se quede corta.`,
+      );
+      continue;
+    }
+
+    const faciles = preguntas.filter((q) => q.difficulty === "facil").length;
+    const pct = faciles / preguntas.length;
+    if (pct < 0.3) {
+      errores.push(
+        `El tema «${tema}» solo tiene un ${Math.round(pct * 100)} % de preguntas fáciles ` +
+          `(${faciles} de ${preguntas.length}). El sorteo pide un 45 %, y por debajo del 30 % ` +
+          `las rondas salen descompensadas entre los dos jugadores.`,
+      );
+    }
+  }
+
+  return errores;
+}
+
+/** Por debajo de esto un tema no da ni para media partida. */
+const MINIMO_POR_TEMA = 40;
 
 /**
  * Los verdadero o falso tienen que estar repartidos entre unos y otros.

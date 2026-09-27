@@ -1,4 +1,5 @@
-import { PREGUNTAS, porId } from "./preguntas";
+import { porId, preguntasDe } from "./preguntas";
+import { temaDe, TEMA_POR_DEFECTO, type Tema } from "./temas";
 import type {
   Difficulty,
   GameState,
@@ -120,7 +121,8 @@ export function elegirPregunta(
   dificultad: Difficulty,
 ): Question | null {
   const usadas = new Set(estado.usedQuestionIds);
-  const disponibles = PREGUNTAS.filter((q) => !usadas.has(q.id));
+  // Solo el banco del tema en juego: cambiar de tema no mezcla preguntas.
+  const disponibles = preguntasDe(temaDe(estado.tema)).filter((q) => !usadas.has(q.id));
   if (disponibles.length === 0) return null;
 
   const veto = formatoVetado(estado.history);
@@ -439,9 +441,10 @@ export function corregirRebote(estado: GameState): GameState {
   };
 }
 
-export function partidaNueva(): GameState {
+export function partidaNueva(tema: Tema = TEMA_POR_DEFECTO): GameState {
   const base: GameState = {
     version: 1,
+    tema,
     scores: { oscar: 0, alicia: 0 },
     turn: "oscar",
     nextNumber: { oscar: 1, alicia: 1 },
