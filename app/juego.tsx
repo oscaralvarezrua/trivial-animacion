@@ -2,6 +2,8 @@
 
 import { useState, useTransition } from "react";
 import { guardarPartida } from "./acciones";
+import { Etiqueta, Etiquetas, Panel, Puntuacion } from "./animaciones";
+import { Estadisticas } from "./estadisticas";
 import { EntradaRespuesta, type Envio } from "./respuesta";
 import {
   concederPunto,
@@ -15,9 +17,11 @@ import {
   responderRebote,
   servirPregunta,
 } from "@/lib/motor";
-import { porId } from "@/lib/preguntas";
+import { emojiDe } from "@/lib/categorias";
+import { porId, preguntasDe } from "@/lib/preguntas";
+import { TEMA, TEMAS, temaDe, type Tema } from "@/lib/temas";
 import {
-  FORMAT_LABEL,
+  etiquetaFormato,
   PLAYERS,
   type GameState,
   type Player,
@@ -29,6 +33,8 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   const [estado, setEstado] = useState(estadoInicial);
   const [errata, setErrata] = useState(false);
   const [fallo, setFallo] = useState<string | null>(null);
+  const [reiniciando, setReiniciando] = useState(false);
+  const [cambiandoA, setCambiandoA] = useState<Tema | null>(null);
   const [, empezarTransicion] = useTransition();
 
   /** Actualiza la pantalla ya y manda el estado a Supabase por detrás. */
@@ -53,13 +59,72 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
   const ultima = estado.history.at(-1);
   const rebote = estado.rebote ?? null;
 
+  // Reiniciar borra el historial, y con él las estadísticas. Por eso la
+  // confirmación no es un «¿seguro?» a secas: enseña antes el resumen de la
+  // partida, que es lo único que se va a perder de verdad.
+  // Cambiar de tema termina la partida, así que se avisa con el mismo resumen
+  // que el reinicio: lo que se pierde es exactamente lo mismo.
+  if (cambiandoA) {
+    const destino = TEMA[cambiandoA];
+
+    return (
+      <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
+        <Categoria tema={temaDe(estado.tema)} />
+        <Marcador estado={estado} />
+        <Resumen
+          estado={estado}
+          titulo={`Cambiar a ${destino.emoji} ${destino.nombre}`}
+          entradilla={
+            estado.history.length === 0
+              ? `Empezaréis una partida nueva de ${destino.de}.`
+              : `Cambiar de categoría termina esta partida. Así queda el ${estado.scores.oscar}-${estado.scores.alicia}, y empezaréis de cero en ${destino.nombre}.`
+          }
+          accion={`Sí, cambiar a ${destino.nombre}`}
+          onConfirmar={() => {
+            setCambiandoA(null);
+            aplicar(partidaNueva(cambiandoA));
+          }}
+          onCancelar={() => setCambiandoA(null)}
+        />
+      </main>
+    );
+  }
+
+  if (reiniciando) {
+    return (
+      <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
+        <Categoria tema={temaDe(estado.tema)} />
+        <Marcador estado={estado} />
+        <Resumen
+          estado={estado}
+          titulo="Antes de reiniciar"
+          entradilla={
+            estado.history.length === 0
+              ? "Empezaréis de cero otra vez."
+              : `Así va el ${estado.scores.oscar}-${estado.scores.alicia}. Al reiniciar se pierde el historial y este resumen.`
+          }
+          accion="Sí, reiniciar"
+          onConfirmar={() => {
+            setReiniciando(false);
+            aplicar(partidaNueva(temaDe(estado.tema)));
+          }}
+          onCancelar={() => setReiniciando(false)}
+        />
+      </main>
+    );
+  }
+
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-6 sm:py-10">
+      <Categoria tema={temaDe(estado.tema)} onCambiar={setCambiandoA} />
       <Marcador estado={estado} />
 
+      {/* Cada rama lleva su propia clave de fase para que el panel entre y salga
+          al cambiar de una a otra. La del veredicto incluye el id de la pregunta:
+          si no, al corregir un veredicto la clave no cambiaba y no se veía nada. */}
+      <Panel id={faseActual(estado)}>
       {pregunta && rebote ? (
         <Rebote
-          key={`${pregunta.id}-rebote`}
           pregunta={pregunta}
           jugador={rebote}
           fallo={ultima?.given ?? ""}
@@ -77,24 +142,23 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
         <section
           key={pregunta.id}
           data-jugador={estado.turn}
-          className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--borde)]
-            bg-[var(--superficie)] p-5 sm:p-6"
+          className="tarjeta flex flex-col gap-5 p-5 sm:p-6"
         >
-          <header className="flex flex-col gap-1">
-            <p className="text-sm text-[var(--apagado)]">
-              <span style={{ color: "var(--jugador)" }}>
-                {PLAYERS[estado.turn].emoji} Pregunta {estado.nextNumber[estado.turn]}
-              </span>
-              {" — "}
-              {FORMAT_LABEL[pregunta.format]}
-            </p>
-            <p className="text-sm text-[var(--apagado)]">
-              {pregunta.emoji} {pregunta.franchise}
-            </p>
-          </header>
+          <Etiquetas>
+            <Etiqueta
+              className="chip border-[var(--jugador)] font-medium"
+              style={{ color: "var(--jugador)", background: "var(--jugador-suave)" }}
+            >
+              {PLAYERS[estado.turn].emoji} Pregunta {estado.nextNumber[estado.turn]}
+            </Etiqueta>
+            <Etiqueta className="chip">
+              {emojiDe(pregunta.franchise)} {pregunta.franchise}
+            </Etiqueta>
+            <Etiqueta className="chip ml-auto">{etiquetaFormato(pregunta.format, temaDe(estado.tema))}</Etiqueta>
+          </Etiquetas>
 
-          <div className="flex flex-col gap-1.5">
-            <h2 className="text-xl leading-snug font-medium text-balance sm:text-2xl">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
               {pregunta.prompt}
             </h2>
             {pregunta.hint && (
@@ -131,11 +195,86 @@ export function Juego({ estadoInicial }: { estadoInicial: GameState }) {
           }}
         />
       ) : (
-        <Agotado onReiniciar={() => aplicar(partidaNueva())} />
+        <Resumen
+          estado={estado}
+          titulo="Se ha acabado el banco de preguntas"
+          entradilla="Habéis jugado todas. Aquí está cómo ha ido; después podéis empezar otra partida y volver a usarlas."
+          accion="Partida nueva"
+          onConfirmar={() => aplicar(partidaNueva(temaDe(estado.tema)))}
+        />
       )}
+      </Panel>
 
-      <Pie estado={estado} fallo={fallo} onReiniciar={() => aplicar(partidaNueva())} />
+      <Pie estado={estado} fallo={fallo} onPedirReinicio={() => setReiniciando(true)} />
     </main>
+  );
+}
+
+/**
+ * Identifica en qué punto está la partida, para que el panel sepa cuándo tiene
+ * que reemplazarse. No basta con el id de la pregunta: la misma pregunta pasa
+ * por servida, rebote y veredicto, y cada paso es un panel distinto.
+ */
+function faseActual(estado: GameState): string {
+  const id = estado.currentQuestionId ?? estado.history.at(-1)?.questionId ?? "vacio";
+  if (estado.currentQuestionId && estado.rebote) return `rebote:${id}`;
+  if (estado.currentQuestionId) return `pregunta:${id}`;
+  if (estado.history.length > 0) return `veredicto:${id}`;
+  return "agotado";
+}
+
+/**
+ * Cabecera con el menú de categorías.
+ *
+ * Sin `onCambiar` se pinta igual pero sin poder pulsarse. Es lo que se usa en
+ * las pantallas de confirmación: ahí ya se está decidiendo qué hacer con la
+ * partida, y ofrecer a la vez otro cambio de categoría sería mandar a alguien a
+ * una confirmación desde dentro de otra.
+ *
+ * El botón de la categoría en juego se marca con `aria-current` y no hace nada
+ * al pulsarlo: cambiar a la que ya estás jugando terminaría la partida para
+ * empezar otra igual, que es justo lo que nadie quiere que pase por un clic mal
+ * dado.
+ */
+function Categoria({ tema, onCambiar }: { tema: Tema; onCambiar?: (t: Tema) => void }) {
+  return (
+    <header className="flex items-center justify-between gap-3">
+      <p className="text-sm font-medium tracking-tight text-[var(--texto)]">Sabelotodo</p>
+
+      <nav className="flex flex-wrap items-center gap-2">
+        {TEMAS.map((t) => {
+          const enJuego = t === tema;
+
+          if (!onCambiar || enJuego) {
+            return (
+              <span
+                key={t}
+                aria-current={enJuego ? "page" : undefined}
+                className="chip"
+                style={
+                  enJuego
+                    ? { color: "var(--texto)", borderColor: "var(--borde-fuerte)" }
+                    : undefined
+                }
+              >
+                {TEMA[t].emoji} {TEMA[t].nombre}
+              </span>
+            );
+          }
+
+          return (
+            <button
+              key={t}
+              onClick={() => onCambiar(t)}
+              title={`Cambiar a ${TEMA[t].nombre}: ${TEMA[t].de}`}
+              className="chip hover:border-[var(--texto)] hover:text-[var(--texto)]"
+            >
+              {TEMA[t].emoji} {TEMA[t].nombre}
+            </button>
+          );
+        })}
+      </nav>
+    </header>
   );
 }
 
@@ -152,26 +291,28 @@ function Marcador({ estado }: { estado: GameState }) {
             key={jugador}
             data-jugador={jugador}
             aria-current={activo ? "true" : undefined}
-            className={`rounded-2xl border p-4 transition ${
+            className={`tarjeta flex flex-col gap-0.5 p-4 transition duration-200 ${
               activo
-                ? "border-[var(--jugador)] bg-[var(--jugador-suave)]"
-                : "border-[var(--borde)] bg-[var(--superficie)]"
+                ? "latido border-[var(--jugador)] bg-[var(--jugador-suave)]"
+                : "opacity-70"
             }`}
           >
-            <p className="text-sm text-[var(--apagado)]">
-              {PLAYERS[jugador].emoji} {PLAYERS[jugador].nombre}
+            <p className="flex items-center gap-1.5 text-sm text-[var(--apagado)]">
+              <span aria-hidden>{PLAYERS[jugador].emoji}</span>
+              {PLAYERS[jugador].nombre}
             </p>
+            <Puntuacion
+              valor={estado.scores[jugador]}
+              color={activo ? "var(--jugador)" : undefined}
+            />
+            {/* La altura se reserva siempre para que el marcador no dé un salto
+                cada vez que cambia el turno. */}
             <p
-              className="text-4xl font-semibold tabular-nums"
-              style={{ color: activo ? "var(--jugador)" : undefined }}
+              className="h-4 text-xs font-medium"
+              style={{ color: "var(--jugador)" }}
             >
-              {estado.scores[jugador]}
+              {activo ? (estado.rebote ? "Rebote" : "Su turno") : ""}
             </p>
-            {activo && (
-              <p className="text-xs" style={{ color: "var(--jugador)" }}>
-                {estado.rebote ? "Rebote" : "Su turno"}
-              </p>
-            )}
           </div>
         );
       })}
@@ -203,8 +344,7 @@ function Rebote({
   return (
     <section
       data-jugador={jugador}
-      className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--jugador)]
-        bg-[var(--superficie)] p-5 sm:p-6"
+      className="tarjeta flex flex-col gap-5 border-[var(--jugador)] p-5 sm:p-6"
     >
       <header className="flex flex-col gap-1">
         <p className="text-sm font-medium" style={{ color: "var(--jugador)" }}>
@@ -270,20 +410,26 @@ function Veredicto({
   return (
     <section
       data-jugador={ultima.player}
-      className="aparecer flex flex-col gap-5 rounded-2xl border border-[var(--borde)]
-        bg-[var(--superficie)] p-5 sm:p-6"
+      className="tarjeta flex flex-col gap-5 p-5 sm:p-6"
+      style={{
+        // Una franja de color arriba: el veredicto se lee de un vistazo desde
+        // lejos, sin tener que fijarse en el texto.
+        borderTop: `3px solid ${ultima.correct ? "var(--acierto)" : "var(--fallo)"}`,
+        background: `linear-gradient(var(--${ultima.correct ? "acierto" : "fallo"}-suave), transparent 140px), var(--superficie)`,
+      }}
     >
       <p
-        className="text-xl font-semibold"
+        className="flex items-center gap-2 text-lg font-semibold"
         style={{ color: ultima.correct ? "var(--acierto)" : "var(--fallo)" }}
       >
-        {ultima.correct ? "✅ ¡Correcto!" : "❌ Incorrecto"}
+        <span aria-hidden>{ultima.correct ? "✅" : "❌"}</span>
+        {ultima.correct ? "¡Correcto!" : "Incorrecto"}
       </p>
 
       <div className="flex flex-col gap-1.5">
-        <p className="text-lg">
+        <p className="text-xl leading-snug text-balance">
           La respuesta {ultima.correct ? "era" : "correcta era"}{" "}
-          <strong>{pregunta?.official}</strong>.
+          <strong className="font-semibold">{pregunta?.official}</strong>.
         </p>
         {errata && ultima.correct && (
           <p className="text-sm text-[var(--apagado)]">
@@ -371,20 +517,51 @@ function Rebotado({ rebote }: { rebote: Rebound }) {
   );
 }
 
-function Agotado({ onReiniciar }: { onReiniciar: () => void }) {
+/**
+ * Fin de partida: banco agotado o reinicio a punto de confirmarse. En los dos
+ * casos la partida deja de estar en curso, así que es cuando toca enseñar el
+ * resumen.
+ */
+function Resumen({
+  estado,
+  titulo,
+  entradilla,
+  accion,
+  onConfirmar,
+  onCancelar,
+}: {
+  estado: GameState;
+  titulo: string;
+  entradilla: string;
+  accion: string;
+  onConfirmar: () => void;
+  onCancelar?: () => void;
+}) {
   return (
-    <section className="rounded-2xl border border-[var(--borde)] bg-[var(--superficie)] p-6">
-      <h2 className="text-xl font-medium">Se ha acabado el banco de preguntas</h2>
-      <p className="mt-2 text-[var(--apagado)]">
-        Habéis jugado todas. Añade más en <code>lib/banco/</code> o empieza una partida
-        nueva para volver a usarlas.
-      </p>
-      <button
-        onClick={onReiniciar}
-        className="mt-4 rounded-xl border border-[var(--borde)] px-4 py-2.5 hover:border-[var(--texto)]"
-      >
-        Partida nueva
-      </button>
+    <section className="tarjeta flex flex-col gap-5 p-5 sm:p-6">
+      <header className="flex flex-col gap-1">
+        <h2 className="text-xl font-medium">{titulo}</h2>
+        <p className="text-sm text-[var(--apagado)]">{entradilla}</p>
+      </header>
+
+      <Estadisticas estado={estado} />
+
+      <div className="flex flex-wrap gap-3 border-t border-[var(--borde)] pt-4">
+        <button
+          onClick={onConfirmar}
+          className="rounded-xl border border-[var(--borde)] px-4 py-2.5 hover:border-[var(--texto)]"
+        >
+          {accion}
+        </button>
+        {onCancelar && (
+          <button
+            onClick={onCancelar}
+            className="text-sm text-[var(--apagado)] underline-offset-4 hover:text-[var(--texto)] hover:underline"
+          >
+            Cancelar
+          </button>
+        )}
+      </div>
     </section>
   );
 }
@@ -392,13 +569,16 @@ function Agotado({ onReiniciar }: { onReiniciar: () => void }) {
 function Pie({
   estado,
   fallo,
-  onReiniciar,
+  onPedirReinicio,
 }: {
   estado: GameState;
   fallo: string | null;
-  onReiniciar: () => void;
+  onPedirReinicio: () => void;
 }) {
-  const [confirmando, setConfirmando] = useState(false);
+  const usadas = estado.usedQuestionIds.length;
+  // El banco del tema en juego, no el de todos: la barra mide lo que queda por
+  // jugar de esta categoría.
+  const total = preguntasDe(temaDe(estado.tema)).length;
 
   return (
     <footer className="mt-auto flex flex-col gap-3 pt-4 text-sm text-[var(--apagado)]">
@@ -408,44 +588,35 @@ function Pie({
         </p>
       )}
 
+      {/* Barra de banco gastado. Con más de mil preguntas, «12 preguntas usadas»
+          no dice nada; lo que quiere saberse es cuánto queda. */}
+      <div
+        className="h-1 overflow-hidden rounded-full bg-[var(--borde)]"
+        role="progressbar"
+        aria-valuenow={usadas}
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-label="Preguntas jugadas del banco"
+      >
+        <div
+          className="h-full rounded-full bg-[var(--texto)] opacity-40 transition-[width] duration-500"
+          style={{ width: `${Math.max(0.5, (usadas / total) * 100)}%` }}
+        />
+      </div>
+
       <div className="flex flex-wrap items-center gap-3">
-        <span>
-          {estado.usedQuestionIds.length}{" "}
-          {estado.usedQuestionIds.length === 1 ? "pregunta usada" : "preguntas usadas"}
+        <span className="tabular-nums">
+          {usadas} de {total} preguntas
         </span>
         <span aria-hidden>·</span>
-        {confirmando ? (
-          <>
-            {/* El marcador sale del estado: antes estaba escrito el 59-57 de la
-                partida que se heredó de ChatGPT, y dejó de ser cierto enseguida. */}
-            <span>
-              {estado.scores.oscar === 0 &&
-              estado.scores.alicia === 0 &&
-              estado.history.length === 0
-                ? "¿Seguro? Empezaréis de cero otra vez."
-                : `¿Seguro? Se pierde el ${estado.scores.oscar}-${estado.scores.alicia} y todo el historial.`}
-            </span>
-            <button
-              onClick={() => {
-                setConfirmando(false);
-                onReiniciar();
-              }}
-              className="text-[var(--fallo)] underline underline-offset-4"
-            >
-              Sí, reiniciar
-            </button>
-            <button onClick={() => setConfirmando(false)} className="underline underline-offset-4">
-              Cancelar
-            </button>
-          </>
-        ) : (
-          <button
-            onClick={() => setConfirmando(true)}
-            className="underline-offset-4 hover:text-[var(--texto)] hover:underline"
-          >
-            Reiniciar partida
-          </button>
-        )}
+        {/* La confirmación ya no vive aquí: al pulsar se enseña el resumen de la
+            partida, que es lo que se pierde al reiniciar. */}
+        <button
+          onClick={onPedirReinicio}
+          className="underline-offset-4 hover:text-[var(--texto)] hover:underline"
+        >
+          Reiniciar partida
+        </button>
       </div>
     </footer>
   );

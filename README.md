@@ -1,9 +1,14 @@
-# Trivial de animación
+# Sabelotodo
 
-Web para que Oscar y Alicia jueguen a un trivial de películas y series de
-animación en un mismo dispositivo, por turnos. Las reglas están implementadas
-como código: **no hay ninguna llamada a IA en tiempo de ejecución**, y las 220
-preguntas viven en un banco local en TypeScript.
+Web para jugar a un trivial en un mismo dispositivo, por turnos. Las reglas
+están implementadas como código: **no hay ninguna llamada a IA en tiempo de
+ejecución**, y las preguntas viven en un banco local en TypeScript.
+
+La idea es que acabe teniendo varias categorías. De momento hay una:
+
+- **🍿 Palomitas** — cine y series, de la animación clásica al Universo
+  Cinematográfico de Marvel, pasando por Disney Channel y los dibujos de
+  sobremesa.
 
 El contexto largo del proyecto —decisiones, reglas y su porqué— está en
 [ESTADO.md](ESTADO.md).
@@ -49,7 +54,7 @@ web enseña una pantalla explicando qué falta en vez de romperse.
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run lint` | ESLint |
 | `npm run validar` | Estructura y reparto del banco de preguntas |
-| `npm run probar` | 25 casos del corrector de respuestas |
+| `npm run probar` | 35 casos del corrector de respuestas |
 | `npm run simular` | Juega una partida entera y comprueba las reglas |
 | `npm run supabase` | Comprueba la conexión con la base de datos |
 
@@ -65,7 +70,7 @@ web enseña una pantalla explicando qué falta en vez de romperse.
 ```
 lib/motor.ts        Elección de pregunta, turnos, puntuación
 lib/corrector.ts    Acepta erratas sin colar respuestas distintas
-lib/banco/          Las 220 preguntas, por familias
+lib/banco/          Las 840 preguntas, por familias
 app/page.tsx        Lee el estado o enseña la pantalla de configuración
 app/juego.tsx       Marcador, pregunta, veredicto
 ```

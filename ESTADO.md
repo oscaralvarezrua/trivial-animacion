@@ -1,17 +1,52 @@
-# Estado del proyecto — Trivial de animación
+# Estado del proyecto — Sabelotodo
 
 Documento de contexto para retomar el trabajo sin depender del historial de chat.
-Última actualización: 6 de agosto de 2026.
+Última actualización: 19 de agosto de 2026.
 
 ## Qué es
 
-Web para que Oscar y Alicia jueguen a un trivial de películas y series de
-animación. Sustituye a una partida que venían jugando con ChatGPT, con marcador
+Web para que Oscar y Alicia jueguen a un trivial en un mismo dispositivo, por
+turnos. Sustituye a una partida que venían jugando con ChatGPT, con marcador
 59-57 y 82 preguntas respondidas cada uno.
 
 El punto de partida fue un prompt de ChatGPT con las reglas del juego. La web
 implementa esas reglas como código, no como instrucciones a un modelo: no hay
 ninguna llamada a IA en tiempo de ejecución.
+
+### El nombre y las categorías
+
+Nació como «Trivial de animación» y se llamó así hasta el 19 de agosto de 2026.
+Dejó de valer por dos motivos a la vez: el banco había crecido hasta incluir
+imagen real (el Universo Cinematográfico de Marvel, las series de Disney
+Channel), y la intención es acabar teniendo varias categorías, no solo esta.
+
+Así que ahora la aplicación es **Sabelotodo** y esta categoría es
+**🍿 Palomitas**: cine y series, de la animación clásica a Endgame. Las
+siguientes previstas son geografía, historia y arte.
+
+### Los temas
+
+Desde el 27 de septiembre de 2026 hay **dos**: **🍿 Palomitas** (cine, series y
+animación) y **🎵 Música** (canciones y artistas). El menú vive en la cabecera
+de `app/juego.tsx` y los temas se declaran en `lib/temas.ts`.
+
+Cuidado con el vocabulario, porque hay dos cosas que se llaman parecido:
+
+- **Tema** es Palomitas o Música: lo que se elige arriba y decide de qué banco
+  se sortea.
+- **Categoría** es el grupo dentro de un tema (Disney, Pixar, Reggaetón…): lo
+  que desglosa el resumen de fin de partida.
+
+**Cambiar de tema termina la partida.** Se enseña antes el resumen, igual que al
+reiniciar, y se empieza de cero en el tema nuevo. Se decidió así en vez de
+guardar una partida por tema: dos marcadores a medias obligan a decidir cuál es
+«el bueno», y el marcador es lo único que de verdad importa aquí. El efecto
+práctico es que sigue habiendo **una sola fila en Supabase** (`oscar-alicia`).
+
+Las partidas guardadas antes de que existieran los temas no traen el campo, y
+`temaDe()` las da por Palomitas, que es lo que eran.
+
+Las siguientes previstas son geografía, historia y arte.
 
 ## Decisiones tomadas (y por qué)
 
@@ -23,14 +58,15 @@ ninguna llamada a IA en tiempo de ejecución.
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | ~150 objetivo, salieron 220 | Ampliable añadiendo líneas a `lib/banco/` |
+| Tamaño del banco | 1925 preguntas en dos temas | Con 220 el último tramo de partida perdía variedad |
+| Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
 
 - Next.js 16.3.0 (App Router, Server Actions), React 19.2.8, TypeScript, Tailwind 4.
 - `@supabase/supabase-js` + `server-only`.
 - `tsx` para los scripts de verificación.
-- Node 20.19.4, Windows.
+- Node 24.x, Windows. Es lo que usa también el despliegue de Vercel.
 
 **Importante:** este Next.js tiene cambios respecto a lo que un modelo suele
 recordar. `AGENTS.md` obliga a consultar `node_modules/next/dist/docs/` antes de
@@ -74,13 +110,40 @@ escribir código. Dos cosas ya comprobadas ahí:
 9. Solo marcador numérico, sin cadenas de aciertos y fallos.
 10. Nombres y títulos del doblaje de España.
 
+### Estadísticas de fin de partida
+
+Al agotarse el banco y al pulsar «Reiniciar partida» se enseña un resumen por
+jugador: aciertos sobre intentos en total, por formato y por categoría.
+
+- Se calcula entero desde `history`, así que no hay contadores en el estado ni
+  hubo que migrar la partida guardada.
+- **El rebote cuenta como un intento más de quien lo jugó.** Si el titular falla
+  y el rival acierta, eso es un fallo para uno y un acierto para el otro dentro
+  de la misma pregunta. Pasar no cuenta como intento: no llegó a responder, y
+  apuntárselo como fallo diría que se equivocó cuando lo que hizo fue no
+  arriesgarse. Los pases se cuentan aparte, en una línea suelta.
+- Solo se pintan las filas con algún intento. Con 7 formatos y 12 categorías,
+  una tabla de ceros taparía lo poco que se hubiera jugado.
+- El reinicio ya no pregunta «¿seguro?» a secas: enseña el resumen primero,
+  porque es justo lo que se va a perder.
+
+La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
+categoría en `lib/categorias.ts`: 18 categorías y 518 franquicias. Repetir el
+dato en cada una de las 1925 preguntas era pedir que se desincronizara.
+`validarBanco()` comprueba que toda franquicia tenga categoría, así que añadir
+una nueva sin clasificarla rompe `npm run validar`.
+
+Manda la franquicia, no el fichero: Ratatouille cuenta como Pixar aunque su
+pregunta viva en `banco/disney.ts`.
+
 ### Variedad
 
 - Una franquicia no se repite hasta pasadas 8 preguntas.
 - Nunca la misma franquicia para los dos dentro de una ronda.
 - Ningún formato más de 2 veces seguidas.
-- Dificultad sorteada **por ronda** (60 % fácil / 30 % media / 10 % difícil), así
+- Dificultad sorteada **por ronda** (45 % fácil / 40 % media / 15 % difícil), así
   Oscar y Alicia juegan siempre al mismo nivel.
+- **Ninguna dificultad más de 2 rondas seguidas**, que son 4 preguntas.
 - Las preguntas difíciles son siempre de elección múltiple.
 
 ### Conflicto de reglas resuelto
@@ -93,21 +156,35 @@ Está en `sortearDificultad(permitirDificil)` en `lib/motor.ts`.
 ## Mapa de ficheros
 
 ```
-lib/types.ts             Question (unión por formato), GameState, HistoryEntry
+lib/types.ts             Question (unión por formato), GameState, HistoryEntry, Rebound
 lib/corrector.ts         normalizar, levenshtein, esqueleto, corregirTexto
 lib/motor.ts             elegirPregunta, servirPregunta, responder,
-                         descartarPregunta, concederPunto, partidaNueva
+                         responderRebote, pasarRebote, descartarPregunta,
+                         concederPunto, corregirTitular, corregirRebote,
+                         partidaNueva, jugadorRival
 lib/barajar.ts           Barajado determinista por semilla (evita mismatch de hidratación)
 lib/preguntas.ts         Índice del banco, porId, validarBanco, PREGUNTA_PENDIENTE
+lib/pistas.ts            Guarda de que el emoji de una categoría no delate ni desvíe
 lib/banco/disney.ts      Clásicos Disney y WDAS
 lib/banco/estudios.ts    Pixar, DreamWorks, Illumination, Sony y otros
 lib/banco/series.ts      TV, Ghibli, anime, Clan y Boing
+lib/banco/superheroes.ts Marvel, DC y Spider-Man, en animación
+lib/banco/television.ts  Tom y Jerry, Cartoon Network, Nickelodeon y animación adulta
+lib/banco/imagen-real.ts Disney Channel y Nickelodeon en imagen real
 lib/partida-guardada.ts  Estado semilla 59-57 con la pregunta 83 pendiente
 lib/supabase.ts          Cliente con service role key, marcado server-only
-app/acciones.ts          Server Actions: cargarPartida, guardarPartida
-app/page.tsx             Server Component: lee el estado o enseña la pantalla de configuración
-app/juego.tsx            Cliente: marcador, pregunta, veredicto, pie
-app/respuesta.tsx        Entrada de respuesta según el formato
+lib/acceso.ts            PIN: haySesion, exigirSesion, abrirSesion (server-only)
+lib/categorias.ts        Mapa de franquicia a categoría y emoji de cada categoría
+lib/temas.ts             Los dos temas (Palomitas, Música) y el de reserva
+lib/banco/musica.ts      Música escrita a mano y contrastada
+lib/banco/musica-listas.ts  Música salida del fichero de 750 acertijos de Oscar
+lib/estadisticas.ts      Aciertos y fallos por jugador, formato y categoría
+app/acciones.ts          Server Actions: cargarPartida, guardarPartida, entrar
+app/page.tsx             Server Component: PIN, luego el estado o la pantalla de configuración
+app/acceso.tsx           Pantalla del PIN
+app/juego.tsx            Cliente: marcador, pregunta, veredicto, rebote, banco agotado, pie
+app/respuesta.tsx        Entrada de respuesta según el formato (los siete)
+app/estadisticas.tsx     Resumen de la partida por jugador
 app/globals.css          Variables de color y tema por jugador
 supabase/esquema.sql     Tabla partidas + RLS
 scripts/*.ts             Verificación (ver abajo)
@@ -118,8 +195,7 @@ scripts/*.ts             Verificación (ver abajo)
 ```ts
 {
   id: "reyleon-pumba",          // único en todo el banco
-  franchise: "El Rey León",     // clave del bloqueo de 8 preguntas
-  emoji: "🦁",
+  franchise: "El Rey León",     // bloqueo de 8; de ella salen categoría y emoji
   difficulty: "facil",          // facil | media | dificil
   format: "corta",              // corta | multiple | vf | orden | relacionar | describir | completar
   prompt: "¿Cómo se llama el jabalí verrugoso que acompaña a Timón?",
@@ -135,9 +211,23 @@ Según el formato cambian los campos de respuesta: `multiple` usa
 baraja), `vf` usa `correct: boolean`, `orden` usa `items` en el orden correcto y
 `relacionar` usa `pairs: {left, right}[]`.
 
+**La pregunta no lleva emoji.** Lo pone la categoría, en `EMOJI_DE_CATEGORIA`
+(lib/categorias.ts), y por eso no hay forma de que delate nada: al lado del
+emoji ya se enseña la franquicia, la franquicia determina la categoría, y algo
+que no añade información no puede chivarse. Con un emoji por pregunta pasaron
+las dos cosas que podían pasar: 🦥 en «¿qué animal es Sid?», y 170 de las 269
+franquicias usando más de un emoji entre sus propias preguntas.
+
 ## Cómo funciona el corrector
 
-Dos vías para dar por buena una respuesta que no es idéntica:
+Antes de nada, una regla que corta por lo sano: **los dígitos tienen que
+coincidir exactamente**. Si no, «5» valía por «7» y «102 dálmatas» por «101
+dálmatas», porque el esqueleto consonántico borra todo lo que no sea letra y
+dejaba las dos respuestas en la cadena vacía. Cambiar un dígito no deja la misma
+respuesta mal escrita, deja otra respuesta.
+
+Con los números fuera, quedan dos vías para dar por buena una respuesta que no
+es idéntica:
 
 1. **Levenshtein** con tolerancia por longitud (0 hasta 6 caracteres, 1 hasta 10,
    2 por encima). Caza resbalones de teclado en nombres largos: «Rapuzel».
@@ -155,18 +245,63 @@ valer, mientras que «Nala»/Nana está a distancia 1 y debe fallar.
 npm run typecheck   # tsc --noEmit
 npm run lint        # eslint
 npm run validar     # estructura y reparto del banco
-npm run probar      # 25 casos del corrector, incluidos los 6 del enunciado
+npm run probar      # 35 casos del corrector, incluidos los 6 del enunciado
 npm run simular     # juega una partida entera y comprueba las reglas
+npm run supabase    # claves y tabla, sin imprimir nunca su valor
 ```
 
-Estado actual de cada uno:
+Estado actual de cada uno, comprobado el 19 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 220 preguntas, 130 franquicias, reparto 62 % / 27 % / 11 %.
-- `probar`: los 25 casos pasan.
-- `simular`: las reglas se cumplen durante las ~180 primeras preguntas. En las
-  últimas ~35 aparecen repeticiones de formato porque el banco se queda sin
-  alternativas; es inevitable y se arregla añadiendo preguntas.
+- `validar`: 1925 preguntas (1183 de Palomitas y 742 de Música), 518
+  franquicias, reparto global 45 % / 41 % / 14 %.
+- `probar`: los 35 casos pasan.
+- `simular`: pasa limpio. Comprueba a mano el veto del rebote en las preguntas
+  de verdadero o falso y los cinco casos de corrección del veredicto, y luego
+  juega una partida entera. En seis ejecuciones seguidas: racha máxima de 4 o 5
+  preguntas con la misma dificultad, y entre 0 y 2 rondas descompensadas de 502.
+  La partida se juega al azar, así que estas cifras bailan un poco.
+
+### El sorteo de dificultad, y por qué se cambió
+
+Hasta el 7 de septiembre de 2026 el sorteo pedía 60 % / 30 % / 10 %. Se cambió
+porque jugando se notaban tandas largas de preguntas fáciles, y al medirlo
+resultó que el problema era doble.
+
+**Uno: el sorteo pedía más fáciles de las que hay.** El banco tiene un 45 % y se
+pedía un 60 %, así que se las gastaba al principio. Medido jugando el banco
+entero, el primer cuarto salía al 71 % de fáciles y el último al 0 %. Además,
+cuando se le acababan, `elegirPregunta` cede en la dificultad antes que en el
+formato, y ahí es donde Alicia acababa con una distinta a la de Oscar.
+
+**Dos: el sorteo era independiente en cada ronda.** Eso encadena rachas por pura
+estadística, y como una ronda son dos preguntas, tres rondas fáciles seguidas ya
+son seis preguntas del tirón. El 23 % de las preguntas caía dentro de una tanda
+de ocho o más fáciles seguidas.
+
+Se arreglaron las dos a la vez: **pesos 45/40/15** (lo que el banco tiene de
+verdad) y **tope de 2 rondas seguidas con la misma dificultad**, deducido del
+historial igual que el veto de formato, sin tocar el estado guardado.
+
+| | Antes | Ahora |
+| --- | --- | --- |
+| Fácil en el primer cuarto del banco | 71 % | 41 % |
+| Fácil en el último cuarto | 0 % | 46 % |
+| Preguntas en racha de 6+ iguales | 30 % | 6 % |
+| Preguntas en racha de 8+ iguales | 23 % | 2 % |
+| Rondas descompensadas | 21 de 502 | **0-2** |
+| Franquicias repetidas antes de tiempo | 18 | **0-1** |
+
+`simular` mide ahora la racha máxima y falla por encima de 8 preguntas
+seguidas con la misma dificultad. Comprobado quitando el tope: sin él sale una
+racha de 16 y el script rompe.
+
+Queda anotado por qué el banco tiene el reparto que tiene: cada ampliación lo ha
+ido corriendo hacia la media (220 → 62 % fáciles, 440 → 56 %, 840 → 53 %,
+1080 → 49 %, 1183 → 45 %), porque preguntar por lo muy conocido de un tema que
+no dominas sigue saliendo «medio». **Se ha decidido no compensarlo con preguntas
+fáciles**: un banco con un 60 % de fáciles se juega aburrido. El sorteo se
+adapta al banco, no al revés.
 
 ### Verificado en el navegador
 
@@ -176,10 +311,29 @@ Con `TRIVIAL_SIN_NUBE=1` se jugaron cuatro turnos reales y funcionó todo:
 - «roxane richi» se acepta como Roxanne Ritchi, avisa de la errata y suma punto.
 - El turno pasa a Alicia con una franquicia distinta y la misma dificultad.
 - Una respuesta fallada muestra la correcta; «Era correcta» sube 57 a 58.
-- «Anular pregunta» mantiene jugador y número, y sirve otra pregunta que además
+- Descartar una pregunta mantiene jugador y número, y sirve otra que además
   respeta el veto de formato.
 - Consola del navegador limpia; en el servidor solo los errores esperados de
   Supabase sin claves.
+
+En una segunda sesión, al montar las estadísticas, se jugaron cuatro turnos más
+con `TRIVIAL_SIN_NUBE=1` y se comprobó:
+
+- El formato `relacionar`, que nunca se había visto: los cuatro desplegables
+  funcionan y corrige bien.
+- El **rebote entero**: Oscar falla una de opciones, salta el rebote a Alicia
+  sin revelar la solución, acierta y se le suma el punto.
+- El resumen al pulsar «Reiniciar partida»: Oscar 1 de 2 (50 %) y Alicia 3 de 3
+  (100 %), con el desglose por formato y por categoría cuadrando, y el rebote
+  contando como acierto de Alicia en `multiple` y en «Series de dibujos».
+- «Cancelar» devuelve a la partida con el estado intacto.
+
+Quedan por ejercitar `vf`, `orden`, `describir` y `completar`, y la pantalla de
+banco agotado, que no es fácil de provocar sin jugar las 440. El resumen que
+sale al agotarse el banco es el mismo componente que el del reinicio, con otro
+texto, así que está probado por dentro pero no en esa ruta.
+
+Las correcciones del veredicto siguen comprobadas solo por `simular`.
 
 ### Modo sin nube
 
@@ -188,18 +342,58 @@ en local desde el estado semilla en vez de enseñar la pantalla de configuració
 **No guarda nada y se reinicia al recargar.** Es solo para probar la interfaz;
 en cuanto haya claves reales deja de activarse, porque la carga ya no falla.
 
+## Despliegue
+
+Está en producción y funcionando.
+
+| | |
+| --- | --- |
+| Vercel | `oscaralvarezs-projects/trivial-animacion`, plan Hobby, Node 24.x |
+| URL | https://trivial-animacion-rho.vercel.app |
+| Supabase | proyecto `yanwsicuprdrgwfjynfw` |
+| Repo | https://github.com/oscaralvarezrua/trivial-animacion, rama `main` |
+
+**Las tres variables de entorno están marcadas «Sensitive» en Vercel.** Eso las
+hace de solo escritura: ni el panel ni la CLI pueden leerlas, y
+`vercel env pull` escribe el literal `[SENSITIVE]` en vez del valor. Para
+rehacer un `.env.local` no sirve de nada tirar de Vercel: la URL sale del ref de
+Supabase de la tabla de arriba, la *service role key* del panel de Supabase
+(Project Settings → API Keys → `service_role`) y el PIN solo lo sabe Oscar.
+
+Ojo con no confundirse de sitio: `trivial-animacion.vercel.app`, sin el `-rho`,
+es de otra persona y no tiene nada que ver con esto.
+
+## Montar el proyecto en una máquina nueva
+
+Dos tropiezos que parecen fallos del código y no lo son:
+
+1. `npm run typecheck` falla nada más clonar con «Cannot find name
+   `LayoutProps`». Ese tipo global lo genera Next, así que hay que correr
+   `npm run build` una vez antes. `app/layout.tsx` está bien; no hay que tocarlo.
+2. npm 11 no ejecuta los postinstall de `esbuild` ni de `unrs-resolver`. Sin
+   ellos `tsx` no arranca y se caen `validar`, `probar` y `simular`. Se arregla
+   con `npm approve-scripts esbuild`, lo mismo para `unrs-resolver`, y luego
+   `npm rebuild`. Eso deja un bloque `allowScripts` en `package.json`.
+
+O sea: `npm install` → `npm approve-scripts` → `npm rebuild` → `npm run build` →
+ya el resto.
+
 ## Pendiente
 
-1. **Bloqueante — Supabase.** Oscar tiene que crear el proyecto en supabase.com,
-   ejecutar `supabase/esquema.sql` en el SQL Editor y copiar
-   `.env.local.example` a `.env.local` con la URL y la *service role key*. Sin
-   eso la web arranca pero solo enseña la pantalla de configuración.
-2. **Probar los formatos que faltan.** Se han visto en el navegador `corta` y
-   `multiple`. Quedan por ejercitar `vf`, `orden`, `relacionar`, `describir` y
-   `completar`, y la pantalla de banco agotado.
-3. **Desplegar en Vercel** con las dos variables de entorno.
-4. **README** breve.
-5. Commit: nada de esto está commiteado todavía, solo el scaffold inicial.
+1. **Probar en el navegador los cuatro formatos que faltan**: `vf`, `orden`,
+   `describir` y `completar`, más la pantalla de banco agotado y las dos
+   correcciones del veredicto. `corta`, `multiple` y `relacionar` ya están
+   vistos, y el rebote también.
+2. **Repasar las preguntas nuevas.** El banco pasó de 220 a 440 de una tacada, y
+   las 220 nuevas las redactó Claude de memoria, no salieron de ninguna fuente
+   consultada. La estructura la valida `npm run validar`, pero **que el dato sea
+   cierto no lo comprueba nadie**. Conviene leerlas con calma antes de fiarse,
+   sobre todo años, nombres de doblaje y personajes secundarios.
+3. **Vigilar el reparto de dificultad.** Ahora es 56 % / 34 % / 10 % y el sorteo
+   pide 60 / 30 / 10, así que la escasa ha pasado a ser la **fácil**. Todavía
+   sobra margen, pero si algún día se amplía otra vez, que sea de fáciles.
+4. **Nada urgente más.** Supabase, el despliegue, el README y el PIN ya están
+   hechos.
 
 ## Ideas descartadas o aplazadas
 
@@ -215,8 +409,14 @@ en cuanto haya claves reales deja de activarse, porque la carga ya no falla.
   key. La tabla tiene RLS activado y **ninguna política**, así que la clave
   pública no sirve para nada. La anon key no se usa en ningún sitio.
 - Las Server Actions son invocables por POST por cualquiera que conozca la URL
-  del despliegue. Para una partida privada entre dos es aceptable; si molesta,
-  se puede añadir un PIN compartido.
+  del despliegue, así que esconder la pantalla no bastaría. De ahí el PIN: se
+  comprueba en `app/page.tsx` para no enseñar la partida y otra vez dentro de
+  cada Server Action, en `lib/acceso.ts`, que es donde está el dato. En la
+  cookie viaja un hash con sal, no el PIN. Cambiar `TRIVIAL_PIN` invalida de
+  golpe todas las sesiones abiertas.
+- Si `TRIVIAL_PIN` se deja vacío la web queda abierta, y es a propósito:
+  quedarse fuera de vuestra propia partida por una variable mal puesta es peor
+  que el riesgo que cubre.
 - El estado de la partida cabe entero en una fila jsonb con id `oscar-alicia`.
 - Los ~130 datos del registro de preguntas ya usadas del prompt original están
   excluidos del banco: ninguna pregunta los repite.
