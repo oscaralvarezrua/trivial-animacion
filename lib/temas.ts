@@ -18,13 +18,14 @@
  * lo único que importa de verdad.
  */
 
-export const TEMAS = ["palomitas", "musica"] as const;
+export const TEMAS = ["palomitas", "musica", "historia"] as const;
 
 export type Tema = (typeof TEMAS)[number];
 
 export const TEMA: Record<Tema, { nombre: string; emoji: string; de: string }> = {
   palomitas: { nombre: "Palomitas", emoji: "🍿", de: "cine, series y animación" },
   musica: { nombre: "Música", emoji: "🎵", de: "canciones y artistas" },
+  historia: { nombre: "Historia", emoji: "🗺️", de: "historia de todo el mundo" },
 };
 
 /**

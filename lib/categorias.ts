@@ -34,6 +34,22 @@ export const CATEGORIAS = [
   "Salsa y pop latino",
   "Pop internacional",
   "Los 2000 en inglés",
+
+  // Tema Historia. Se agrupa por cultura y no por siglos a propósito: el
+  // objetivo del tema es que Europa sea una más, y ordenar por épocas la
+  // devolvería al centro, porque «Edad Media» o «Edad Moderna» son cortes
+  // europeos que no significan lo mismo en China, en Malí o en el Pacífico.
+  "Mesopotamia y Egipto",
+  "Grecia y Roma",
+  "China",
+  "Japón y Corea",
+  "India",
+  "El mundo islámico",
+  "África",
+  "América precolombina",
+  "Oceanía y el Pacífico",
+  "Europa medieval y moderna",
+  "El mundo contemporáneo",
 ] as const;
 
 export type Categoria = (typeof CATEGORIAS)[number];
@@ -629,6 +645,63 @@ const POR_FRANQUICIA: Record<string, Categoria> = {
   "Tones And I": "Pop internacional",
   "Twenty One Pilots": "Pop internacional",
 
+  // --- Historia: la franquicia es la civilización o el imperio ---
+  // Así la regla de no repetir franquicia en 8 preguntas evita que salgan
+  // cuatro de Roma seguidas, y la categoría agrupa por cultura.
+  Mesopotamia: "Mesopotamia y Egipto",
+  "Antiguo Egipto": "Mesopotamia y Egipto",
+  "Reino de Kush": "Mesopotamia y Egipto",
+
+  "Antigua Grecia": "Grecia y Roma",
+  "Antigua Roma": "Grecia y Roma",
+  "Imperio bizantino": "Grecia y Roma",
+
+  "China imperial": "China",
+  "Imperio mongol": "China",
+
+  "Japón": "Japón y Corea",
+  Corea: "Japón y Corea",
+
+  "Civilización del Indo": "India",
+  "Imperio maurya": "India",
+  "India antigua": "India",
+  "Imperio mogol": "India",
+  "India contemporánea": "India",
+
+  "Islam medieval": "El mundo islámico",
+  "Al-Ándalus": "El mundo islámico",
+  "Imperio otomano": "El mundo islámico",
+
+  "Imperio de Malí": "África",
+  "Gran Zimbabue": "África",
+  "Reino de Aksum": "África",
+  "Etiopía": "África",
+  "Reino de Benín": "África",
+  "África colonial": "África",
+  "Sudáfrica": "África",
+  // Comodín para las preguntas que cruzan reinos africanos.
+  "África": "África",
+
+  "Civilización caral": "América precolombina",
+  "Civilización maya": "América precolombina",
+  "Imperio mexica": "América precolombina",
+  "Imperio inca": "América precolombina",
+  "América precolombina": "América precolombina",
+
+  Polinesia: "Oceanía y el Pacífico",
+  "Nueva Zelanda": "Oceanía y el Pacífico",
+  "Rapa Nui": "Oceanía y el Pacífico",
+  Australia: "Oceanía y el Pacífico",
+
+  "Europa medieval": "Europa medieval y moderna",
+  "Europa moderna": "Europa medieval y moderna",
+
+  "Primera Guerra Mundial": "El mundo contemporáneo",
+  "Segunda Guerra Mundial": "El mundo contemporáneo",
+  "Guerra Fría": "El mundo contemporáneo",
+  "Descolonización": "El mundo contemporáneo",
+  "Siglo XX": "El mundo contemporáneo",
+
   // Comodines para las preguntas que cruzan artistas
   "Trap y rap latino": "Trap y rap latino",
   "Reggaetón": "Reggaetón",
@@ -687,6 +760,22 @@ export const EMOJI_DE_CATEGORIA: Record<Categoria, string> = {
   "Salsa y pop latino": "📻",
   "Pop internacional": "🎤",
   "Los 2000 en inglés": "💿",
+
+  // Historia. Los tres globos terráqueos no son pereza: el emoji enseña
+  // literalmente la región de la que va la pregunta, que es lo más neutro que
+  // hay. Y siguen valiendo las reglas de siempre: nada que pueda ser respuesta,
+  // así que un 🐉 para China o un 🪶 para América quedan descartados.
+  "Mesopotamia y Egipto": "🏺",
+  "Grecia y Roma": "🏛️",
+  China: "🏮",
+  "Japón y Corea": "🏯",
+  India: "🕉️",
+  "El mundo islámico": "🕌",
+  "África": "🌍",
+  "América precolombina": "🌎",
+  "Oceanía y el Pacífico": "🌏",
+  "Europa medieval y moderna": "⚜️",
+  "El mundo contemporáneo": "📰",
 };
 
 /**
