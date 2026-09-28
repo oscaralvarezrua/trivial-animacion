@@ -26,9 +26,10 @@ siguientes previstas son geografía, historia y arte.
 
 ### Los temas
 
-Desde el 27 de septiembre de 2026 hay **dos**: **🍿 Palomitas** (cine, series y
-animación) y **🎵 Música** (canciones y artistas). El menú vive en la cabecera
-de `app/juego.tsx` y los temas se declaran en `lib/temas.ts`.
+Desde el 27 de septiembre de 2026 hay **tres**: **🍿 Palomitas** (cine, series y
+animación), **🎵 Música** (canciones y artistas) e **🗺️ Historia** (historia de
+todo el mundo). El menú vive en la cabecera de `app/juego.tsx` y los temas se
+declaran en `lib/temas.ts`.
 
 Cuidado con el vocabulario, porque hay dos cosas que se llaman parecido:
 
@@ -46,7 +47,7 @@ práctico es que sigue habiendo **una sola fila en Supabase** (`oscar-alicia`).
 Las partidas guardadas antes de que existieran los temas no traen el campo, y
 `temaDe()` las da por Palomitas, que es lo que eran.
 
-Las siguientes previstas son geografía, historia y arte.
+Las siguientes previstas son geografía y arte.
 
 ## Decisiones tomadas (y por qué)
 
@@ -58,7 +59,7 @@ Las siguientes previstas son geografía, historia y arte.
 | Persistencia | Supabase (Postgres) | Oscar quiere abrir la partida desde cualquier sitio |
 | Ubicación | Proyecto nuevo, hermano de `tienda_de_ropa` | No mezclar con la landing VANTA |
 | Árbitro | Corrección en los dos sentidos desde el veredicto | El corrector automático falla en ambas direcciones; sin registro visible de usos |
-| Tamaño del banco | 1925 preguntas en dos temas | Con 220 el último tramo de partida perdía variedad |
+| Tamaño del banco | 2056 preguntas en tres temas | Con 220 el último tramo de partida perdía variedad |
 | Acceso | PIN compartido, comprobado también dentro de cada Server Action | Esconder la pantalla no basta: las acciones se invocan por POST |
 
 ## Stack
@@ -128,8 +129,8 @@ jugador: aciertos sobre intentos en total, por formato y por categoría.
   porque es justo lo que se va a perder.
 
 La categoría **no es un campo de cada pregunta**, sino un mapa de franquicia a
-categoría en `lib/categorias.ts`: 18 categorías y 518 franquicias. Repetir el
-dato en cada una de las 1925 preguntas era pedir que se desincronizara.
+categoría en `lib/categorias.ts`: 29 categorías y 560 franquicias. Repetir el
+dato en cada una de las 2056 preguntas era pedir que se desincronizara.
 `validarBanco()` comprueba que toda franquicia tenga categoría, así que añadir
 una nueva sin clasificarla rompe `npm run validar`.
 
@@ -178,6 +179,7 @@ lib/categorias.ts        Mapa de franquicia a categoría y emoji de cada categor
 lib/temas.ts             Los dos temas (Palomitas, Música) y el de reserva
 lib/banco/musica.ts      Música escrita a mano y contrastada
 lib/banco/musica-listas.ts  Música salida del fichero de 750 acertijos de Oscar
+lib/banco/historia.ts    Historia de varias culturas, con Europa como una más
 lib/estadisticas.ts      Aciertos y fallos por jugador, formato y categoría
 app/acciones.ts          Server Actions: cargarPartida, guardarPartida, entrar
 app/page.tsx             Server Component: PIN, luego el estado o la pantalla de configuración
@@ -253,8 +255,8 @@ npm run supabase    # claves y tabla, sin imprimir nunca su valor
 Estado actual de cada uno, comprobado el 19 de agosto de 2026:
 
 - `typecheck` y `lint`: limpios.
-- `validar`: 1925 preguntas (1183 de Palomitas y 742 de Música), 518
-  franquicias, reparto global 45 % / 41 % / 14 %.
+- `validar`: 2056 preguntas (1183 de Palomitas, 742 de Música y 131 de
+  Historia), 560 franquicias, reparto global 45 % / 40 % / 15 %.
 - `probar`: los 35 casos pasan.
 - `simular`: pasa limpio. Comprueba a mano el veto del rebote en las preguntas
   de verdadero o falso y los cinco casos de corrección del veredicto, y luego

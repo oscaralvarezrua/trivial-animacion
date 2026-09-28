@@ -6,6 +6,7 @@ import { IMAGEN_REAL } from "./banco/imagen-real";
 import { TELEVISION } from "./banco/television";
 import { MUSICA } from "./banco/musica";
 import { MUSICA_LISTAS } from "./banco/musica-listas";
+import { HISTORIA } from "./banco/historia";
 import { categoriaDe, emojiDe } from "./categorias";
 import { pistaDelEmoji } from "./pistas";
 import { TEMAS, type Tema } from "./temas";
@@ -43,6 +44,7 @@ const POR_TEMA: Record<Tema, Question[]> = {
     ...IMAGEN_REAL,
   ],
   musica: [...MUSICA, ...MUSICA_LISTAS],
+  historia: [...HISTORIA],
 };
 
 /** Todas las preguntas de todos los temas. Para validar y para `porId`. */
